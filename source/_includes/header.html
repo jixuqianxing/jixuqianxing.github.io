@@ -1,19 +1,31 @@
 <div class="profilepic">
 	{% if site.email_md5 %}
-	<img src="http://www.gravatar.com/avatar/{{ site.email_md5 }}?s=160" alt="Profile Picture" style="width: 160px;" />
+	<img src="header/header.png{{ 296068974@qq.com_md5 }}?s=160" alt="Profile Picture" style="width: 160px;" />
+<!--<img src="/images/header/header.png" alt="Profile Picture" style="width: 160px;" />-->
 	{% else %}
 	<script src="{{ root_url }}/javascripts/md5.js"></script>
 	<script type="text/javascript">
-		$(function(){
-			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("{{ site.email | downcase }}") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
-		});
+        document.write("<img src='http://tp1.sinaimg.cn/2410259360/180/5711290044/1" + MD5("{{ 296068974@.qq.com | downcase }}") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
 	</script>
 	{% endif %}
 </div>
 {% include custom/header.html %}
+        
+<section class="aboutme">
+    <p>
+    树在，山在，大地在，我在，你还要怎样更好的生活？
+    </p>
+</section>
+
+
 <nav id="main-nav">{% include navigation.html %}</nav>
+
+
 <nav id="sub-nav">
 	<div class="social">
+        {% if site.weibo_user %}
+            <a class="weibo" href="http://www.weibo.com/2410259360" title="Weibo">Weibo</a>
+        {% endif %}
 		{% if site.email %}
 			<a class="email" href="mailto:{{ site.email }}" title="Email">Email</a>
 		{% endif %}
