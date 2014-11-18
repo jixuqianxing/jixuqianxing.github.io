@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[继续前行]]></title>
+  <link href="http://jixuqianxing.github.io/atom.xml" rel="self"/>
+  <link href="http://jixuqianxing.github.io/"/>
+  <updated>2014-11-18T14:36:08+08:00</updated>
+  <id>http://jixuqianxing.github.io/</id>
+  <author>
+    <name><![CDATA[Zhengcaixi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
