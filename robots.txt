@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://jixuqianxing.github.io/sitemap.xml 
