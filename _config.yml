@@ -103,3 +103,10 @@ facebook_like: false
 
 weibo_user: 2410259360 # 微博数字 ID 或域名 ID
 weibo_share: true # 是否开启微博分享按钮
+
+
+# duoshuo comments 添加多说评论
+duoshuo_comments: true
+duoshuo_short_name: jixuqianxing
+
+
