@@ -9,18 +9,12 @@
 	</script>
 	{% endif %}
 </div>
-{% include custom/header.html %}
-        
-<section class="aboutme">
-    <p>
-    树在，山在，大地在，我在，你还要怎样更好的生活？
-    </p>
-</section>
 
 
+<h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+<p class="subtitle">{{ site.subtitle }}</p>
+<p class="subtitle">{{ site.description }}</p>
 <nav id="main-nav">{% include navigation.html %}</nav>
-
-
 <nav id="sub-nav">
 	<div class="social">
         {% if site.weibo_user %}
@@ -76,3 +70,5 @@
 		{% endif %}
 	</div>
 </nav>
+
+{% include custom/header.html %}
