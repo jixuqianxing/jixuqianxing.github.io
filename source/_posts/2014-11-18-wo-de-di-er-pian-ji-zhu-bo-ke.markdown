@@ -51,16 +51,16 @@ Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法
 
 例子如下，在 Markdown 文件里加上一段 HTML 表格：
 
-```
- 这是一个普通段落。
 
- <table>
-    <tr>
-        <td>Foo</td>
-    </tr>
- </table>
-这是另一个普通段落。
-```
+	 这是一个普通段落。
+	
+	 <table>
+	    <tr>
+	        <td>Foo</td>
+	    </tr>
+	 </table>
+	这是另一个普通段落。
+
 请注意，在 HTML 区块标签间的 Markdown 格式语法将不会被处理。比如，你在 HTML 区块内使用 Markdown 样式的*强调*会没有效果。
 
 HTML 的区段（行内）标签如 `<span>`、`<cite>`、`<del>` 可以在 Markdown 的段落、列表或是标题里随意使用。依照个人习惯，甚至可以不用 Markdown 格式，而直接采用 HTML 标签来格式化。举例说明：如果比较喜欢 HTML 的 `<a>` 或 `<img>` 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图像标签语法。
@@ -73,44 +73,44 @@ HTML 的区段（行内）标签如 `<span>`、`<cite>`、`<del>` 可以在 Mark
 
 `&` 字符尤其让网络文档编写者受折磨，如果你要打「`AT&T`」 ，你必须要写成「`AT&amp;T`」。而网址中的 `&` 字符也要转换。比如你要链接到：
 
-```
-http://images.google.com/images?num=30&q=larry+bird
-```
+
+	http://images.google.com/images?num=30&q=larry+bird
+
 你必须要把网址转换写为：
 
-```
-http://images.google.com/images?num=30&amp;q=larry+bird
-```
+
+	http://images.google.com/images?num=30&amp;q=larry+bird
+
 才能放到链接标签的 `href` 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。
 
 Markdown 让你可以自然地书写字符，需要转换的由它来处理好了。如果你使用的 `&` 字符是 HTML 字符实体的一部分，它会保留原状，否则它会被转换成 `&amp;`。
 
 所以你如果要在文档中插入一个版权符号 `©`，你可以这样写：
 
-```
-&copy
-```
+
+	&copy
+
 Markdown 会保留它不动。而若你写：
 
-```
-AT&T
-```
+
+	AT&T
+
 Markdown 就会将它转为：
 
-```
-AT&amp;T
-```
+
+	AT&amp;T
+
 
 类似的状况也会发生在 `<` 符号上，因为 Markdown 允许 兼容 HTML ，如果你是把 `<` 符号作为 HTML 标签的定界符使用，那 Markdown 也不会对它做任何转换，但是如果你写：
 
-```
-4 < 5
-```
+
+	4 < 5
+
 Markdown 将会把它转换为：
 
-```
-4 &lt; 5
-```
+
+	4 &lt; 5
+
 不过需要注意的是，code 范围内，不论是行内还是区块， `<` 和 `&` 两个符号都一定会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code （和 HTML 相对而言， HTML 语法中，你要把所有的 `<` 和 `&` 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。）
 
 ******
@@ -133,77 +133,77 @@ Markdown 支持两种标题的语法，类 Setext 和类 atx 形式。
 
 类 Setext 形式是用底线的形式，利用 `=` （最高阶标题）和 `-` （第二阶标题），例如：
 
-```
-This is an H1
-=============
+	
+	This is an H1
+	=============
+	
+	This is an H2
+	-------------
 
-This is an H2
--------------
-```
 任何数量的 `=` 和 `-` 都可以有效果。
 
 类 Atx 形式则是在行首插入 1 到 6 个 `#`，对应到标题 1 到 6 阶，例如：
 
-```
-# 这是 H1
 
-## 这是 H2
+	# 这是 H1
+	
+	## 这是 H2
+	
+	###### 这是 H6
 
-###### 这是 H6
-```
 你可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 `#`，而行尾的 `#` 数量也不用和开头一样（行首的井字符数量决定标题的阶数）：
 
-```
-# 这是 H1 #
 
-## 这是 H2 ##
+	# 这是 H1 #
+	
+	## 这是 H2 ##
+	
+	### 这是 H3 ######
 
-### 这是 H3 ######
-```
 
 区块引用 Blockquotes
 
 Markdown 标记区块引用是使用类似 email 中用 > 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 `>` ：
 
-```
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-> 
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
-```
+
+	> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+	> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+	> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+	> 
+	> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+	> id sem consectetuer libero luctus adipiscing.
+
 Markdown 也允许你偷懒只在整个段落的第一行最前面加上 `>` ：
 
-```
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-id sem consectetuer libero luctus adipiscing.
-```
+	> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+	consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+	Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+	
+	> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+	id sem consectetuer libero luctus adipiscing.
+
 区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 `>` ：
 
-```
-> This is the first level of quoting.
->
-> > This is nested blockquote.
->
-> Back to the first level.
-```
+
+	> This is the first level of quoting.
+	>
+	> > This is nested blockquote.
+	>
+	> Back to the first level.
+
 引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：
 
-```
-> ## 这是一个标题。
-> 
-> 1.   这是第一行列表项。
-> 2.   这是第二行列表项。
-> 
-> 给出一些例子代码：
-> 
->     return shell_exec("echo $input | $markdown_script");
-```
+
+	> ## 这是一个标题。
+	> 
+	> 1.   这是第一行列表项。
+	> 2.   这是第二行列表项。
+	> 
+	> 给出一些例子代码：
+	> 
+	>     return shell_exec("echo $input | $markdown_script");
+
 
 ####列表
 
