@@ -4,7 +4,7 @@
   <title><![CDATA[继续前行]]></title>
   <link href="http://jixuqianxing.github.io/atom.xml" rel="self"/>
   <link href="http://jixuqianxing.github.io/"/>
-  <updated>2014-11-22T15:14:00+08:00</updated>
+  <updated>2014-11-22T15:36:38+08:00</updated>
   <id>http://jixuqianxing.github.io/</id>
   <author>
     <name><![CDATA[Zhengcaixi]]></name>
@@ -31,6 +31,13 @@
 <li>特殊字符自动转换</li>
 </ul>
 </li>
+</ul>
+
+
+<!-- more -->
+
+
+<ul>
 <li>区块元素
 
 <ul>
