@@ -1,111 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE HTML>
+  <title><![CDATA[Category: 转载 | 继续前行]]></title>
+  <link href="http://jixuqianxing.github.io/blog/categories/zhuan-zai/atom.xml" rel="self"/>
+  <link href="http://jixuqianxing.github.io/"/>
+  <updated>2014-11-22T13:42:33+08:00</updated>
+  <id>http://jixuqianxing.github.io/</id>
+  <author>
+    <name><![CDATA[Zhengcaixi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
-<html>
-
-<head>
-	<meta charset="utf-8">
-	<title>Makdown语法说明（简体中文版） - 继续前行</title>
-	<meta name="author" content="Zhengcaixi">
-
-	
-	<meta name="description" content="Makdown语法说明（简体中文版） 原文链接：https://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md 目录 概述 宗旨
-兼容HTML
-特殊字符自动转换 区块元素 段落换行
-标题
-区块引用
-列表
-代码区块
-分割线 &hellip;">
-	
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link href="/atom.xml" rel="alternate" title="继续前行" type="application/atom+xml">
-	
-	<link rel="canonical" href="http://jixuqianxing.github.io/blog/2014/11/18/wo-de-di-er-pian-ji-zhu-bo-ke/">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
   
-
-</head>
-
-
-<body>
-	<div class="container">
-		<div class="left-col">
-			<div class="intrude-less">
-			<header id="header" class="inner"><div class="profilepic">
-	
-	<script src="/javascripts/md5.js"></script>
-	<script type="text/javascript">
-        document.write("<img src='http://tp1.sinaimg.cn/2410259360/180/5711290044/1" + MD5("") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
-	</script>
-	
-</div>
-
-        
-<section class="aboutme">
-    <p>
-    树在，山在，大地在，我在，你还要怎样更好的生活？
-    </p>
-</section>
-
-
-<nav id="main-nav"><ul class="main">
-    <li><a href="/">文章</a></li>
-    <li><a href="http://about.me/shashankmehta">关于我</a></li>
-    <li><a href="/blog/archives">Archives</a></li>
-</ul>
-</nav>
-
-
-<nav id="sub-nav">
-	<div class="social">
-        
-            <a class="weibo" href="http://www.weibo.com/2410259360" title="Weibo">Weibo</a>
-        
-		
-		
-		
-		
-		
-			<a class="github" href="https://github.com/jixuqianxing" title="GitHub">GitHub</a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-    	
-    	
-			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-		
-	</div>
-</nav>
-</header>				
-			</div>
-		</div>	
-		<div class="mid-col">
-			
-				
-			
-			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name">Makdown语法说明（简体中文版）</h1>
-	<div class="entry-content" itemprop="articleBody"><p>原文链接：<a href="https://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md">https://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md</a></p>
+  <entry>
+    <title type="html"><![CDATA[Makdown语法说明（简体中文版）]]></title>
+    <link href="http://jixuqianxing.github.io/blog/2014/11/18/wo-de-di-er-pian-ji-zhu-bo-ke/"/>
+    <updated>2014-11-18T14:59:35+08:00</updated>
+    <id>http://jixuqianxing.github.io/blog/2014/11/18/wo-de-di-er-pian-ji-zhu-bo-ke</id>
+    <content type="html"><![CDATA[<p>原文链接：<a href="https://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md">https://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md</a></p>
 
 <h3>目录</h3>
 
@@ -172,23 +85,15 @@
 
 <p>例子如下，在 Markdown 文件里加上一段 HTML 表格：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> 这是一个普通段落。
-</span><span class='line'>
-</span><span class='line'> &lt;table&gt;
-</span><span class='line'>    &lt;tr&gt;
-</span><span class='line'>        &lt;td&gt;Foo&lt;/td&gt;
-</span><span class='line'>    &lt;/tr&gt;
-</span><span class='line'> &lt;/table&gt;
-</span><span class='line'>这是另一个普通段落。</span></code></pre></td></tr></table></div></figure>
+<pre><code> 这是一个普通段落。
 
+ &lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Foo&lt;/td&gt;
+    &lt;/tr&gt;
+ &lt;/table&gt;
+这是另一个普通段落。
+</code></pre>
 
 <p>请注意，在 HTML 区块标签间的 Markdown 格式语法将不会被处理。比如，你在 HTML 区块内使用 Markdown 样式的<em>强调</em>会没有效果。</p>
 
@@ -202,15 +107,13 @@
 
 <p><code>&amp;</code> 字符尤其让网络文档编写者受折磨，如果你要打「<code>AT&amp;T</code>」 ，你必须要写成「<code>AT&amp;amp;T</code>」。而网址中的 <code>&amp;</code> 字符也要转换。比如你要链接到：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>http://images.google.com/images?num=30&q=larry+bird</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>http://images.google.com/images?num=30&amp;q=larry+bird
+</code></pre>
 
 <p>你必须要把网址转换写为：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>http://images.google.com/images?num=30&amp;q=larry+bird</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>http://images.google.com/images?num=30&amp;amp;q=larry+bird
+</code></pre>
 
 <p>才能放到链接标签的 <code>href</code> 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。</p>
 
@@ -218,33 +121,28 @@
 
 <p>所以你如果要在文档中插入一个版权符号 <code>©</code>，你可以这样写：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&copy</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>&amp;copy
+</code></pre>
 
 <p>Markdown 会保留它不动。而若你写：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>AT&T</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>AT&amp;T
+</code></pre>
 
 <p>Markdown 就会将它转为：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>AT&amp;T</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>AT&amp;amp;T
+</code></pre>
 
 <p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 允许 兼容 HTML ，如果你是把 <code>&lt;</code> 符号作为 HTML 标签的定界符使用，那 Markdown 也不会对它做任何转换，但是如果你写：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>4 &lt; 5</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>4 &lt; 5
+</code></pre>
 
 <p>Markdown 将会把它转换为：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>4 &lt; 5</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>4 &amp;lt; 5
+</code></pre>
 
 <p>不过需要注意的是，code 范围内，不论是行内还是区块， <code>&lt;</code> 和 <code>&amp;</code> 两个符号都一定会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code （和 HTML 相对而言， HTML 语法中，你要把所有的 <code>&lt;</code> 和 <code>&amp;</code> 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。）</p>
 
@@ -268,115 +166,75 @@
 
 <p>类 Setext 形式是用底线的形式，利用 <code>=</code> （最高阶标题）和 <code>-</code> （第二阶标题），例如：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>This is an H1
-</span><span class='line'>=============
-</span><span class='line'>
-</span><span class='line'>This is an H2
-</span><span class='line'>-------------</span></code></pre></td></tr></table></div></figure>
+<pre><code>This is an H1
+=============
 
+This is an H2
+-------------
+</code></pre>
 
 <p>任何数量的 <code>=</code> 和 <code>-</code> 都可以有效果。</p>
 
 <p>类 Atx 形式则是在行首插入 1 到 6 个 <code>#</code>，对应到标题 1 到 6 阶，例如：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># 这是 H1
-</span><span class='line'>
-</span><span class='line'>## 这是 H2
-</span><span class='line'>
-</span><span class='line'>###### 这是 H6</span></code></pre></td></tr></table></div></figure>
+<pre><code># 这是 H1
 
+## 这是 H2
+
+###### 这是 H6
+</code></pre>
 
 <p>你可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 <code>#</code>，而行尾的 <code>#</code> 数量也不用和开头一样（行首的井字符数量决定标题的阶数）：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># 这是 H1 #
-</span><span class='line'>
-</span><span class='line'>## 这是 H2 ##
-</span><span class='line'>
-</span><span class='line'>### 这是 H3 ######</span></code></pre></td></tr></table></div></figure>
+<pre><code># 这是 H1 #
 
+## 这是 H2 ##
+
+### 这是 H3 ######
+</code></pre>
 
 <p>区块引用 Blockquotes</p>
 
 <p>Markdown 标记区块引用是使用类似 email 中用 > 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 <code>&gt;</code> ：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-</span><span class='line'>&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-</span><span class='line'>&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-</span><span class='line'>&gt; 
-</span><span class='line'>&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-</span><span class='line'>&gt; id sem consectetuer libero luctus adipiscing.</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+&gt; 
+&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+&gt; id sem consectetuer libero luctus adipiscing.
+</code></pre>
 
 <p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 <code>&gt;</code> ：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-</span><span class='line'>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-</span><span class='line'>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-</span><span class='line'>
-</span><span class='line'>&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-</span><span class='line'>id sem consectetuer libero luctus adipiscing.</span></code></pre></td></tr></table></div></figure>
+<pre><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
+&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.
+</code></pre>
 
 <p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 <code>&gt;</code> ：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; This is the first level of quoting.
-</span><span class='line'>&gt;
-</span><span class='line'>&gt; &gt; This is nested blockquote.
-</span><span class='line'>&gt;
-</span><span class='line'>&gt; Back to the first level.</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>&gt; This is the first level of quoting.
+&gt;
+&gt; &gt; This is nested blockquote.
+&gt;
+&gt; Back to the first level.
+</code></pre>
 
 <p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; ## 这是一个标题。
-</span><span class='line'>&gt; 
-</span><span class='line'>&gt; 1.   这是第一行列表项。
-</span><span class='line'>&gt; 2.   这是第二行列表项。
-</span><span class='line'>&gt; 
-</span><span class='line'>&gt; 给出一些例子代码：
-</span><span class='line'>&gt; 
-</span><span class='line'>&gt;     return shell_exec("echo $input | $markdown_script");</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>&gt; ## 这是一个标题。
+&gt; 
+&gt; 1.   这是第一行列表项。
+&gt; 2.   这是第二行列表项。
+&gt; 
+&gt; 给出一些例子代码：
+&gt; 
+&gt;     return shell_exec("echo $input | $markdown_script");
+</code></pre>
 
 <h4>列表</h4>
 
@@ -662,13 +520,10 @@ title attribute.&lt;/p&gt;
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[foo]: http://example.com/  "Optional Title Here"
-</span><span class='line'>[foo]: http://example.com/  'Optional Title Here'
-</span><span class='line'>[foo]: http://example.com/  (Optional Title Here)</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>    [foo]: http://example.com/  "Optional Title Here"
+    [foo]: http://example.com/  'Optional Title Here'
+    [foo]: http://example.com/  (Optional Title Here)
+</code></pre>
 
 <p><strong>请注意</strong>：有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title。</p>
 
@@ -935,102 +790,7 @@ _   底线
 .   英文句点
 !   惊叹号
 </code></pre>
-</div>
-
-</article>
-
-	<div class="share">
-	<div class="addthis_toolbox addthis_default_style ">
-<!--   微博分享     -->
-    
-    <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style_24x24">
-    <a class="jiathis_button_qzone"></a>
-    <a class="jiathis_button_tsina"></a>
-    <a class="jiathis_button_tqq"></a>
-    <a class="jiathis_button_weixin"></a>
-    <a class="jiathis_button_renren"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-    <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1401108369599951" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
-<!-- UY END -->
-    
-<!---->
-	
-	
-	
-	<a class="addthis_counter addthis_pill_style"></a>
-	</div>
-  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
-</div>
-
-
-
-
-<!--多说评论-->
-
-<section>
-    <h1>Comments</h1>
-    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
-<!--<div class="ds-thread" data-thread-key="/blog/2014/11/18/wo-de-di-er-pian-ji-zhu-bo-ke" data-title="Makdown语法说明（简体中文版）" data-url="http://jixuqianxing.github.io/blog/2014/11/18/wo-de-di-er-pian-ji-zhu-bo-ke/"></div>&#8211;>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<!--<script type="text/javascript">-->
-<!--    var duoshuoQuery = {short_name:"9738395"};-->
-<!--    (function() {-->
-<!--     -->
-<!--     var ds = document.createElement('script');-->
-<!--     ds.type = 'text/javascript';ds.async = true;-->
-<!--     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';-->
-<!--     ds.charset = 'UTF-8';-->
-<!--     (document.getElementsByTagName('head')[0]-->
-<!--      || document.getElementsByTagName('body')[0]).appendChild(ds);-->
-<!--     })();-->
-<!--    </script>&#8211;>
-<!-- 多说公共JS代码 end -->
-
-<!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread"></div>
-<script type="text/javascript">
-    var duoshuoQuery = {short_name:"jixuqianxing"};
-    (function() {
-     var ds = document.createElement('script');
-     ds.type = 'text/javascript';ds.async = true;
-     ds.src = 'http://static.duoshuo.com/embed.js';
-     ds.charset = 'UTF-8';
-     (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-     })();
-    </script>
-<!-- Duoshuo Comment END --></div>
-</section>
-</div>
-			</div>
-			<footer id="footer" class="inner">Copyright &copy; 2014
-
-    Zhengcaixi
-
-
-Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
-		</div>
-	</div>
-	
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+]]></content>
+  </entry>
+  
+</feed>
