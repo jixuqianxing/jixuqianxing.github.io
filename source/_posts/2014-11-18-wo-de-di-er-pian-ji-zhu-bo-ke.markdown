@@ -5,7 +5,8 @@ date: 2014-11-18 14:59:35 +0800
 comments: true
 categories: 转载
 ---
-原文链接：<https://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md>
+
+原文链接：<http://markdown.tw/>
 ###目录
  * 概述
     * 宗旨

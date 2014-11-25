@@ -106,7 +106,7 @@ weibo_share: true # 是否开启微博分享按钮
 
 
 # duoshuo comments 添加多说评论
-duoshuo_comments: true
-duoshuo_short_name: jixuqianxing
+#duoshuo_comments: true
+#duoshuo_short_name: jixuqianxing
 
 
