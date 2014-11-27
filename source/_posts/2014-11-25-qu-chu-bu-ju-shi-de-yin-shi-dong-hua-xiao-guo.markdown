@@ -5,7 +5,10 @@ date: 2014-11-25 16:51:18 +0800
 comments: true
 categories: 细节必究
 ---
-原创，欢迎转载，转载请注明出处。
+
+*原创，欢迎转载，转载请注明出处。*
+
+-------
 
 在布局UITableViewCell子试图时，如果在layoutSubviews中处理布局，当项目运行时我们经常会看到cell上面的控件在动，这也就是标题所说的隐式动画。虽然说动态效果更能够吸引人，但有时候并非我们所要，那我们应该怎样解决这个问题呢？
 
@@ -15,21 +18,21 @@ categories: 细节必究
 
 **swift版：**
 
-```
+``` ruby 
 override func layoutSubviews() {
-        super.layoutSubviews()
-        CATransaction.begin()
-        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-        /*******************/
-        // 在这里书写布局的代码
-        /*******************/
-        CATransaction.commit()
-    }
+     super.layoutSubviews()
+     CATransaction.begin()
+     CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+     /*******************/
+     // 在这里书写布局的代码
+     /*******************/
+     CATransaction.commit()
+}
 ```
     
 **OC版：**
 
-```
+``` ruby
 - (void)layoutSubviews
 {
     [super layoutSubviews];    
