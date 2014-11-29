@@ -3,7 +3,7 @@ layout: post
 title: "iOS8下的UIActionSheet"
 date: 2014-11-28 20:43:02 +0800
 comments: false
-categories: iOS 8、问题集
+categories: iOS8、问题集
 ---
 <br><br/>
 前段时间做了一个iPad应用，里面用到了图片上传。因此，需要用到UIImagePickerController打开本地图库和开启相机拍照。代码如下：
@@ -18,7 +18,6 @@ categories: iOS 8、问题集
                                               otherButtonTitles:@"拍一张", nil];
     [sheet showInView:self.view];
 }
-
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == actionSheet.cancelButtonIndex) {
@@ -58,12 +57,16 @@ categories: iOS 8、问题集
 // 显示actionSheet
 - (IBAction)choosePhoto:(id)sender
 {
-    [self presentViewController:self.actionSheet animated:YES completion:nil];
+    [self presentViewController:self.actionSheet 
+                       animated:YES
+                     completion:nil];
 }
 - (UIAlertController *)actionSheet
 {
     if (_actionSheet == nil) {
-        _actionSheet = [UIAlertController alertControllerWithTitle:@"选择照片" message:@"请通过以下方式来选择照片" preferredStyle:UIAlertControllerStyleActionSheet];
+        _actionSheet = [UIAlertController alertControllerWithTitle:@"选择照片"  
+                                                           message:@"请通过以下方式来选择照片" 
+                                                                                         preferredStyle:UIAlertControllerStyleActionSheet];
         // 在action sheet中，UIAlertActionStyleCancel不起作用
         UIAlertAction *act1 = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         }];
@@ -128,9 +131,12 @@ categories: iOS 8、问题集
 ```
 
 此时，运行结果如下：
+
+![](http://a.hiphotos.baidu.com/image/w%3D2048/sign=6379a2cbb0119313c743f8b051000dd7/e4dde71190ef76c697d597229f16fdfaaf5167b7.jpg)
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128-1.png)
 
 但是，当我旋转屏幕时，问题又出现了。
+
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128-2.png)
 
 从图中可以看出，actionSheet的位置不在使我们想要的。解决办法如下：
