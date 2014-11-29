@@ -130,14 +130,17 @@ categories: iOS8、问题集
 }
 ```
 
+<br><br/>
 此时，运行结果如下：<br><br/>
 
-![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128-1.png)
+![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128_1.png)
 
+<br><br/>
 但是，当我旋转屏幕时，问题又出现了。<br><br/>
 
-![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128-2.png)
+![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128_2.gif)
 
+<br><br/>
 从图中可以看出，actionSheet的位置不在使我们想要的。解决办法如下：
 
 ```
@@ -150,9 +153,11 @@ categories: iOS8、问题集
     *rect = CGRectMake((CGRectGetWidth((*view).bounds)-2)*0.5f, (CGRectGetHeight((*view).bounds)-2)*0.5f, 2, 2);
 }
 ```
+
+<br><br/>
 运行结果如下：<br><br/>
 
-![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128-3.gif)
+![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128_3.gif)
 
 至此，iOS 8下地UIActionSheet处理就完成了。在iOS 8下面使用这个还是有点小复杂。那么还有没有其他的方法呢？答案是肯定的，可以再本文开始的代码作如下处理：
 
