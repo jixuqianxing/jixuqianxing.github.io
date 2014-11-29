@@ -130,12 +130,11 @@ categories: iOS8、问题集
 }
 ```
 
-此时，运行结果如下：
+此时，运行结果如下：<br><br/>
 
-![](http://a.hiphotos.baidu.com/image/w%3D2048/sign=6379a2cbb0119313c743f8b051000dd7/e4dde71190ef76c697d597229f16fdfaaf5167b7.jpg)
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128-1.png)
 
-但是，当我旋转屏幕时，问题又出现了。
+但是，当我旋转屏幕时，问题又出现了。<br><br/>
 
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128-2.png)
 
@@ -151,7 +150,7 @@ categories: iOS8、问题集
     *rect = CGRectMake((CGRectGetWidth((*view).bounds)-2)*0.5f, (CGRectGetHeight((*view).bounds)-2)*0.5f, 2, 2);
 }
 ```
-运行结果如下：
+运行结果如下：<br><br/>
 
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128-3.gif)
 
