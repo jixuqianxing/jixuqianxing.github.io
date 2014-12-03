@@ -35,6 +35,8 @@ categories: iOS8、问题集
 
 <br><br/>
 
+<!--more-->
+
 在iOS 7之前的模拟器以及iOS 7模拟器上测试都没问题。但是，iOS 8上报了如下警告：
 
 
