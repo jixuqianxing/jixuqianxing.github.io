@@ -6,7 +6,7 @@ comments: true
 keywords: AutoLayout 自动布局
 categories: iOS、教程、屏幕适配
 ---
-<br></br>
+
 ##前言
 <br></br>
 随着新一代iPhone的推出，苹果也开始大屏化，一下推出了两款大屏iPhone，并且这两款iPhone尺寸也不一样，一个是4.7寸，另一款则是5.5寸。加上之前的3.5寸和4寸，现在已经有四种不同的尺寸了。作为一名iOS开发者，你是不是感到很捉急呢，会不会感觉iPhone也要像安卓那样做着各种机型的适配呢？答案是肯定的。但是，你会发现选择iOS开发是多么明智的选择。因为，苹果已经为我们准备了屏幕适配做好的工具AutoLayout以及iOS8新推出的SizeClass，熟练掌握这两项技术后，你会发现适配也是如此简单。
@@ -14,23 +14,23 @@ categories: iOS、教程、屏幕适配
 好了，前面都是废话，之所以写这篇文章，是因为身边还有很多朋友在为屏幕适配而烦恼。接下来我不会介绍什么是AutoLayout，如果你还不熟悉AutoLayout那么建议你先查查资料了解一下。另外，如果你对本文或者对本文使用的方法存在疑问，欢迎在文章下面留言，我会抽出时间来解答。
 
 <!--more-->
-<br></br>
+
 ##实战演练
-<br></br>
+
 下面，主要通过一个实例来演示如何快速的在Storyboard或Xib中使用AutoLayout。
 
 例：如图，给白色方块添加约束条件，使其据父控件的顶部的距离一定，长宽不变，并且垂直居中。
 
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/AL_1.png)
 
-<br></br>
+
 操作方法有很多，我主要介绍三种快速操作。方法一如下：
 
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/AL_3.gif)
 
 这种方法很简单，相信很多人都会。
 
-<br></br>
+
 
 第二种方法：
 
@@ -45,7 +45,7 @@ categories: iOS、教程、屏幕适配
 * 拖拽的方向（上、下、左、右）
 * 拖拽的位置（从哪到哪）
 
-<br></br>
+
 第三种操作方式，如下：
 
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/AL_2.gif)
@@ -56,7 +56,7 @@ categories: iOS、教程、屏幕适配
 
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/AL_4.gif)
 
-<br></br>
+
 
 ###小结
 
@@ -64,8 +64,7 @@ categories: iOS、教程、屏幕适配
 
 如果大家有什么疑问，欢迎提出。
 
-<br><br/>
-<br></br>
+
 
 
 原创文章，版权声明：自由转载-费商用-非衍生-保持署名 \| [Creative Commons BY-NC-ND 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)
