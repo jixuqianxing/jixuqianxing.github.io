@@ -15,18 +15,18 @@ categories: iOS、教程、屏幕适配
 
 <!--more-->
 <br></br>
-###实战演练
+##实战演练
 <br></br>
 下面，主要通过一个实例来演示如何快速的在Storyboard或Xib中使用AutoLayout。
 
 例：如图，给白色方块添加约束条件，使其据父控件的顶部的距离一定，长宽不变，并且垂直居中。
 
-![]()
+![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/AL_1.png)
 
 <br></br>
 操作方法有很多，我主要介绍三种快速操作。方法一如下：
 
-![]()
+![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/AL_3.gif)
 
 这种方法很简单，相信很多人都会。
 
@@ -34,7 +34,7 @@ categories: iOS、教程、屏幕适配
 
 第二种方法：
 
-![]()
+![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/AL_1.gif)
 
 **注意:**操作方法为：按住`control`键，然后进行拖拽。
 
@@ -47,9 +47,14 @@ categories: iOS、教程、屏幕适配
 
 <br></br>
 第三种操作方式，如下：
-![]()
+
+![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/AL_2.gif)
 
 这种方法跟前面的方法一样，只是操作的位置不一样，在界面控件多的时候，用这种方法可以快速定位控件并快速添加约束。
+
+最终效果如下：
+
+![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/AL_4.gif)
 
 <br></br>
 
