@@ -188,3 +188,10 @@ categories: iOS8、问题集
 ```
 
 这样也是可以解决前面的警告错误的。因为，现在是在didDismissWithButtonIndex:方法里面处理，也就是此时UIActionSheet已经从界面消失了之后再present UIImagePickerController。也就避免了同时present两个控制器。虽然，这种解决方法比较简单，但是苹果已经在iOS 8中废弃了UIActionSheet还有UIAlertView。所以，还是建议采用上面的解决方法。
+
+
+<br><br/>
+
+
+
+原创文章，版权声明：自由转载-费商用-非衍生-保持署名 \| [Creative Commons BY-NC-ND 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)
