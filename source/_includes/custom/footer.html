@@ -1,18 +1,17 @@
-Copyright &copy; {{ site.time | date: "%Y" }}
-{% if site.author %}
-    {{ site.author }}
-{% else %}
-    {{ site.title }}
-{% endif %}
+<p>
+Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} -
+<span class="credit">
+    Powered by
+    <a href="http://octopress.org">Octopress</a>
+</span>
+</p>
 
 
 
 <!--启用MathJax-->
 
-<!-- mathjax config similar to math.stackexchange -->
-
+<!-- mathjax config similar to math.stackexchange-->
 <script type="text/x-mathjax-config">
-
     MathJax.Hub.Config({
 
                        jax: ["input/TeX", "output/HTML-CSS"],

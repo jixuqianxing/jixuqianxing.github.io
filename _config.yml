@@ -103,8 +103,8 @@ disqus_show_comment_count: false
 # Facebook Like
 facebook_like: false
 
-weibo_user: 2410259360 # 微博数字 ID 或域名 ID
-weibo_share: true # 是否开启微博分享按钮
+weibo_user: 2410259360   # 微博数字 ID 或域名 ID
+weibo_share: true        # 是否开启微博分享按钮
 
 
 # duoshuo comments 添加多说评论

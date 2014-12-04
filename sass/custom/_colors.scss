@@ -1,4 +1,4 @@
-$greyshade: #2571B8;
+$greyshade: #2571B8; // 超链接高亮颜色
 
 
 // Here you can easily change your sites's color scheme.
@@ -43,4 +43,4 @@ $solar-green:     #859900;
 /* Non highlighted code colors */
 $pre-bg: $base03;
 $pre-border: darken($base02, 5);
-$pre-color: $base1;
+$pre-color: $base1;$greyshade: color;

@@ -4,8 +4,14 @@ title: "iOS8下的UIActionSheet"
 date: 2014-11-28 20:43:02 +0800
 comments: false
 categories: iOS8、问题集
+tags: [UIActionSheet, 博客, iOS 8]
+keywords: UIActionSheet, iOS 8, 站内搜索
+description: UIActionSheet在iOS 8下的用法
+
 ---
-<br><br/>
+
+---
+
 前段时间做了一个iPad应用，里面用到了图片上传。因此，需要用到UIImagePickerController打开本地图库和开启相机拍照。代码如下：
 
 ``` ruby
@@ -33,7 +39,6 @@ categories: iOS8、问题集
 }
 ```
 
-<br><br/>
 
 <!--more-->
 
@@ -42,13 +47,13 @@ categories: iOS8、问题集
 
 >   Warning: Attempt to present <UIImagePickerController: 0x7f96c28f7800>  on <ViewController: 0x7f96c302c3d0> which is already presenting <UIAlertController: 0x7f96c337be90>
 
-<br><br/>
+
 根据问题可以看出ViewController在present UIImagePickerController之前present了UIAlertController，但是，我并没有是用UIAlertView。但是这里出现了UIAlertController这个iOS 8推出的新的类，问题应该就出现在这里。然后，我在UIActionSheet头文件找到了这样一句话：
 
 >   UIActionSheet is deprecated. Use UIAlertController
 >    with a preferredStyle of UIAlertControllerStyleActionSheet instead  
 
-<br><br/>
+
 原来，在iOS 8下UIActionSheet已经被废弃掉，取而代之的是UIAlertController。
 
 于是，我将代码修改如下：
@@ -83,7 +88,7 @@ categories: iOS8、问题集
     return _actionSheet;
 }
 ```
-<br><br/>
+
 结果，运行时程序直接崩掉了。错误信息：
 
 >   Terminating app due to uncaught exception 'NSGenericException', reason: 'Your application has presented a UIAlertController (<UIAlertController: 0x7f8e5841e790>) of style UIAlertControllerStyleActionSheet. The modalPresentationStyle of a UIAlertController with this style is UIModalPresentationPopover. You must provide location information for this popover through the alert controller's popoverPresentationController. You must provide either a sourceView and sourceRect or a barButtonItem.  If this information is not known when you present the alert controller, you may provide it in the UIPopoverPresentationControllerDelegate method -prepareForPopoverPresentation.'
@@ -93,7 +98,7 @@ categories: iOS8、问题集
 
 **注意：**[UIPopoverPresentationController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPopoverPresentationController_class/index.html)是[UIPresentationController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPresentationController_class/index.html)的一个子类，此类将取代UIPopoverController，并且可以再iPhone应用中实现以前只有iPad才有的UIPopoverController功能。
 
-<br><br/>
+
 于是，将上面的代码修改如下：
 
 ```
@@ -132,17 +137,17 @@ categories: iOS8、问题集
 }
 ```
 
-<br><br/>
-此时，运行结果如下：<br><br/>
+
+此时，运行结果如下：
 
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128_1.png)
 
-<br><br/>
-但是，当我旋转屏幕时，问题又出现了。<br><br/>
+
+但是，当我旋转屏幕时，问题又出现了。
 
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128_2.gif)
 
-<br><br/>
+
 从图中可以看出，actionSheet的位置不在使我们想要的。解决办法如下：
 
 ```
@@ -156,8 +161,8 @@ categories: iOS8、问题集
 }
 ```
 
-<br><br/>
-运行结果如下：<br><br/>
+
+运行结果如下：
 
 ![](https://raw.githubusercontent.com/jixuqianxing/jixuqianxing.github.com/master/images/blogImages/20141128/20141128_3.gif)
 
@@ -189,11 +194,11 @@ categories: iOS8、问题集
 }
 ```
 
-这样也是可以解决前面的警告错误的。因为，现在是在didDismissWithButtonIndex:方法里面处理，也就是此时UIActionSheet已经从界面消失了之后再present UIImagePickerController。也就避免了同时present两个控制器。虽然，这种解决方法比较简单，但是苹果已经在iOS 8中废弃了UIActionSheet还有UIAlertView。所以，还是建议采用上面的解决方法。
+这样也是可以解决前面的警告错误的。因为，现在是在 didDismissWithButtonIndex: 方法里面处理，也就是此时UIActionSheet已经从界面消失了之后再 present UIImagePickerController。也就避免了同时 present 两个控制器。如果你考虑 iOS 8 以下版本的支持，那么推荐使用此方法。
 
 
 <br><br/>
 
 
-
+---
 原创文章，版权声明：自由转载-费商用-非衍生-保持署名 \| [Creative Commons BY-NC-ND 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)

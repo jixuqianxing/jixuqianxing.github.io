@@ -4,8 +4,10 @@ title: "去除布局时的隐式动画效果"
 date: 2014-11-25 16:51:18 +0800
 comments: true
 categories: iOS、问题集
+
 ---
 
+---
 
 在布局UITableViewCell子试图时，如果在layoutSubviews中处理布局，当项目运行时我们经常会看到cell上面的控件在动，这也就是标题所说的隐式动画。虽然说动态效果更能够吸引人，但有时候并非我们所要，那我们应该怎样解决这个问题呢？
 
@@ -26,6 +28,8 @@ override func layoutSubviews() {
      CATransaction.commit()
 }
 ```
+
+
 
 ---
 
@@ -50,6 +54,7 @@ override func layoutSubviews() {
 
 <br><br/>
 
+---
 
 
 原创文章，版权声明：自由转载-费商用-非衍生-保持署名 \| [Creative Commons BY-NC-ND 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)

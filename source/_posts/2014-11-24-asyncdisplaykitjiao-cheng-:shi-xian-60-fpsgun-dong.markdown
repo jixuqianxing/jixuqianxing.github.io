@@ -6,8 +6,12 @@ comments: true
 published: false
 categories: 教程
 ---
+
+
 本文译自：
+
 ###摘要：
+
 FaceBook的Paper团队发布了其iOS UI框架[AsyncDisplayKit](https://github.com/facebook/AsyncDisplayKit)。该库旨在快速响应用户界面，将图片解码、布局以及渲染操作都放在了后台线程执行，故不会阻塞主线程。本教程将带你简单学习AsyncDisplayKit。
 
 在这个教程中，你将学习到如何利用AsyncDisplayKit来优化UICollectionView的滚动问题。以此为例，你将学会如何在现有的项目中使用AsyncDisplayKit。
