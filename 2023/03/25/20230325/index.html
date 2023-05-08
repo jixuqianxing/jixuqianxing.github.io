@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          Swift高阶函数 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2023/03/25/20230325/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#iOS, Swift" title="iOS, Swift">iOS, Swift</a>
+                        
+                    </div>
+                    <h1>Swift高阶函数</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2023-03-25
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="Swift高阶函数"><a href="#Swift高阶函数" class="headerlink" title="Swift高阶函数"></a>Swift高阶函数</h1><p>Swift高阶函数是指可以接受函数作为参数或返回函数的函数。高阶函数强调了函数的参数和返回值都可以是函数类型，这使得函数能够被视为可传递和可组合的值和运算。</p>
+<p>Swift中有多种高阶函数，包括<code>map</code>，<code>filter</code>，<code>reduce</code>，<code>sort</code>，<code>flatMap</code>，<code>compactMap</code>等。</p>
+<h4 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h4><p><code>map</code>是高阶函数中最常用的函数之一。它接受一个函数和一个数组，并返回一个新数组，其中每个元素都是原始数组中对应元素通过输入的函数转换后得到的结果。</p>
+<p>以下是一个简单示例，将一个数组中的每个元素加倍：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> doubled <span class="operator">=</span> numbers.map &#123; <span class="variable">$0</span> <span class="operator">*</span> <span class="number">2</span> &#125;</span><br><span class="line"><span class="built_in">print</span>(doubled) </span><br><span class="line"><span class="comment">// prints [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-Filter"><a href="#2-Filter" class="headerlink" title="2. Filter"></a>2. Filter</h4><p><code>filter</code>函数接受一个函数和一个数组，并返回一个新数组，其中只包含原始数组中符合条件的元素。这个函数可以用于过滤数组中不需要的元素。</p>
+<p>以下是一个简单示例，从一个字符串数组中过滤出包含大写字母的字符串：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> words <span class="operator">=</span> [<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;CAT&quot;</span>, <span class="string">&quot;dog&quot;</span>, <span class="string">&quot;EGG&quot;</span>]</span><br><span class="line"><span class="keyword">let</span> capitalized <span class="operator">=</span> words.filter &#123; word <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">let</span> pattern <span class="operator">=</span> <span class="string">&quot;.*[A-Z]+.*&quot;</span></span><br><span class="line">    <span class="keyword">let</span> range <span class="operator">=</span> word.range(of: pattern, options: .regularExpression)</span><br><span class="line">    <span class="keyword">return</span> range <span class="operator">!=</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(capitalized) </span><br><span class="line"><span class="comment">// prints [&quot;CAT&quot;, &quot;EGG&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Reduce"><a href="#3-Reduce" class="headerlink" title="3. Reduce"></a>3. Reduce</h4><p><code>reduce</code>函数接受一个函数和一个数组，并返回一个单一的值，这个值是通过使用指定的函数对数组中的所有元素进行聚合得到的。这个函数可以用于计算数组中所有元素的总和或平均值等。</p>
+<p>以下是一个简单示例，计算一个数组中所有元素的总和：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> sum <span class="operator">=</span> numbers.reduce(<span class="number">0</span>, &#123; <span class="variable">$0</span> <span class="operator">+</span> <span class="variable">$1</span> &#125;)</span><br><span class="line"><span class="built_in">print</span>(sum) </span><br><span class="line"><span class="comment">// prints 15</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的例子在<code>reduce</code>函数的初始化值参数中指定了一个初始值0，<code>reduce</code>函数对该数组中的所有元素进行了求和操作。<code>reduce</code>函数中的第二个参数是一个闭包，用于对数组中的每个元素进行操作。</p>
+<h4 id="4-Sorted"><a href="#4-Sorted" class="headerlink" title="4. Sorted"></a>4. Sorted</h4><p><code>sorted</code>函数接受一个数组，并返回一个新数组，其中所有元素都按照指定的顺序排列。这个函数可以用于对数组中的元素进行排序操作。</p>
+<p>以下是一个简单示例，对一个包含人员信息的数组按照年龄从小到大排序：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> people <span class="operator">=</span> [(<span class="string">&quot;Alice&quot;</span>, <span class="number">20</span>), (<span class="string">&quot;Bob&quot;</span>, <span class="number">18</span>), (<span class="string">&quot;Charlie&quot;</span>, <span class="number">25</span>), (<span class="string">&quot;David&quot;</span>, <span class="number">22</span>)]</span><br><span class="line"><span class="keyword">let</span> sortedPeople <span class="operator">=</span> people.sorted &#123; (person1, person2) <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">return</span> person1.<span class="number">1</span> <span class="operator">&lt;</span> person2.<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(sortedPeople)</span><br><span class="line"><span class="comment">// prints [(&quot;Bob&quot;, 18), (&quot;Alice&quot;, 20), (&quot;David&quot;, 22), (&quot;Charlie&quot;, 25)]</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们传递了一个闭包作为<code>sorted</code>函数的参数，这个闭包用于比较元组中的第二个元素（年龄），成升序排列。</p>
+<h4 id="5-FlatMap"><a href="#5-FlatMap" class="headerlink" title="5. FlatMap"></a>5. FlatMap</h4><p><code>flatMap</code>接受一个数组，然后将每个元素映射为新的数组，并将所有结果组合成一个单一的数组。与map不同，在使用<code>flatMap</code>时，元素可以映射到一个可选类型的数组，从而更加灵活。</p>
+<p>以下是一个简单示例，将一个含有字符串的数组转换成一个包含所有单词的数组：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> phrases <span class="operator">=</span> [<span class="string">&quot;hello world&quot;</span>, <span class="string">&quot;goodbye cruel world&quot;</span>]</span><br><span class="line"><span class="keyword">let</span> words <span class="operator">=</span> phrases.flatMap &#123; <span class="variable">$0</span>.split(separator: <span class="string">&quot; &quot;</span>) &#125;</span><br><span class="line"><span class="built_in">print</span>(words) </span><br><span class="line"><span class="comment">// prints [&quot;hello&quot;, &quot;world&quot;, &quot;goodbye&quot;, &quot;cruel&quot;, &quot;world&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，首先使用<code>split</code>函数将字符串分割成单词数组，然后使用<code>flatMap</code>将多个数组合并为一个数组。</p>
+<h4 id="6-CompactMap"><a href="#6-CompactMap" class="headerlink" title="6. CompactMap"></a>6. CompactMap</h4><p><code>compactMap</code>通过一个闭包参数来转化数组中的每个元素，并返回一个新的数组，其中<code>nil</code>值会被过滤掉。这个闭包必须返回一个可选类型值，当返回值为<code>nil</code>时，元素将被过滤掉。</p>
+<p>例如：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> items <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mappedItems <span class="operator">=</span> items.map &#123; <span class="variable">$0</span> <span class="operator">*</span> <span class="number">2</span> &#125;</span><br><span class="line"><span class="built_in">print</span>(mappedItems) </span><br><span class="line"><span class="comment">// prints [2, 4, 6, 8, 10]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> compactMappedItems <span class="operator">=</span> items.compactMap &#123; <span class="variable">$0</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">0</span> <span class="operator">?</span> <span class="variable">$0</span> : <span class="literal">nil</span> &#125;</span><br><span class="line"><span class="built_in">print</span>(compactMappedItems) </span><br><span class="line"><span class="comment">// prints [2, 4]</span></span><br></pre></td></tr></table></figure>
+
+<p>在上面的例子中，我们将数组中的元素乘以 2 进行了映射，产生了一个新的数组。然后我们使用<code>compactMap</code>过滤掉了奇数元素，只剩下了偶数元素 2 和 4。</p>
+<h4 id="One-more-Thing"><a href="#One-more-Thing" class="headerlink" title="One more Thing"></a>One more Thing</h4><p>Swift高阶函数的另一个强大之处在于它们可以链接在一起形成一个管道，这被称为函数链或函数式编程范式。使用函数链，我们可以通过将多个函数应用于同一个数组来生成一个复杂的、自定义的操作序列。</p>
+<p>以下是一个简单示例，将一个字符串数组中的大写字母转换为小写字母，并按字母顺序排序：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> words <span class="operator">=</span> [<span class="string">&quot;AbC&quot;</span>, <span class="string">&quot;deF&quot;</span>, <span class="string">&quot;ghi&quot;</span>, <span class="string">&quot;JKL&quot;</span>]</span><br><span class="line"><span class="keyword">let</span> result <span class="operator">=</span> words</span><br><span class="line">    .map &#123; <span class="variable">$0</span>.lowercased() &#125;</span><br><span class="line">    .filter &#123; <span class="variable">$0</span>.count <span class="operator">&lt;=</span> <span class="number">3</span> &#125;</span><br><span class="line">    .sorted()</span><br><span class="line"><span class="built_in">print</span>(result) </span><br><span class="line"><span class="comment">// prints [&quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们调用了串联式的<code>map</code>、<code>filter</code>和<code>sorted</code>函数，它们在一起形成了一个管道，每个函数都返回一个新的数组，以形成复合操作。</p>
+<p>通过函数链，我们可以创建与原始数据完全不同的结果，并且所需的代码量非常少。使用高阶函数以及函数链编程方式，可以使代码更加可读性强，更加易于维护和测试。</p>
+<p>总之，高阶函数是Swift语言中非常强大和灵活的工具，可以大大简化代码，并提高代码的可读性和可维护性。掌握这些高阶函数，可以让我们更快地构建高效、简洁的代码。</p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2023/03/10/20230310/" data-toggle="tooltip" data-placement="top" title="iOS模块化中的通用图片访问器优化">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

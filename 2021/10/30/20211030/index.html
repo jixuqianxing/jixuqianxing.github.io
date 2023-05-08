@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          iOS模块化中的通用图片访问器 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2021/10/30/20211030/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#iOS, Swift" title="iOS, Swift">iOS, Swift</a>
+                        
+                    </div>
+                    <h1>iOS模块化中的通用图片访问器</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2021-10-30
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>本文旨在解决，多模块、多 bundle 的图片资源的统一访问方法。</p>
+</blockquote>
+<p>目前，我们开发的项目实现了模块化，不同模块使用的图片资源也都抽到了相应的模块内部，可以共用的图片资源和资源访问器，单独封装成一个基础模块。图片资源使用 <code>xcassets</code> 进行管理，模块通过 <code>Cocoapods</code> 进行管理。需要在每个模块中的 <code>podspec</code> 这样定义资源包：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s.resource_bundle = &#123;</span><br><span class="line">  <span class="string">&#x27;ModuleName&#x27;</span> =&gt; [<span class="string">&#x27;Resources/*&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样定义的好处是，<code>pod</code> 会将资源打包成模块同名的 <code>bundle</code> 文件。不会将资源整合到 <code>main bundle</code> ，这样也可以避免命名冲突的问题。</p>
+<p>当然，如果你喜欢的话，你也可以选择另一种方式，将所有的资源整合到 <code>main bundle</code> 。那么，你可能就没有从非  <code>main bundle</code> 取图片的烦恼，你也可以关闭这篇文章了。</p>
+<p>在介绍这个访问器之前，有必要介绍下 Swift 的下标语法，我在 <code>Swift</code> 中实现的图片资源访问器是基于此语法进行设计。</p>
+<h2 id="Subscript-下标语法"><a href="#Subscript-下标语法" class="headerlink" title="Subscript-下标语法"></a>Subscript-下标语法</h2><p>下标语法可以定义在类、结构体和枚举中，是访问集合、列表或序列中元素的快捷方式。可以使用下标的索引，设置和获取值，而不需要再调用对应的存取方法。</p>
+<p>在使用 <code>Swift</code> 进行开发时，下标语法几乎每天都会用到，比如我们从数组中取一个元素：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> item <span class="operator">=</span> array[i]</span><br></pre></td></tr></table></figure>
+
+<p>从字典中通过 <code>key</code> 来取值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let value = dict[&quot;key&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>下标允许你通过在实例名称后面的方括号中传入一个或者多个索引值来对实例进行查询。它的语法类似于实例方法语法和计算型属性语法。定义下标使用 <code>subscript</code> 关键字，与定义实例方法类似，都是指定一个或多个输入参数和一个返回类型。与实例方法不同的是，下标可以设定为读写或只读。这种行为由 getter 和 setter 实现，类似计算型属性：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">subscript</span>(<span class="params">index</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">get</span> &#123;</span><br><span class="line">      <span class="comment">// 返回一个适当的 Int 类型的值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span>(newValue) &#123;</span><br><span class="line">      <span class="comment">// 执行适当的赋值操作</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>newValue</code> 的类型和下标操作的返回类型相同。如同计算型属性，可以不指定 setter 的参数（<code>newValue</code>）。如果不指定参数，setter 会提供一个名为 <code>newValue</code> 的默认参数。</p>
+<p>如同只读计算型属性，对于只读下标的声明，你可以通过省略 <code>get</code> 关键字和对应的大括号组来进行简写：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">subscript</span>(<span class="params">index</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="comment">// 返回一个适当的 Int 类型的值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更多关于下标语法的信息，你可以通过这个<a target="_blank" rel="noopener" href="https://docs.swift.org/swift-book/LanguageGuide/Subscripts.html">链接</a>了解更全面的信息。</p>
+<h2 id="使用下标语法实现通用的图片访问器"><a href="#使用下标语法实现通用的图片访问器" class="headerlink" title="使用下标语法实现通用的图片访问器"></a>使用下标语法实现通用的图片访问器</h2><p>这里，其实是利用了下标的多维特性来实现。一个类型可以定义多个下标，通过不同索引类型进行对应的重载。</p>
+<p>多维特性示例：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">subscript</span>(<span class="params">row</span>: <span class="type">Int</span>, <span class="params">column</span>: <span class="type">Int</span>) -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">    <span class="keyword">get</span> &#123;</span><br><span class="line">        <span class="built_in">assert</span>(indexIsValid(row: row, column: column), <span class="string">&quot;Index out of range&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> grid[(row <span class="operator">*</span> columns) <span class="operator">+</span> column]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> &#123;</span><br><span class="line">        <span class="built_in">assert</span>(indexIsValid(row: row, column: column), <span class="string">&quot;Index out of range&quot;</span>)</span><br><span class="line">        grid[(row <span class="operator">*</span> columns) <span class="operator">+</span> column] <span class="operator">=</span> newValue</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最终实现大概如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public struct MyImage &#123;</span><br><span class="line">	/// 通过图片名，获取一个 UIImage</span><br><span class="line">    public static subscript(named: String) -&gt; UIImage? &#123;</span><br><span class="line">        UIImage(named: named)</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    /// 通过 module 和图片名，获取一个 UIImage</span><br><span class="line">    public static subscript(module: Any.Type?, named: String) -&gt; UIImage? &#123;</span><br><span class="line">        var buldel: Bundle?</span><br><span class="line">        if let module = module &#123;</span><br><span class="line">            buldel = Bundle.named(String(describing: module.self))</span><br><span class="line">        &#125;</span><br><span class="line">        return UIImage(named: named, in: buldel, compatibleWith: nil)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用法：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从 ModuleName.bundle 中获取图片</span></span><br><span class="line"><span class="type">MyImage</span>[<span class="type">ModuleName</span>.<span class="keyword">self</span>, <span class="string">&quot;image name&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者，从 main bundle 中获取图片</span></span><br><span class="line"><span class="type">MyImage</span>[<span class="string">&quot;image name&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是一个通用的图片访问器的简单实现，这只是一个基础版本，可以支持 <code>png</code> 和 <code>jpg</code> 格式的图片访问了，基本满足我们的需求。</p>
+<p>由于项目需要，我的项目中，对其进行了扩展，使其可以访问诸如 <code>webp</code> 、 <code>gif</code> 等其他格式文件。</p>
+<p>对于共用的图片资源，我们可以封装在 <code>MyImage</code> 模块下，通过脚本生成类似于下面这样的文件：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extension</span> <span class="title class_">MyImage</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> iconX <span class="operator">=</span> <span class="type">MyImage</span>[<span class="type">MyImage</span>.<span class="keyword">self</span>, <span class="string">&quot;icon name&quot;</span>]</span><br><span class="line">  </span><br><span class="line">    <span class="operator">...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>访问这些共用的资源，只需要这样使用即可：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">MyImage</span>.iconX</span><br></pre></td></tr></table></figure>
+
+<p>另外，想要提的一点是，并不是所有的多个模块使用的图片，都适合放到这个基础组件中，这个需要各位自己权衡。比如导航上面的按钮，一些返回按钮或者箭头之类的就很适合放在这里面。</p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2023/02/14/20230214/" data-toggle="tooltip" data-placement="top" title="Physics Simulation">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2021/10/29/20211029/" data-toggle="tooltip" data-placement="top" title="iOS 如何更好的适配异形屏（刘海屏）">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

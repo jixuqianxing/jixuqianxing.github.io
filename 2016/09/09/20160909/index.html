@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          如何优雅地拦截按钮事件 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2016/09/09/20160909/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#iOS" title="iOS">iOS</a>
+                        
+                    </div>
+                    <h1>如何优雅地拦截按钮事件</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2016-09-09
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>关于这个标题，起因是这样的。</p>
+<p>最近一次做项目需求时，遇到这样一个需求，就是本来我们<code>App</code>是必须注册或者第三方登录才可以使用，现在希望不登录也可以浏览<code>App</code>里面的内容，只是在需要的时候才提示登录，并且在用户没有登录的情况下，用户选择并登录成功了，程序需自动完成用户操作登录前的操作。比如购买商品时没有登录，用户登录成功后，直接跳转至订单确认页面。</p>
+<span id="more"></span>
+
+<p>在接到这个需求时，我们的<code>App</code>功能已经很多了，评估了下这个需求，发现<code>App</code>里面很多功能是需要登录才可以操作，比如关注用户、购买商品、私信聊天、评论等等，而且这些功能的入口也比较多。</p>
+<p>这么多的地方我们都要去写判断的代码显然是不科学的，那么有没有简单点的方式呢？怎么避免我们去做苦力活呢？🤔🤔🤔</p>
+<p>于是，进一步分析，发现这些功能大部分都是用户主动通过点击按钮来触发下一步操作。此时，我们把关注点移到按钮<code>UIButton</code>上。</p>
+<p>最开始想到的办法是自定义一个<code>button</code>，让所有需要登录操作的按钮继承这个按钮，然后，在这个按钮里面拦截自身事件进一步处理。但是，发现这么做还是需要改大量的代码。接着想到用类别来做，这样直接给按钮增加一个<code>BOOL</code>属性，设置为<code>YES</code>的按钮视为需要做登录才可以操作的按钮。然后，对于需要登录操作的按钮，在分类里面拦截其点击事件，并记录<code>target</code>和<code>action</code>，然后先判断是否登录：如果没有登录则丢弃其<code>target</code>和<code>action</code>，并且提示用户登录；如果用户已经登录或者登录成功了，则继续让<code>target</code>执行<code>action</code>，这样完美解决我们的需求，也只需要很少的代码即可搞定。<br>这个方案看似很不错，不过在实际做的时候还是走了弯路。一开始，我们想从下面方法入手</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)<span class="symbol">addTarget:</span>(nullableid)target <span class="symbol">action:</span>(<span class="variable constant_">SEL</span>)action <span class="symbol">forControlEvents:</span>(<span class="title class_">UIControlEvents</span>)controlEvents</span><br></pre></td></tr></table></figure>
+
+<p>但是发现根本就不能实现。经过查找，找到了下面这个方法：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)<span class="symbol">sendAction:</span>(<span class="variable constant_">SEL</span>)action <span class="symbol">to:</span>(id)target <span class="symbol">forEvent:</span>(<span class="title class_">UIEvent</span> *)event</span><br></pre></td></tr></table></figure>
+
+<p>关于这个方法，苹果给了如下解释：</p>
+<blockquote>
+<p>send the action. the first method is called for the event and is a point at which you can observe or override behavior. it is called repeately by the second.</p>
+</blockquote>
+<p>这正是我们要找的方法，于是我们重写此方法，如下：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">- (void)<span class="symbol">sendAction:</span>(<span class="variable constant_">SEL</span>)action <span class="symbol">to:</span>(id)target <span class="symbol">forEvent:</span>(<span class="title class_">UIEvent</span> *)event</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">self</span>.checkLogin)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable language_">self</span>.selector = <span class="title class_">NSStringFromSelector</span>(action);</span><br><span class="line">        <span class="variable language_">self</span>.objClass = target;</span><br><span class="line">        [<span class="variable language_">self</span> checkIsLogin];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="variable language_">super</span> <span class="symbol">sendAction:</span>action <span class="symbol">to:</span>target <span class="symbol">forEvent:</span>event];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">- (void)checkIsLogin</span><br><span class="line">&#123;</span><br><span class="line">    __weak typeof(<span class="variable language_">self</span>) weakSelf = <span class="variable language_">self</span>;</span><br><span class="line">    [<span class="title class_">LoginManager</span> <span class="symbol">checkLoginSuccess:</span>^&#123;</span><br><span class="line">        <span class="variable constant_">SEL</span> sel = <span class="title class_">NSSelectorFromString</span>(weakSelf.selector);</span><br><span class="line">        <span class="keyword">if</span> ([weakSelf.objClass <span class="symbol">respondsToSelector:</span>sel])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> ([weakSelf.selector <span class="symbol">hasSuffix:</span>@<span class="string">&quot;:&quot;</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                objc_msgSend(weakSelf.objClass, sel, <span class="variable language_">self</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                objc_msgSend(weakSelf.objClass, sel);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>简单解释下这段代码：</strong><br>当按钮事件执行时会走<code>sendAction:to:forEvent:</code>这个方法，于是，我们在这个方法里面，先判断该按钮是否需要登录后再操作，如果需要，阻断事件传递，并记录下按钮的action和target，然后判断是否登录了，如果已经登录或者用户登录成功了，那么再调用<code>objc_msgSend(self.objClass, self.selector)</code>去实现按钮事件，如果用户放弃登录或者登录失败，则不做处理。</p>
+<p>实现了上面的方法之后，我们只需要找出那些按钮事件需要登录后才能操作，然后，设置按钮的<code>checkLogin = YES</code>即可，这样是不是省了很多不必要的代码。</p>
+<p>到此，上面的实现已经解决了所有按钮点击需要判断登录的操作。还有些是上述方式解决不了的，则使用<code>LoginManager</code>单独处理下，幸运的是，几乎很少地方需要单独处理😄。</p>
+<p>通过这个案例：一方面巩固了对<code>sendAction:to:forEvent:</code>这个方法的理解；另一方面在做需求的时候一定要发散思维，找到更合理的解决方法。</p>
+<p>欢迎大家留言讨论，如果你有更好地方式，欢迎分享！</p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/09/18/20160918/" data-toggle="tooltip" data-placement="top" title="屏蔽Xcode 8“烦人”的日志输出">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/05/18/Teamtalk1/" data-toggle="tooltip" data-placement="top" title="如何试用Teamtalk iOS端源码">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

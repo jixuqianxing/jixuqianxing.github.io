@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/page/3/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Qianxing&#39;s Blog</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+            
+                <!-- Main Content -->
+
+
+<div class="post-preview">
+
+    <a href="/2015/01/26/你的Cocoapods是最新的吗？/">
+        <h2 class="post-title">
+            你的Cocoapods是最新的吗？
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+很多人在电脑系统更新到 Mac OS X Yosemite 时候，原来好用的Cocoapods罢工了。于是，按照网上的教程重装一遍，又可以重新使用了。
+
+
+但是，你确定你的Cocoapods好用？我们可以测试一下，在终端执行以下命令：
+1pod search AFNetworking
+
+如果，你搜索的结果跟下面这张图片里面的结果一样。那么恭喜你！你的Cocoapods是好用的。
+
+需要提醒......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2015-01-26
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2015/01/19/如何不写一句代码就可以制作一个圆形头像/">
+        <h2 class="post-title">
+            如何不写一句代码就可以制作一个圆形头像
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            小引实现圆形头像的方法有很多种，下面就是其中一种简单的方法。
+12345UIImageView *headIcon = [[UIImageView alloc] initWithFrame:CGRectMake(85, 110, 150, 150)];headIcon.layer.cornerRadius  = 75.0f;/* 针对有imageView的需要设置下面属性为 YES 否则圆角......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2015-01-19
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2015/01/06/AFNtworking同步请求解决方法/">
+        <h2 class="post-title">
+            AFNtworking同步请求解决方法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            很多时候我们在做网络请求的时候，往往要拿到数据后才能去处理进一步的操作。但是，AFNetworking并没有同步的方法，那么我们应该怎么处理呢？
+
+
+
+方法一:12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849- (void)getWeatherData&#123;......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2015-01-06
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2014/12/24/Cocoapods重装及报错处理/">
+        <h2 class="post-title">
+            Cocoapods重装及报错处理
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+电脑升级系统后曾经更新过一次Cocoapods，当时用着还挺好。但是，最近一次使用时报了下面的错误：
+
+[!] Error installing AFNetworking[!] &#x2F;usr&#x2F;bin&#x2F;git clone https://github.com/AFNetworking/AFNetworking.git &#x2F;Users&#x2F;…&#x2F;......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2014-12-24
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2014/12/23/多人多Storyboard开发/">
+        <h2 class="post-title">
+            多人多Storyboard开发
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            小引最近，经常在 iOS 开发交流群里面看到有人在讨论关于屏幕适配的问题。我之前也写过几篇关于利用AutoLayout来做屏幕适配的文章《AutoLayout之可视化布局》、《AutoLayout之纯代码布局》，讲的虽然比较基础，但都是可以很好的帮助初学者掌握AutoLayout。
+说到屏幕适配，就不得不提Storyboard。虽然，还是有很多人在坚持使用纯代码，但是Size Class的出......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2014-12-23
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2014/12/16/AutoLayout之可视化布局/">
+        <h2 class="post-title">
+            AutoLayout之可视化布局
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            写过两篇关于自动布局的文章《AutoLayout实用技巧》和《AutoLayout之纯代码布局》。虽然，《AutoLayout实用技巧》主要是针对Storyboard和XIB写的，但是里面仅仅只是展示了下操作技巧，也是针对有基础的人来学的，并未对如何在Storyboard和XIB中使用AutoLayout做过介绍。所以，打算再写篇文章来介绍一下。
+
+
+
+基础知识1、如何启用 AutoLayo......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2014-12-16
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2014/12/11/AutoLayout之纯代码布局/">
+        <h2 class="post-title">
+            AutoLayout之纯代码布局
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            我之前写过一篇文章《AutoLayout实用技巧》，那篇文章更适合作为提高来学习，并且只适用于Storyboard和xib。那么对于那些用惯了纯代码的人来说，该怎么使用代码来使用AutoLayout呢？答案是，看我的这篇文章~~ ：）
+
+
+
+基础篇VFL (Visual format language) 格式字符介绍
+注：不明白的没关系，后面用到时候会介绍。
+
+主要API1234+ (NSA......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2014-12-11
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2014/12/05/Pch文件惹的祸/">
+        <h2 class="post-title">
+            Pch文件惹的祸
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            小引从 Xcode 6 开始，苹果就阉割掉了Precompile Prefix Header（pch文件），阉割并不就意味着不再让你使用了，只是苹果更推荐你不要使用它。如果你非用不可，你可以手动添加来启用它。想必大家都很清楚 pch 文件的作用，但是，在你遇到问题时，你是否会意识到问题是它惹的祸呢？
+
+
+正文此篇文章源起一个报错，如下图所示：
+
+这是在我在 Xcode 6.1 中新建项目导入......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2014-12-05
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2014/11/29/iOS8下的UIActionSheet/">
+        <h2 class="post-title">
+            iOS8下的UIActionSheet
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            前段时间做了一个iPad应用，里面用到了图片上传。因此，需要用到UIImagePickerController打开本地图库和开启相机拍照。
+
+
+代码如下：
+12345678910111213141516171819202122- (IBAction)choosePhoto:(id)sender&#123;    UIActionSheet *sheet = [[UIActionSheet a......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2014-11-29
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2014/11/28/AutoLayout实用技巧/">
+        <h2 class="post-title">
+            AutoLayout实用技巧
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            前言随着新一代iPhone的推出，苹果也开始大屏化，一下推出了两款大屏iPhone，并且这两款iPhone尺寸也不一样，一个是4.7寸，另一款则是5.5寸，加上之前的3.5寸和4寸，现在已经有四种不同的尺寸了。作为一名iOS开发者，你是不是感到很捉急呢？会不会感觉iPhone也要像安卓那样做着各种机型的适配呢？答案是肯定的，不过你会发现选择iOS开发是多么明智的选择。因为，苹果已经为我们准备......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2014-11-28
+    </p>
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+        <li class="previous">
+            <a href="/page/2/">&larr; Newer Posts</a>
+        </li>
+    
+    
+        <li class="next">
+            <a href="/page/4/">Older Posts &rarr;</a>
+        </li>
+    
+</ul>
+
+
+
+                <!-- 如果开启评论功能 -->
+                
+
+            </div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+                <!-- Featured Tags -->
+                
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+
+                        
+
+                        
+
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+                            
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Friends Blog -->
+                
+            </div>
+        
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          多人多Storyboard开发 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2014/12/23/多人多Storyboard开发/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>多人多Storyboard开发</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2014-12-23
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="小引"><a href="#小引" class="headerlink" title="小引"></a>小引</h2><p>最近，经常在 iOS 开发交流群里面看到有人在讨论关于屏幕适配的问题。我之前也写过几篇关于利用AutoLayout来做屏幕适配的文章<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/12/16/AutoLayout%E4%B9%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B8%83%E5%B1%80/">《AutoLayout之可视化布局》</a>、<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/12/11/AutoLayout%E4%B9%8B%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%B8%83%E5%B1%80/">《AutoLayout之纯代码布局》</a>，讲的虽然比较基础，但都是可以很好的帮助初学者掌握AutoLayout。</p>
+<p>说到屏幕适配，就不得不提Storyboard。虽然，还是有很多人在坚持使用纯代码，但是Size Class的出现就足够引起你对Storyboard的重视了，在使用Size Class时，一个Storyboard相当于九个Storyboard，你可以在这里处理各种屏幕的适配。</p>
+<span id="more"></span>
+
+<p>如果你还不会使用Storyboard，你可以看看这篇文章《在iOS 7中使用storyboard》。</p>
+<p>不知道现在是否还有人在说，使用Storyboard最大的弊端在于不利于多人开发。那么本文将向你讲解一下如何在一个项目中使用多个Storyboard来进行多人开发。也许看完本文，你也会爱上Storyboard的。</p>
+<hr>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>最终效果</p>
+<p>下面我主要通过搭建一个大家最常见的UITabbarController和UINavigationController嵌套使用的项目来讲解一下，如何在一个项目中使用多个Storyboard。</p>
+<p>项目的最终效果如下图：</p>
+<p><img src="http://img.itc.cn/photo/j3dESAZebb8" alt="image"></p>
+<p>说明一下，项目中使用的图标是新浪微博客户端里面的,模仿了一下新浪微。<br>项目目录结构大家也可以看下：</p>
+<p><img src="http://img.itc.cn/photo/j36eWp6YZit" alt="image"></p>
+<hr>
+<h4 id="API介绍"><a href="#API介绍" class="headerlink" title="API介绍"></a>API介绍</h4><p>其实，使用多Storyboard开发还是很简单的，只是很多人没有尝试过，不知道该如何下手。这里我先提一下我们会用到的主要API，如下：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="title class_">UIStoryboard</span> *)<span class="symbol">storyboardWithName:</span>(<span class="title class_">NSString</span> *)name</span><br><span class="line">                              <span class="symbol">bundle:</span>(<span class="title class_">NSBundle</span> *)storyboardBundleOrNil</span><br><span class="line"></span><br><span class="line">- (id)instantiateInitialViewController</span><br><span class="line"></span><br><span class="line">- (id)<span class="symbol">instantiateViewControllerWithIdentifier:</span>(<span class="title class_">NSString</span> *)identifier</span><br></pre></td></tr></table></figure>
+
+<h4 id="API说明："><a href="#API说明：" class="headerlink" title="API说明："></a>API说明：</h4><ul>
+<li><code>+ (UIStoryboard *)storyboardWithName:(NSString *)name bundle:(NSBundle *)storyboardBundleOrNil</code>是加载Storyboard的方法，需要注意的是，它仅仅是加载名字为name的Storyboard,并不会创建Storyboard中的控制器和控件。</li>
+<li><code>- (id)instantiateInitialViewController</code>返回第一个界面（根视图所在界面），每个Storyboard都必须有一个入口界面，也就是Storyboard的第一个界面，肉眼可见的就是，会有个箭头在这个控制器前面，如下图所示的Navigation Controller。</li>
+</ul>
+<p><img src="http://img.itc.cn/photo/j36MwIwFoht" alt="image"></p>
+<p><em>图中还有一处标示：Is Initial View Controller,读者可以试下勾选和去掉的区别，这个操作就可以自己设置Storyboard的根控制器啦。</em></p>
+<ul>
+<li><code>- (id)instantiateViewControllerWithIdentifier:(NSString *)identifier</code>根据identifier获取Storyboard中对应的控制器，identifier的设置如下图，这个一定要设置，否则在使用该方法时会报‘Storyboard doesn’t contain a view controller with identifier ‘xxx’’的错误。此方法可以动态的加载Storyboard里面的任何一个控制器。</li>
+</ul>
+<p><img src="http://img.itc.cn/photo/j36d0kwSpkv" alt="image"></p>
+<hr>
+<h2 id="实战项目"><a href="#实战项目" class="headerlink" title="实战项目"></a>实战项目</h2><h4 id="如何创建新的Storyboard"><a href="#如何创建新的Storyboard" class="headerlink" title="如何创建新的Storyboard"></a>如何创建新的Storyboard</h4><p>选择你要创建Storyboard的目录，然后command + n，选择User Interface再选Storyboard，命名好回车即可。</p>
+<p><img src="http://img.itc.cn/photo/j36Tgz8U7tx" alt="image"></p>
+<p>创建好了之后，直接拖一个控制器到Storyboard里面，并选中该控制器，勾选Is Initial View Controller。</p>
+<hr>
+<h4 id="项目核心代码"><a href="#项目核心代码" class="headerlink" title="项目核心代码"></a>项目核心代码</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@implementation</span> <span class="title class_">ViewController</span></span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="variable language_">super</span> viewDidLoad];</span><br><span class="line">    [<span class="variable language_">self</span> setup];</span><br><span class="line">&#125;</span><br><span class="line">- (void)setup</span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable language_">self</span>.tabBar.translucent = <span class="variable constant_">NO</span>;</span><br><span class="line">    <span class="variable language_">self</span>.tabBar.tintColor = [<span class="title class_">UIColor</span> <span class="symbol">colorWithRed:</span><span class="number">1</span>.0f <span class="symbol">green:</span><span class="number">130</span>/<span class="number">255</span>.0f <span class="symbol">blue:</span><span class="number">0</span> <span class="symbol">alpha:</span><span class="number">1</span>.0f];</span><br><span class="line">    [<span class="variable language_">self</span> <span class="symbol">addChildVcWithStoryboardName:</span>@<span class="string">&quot;Home&quot;</span></span><br><span class="line">                                 <span class="symbol">title:</span>@<span class="string">&quot;首页&quot;</span></span><br><span class="line">                                  <span class="symbol">icon:</span>@<span class="string">&quot;tabbar_home&quot;</span></span><br><span class="line">                               <span class="symbol">selIcon:</span>@<span class="string">&quot;tabbar_home_selected&quot;</span>];</span><br><span class="line">    [<span class="variable language_">self</span> <span class="symbol">addChildVcWithStoryboardName:</span>@<span class="string">&quot;Message&quot;</span></span><br><span class="line">                                 <span class="symbol">title:</span>@<span class="string">&quot;消息&quot;</span></span><br><span class="line">                                  <span class="symbol">icon:</span>@<span class="string">&quot;tabbar_message_center&quot;</span></span><br><span class="line">                               <span class="symbol">selIcon:</span>@<span class="string">&quot;tabbar_message_center_selected&quot;</span>];</span><br><span class="line">    [<span class="variable language_">self</span> <span class="symbol">addChildVcWithStoryboardName:</span>@<span class="string">&quot;Discover&quot;</span></span><br><span class="line">                                 <span class="symbol">title:</span>@<span class="string">&quot;发现&quot;</span></span><br><span class="line">                                  <span class="symbol">icon:</span>@<span class="string">&quot;tabbar_discover&quot;</span></span><br><span class="line">                               <span class="symbol">selIcon:</span>@<span class="string">&quot;tabbar_discover_selected&quot;</span>];</span><br><span class="line">    [<span class="variable language_">self</span> <span class="symbol">addChildVcWithStoryboardName:</span>@<span class="string">&quot;Profile&quot;</span></span><br><span class="line">                                 <span class="symbol">title:</span>@<span class="string">&quot;我&quot;</span></span><br><span class="line">                                  <span class="symbol">icon:</span>@<span class="string">&quot;tabbar_profile&quot;</span></span><br><span class="line">                               <span class="symbol">selIcon:</span>@<span class="string">&quot;tabbar_profile_selected&quot;</span>];</span><br><span class="line">&#125;</span><br><span class="line">- (void)<span class="symbol">addChildVcWithStoryboardName:</span>(<span class="title class_">NSString</span> *)storyboardName</span><br><span class="line">                               <span class="symbol">title:</span>(<span class="title class_">NSString</span> *)title</span><br><span class="line">                                <span class="symbol">icon:</span>(<span class="title class_">NSString</span> *)icon</span><br><span class="line">                             <span class="symbol">selIcon:</span>(<span class="title class_">NSString</span> *)selIcon</span><br><span class="line">&#123;</span><br><span class="line">    <span class="regexp">/* 加载名为storyboardName的Storyboard */</span></span><br><span class="line">    <span class="title class_">UIStoryboard</span> *storyboard = [<span class="title class_">UIStoryboard</span> <span class="symbol">storyboardWithName:</span>storyboardName <span class="symbol">bundle:</span><span class="literal">nil</span>];</span><br><span class="line">    <span class="regexp">/* 获取storyboard的InitialViewController 即根控制器*/</span></span><br><span class="line">    <span class="title class_">UIViewController</span> *vc = [storyboard instantiateInitialViewController];</span><br><span class="line">    <span class="regexp">/**</span></span><br><span class="line"><span class="regexp">     * 设置UIImage的渲染方式。因为按钮的颜色是纯色的，所以上面直接设置 tabBar 的</span></span><br><span class="line"><span class="regexp">     * tintColor 即可设置图片选中时的颜色，所以没有使用图片渲染的方式。如果选中图片不</span></span><br><span class="line"><span class="regexp">     * 止一种颜色，可以使用图片渲染的方式。注意：两者只能选择一种，否则只会显示 tintColor</span></span><br><span class="line"><span class="regexp">     * 的颜色</span></span><br><span class="line"><span class="regexp">     * UIImage * normalImage = [[UIImage imageNamed:icon] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];</span></span><br><span class="line"><span class="regexp">     * UIImage * selectImage = [[UIImage imageNamed:selIcon] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];</span></span><br><span class="line"><span class="regexp">     */</span></span><br><span class="line">    /* 设置tabbarItem的标题、默认图片以及选中时的图片 *<span class="regexp">/</span></span><br><span class="line"><span class="regexp">    vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:[UIImage imageNamed:icon] selectedImage:[UIImage imageNamed:selIcon]];</span></span><br><span class="line"><span class="regexp">    /</span>* 添加子控制器 *<span class="regexp">/</span></span><br><span class="line"><span class="regexp">    [self addChildViewController:vc];</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">@end</span></span><br></pre></td></tr></table></figure>
+
+<p>项目已上传至Github：<a target="_blank" rel="noopener" href="https://github.com/jixuqianxing/MultiStoryboardDemo">下载</a></p>
+<hr>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>以上就是关于多人多Storyboard开发的介绍。其实，只要学会如何加载Storyboard和获取Storyboard里面的控制器即可。接下来就是各自管理各自使用的Storyboard，这样就会避免引起不必要的冲突。另外，像Images.xcassets这样的文件，你也可以创建多个不同的xcassets文件来各自管理项目中使用的图片。</p>
+<hr>
+<h2 id="你可能感兴趣的文章"><a href="#你可能感兴趣的文章" class="headerlink" title="你可能感兴趣的文章"></a>你可能感兴趣的文章</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/12/16/AutoLayout%E4%B9%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B8%83%E5%B1%80/">《AutoLayout之可视化布局》</a></li>
+<li><a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/12/11/AutoLayout%E4%B9%8B%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%B8%83%E5%B1%80/">《AutoLayout之纯代码布局》</a></li>
+<li><a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">《AutoLayout实用技巧》</a></li>
+</ul>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2014/12/24/Cocoapods重装及报错处理/" data-toggle="tooltip" data-placement="top" title="Cocoapods重装及报错处理">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2014/12/16/AutoLayout之可视化布局/" data-toggle="tooltip" data-placement="top" title="AutoLayout之可视化布局">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          如何试用Teamtalk iOS端源码 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2016/05/18/Teamtalk1/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>如何试用Teamtalk iOS端源码</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2016-05-18
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p><img src="https://coding.net/u/jixuqianxing/p/ShareImages/git/raw/master/Images/teamtalk.jpg" alt="image"></p>
+<span id="more"></span>
+
+<hr>
+<h2 id="什么是Teamtalk？"><a href="#什么是Teamtalk？" class="headerlink" title="什么是Teamtalk？"></a>什么是Teamtalk？</h2><p>首先，我想向<a target="_blank" rel="noopener" href="http://tt.mogu.io/">Teamtalk</a>开源团队致敬，感谢你们的开源精神！致敬！</p>
+<p>什么是<a target="_blank" rel="noopener" href="http://tt.mogu.io/">Teamtalk</a>？<a target="_blank" rel="noopener" href="http://tt.mogu.io/">Teamtalk</a>是蘑菇街开源的一套即时通讯系统。通俗的说，就是可以拿它来做即时通讯，而且跨平台做的比较好。</p>
+<hr>
+<h2 id="为什么写这篇文章？"><a href="#为什么写这篇文章？" class="headerlink" title="为什么写这篇文章？"></a>为什么写这篇文章？</h2><p>因为，在使用过程中遇到很多麻烦。踩着坑过来，现在我是来填坑的。希望帮助到一些人，能让大家按照修改，快速用起来。不过还是希望官方能够处理掉啊，毕竟也算是大公司了。</p>
+<hr>
+<h2 id="怎么用？"><a href="#怎么用？" class="headerlink" title="怎么用？"></a>怎么用？</h2><p>首先，下载<code>Teamtalk</code>开源代码。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/mogujie/TeamTalk">Github下载地址:https://github.com/mogujie/TeamTalk</a></p>
+<p>iOS端代码在<code>TeamTalk-master/ios</code>目录下。进入这个目录，先执行下</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>pod update</span><br></pre></td></tr></table></figure>
+<p>没安装<code>CocoaPods</code>的同学需要先装下。</p>
+<p>然后，打开项目。注意，此时项目是跑不起来的。</p>
+<p>首先，需要注释掉<code>AppDelegate.m</code>里面的以下引用：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/#import &lt;Fabric/</span><span class="title class_">Fabric</span>.h&gt;</span><br><span class="line"><span class="regexp">//</span><span class="comment">#import &lt;Crashlytics/Crashlytics.h&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以及以下代码</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/ [Fabric with:@[CrashlyticsKit]];</span></span><br></pre></td></tr></table></figure>
+
+<p>因为，我们不需要这些。不得不吐槽下<code>iOS</code>代码，需要各种改才能跑起来。</p>
+<p>仅仅做了上面的工作，你会发现项目还是运行不起来的。报错信息：</p>
+<blockquote>
+<p>ld: warning: directory not found for option ‘-L&#x2F;Users&#x2F;zcx&#x2F;Downloads&#x2F;TeamTalk-master&#x2F;ios&#x2F;TeamTalk&#x2F;Exist&#x2F;MobClick’<br>ld: framework not found Fabric<br>clang: error: linker command failed with exit code 1 (use -v to see invocation)</p>
+</blockquote>
+<p>信息显示是跟<code>Fabric</code>这个库有关。</p>
+<p>在<code>Linked Frameworks and Libraries</code>下面找到<code>Fabric.framework</code>和<code>Crashlytics.framework</code>，将这个两个framework删掉。</p>
+<p>然后，继续报错。</p>
+<blockquote>
+<p>…&#x2F;Library&#x2F;Developer&#x2F;Xcode&#x2F;DerivedData&#x2F;TeamTalk-clkdsersjrkmjkgcqvhwkdgktpoc&#x2F;Build&#x2F;Intermediates&#x2F;TeamTalk.build&#x2F;Debug-iphonesimulator&#x2F;TeamTalk.build&#x2F;Script-817CB3AD1B3BC68D0004AFEA.sh: line 2: .&#x2F;Fabric.framework&#x2F;run: No such file or directory</p>
+</blockquote>
+<p>此错误信息还是跟<code>Fabric</code>有关，不过这时候可以看到一个单词<code>Script</code>。于是去<code>Build Phases</code>下找了下，发现<code>Run Script</code>有以下脚本：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./<span class="title class_">Fabric</span>.framework/run c85ad901eb0173a488b631e90f5913415f7424d1 bcd847cf6b15b2605cfff9400a4da335ce5ea3a0ac481dd143db404b55a09e73</span><br></pre></td></tr></table></figure>
+<p>将其删除。</p>
+<p>另外，<code>Info.plist</code>文件里面包含一个<code>Fabric</code>字典，这个也可以删除掉，不过删不删没啥影响。</p>
+<p>到此，项目就可以正常的运行起来了，运行起来的坑算是解决了。不过，要想用好这些东西，后面的坑还多着呢。</p>
+<p>如果你搭建好了<code>Teamtalk</code>服务器。</p>
+<p>回到<code>iOS</code>端代码，注释掉以下代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/    userName = @&quot;铸剑&quot;;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/    password = @&quot;123456&quot;;</span></span><br></pre></td></tr></table></figure>
+
+<p>偷懒也不带这样的吧，可以给输入框赋默认值啊。提交代码更不该这么做吧，很多人会看你写的东西呢。</p>
+<p>然后，修改</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define SERVER_ADDR @&quot;http://61.153.100.221:8080/msg_server&quot;</span></span><br></pre></td></tr></table></figure>
+<p>这个宏，换成你自己配的。</p>
+<p>再然后，进到<code>LoginAPI.m</code>这个文件，将<code>if (loginResult != 0)</code>改成<code>if (loginResult == 0) </code>或者直接去掉这个判断直接交给外界处理，这个错误怎么说呢… 完全就不想你看到登录成功呀！！！</p>
+<p>另外，给<code>result</code>字典添加键值<code>@&quot;code&quot;:@(loginResult)</code>，如下</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">result = @&#123;@<span class="string">&quot;serverTime&quot;</span><span class="symbol">:</span>@(serverTime),</span><br><span class="line">           @<span class="string">&quot;result&quot;</span><span class="symbol">:resultString</span>,</span><br><span class="line">           @<span class="string">&quot;user&quot;</span><span class="symbol">:user</span>,</span><br><span class="line">           @<span class="string">&quot;code&quot;</span><span class="symbol">:</span>@(loginResult)</span><br><span class="line">           &#125;;</span><br></pre></td></tr></table></figure>
+<p>后面明明用到了<code>code</code>，你却不传给我…</p>
+<p>处理到这里，基本可以登录上了。如果不行，看看服务端配的是否正确。另外，登录账号输入框提示写的内网花名，实际却是真名…</p>
+<p>另外，你需要将<code>bubble.bundle</code>添加到项目中，否则文本和语音会崩。这个文件在<code>Resource/Bundle</code>目录下面，拖到项目中即可。</p>
+<p>开启日志打印：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define NEED_OUTPUT_LOG             1</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>看完文章，想必大家也看到了很多的问题。不过代码还是值得研究的，熟悉了底层通讯、PB的使用、如何在客户端增加接口等，你就可以开始彻底的改造源码了。</p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/09/09/20160909/" data-toggle="tooltip" data-placement="top" title="如何优雅地拦截按钮事件">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/05/03/autolayout-example/" data-toggle="tooltip" data-placement="top" title="三个固定宽高的视图如何添加约束做到平分屏幕？">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

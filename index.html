@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Qianxing&#39;s Blog</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+            
+                <!-- Main Content -->
+
+
+<div class="post-preview">
+
+    <a href="/2023/03/25/20230325/">
+        <h2 class="post-title">
+            Swift高阶函数
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            Swift高阶函数Swift高阶函数是指可以接受函数作为参数或返回函数的函数。高阶函数强调了函数的参数和返回值都可以是函数类型，这使得函数能够被视为可传递和可组合的值和运算。
+Swift中有多种高阶函数，包括map，filter，reduce，sort，flatMap，compactMap等。
+1. Mapmap是高阶函数中最常用的函数之一。它接受一个函数和一个数组，并返回一个新数组，其中每......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2023-03-25
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/03/10/20230310/">
+        <h2 class="post-title">
+            iOS模块化中的通用图片访问器优化
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+本文主要针对之前写的文章《iOS模块化中的通用图片访问器》的方案改进。
+
+痛点项目组件化，壳工程后，我们对于资源的使用也做了规范。每个模块的图片资源使用xcassets进行管理。正常访问不同Bundle中的资源需要使用以下方法：
+1234open class UIImage : NSObject, NSSecureCoding &#123;   @available(iOS 8.0, *)......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2023-03-10
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/03/04/20230304/">
+        <h2 class="post-title">
+            iOS直播间重构优化记录
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            背景历史原因加上功能的不断迭代，造成直播间代码越来越难以维护，前期架构也没有很好设计，造成各种耦合，不管是业务上的耦合，还是UI上的耦合。加上遗留了很多适配上的问题，以及交互问题，这块的代码成了一块比较难啃的硬骨头，重构这块代码已刻不容缓。
+重构思路
+引入多代理实现（使用过XMPP的同学应该会熟悉这个概率，笔者工作早期有使用过XMPP），用于统一事件的分发，各个业务都可以注册成为代理，用于将......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2023-03-04
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/03/01/20230301/">
+        <h2 class="post-title">
+            Swift实现一个交互友好&灵活自定义的弹框
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            前言在我们平时日常开发中，经常会遇到各种样式的弹框。你是否也经常遇到呢？你是如何实现的？本文介绍使用UIPresentationController，结合自定义转场动效，实现一个高度自定义的弹框，这也是苹果比较推荐的一种实现方式。
+预备知识开始之前，我们要了解下几个知识点：
+
+UIPresentationController
+UIViewControllerTransitioningDele......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2023-03-01
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/02/15/20230215/">
+        <h2 class="post-title">
+            Physics Simulation 之 SCNPhysicsShape
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+此系列为官方文档翻译，用于学习SceneKit
+
+SCNPhysicsShape  物理体实体的抽象，用于调整碰撞检测。
+概述在SceneKit对场景中的SCNPhysicsBody对象进行接触检测和其他模拟时，它使用物理形状而不是可见对象的渲染几何。这种方法既提高了模拟性能，也使您更容易设计基于玩家可以交互的场景元素的游戏玩法。
+简单与复杂的形状当您允许SceneKit自动创建物理形状时......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2023-02-15
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/02/14/202302141/">
+        <h2 class="post-title">
+            Physics Simulation 之 SCNPhysicsBody
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+此系列为官方文档翻译，用于学习SceneKit
+
+概述当SceneKit准备渲染新帧时，会对场景中附加在节点上的物理体执行物理计算。 这些计算包括重力、摩擦和与其他物体的碰撞。 您还可以将自己的力和冲量应用于物体。 在SceneKit完成这些计算之后，它会在渲染帧之前更新节点对象的位置和方向。
+要向节点添加物理，创建和配置SCNPhysicsBody对象，然后将其分配给SCNNode对象的......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2023-02-14
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/02/14/20230214/">
+        <h2 class="post-title">
+            Physics Simulation
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+此系列为官方文档翻译，用于学习SceneKit
+
+向场景元素添加动态行为；检测接触和碰撞；模拟重力、弹簧和车辆等逼真的效果。
+相关内容物理体1class SCNPhysicsBody
+附加到场景图节点的物理模拟属性。
+1class SCNPhysicsShape
+物理体实体的抽象，用于调整碰撞检测。
+碰撞和接触检测1protocol SCNPhysicsContactDelegate
+在场......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2023-02-14
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/10/30/20211030/">
+        <h2 class="post-title">
+            iOS模块化中的通用图片访问器
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            前言
+本文旨在解决，多模块、多 bundle 的图片资源的统一访问方法。
+
+目前，我们开发的项目实现了模块化，不同模块使用的图片资源也都抽到了相应的模块内部，可以共用的图片资源和资源访问器，单独封装成一个基础模块。图片资源使用 xcassets 进行管理，模块通过 Cocoapods 进行管理。需要在每个模块中的 podspec 这样定义资源包：
+123s.resource_bundle =......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2021-10-30
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/10/29/20211029/">
+        <h2 class="post-title">
+            iOS 如何更好的适配异形屏（刘海屏）
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            前言通常我们在适配异形屏的时候，我们可能会使用 safeAreaInsets。使用时机不对的话，safeAreaInsets 的值还会存在问题。或许你可以使用 key window 的 safeAreaInsets ，亦或者你可以通过重写 func safeAreaInsetsDidChange() 方法，在合适的时候来修改布局，但这些操作总是比较麻烦，用起来并不舒服。
+有没有更好的方式呢�......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2021-10-29
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2019/06/10/20190610/">
+        <h2 class="post-title">
+            iOS 13 适配
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+iOS 13 如期而至，适配工作可以开展起来啦。在适配 iOS 13 过程中，遇到了如下一些问题。
+
+1. UITextField 的私有属性 _placeholderLabel 被禁止访问了遇到的第一个崩溃是修改UITextField的placeholder的颜色，历史遗留代码如下：
+1[_textField setValue:self.placeholderColor forKeyPa......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2019-06-10
+    </p>
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+        <li class="next">
+            <a href="/page/2/">Older Posts &rarr;</a>
+        </li>
+    
+</ul>
+
+
+
+                <!-- 如果开启评论功能 -->
+                
+
+            </div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+                <!-- Featured Tags -->
+                
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+
+                        
+
+                        
+
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+                            
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Friends Blog -->
+                
+            </div>
+        
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

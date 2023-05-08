@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          iOS 13 适配 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2019/06/10/20190610/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#iOS" title="iOS">iOS</a>
+                        
+                    </div>
+                    <h1>iOS 13 适配</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2019-06-10
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p><img src="https://s1.ax1x.com/2023/03/16/pp8Ydvn.png" alt="pp8Ydvn.png"></p>
+<p>iOS 13 如期而至，适配工作可以开展起来啦。在适配 iOS 13 过程中，遇到了如下一些问题。</p>
+<hr>
+<h2 id="1-UITextField-的私有属性-placeholderLabel-被禁止访问了"><a href="#1-UITextField-的私有属性-placeholderLabel-被禁止访问了" class="headerlink" title="1. UITextField 的私有属性 _placeholderLabel 被禁止访问了"></a>1. UITextField 的私有属性 _placeholderLabel 被禁止访问了</h2><p>遇到的第一个崩溃是修改<code>UITextField</code>的<code>placeholder</code>的颜色，历史遗留代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[_textField setValue:self.placeholderColor forKeyPath:@&quot;_placeholderLabel.textColor&quot;];</span><br></pre></td></tr></table></figure>
+<p>收到的错误信息⚠️</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;Access to UITextField&#x27;s _placeholderLabel ivar is prohibited. This is an application bug&#x27; </span><br></pre></td></tr></table></figure>
+<p>那么这个问题如何处理呢？</p>
+<p>其实，<code>UITextField </code>有个<code>attributedPlaceholder </code>的属性，我们可以自定义这个富文本来达到我们需要的结果。</p>
+<p>修改如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSMutableAttributedString *placeholderString = [[NSMutableAttributedString alloc] initWithString:placeholder attributes:@&#123;NSForegroundColorAttributeName : self.placeholderColor&#125;];</span><br><span class="line">_textField.attributedPlaceholder = placeholderString;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意⚠️，iOS 13 通过 KVC 方式修改私有属性，有 Crush 风险，谨慎使用！</strong></p>
+<hr>
+<h2 id="2-控制器的-modalPresentationStyle-默认值变了"><a href="#2-控制器的-modalPresentationStyle-默认值变了" class="headerlink" title="2. 控制器的 modalPresentationStyle 默认值变了"></a>2. 控制器的 modalPresentationStyle 默认值变了</h2><p>对于这个变化，有点措手不及，直接修改了模态窗口的交互。<br>查阅了下 <code>UIModalPresentationStyle</code>枚举定义，赫然发现<code>iOS 13</code>新加了一个枚举值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_ENUM(NSInteger, UIModalPresentationStyle) &#123;</span><br><span class="line">    UIModalPresentationFullScreen = 0,</span><br><span class="line">    UIModalPresentationPageSheet API_AVAILABLE(ios(3.2)) API_UNAVAILABLE(tvos),</span><br><span class="line">    UIModalPresentationFormSheet API_AVAILABLE(ios(3.2)) API_UNAVAILABLE(tvos),</span><br><span class="line">    UIModalPresentationCurrentContext API_AVAILABLE(ios(3.2)),</span><br><span class="line">    UIModalPresentationCustom API_AVAILABLE(ios(7.0)),</span><br><span class="line">    UIModalPresentationOverFullScreen API_AVAILABLE(ios(8.0)),</span><br><span class="line">    UIModalPresentationOverCurrentContext API_AVAILABLE(ios(8.0)),</span><br><span class="line">    UIModalPresentationPopover API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos),</span><br><span class="line">    UIModalPresentationBlurOverFullScreen API_AVAILABLE(tvos(11.0)) API_UNAVAILABLE(ios) API_UNAVAILABLE(watchos),</span><br><span class="line">    UIModalPresentationNone API_AVAILABLE(ios(7.0)) = -1,</span><br><span class="line">    UIModalPresentationAutomatic API_AVAILABLE(ios(13.0)) = -2,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>是的，就是<code>UIModalPresentationAutomatic </code>，苹果居然直接将<code>modalPresentationStyle </code>默认值改成这个，有点不解，难道是怕我们不知道新加了这个交互？这个也完全违反了开闭原则吧😒。</p>
+<p><strong>如何修改：</strong><br>如果你完全接受苹果的这个默认效果，那就不需要去修改任何代码。<br>如果，你原来就比较细心，已经设置了<code>modalPresentationStyle</code>的值，那你也不会有这个影响。<br>对于想要找回原来默认交互的同学，直接设置如下即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.modalPresentationStyle = UIModalPresentationFullScreen;</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，当 <code>modalPresentationStyle</code> 是 <code>UIModalPresentationAutomatic</code>时，<code>presentationController</code> 是不会消失的。所以，关闭模态窗口的时候，<code>presentationController</code> 的生命周期方法 <code>viewWillAppear:</code> 和 <code>viewDidAppear:</code> 都不会触发。</p>
+<hr>
+<h2 id="3-MPMoviePlayerController-在iOS-13已经不能用了"><a href="#3-MPMoviePlayerController-在iOS-13已经不能用了" class="headerlink" title="3. MPMoviePlayerController 在iOS 13已经不能用了"></a>3. MPMoviePlayerController 在iOS 13已经不能用了</h2><p>在使用到<code>MPMoviePlayerController</code>的地方，直接抛了异常：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;MPMoviePlayerController is no longer available. Use AVPlayerViewController in AVKit.&#x27; </span><br></pre></td></tr></table></figure>
+<p><strong>如何修改：</strong><br>这个没啥好说的，既然不能再用了，那只能换掉了。替代方案就是<code>AVKit</code>里面的那套播放器。</p>
+<hr>
+<h2 id="4-iOS-13-DeviceToken有变化‼️"><a href="#4-iOS-13-DeviceToken有变化‼️" class="headerlink" title="4. iOS 13 DeviceToken有变化‼️"></a>4. iOS 13 DeviceToken有变化‼️</h2><p><strong>这个很重要⚠️</strong><br>可能大多数使用第三方推送的童鞋都不会注意到这个问题，一般现在的第三方推送都是将<code>DeviceToken</code>原始数据丢进去，具体的解析都是第三方内部处理，所以，这些第三方解析<code>DeviceToken</code>的方式正确的话，那就毫无问题。如果你们是通过这种方式来获取<code>DeviceToken</code>，那你需要注意了。<em>（这个坑也是多年前埋下的，很多文章介绍的也是下面这个方法，不规范的做法迟早要还的🤣）</em>，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NSString *dt = [deviceToken description];</span><br><span class="line">dt = [dt stringByReplacingOccurrencesOfString: @&quot;&lt;&quot; withString: @&quot;&quot;];</span><br><span class="line">dt = [dt stringByReplacingOccurrencesOfString: @&quot;&gt;&quot; withString: @&quot;&quot;];</span><br><span class="line">dt = [dt stringByReplacingOccurrencesOfString: @&quot; &quot; withString: @&quot;&quot;];</span><br></pre></td></tr></table></figure>
+<p>这段代码运行在 iOS 13 上已经无法获取到准确的<code>DeviceToken</code>字符串了，iOS 13 通过<code>[deviceToken description]</code>获取到的内容已经变了。</p>
+<blockquote>
+<p>{length &#x3D; 32, bytes &#x3D; 0x778a7995 29f32fb6 74ba8167 b6bddb4e … b4d6b95f 65ac4587 }</p>
+</blockquote>
+<p>可以看到，跟原来我们认识的那个已经完全不一样了。其实，造成这样的问题，主要还是没有使用正确的方式来操作，下面是解决办法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSMutableString *deviceTokenString = [NSMutableString string];</span><br><span class="line">const char *bytes = deviceToken.bytes;</span><br><span class="line">NSInteger count = deviceToken.length;</span><br><span class="line">for (int i = 0; i &lt; count; i++) &#123;</span><br><span class="line">    [deviceTokenString appendFormat:@&quot;%02x&quot;, bytes[i]&amp;0x000000FF];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者你也可以使用友盟提供的方法（2019年7月24日更新）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken</span><br><span class="line">&#123;</span><br><span class="line">    if (![deviceToken isKindOfClass:[NSData class]]) return;</span><br><span class="line">    const unsigned *tokenBytes = [deviceToken bytes];</span><br><span class="line">    NSString *hexToken = [NSString stringWithFormat:@&quot;%08x%08x%08x%08x%08x%08x%08x%08x&quot;,</span><br><span class="line">                          ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),</span><br><span class="line">                          ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),</span><br><span class="line">                          ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];</span><br><span class="line">    NSLog(@&quot;deviceToken:%@&quot;,hexToken);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-Sign-in-with-Apple-提供第三方登录的注意啦⚠️"><a href="#5-Sign-in-with-Apple-提供第三方登录的注意啦⚠️" class="headerlink" title="5.Sign in with Apple (提供第三方登录的注意啦⚠️)"></a>5.Sign in with Apple (提供第三方登录的注意啦⚠️)</h2><p>如果你的应用使用了第三方登录，那么你可能也需要加下 「Sign in with Apple」🤪</p>
+<blockquote>
+<p>Sign In with Apple will be available for beta testing this summer. It will be required as an option for users in apps that support third-party sign-in when it is commercially available later this year.</p>
+</blockquote>
+<p>关于如何集成，可以参考这篇文章：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/23b46dea2076">《Sign in with Apple》</a>。<br>附上官方Demo：<a target="_blank" rel="noopener" href="https://docs-assets.developer.apple.com/published/80ac09c84c/AddingTheSignInWithAppleFlowToYourApp.zip">点我下载</a></p>
+<p>Sign in with Apple 适配时间苹果已经确认，具体更新到了公众号同名文章，可以在文末扫码关注公众号进行查看。</p>
+<hr>
+<h2 id="6-即将废弃的-LaunchImage"><a href="#6-即将废弃的-LaunchImage" class="headerlink" title="6.即将废弃的 LaunchImage"></a>6.即将废弃的 LaunchImage</h2><p>从 iOS 8 的时候，苹果就引入了 <code>LaunchScreen</code>，我们可以设置 <code>LaunchScreen</code>来作为启动页。当然，现在你还可以使用<code>LaunchImage</code>来设置启动图。不过使用<code>LaunchImage</code>的话，要求我们必须提供各种屏幕尺寸的启动图，来适配各种设备，随着苹果设备尺寸越来越多，这种方式显然不够 <code>Flexible</code>。而使用 <code>LaunchScreen</code>的话，情况会变的很简单， <code>LaunchScreen</code>是支持<code>AutoLayout</code>+<code>SizeClass</code>的，所以适配各种屏幕都不在话下。</p>
+<p><strong>注意⚠️</strong>: 从2020年4月开始，所有使⽤ <code>iOS13 SDK</code> 的 <code>App</code> 将必须提供 <code>LaunchScreen</code>，<code>LaunchImage</code>即将退出历史舞台。</p>
+<p>再补充一点，在使用 <code>LaunchScreen</code>的时候，里面用到的图片资源，最好别放在 <code>xcassets</code> 里面，不然在你修改图片后，你会发现真机上并不会生效。</p>
+<hr>
+<h2 id="7-Dark-Mode"><a href="#7-Dark-Mode" class="headerlink" title="7. Dark Mode"></a>7. Dark Mode</h2><blockquote>
+<p>Apps on iOS 13 are expected to support dark mode<br>Use system colors and materials<br>Create your own dynamic colors and images Leverage flexible infrastructure</p>
+</blockquote>
+<hr>
+<p><strong>9月24更新：</strong></p>
+<p>关于<code>Dark Mode</code>，这里补充几点。</p>
+<p>因为苹果目前还没有强制必须适配这个，相信大家的很多项目也没有开始是配这个模式。所以，前期可以强制<code>Light</code>模式。不然，你可能会遇到一些问题，比如<code>UITableViewCell</code>的背景色，如果你没有设置过背景色的话，它在<code>Dark</code>模式下就是黑色的，再比如<code>UIDatePicker</code>文字颜色等等。</p>
+<p>那么怎么强制模式呢？</p>
+<p><code>iOS 13</code>给<code>UIView</code>和<code>UIViewController</code>都添加了一个属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic) UIUserInterfaceStyle overrideUserInterfaceStyle API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);</span><br></pre></td></tr></table></figure>
+<p>给这个属性设置成某一种模式，即可强制显示模式。<br>如果你想修改一处，应用所有地方，那么你只需要设置<code>widow</code>的显示模式即可，这会影响widow下面的所有视图显示模式，这也可以看出显示模式是向下传递的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (@available(iOS 13, *)) &#123;</span><br><span class="line">   [self.window setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="8-iOS-13-UITabBar顶部分割线隐藏"><a href="#8-iOS-13-UITabBar顶部分割线隐藏" class="headerlink" title="8.iOS 13 UITabBar顶部分割线隐藏"></a>8.iOS 13 UITabBar顶部分割线隐藏</h2><p>这个问题源自网友的提问，我的项目中并没有这样的需求，所以之前没有处理。<br>看到网上的一些解决办法，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[UITabBar appearance].layer.borderWidth = 0.0f;</span><br><span class="line">[UITabBar appearance].clipsToBounds = YES;</span><br></pre></td></tr></table></figure>
+<p>看了下，实际起作用的代码是这条代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[UITabBar appearance].clipsToBounds = YES;</span><br></pre></td></tr></table></figure>
+<p>也就是裁剪掉了多余的部分（多余的部分正好就是分割线，后面会提到为什么是分割线），达到隐藏分割线的目的。但是这样设置，<code>TabBar</code>会裁剪子视图，这样我们有大按钮的<code>TabBar</code>，按钮就会被裁剪，造成显示不完整。</p>
+<p>那么在<code>iOS 13</code>上有没有别的办法来隐藏分割线呢？</p>
+<p>肯定是有的，其实解决这样的问题，只要我们能找到这个视图，就可以解决问题。从这个角度出发，我们来看下<code>iOS 13</code>上面<code>TabBar</code>子视图都有哪些。直接打印下<code>subviews</code>即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(</span><br><span class="line">    &quot;&lt;_UIBarBackground: 0x7fbb34007920; frame = (0 0; 414 83);&quot;,</span><br><span class="line">    &quot;&lt;UITabBarButton: 0x7fbb2ed032d0; frame = (2 1; 410 48);&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>我们可以看到内部有个<code>_UIBarBackground </code>私有的东西，分割线肯定跟他有关（总不可能跟<code>UITabBarButton</code>有关吧😝）。然后，我们在看下这个控件的子视图。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(</span><br><span class="line">    &quot;&lt;UIImageView: 0x7fbb2ec09b90; frame = (0 -0.333333; 414 0.333333);&quot;,</span><br><span class="line">    &quot;&lt;UIVisualEffectView: 0x7fbb2ec05a20; frame = (0 0; 414 83); &quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>emmmm🤔，我们看到了一个越界的<code>UIImageView </code>，这个<code>UIImageView </code>就是分割线视图。怎么证明呢？我们加下这个代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[self.tabBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) &#123;</span><br><span class="line">    [obj.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj1, NSUInteger idx, BOOL * _Nonnull stop) &#123;</span><br><span class="line">         if ([obj1 isKindOfClass:[UIImageView class]]) &#123;</span><br><span class="line">             obj1.hidden = YES;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;];</span><br><span class="line"> &#125;];</span><br></pre></td></tr></table></figure>
+<p>运行后，发现分割线隐藏了，也就证明了我们的猜想。当然，上面这个代码不严谨哈，这里主要是提供一种思路，仅作为演示，具体怎么做相信大家都可以的。</p>
+<p><strong>总结下怎么解决：找到它》隐藏它。千万别通过KVC的方式去处理，理由看第一点。</strong></p>
+<h2 id="9-UIWebView被废弃"><a href="#9-UIWebView被废弃" class="headerlink" title="9.UIWebView被废弃"></a>9.UIWebView被废弃</h2><blockquote>
+<p>“No longer supported; please adopt WKWebView.”, ios(2.0, 12.0)</p>
+</blockquote>
+<p>这个大家也尽快适配吧，看到有提到审核被拒的问题。</p>
+<h2 id="10-iOS-13-需增加蓝牙权限描述"><a href="#10-iOS-13-需增加蓝牙权限描述" class="headerlink" title="10.iOS 13 需增加蓝牙权限描述"></a>10.iOS 13 需增加蓝牙权限描述</h2><p>如果你的应用需要使用蓝牙权限，需要在<code>Info.plist</code>里面加上<code>NSBluetoothAlwaysUsageDescription</code>这个<code>key</code>，对应的描述<code>value</code>根据权限的用途来描述即可。</p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2021/10/29/20211029/" data-toggle="tooltip" data-placement="top" title="iOS 如何更好的适配异形屏（刘海屏）">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2018/06/10/20180610/" data-toggle="tooltip" data-placement="top" title="Autorelease对象何时被释放">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

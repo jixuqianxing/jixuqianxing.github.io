@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          Physics Simulation 之 SCNPhysicsBody - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2023/02/14/202302141/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#iOS, Swift" title="iOS, Swift">iOS, Swift</a>
+                        
+                    </div>
+                    <h1>Physics Simulation 之 SCNPhysicsBody</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2023-02-14
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>此系列为官方文档翻译，用于学习<code>SceneKit</code></p>
+</blockquote>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>当<code>SceneKit</code>准备渲染新帧时，会对场景中附加在节点上的物理体执行物理计算。 这些计算包括重力、摩擦和与其他物体的碰撞。 您还可以将自己的力和冲量应用于物体。 在<code>SceneKit</code>完成这些计算之后，它会在渲染帧之前更新节点对象的位置和方向。</p>
+<p>要向节点添加物理，创建和配置<code>SCNPhysicsBody</code>对象，然后将其分配给<code>SCNNode</code>对象的<code>physicsBody</code>属性。 在您应用力或冲量之前，必须将物理体与节点对象关联。</p>
+<h1 id="一个物体的物理特性"><a href="#一个物体的物理特性" class="headerlink" title="一个物体的物理特性"></a>一个物体的物理特性</h1><p>当场景模拟物体时，<code>SCNPhysicsBody</code>类定义物体的物理特性。对于物理模拟，有三个属性最重要：</p>
+<ul>
+<li><code>type</code> 属性，它确定物体如何与模拟中的力和其他物体交互。 静态物体不受力和碰撞影响且无法移动。动态物体受到力和与其他类型物体的碰撞的影响。 运动物体不受力或碰撞影响，但可以直接移动它们，从而可能会影响动态物体发生碰撞。</li>
+<li><code>physicsShape</code> 属性，它定义物体的三维形状以进行碰撞检测。 使用简单形状而不是节点可见几何的详细信息，物理模拟运行得更快。 通常，您将一个物体的物理形状设置为大致匹配节点可见内容的边界框、球体或基本形状。 有关创建物理形状的详细信息，请参阅<code>SCNPhysicsShape</code>。</li>
+<li><code>kinematic()</code> 属性。 对动态物体施加力或扭矩会导致其加速度（或角加速度）与其质量成比例。</li>
+</ul>
+<p>场景中的所有值在<code>SceneKit</code>的物理模拟中使用国际单位制（SI），<code>mass </code>（质量）单位为千克；<code>force </code>（力）、<code>impulse </code>（冲量）和<code>torque </code>（扭矩）的单位是牛顿、牛顿秒和牛顿米；节点位置和大小的距离单位是米。 请注意，您不必尝试为物理量提供逼真的值 - 使用产生您所需行为或游戏玩法的任何值即可。<br>对于动态物体，您可以控制物体受力或碰撞的影响方式。 请参阅定义力如何影响物理体。</p>
+<h1 id="定义物体的类别和碰撞"><a href="#定义物体的类别和碰撞" class="headerlink" title="定义物体的类别和碰撞"></a>定义物体的类别和碰撞</h1><p>当您设计使用物理的游戏时，定义在场景中出现的不同物理对象的各种类别。 为您的应用程序的行为定义不同类别的物理体。 一个物体可以分配给您想要的这些类别中的任意数量。 除了声明自己的类别之外，物理体还声明了它与哪些物体类别交互。</p>
+<p>使用<code>categoryBitMask</code>和<code>collisionBitMask</code>属性定义对象的碰撞行为。 <code>SCNPhysicsCollisionCategory</code> 中列出的常量为这些属性提供了默认值。 此外，使用 <code>contactTestBitMask</code> 属性，您可以定义一对物体生成接触消息（请参见 <code>SCNPhysicsContactDelegate</code> 协议），而不受到碰撞影响的交互。</p>
+<h1 id="相关物理类"><a href="#相关物理类" class="headerlink" title="相关物理类"></a>相关物理类</h1><p>物理场创建影响区域内所有物体的力，例如涡旋和引力。 有关详细信息和可用字段类型的列表，请参阅 <code>SCNPhysicsField</code>。</p>
+<p>您可以添加更高级别的行为，以控制多个物体之间的交互，例如关节和车辆。 有关详细信息和可用行为的列表，请参阅 <code>SCNPhysicsBehavior</code>。</p>
+<p>场景的 <code>physicsWorld</code> 属性持有一个管理影响整个场景的物理特性的 <code>SCNPhysicsWorld</code> 对象。</p>
+<h1 id="物理和渲染循环"><a href="#物理和渲染循环" class="headerlink" title="物理和渲染循环"></a>物理和渲染循环</h1><p><code>SceneKit</code> 将其物理模拟作为 <code>SCNSceneRendererDelegate</code> 中描述的渲染循环的一部分进行评估。在通过此循环的每个步骤中，SceneKit 确定具有附加物理体的所有节点的状态，并为一个时间步长模拟物理对这些物体的影响。例如，通过根据其速度和角速度更新物体的位置或旋转来模拟物理。在模拟物理之后，<code>SceneKit</code> 将物理模拟的结果应用于场景以供显示。</p>
+<p>因为您不仅可以通过物理，而且可以通过动作和隐式和显式定义的动画动画 <code>SceneKit</code> 内容，所以 <code>SceneKit</code> 将物理模拟的结果不应用于场景中 <code>SCNNode</code> 对象，而应用于每个节点的呈现对象，表示其当前显示状态。 因此，更改受物理影响的节点的属性需要特别考虑。</p>
+<p>如果更改受物理影响的节点的变换值或变换的任何其他属性，如位置和旋转之一，<code>SceneKit</code>将重置该节点的物理模拟。如果您只想更改变换的一个组件，同时将其他组件保留为其物理模拟值，请在更改前复制呈现节点的变换，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//将演示节点的变换复制到模型节点。</span><br><span class="line">node.transform = node.presentationNode.transform</span><br><span class="line">//更改新变换中的一个组件</span><br><span class="line">node.eulerAngles.z = newRollValue</span><br></pre></td></tr></table></figure>
+
+<h1 id="相关API"><a href="#相关API" class="headerlink" title="相关API"></a>相关API</h1><h3 id="创建物理体"><a href="#创建物理体" class="headerlink" title="创建物理体"></a>创建物理体</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init(type: SCNPhysicsBodyType, shape: SCNPhysicsShape?)</span><br></pre></td></tr></table></figure>
+<p>使用指定的类型和形状创建物理体。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class func  `static` () -&gt; Self</span><br></pre></td></tr></table></figure>
+<p>创建一个不受力或碰撞影响且不能移动的物理体。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class func dynamic() -&gt; Self</span><br></pre></td></tr></table></figure>
+
+<p>创建一个可以受力和碰撞影响的物理体。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class func kinematic() -&gt; Self</span><br></pre></td></tr></table></figure>
+
+<p>创建一个不受力或碰撞影响，但在移动时可以引起影响其他物体的碰撞的物理体。</p>
+<h3 id="定义力如何影响物理体"><a href="#定义力如何影响物理体" class="headerlink" title="定义力如何影响物理体"></a>定义力如何影响物理体</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var physicsShape: SCNPhysicsShape?</span><br></pre></td></tr></table></figure>
+<p>定义用于碰撞检测的物理体的实体体积。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var type: SCNPhysicsBodyType</span><br></pre></td></tr></table></figure>
+<p>一个常量，用于确定物理体如何响应力和碰撞。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enum SCNPhysicsBodyType</span><br></pre></td></tr></table></figure>
+
+<p>常量，用于确定物理体如何与力和其他物体交互，用于类型属性和创建物理体时。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var velocityFactor: SCNVector3</span><br></pre></td></tr></table></figure>
+
+<p>一个乘数，影响<code>SceneKit</code>将物理模拟计算的平移应用于包含物理体的节点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var angularVelocityFactor: SCNVector3</span><br></pre></td></tr></table></figure>
+
+<p>一个乘数，影响<code>SceneKit</code>将物理模拟计算的旋转应用于包含物理体的节点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var isAffectedByGravity: Bool</span><br></pre></td></tr></table></figure>
+
+<p>一个布尔值，用于确定场景中的恒定重力是否加速物体。</p>
+<h3 id="定义物体的物理属性"><a href="#定义物体的物理属性" class="headerlink" title="定义物体的物理属性"></a>定义物体的物理属性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var mass: CGFloat</span><br></pre></td></tr></table></figure>
+<p>物体的质量，以千克为单位。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var charge: CGFloat</span><br></pre></td></tr></table></figure>
+
+<p>物体的电荷，以库仑为单位。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var friction: CGFloat</span><br></pre></td></tr></table></figure>
+
+<p>物体的滑动运动阻力。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var rollingFriction: CGFloat</span><br></pre></td></tr></table></figure>
+
+<p>物体的滚动运动阻力。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var restitution: CGFloat</span><br></pre></td></tr></table></figure>
+
+<p>确定物体在碰撞中损失或获得多少动能的因子。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var damping: CGFloat</span><br></pre></td></tr></table></figure>
+
+<p>减少物体的线性速度的因子。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var angularDamping: CGFloat</span><br></pre></td></tr></table></figure>
+
+<p>减少物体的角速度的因子。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var momentOfInertia: SCNVector3</span><br></pre></td></tr></table></figure>
+
+<p>物体的惯性矩，以包含物体的节点的本地坐标系表示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var usesDefaultMomentOfInertia: Bool</span><br></pre></td></tr></table></figure>
+
+<p>一个布尔值，用于确定<code>SceneKit</code>是否自动计算物体的惯性矩，或允许设置自定义值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var centerOfMassOffset: SCNVector3</span><br></pre></td></tr></table></figure>
+
+<p>物体质心相对于其本地坐标原点的位置。</p>
+<h3 id="处理接触和碰撞"><a href="#处理接触和碰撞" class="headerlink" title="处理接触和碰撞"></a>处理接触和碰撞</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var categoryBitMask: Int</span><br></pre></td></tr></table></figure>
+
+<p>定义该物理体属于的哪些类别的掩码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var contactTestBitMask: Int</span><br></pre></td></tr></table></figure>
+
+<p>定义哪些类别的物体与此物理体发生交集通知。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var collisionBitMask: Int</span><br></pre></td></tr></table></figure>
+
+<p>定义哪些类别的物理体可以与此物理体碰撞。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct SCNPhysicsCollisionCategory</span><br></pre></td></tr></table></figure>
+
+<p>用于物理体的<code>categoryBitMask</code>和<code>collisionBitMask</code>属性的默认值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var continuousCollisionDetectionThreshold: CGFloat</span><br></pre></td></tr></table></figure>
+
+<p>物体必须移动的最小距离，这样<code>SceneKit</code>才能应用更精确（但更昂贵）的算法来检测与其他物体的接触。</p>
+<h3 id="应用力、冲量和扭矩"><a href="#应用力、冲量和扭矩" class="headerlink" title="应用力、冲量和扭矩"></a>应用力、冲量和扭矩</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func applyForce(SCNVector3, asImpulse: Bool)</span><br></pre></td></tr></table></figure>
+
+<p>将力或冲量应用于物体的质心。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func applyForce(SCNVector3, at: SCNVector3, asImpulse: Bool)</span><br></pre></td></tr></table></figure>
+
+<p>将力或冲量应用于物体的特定点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func applyTorque(SCNVector4, asImpulse: Bool)</span><br></pre></td></tr></table></figure>
+
+<p>将净扭矩或角动量变化应用于物体。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func clearAllForces()</span><br></pre></td></tr></table></figure>
+
+<p>取消当前模拟步骤中作用于物理体上的所有连续力和扭矩。</p>
+<h3 id="在运动的物体中交互"><a href="#在运动的物体中交互" class="headerlink" title="在运动的物体中交互"></a>在运动的物体中交互</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var velocity: SCNVector3</span><br></pre></td></tr></table></figure>
+
+<p>描述物理体当前速度（以米&#x2F;秒为单位）和运动方向的向量。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var angularVelocity: SCNVector4</span><br></pre></td></tr></table></figure>
+
+<p>描述物理体当前旋转轴和旋转速度（以弧度&#x2F;秒为单位）的向量。</p>
+<h3 id="定义何时可以移动物体"><a href="#定义何时可以移动物体" class="headerlink" title="定义何时可以移动物体"></a>定义何时可以移动物体</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var isResting: Bool</span><br></pre></td></tr></table></figure>
+
+<p>一个布尔值，指示物理体是否静止。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var allowsResting: Bool</span><br></pre></td></tr></table></figure>
+
+<p>一个布尔值，指定是否可以自动将物理体标记为静止。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func setResting(Bool)</span><br></pre></td></tr></table></figure>
+
+<p>告诉SceneKit是否将物体视为当前正在运动。</p>
+<h3 id="将物理体与其节点同步"><a href="#将物理体与其节点同步" class="headerlink" title="将物理体与其节点同步"></a>将物理体与其节点同步</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func resetTransform()</span><br></pre></td></tr></table></figure>
+<p>更新物体在物理模拟中的位置和方向，以匹配其附加的节点。</p>
+<h3 id="实例属性"><a href="#实例属性" class="headerlink" title="实例属性"></a>实例属性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var angularRestingThreshold: CGFloat</span><br><span class="line">var linearRestingThreshold: CGFloat</span><br></pre></td></tr></table></figure>
+
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><p>详细内容请看：<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/scenekit/scnphysicsbody#topics">SCNPhysicsBody</a></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2023/02/15/20230215/" data-toggle="tooltip" data-placement="top" title="Physics Simulation 之 SCNPhysicsShape">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2023/02/14/20230214/" data-toggle="tooltip" data-placement="top" title="Physics Simulation">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

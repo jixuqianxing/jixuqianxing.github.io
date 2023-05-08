@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          AutoLayout之可视化布局 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2014/12/16/AutoLayout之可视化布局/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>AutoLayout之可视化布局</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2014-12-16
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>写过两篇关于自动布局的文章<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">《AutoLayout实用技巧》</a>和<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/12/11/AutoLayout%E4%B9%8B%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%B8%83%E5%B1%80/">《AutoLayout之纯代码布局》</a>。虽然，<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">《AutoLayout实用技巧》</a>主要是针对<code>Storyboard</code>和<code>XIB</code>写的，但是里面仅仅只是展示了下操作技巧，也是针对有基础的人来学的，并未对如何在<code>Storyboard</code>和<code>XIB</code>中使用<code>AutoLayout</code>做过介绍。所以，打算再写篇文章来介绍一下。</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h4 id="1、如何启用-AutoLayout"><a href="#1、如何启用-AutoLayout" class="headerlink" title="1、如何启用 AutoLayout"></a>1、如何启用 AutoLayout</h4><p>如下图：<br><img src="http://img.itc.cn/photo/j3CetNyLqK1" alt="image"></p>
+<h4 id="2、约束条件介绍"><a href="#2、约束条件介绍" class="headerlink" title="2、约束条件介绍"></a>2、约束条件介绍</h4><p><img src="http://img.itc.cn/photo/j3CN3D1oKkD" alt="图片"></p>
+<p><img src="http://img.itc.cn/photo/j3cZ9RJjO1x" alt="图片"></p>
+<p>上面这两张图主要介绍了<code>Align</code>和<code>Pin</code>下面的约束条件的含义。</p>
+<hr>
+<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><p>下面主要通过具体例子来介绍<code>AutoLayout</code>的使用。</p>
+<p><strong>例：</strong>如图，给“跟我学<code>AutoLayout</code>”这个按钮添加约束条件，使其在各种屏幕上面的位置满足以下要求：1、距离父视图顶部的距离不变；2、宽高固定不变；3、水平居中。</p>
+<p><img src="http://img.itc.cn/photo/j3C0TfTCHSf" alt="image"></p>
+<p><strong>解析：</strong><br>其实，并不用做过多的解析，因为问题本身已经告诉了我们该如何添加约束条件了。这里主要是想引起大家的注意，在我们自己做项目的时候，并不会像上面这样告诉你该怎么设置。当你拿到设计师设计好的 UI 界面时，你首先应该知道每一个控件最终要在什么地方，哪些条件是固定不变的，哪些是可变的，这对你下一步的使用<code>AutoLayout</code>是非常重要的。另外，在使用<code>AutoLayout</code>时，一定要先理解我上面介绍的约束条件的含义，很多人知道自己想要什么样的布局，但是总是会忽略一些限定条件，以至于最终效果不尽人意。如何才能避免这样的问题呢？我给的建议就是，像上面这个问题一样，分析界面上面的每个控件的具体位置，然后，将其转化为每一个约束条件。</p>
+<p>最终操作如下所示：</p>
+<p><img src="http://img.itc.cn/photo/otp5PBPk94d" alt="image"></p>
+<p><strong>再不厌其烦的解释一下上面的操作：</strong></p>
+<ul>
+<li>第一步：选中需要布局的视图（此处是跟我学<code>AutoLayout</code>这个按钮）</li>
+<li>第二步：选中Pin这个选项，然后给跟我学<code>AutoLayout</code>这个按钮添加距离父视图顶部197 pts的约束条件。然后，勾选width、height这两个项，并且你可以在后面的方框中看到168 pts和30 pts这两个值，这样操作就是限制了按钮的宽度为168 pts、高度为30 pts，并且这两个值是可以手动修改的。</li>
+<li>第三步：点击Align这个选项，然后，点击<code>Horizontal Center in Container</code>，此条件就是限制按钮水平居中。</li>
+<li>第四步：其实，这个算是一个高端的操作（瞎扯！这么简单，算什么高端）。在大部分人操作的时候，肯定是先将试图放在相应的位置，然后再添加约束，这样做是对的。我这个操作，主要是想让大家认识一下<code>Resolve Auto Layout Issues</code>这个选项里面的<code>Update Frames</code>的作用，因为很多时候，你会一不小心就把某个控件给拖到其他的位置了，此时你可以利用此操作来处理，当然你可以使用<code>command+z</code>来撤销操作，具体操作视情况而定。在前面三步操作完成的时候，我们可以看到在按钮的左边有个橙色的虚线框，他的意思是，在当前的约束条件下，视图的位置应该在虚线框这里。此时，我们使用Update Frames这个选项就可以将视图移到虚线框的位置，并且此时橙色的虚线框消失，以及所有的约束条件都变为蓝色的了，这就说明约束条件添加完成（未完成的话，选中控件，会看到橙色的线）。</li>
+</ul>
+<hr>
+<p><strong>还是上面的问题，再介绍另一种操作方法，如下：</strong></p>
+<p><img src="http://img.itc.cn/photo/otp5PWcnRC0" alt="image"></p>
+<p>对于上面的操作，需要指出的是以下几点：</p>
+<ul>
+<li><code>Clear Constraints</code>是清除选中控件的所有约束条件，这个很实用，不需要一个个的找了。</li>
+<li>在<code>Align</code>这个选项里面也有<code>Update Frames</code>这个选项，读者可以回头看看基础知识里面的两张图，两张图里面都有<code>Update Frames</code>，含义图上面已经介绍了。此操作是不是更方便，这才是高端:)。</li>
+</ul>
+<hr>
+<h4 id="补充知识1："><a href="#补充知识1：" class="headerlink" title="补充知识1："></a>补充知识1：</h4><p>其实，<code>Update Frames</code>更多的用处在于根据控件的内容来设置当前控件的尺寸，也许这句话比较难于理解。我举个简单的例子，如下所示：<br><img src="http://img.itc.cn/photo/o3C6Uo45q8N" alt="image"></p>
+<p>这里的操作主要是给UILabel添加上边距、左边距以及固定宽度的约束条件，显然，这三个条件是不足以固定住这个<code>UILabel</code>的。此时，我们再使用<code>Update Frames</code>这个操作，这时<code>AutoLayout</code>会自动根据<code>UILabel</code>里面的内容“我是<code>UILabel</code>”来计算这个<code>UILabel</code>的尺寸，并且根据这个内容尺寸(<code>intrinsicContentSize</code>我的这篇文章<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/12/11/AutoLayout%E4%B9%8B%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%B8%83%E5%B1%80/">《AutoLayout之纯代码布局》</a>有介绍)来调整<code>UILabel</code>的尺寸。</p>
+<p>如果，在上面的操作中，省去第三步限制宽度的操作，直接执行<code>Update Frames</code>操作，你会看到<code>UILabel</code>的尺寸就是里面文字内容的尺寸。另外，如果你没有看过我的这篇文章<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">《AutoLayout实用技巧》</a>，你可能对此处的拖拽添加约束条件感到陌生，那么还是建议你去看看那篇文章，此处不再解释。</p>
+<p>这对我们在动态布局中是十分重要的信息。大家可以测试一下以下操作：</p>
+<ul>
+<li>还是上面这个<code>UILabel</code>，第一种操作是，不限定宽度条件，其他约束同上面的操作。然后，通过代码给这个<code>UILabel</code>设置内容，内容的要求是至少15五个字，越多越好。然后，运行项目看看。</li>
+<li>第二种操作是，限定宽度，并且设置<code>UILabel</code>的<code>numberOfLines</code>属性为0，其他约束条件跟前面一样。再设置内容，运行看看。</li>
+</ul>
+<p>通过上面的操作，你会看到，<code>UILabel</code>已经可以根据内容自适应了，不再需要你去根据内容进行计算了。</p>
+<hr>
+<h4 id="补充知识2："><a href="#补充知识2：" class="headerlink" title="补充知识2："></a>补充知识2：</h4><p><code>Update Frames</code>跟<code>Update Constraints</code>的区别</p>
+<p>如下所示：</p>
+<p><img src="http://img.itc.cn/photo/otp5P1W10qp" alt="image"></p>
+<p>一图胜千言。</p>
+<hr>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>以上就是<code>Storyboard</code>和<code>XIB</code>中的<code>AutoLayout</code>简单使用。文章中的知识算是比较基础的，但是掌握了的话，一般的布局都不在话下。更多的操作读者可以自己去尝试，只有实际操作，你才会更好的理解和记忆这些操作，并且能够快速的实现复杂的布局。<br>读到这里，如果你对本文所述观点存在疑问或者质疑，欢迎在下面留言，我会在看到的时候回答你。</p>
+<hr>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><p><a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">《AutoLayout实用技巧》</a><br><a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/12/11/AutoLayout%E4%B9%8B%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%B8%83%E5%B1%80/">《AutoLayout之纯代码布局》</a></p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2014/12/23/多人多Storyboard开发/" data-toggle="tooltip" data-placement="top" title="多人多Storyboard开发">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2014/12/11/AutoLayout之纯代码布局/" data-toggle="tooltip" data-placement="top" title="AutoLayout之纯代码布局">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          iOS直播间重构优化记录 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2023/03/04/20230304/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#iOS, Swift" title="iOS, Swift">iOS, Swift</a>
+                        
+                    </div>
+                    <h1>iOS直播间重构优化记录</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2023-03-04
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>历史原因加上功能的不断迭代，造成直播间代码越来越难以维护，前期架构也没有很好设计，造成各种耦合，不管是业务上的耦合，还是UI上的耦合。加上遗留了很多适配上的问题，以及交互问题，这块的代码成了一块比较难啃的硬骨头，重构这块代码已刻不容缓。</p>
+<h1 id="重构思路"><a href="#重构思路" class="headerlink" title="重构思路"></a>重构思路</h1><ol>
+<li>引入多代理实现（使用过XMPP的同学应该会熟悉这个概率，笔者工作早期有使用过XMPP），用于统一事件的分发，各个业务都可以注册成为代理，用于将数据转发给各个关心的业务模块，做到各业务模块的解耦。</li>
+<li>将页面划分成不同的<code>Container</code>，使用<code>UIStatickView</code>来做流式布局。通过协议的方式，添加不同业务的视图，业务层自己维护视图的显示尺寸，以及是否显示，不需要管理布局间的相对关系。这样可以很好的将<code>UI</code>进行解耦，达到插拔式使用效果。</li>
+<li><code>UI</code>联动解耦，比如键盘升起某些视图需要位移，某些需要隐藏，原来的处理方式是在一个地方注册监听，然后处理所有的视图逻辑。重构思路是，下放权利，各个业务模块自己注册通知，然后自己处理这块的逻辑。这个主要也是充分发挥了<code>UIStatickView</code>的特性，不然做起来会比较麻烦。</li>
+<li>横竖屏切换，布局相应调整。主要也是利用<code>UIStatickView </code>流式布局的线性方向，结合<code>SizeClass</code>，可以达到切换横屏后，布局方向的灵活调整。</li>
+<li>业务层采用MVVM结构实现。</li>
+</ol>
+<h1 id="UI结构"><a href="#UI结构" class="headerlink" title="UI结构"></a>UI结构</h1><p>以下只是部分结构<br><img src="https://s1.ax1x.com/2023/03/16/pp8dM01.png" alt="直播间UI架构.png"></p>
+<h1 id="部分效果"><a href="#部分效果" class="headerlink" title="部分效果"></a>部分效果</h1><p>由于涉及到一些隐私数据问题，这里只放很小的一部分效果。</p>
+<p>横竖屏切换自适应：<br><img src="https://upload-images.jianshu.io/upload_images/1284335-0c4766e7103e17ef.gif?imageMogr2/auto-orient/strip" alt="点击图片查看动图"></p>
+<p>键盘联动效果，以及横竖屏切换：<br><img src="https://upload-images.jianshu.io/upload_images/1284335-71d498fd051b4335.gif?imageMogr2/auto-orient/strip" alt="点击图片查看动图"></p>
+<h1 id="体验优化"><a href="#体验优化" class="headerlink" title="体验优化"></a>体验优化</h1><p>本次重构，还做了很多交互体验上的优化。</p>
+<h4 id="1-添加动画"><a href="#1-添加动画" class="headerlink" title="1.添加动画"></a>1.添加动画</h4><p>交互没有动画，就像一个人没有灵魂一样。但是，动效也不是越多越好，越复杂越好。常规动效即可，耐看。也可以理解为，在该有的地方有该有的动效，才是好的动效。<br>比如底部弹起的弹框，那么他就该从底部慢慢升起，而不是直接就盖在了页面上。这是用户已经见惯不怪的效果了，没有这个效果反而觉得很low。<br>再比如键盘升起的时候，页面内容需要跟着键盘的动效一起慢慢升起或者降落。<br>当然，还有很多弹框的动效，由于时间和资源有限，加上直播间的弹框较多，需要重新架构一下。所以，本次只做了部分修改。</p>
+<h4 id="2-直播间刷新优化"><a href="#2-直播间刷新优化" class="headerlink" title="2.直播间刷新优化"></a>2.直播间刷新优化</h4><p>老版本在进入直播间，加载数据的时候加了很多loading，这个其实很影响视觉。所以，我在不影响功能的情况下，直接干掉了霸屏loading。</p>
+<p>再一个，老版本从直播间切换到其他页面后，会再次刷新直播间数据，并且重新拉流。这样就会看到聊天列表闪屏、直播拉流断掉并重新启动等。这样一顿操作下来，体验真的有点难以忍受。这个细节问题，其实很好解决，从新回到直播间的时候，已经在拉流了就不需要再次启动拉流了，这样画面就不会断掉（视网络情况而定）。</p>
+<p>聊天列表闪屏问题。为什么会闪屏？仔细看不难发现，造成闪屏的原因是：列表数据从有到无，再到有。找出这个问题就好解决了，解决方式就是在有数据的时候去刷新列表，不做清空列表的动作。事实上，聊天列表数据也不会有清空的情况。真的有这种情况，那就是数据库数据被清了。</p>
+<h4 id="3-样式升级"><a href="#3-样式升级" class="headerlink" title="3.样式升级"></a>3.样式升级</h4><p>当你在一家公司接触了一波又一波<code>UI</code>设计师后，你会发现每个人的设计都有自己的风格。我觉得一个好的<code>App</code>，需要有一个整体的风格，不管是图标、圆角、配色、字体字号、插图、弹框、交互等等，都应该在一个规范里面去执行，需要一个宏观的把控。巧了，我在公司就主导推动过这件事，并且最终出了一套规范。在这次重构中发现的一些配色和字体问题，做了修改。比如邀请下单按钮背景色、价格颜色和字体、七天无理由颜色等等。</p>
+<h4 id="4-异形屏适配"><a href="#4-异形屏适配" class="headerlink" title="4.异形屏适配"></a>4.异形屏适配</h4><p>屏幕适配，其实，也是UI重构的一部分。放在体验优化里面讲，是因为很多人不觉得这是一个 bug，仅仅是丑了点。它确实不是 bug，但真的看不过去呀。</p>
+<p>关于如何准确适配异形屏，可以参考我之写的一篇文章 《<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/104b2b6ccd35">iOS 如何更好的适配异形屏（刘海屏）</a>》，掌握了这个技巧，可以很轻松的就解决这个问题。</p>
+<h4 id="5-聊天列表顶部渐隐效果"><a href="#5-聊天列表顶部渐隐效果" class="headerlink" title="5.聊天列表顶部渐隐效果"></a>5.聊天列表顶部渐隐效果</h4><p>这个细节问题，也是不痛不痒。但是，别人家孩子有的东西，咱也不能落下。</p>
+<h4 id="6-统一转屏效果"><a href="#6-统一转屏效果" class="headerlink" title="6.统一转屏效果"></a>6.统一转屏效果</h4><p>很多地方都是直接在转屏的同时去切换下一个页面，这样不仅看起来怪怪的，同时也会产生布局的问题，特别的有两个操作都需要转屏时，出现同时调两次转屏造成一些意想不到的问题。<br>本次重构统，重构了转屏的方法，提供了转屏结束的回调。将需要转屏的操作，统一放在完成转屏的回调中去处理。这样既保持了统一性，又能避免出现布局错误。</p>
+<h4 id="7-页面联动效果"><a href="#7-页面联动效果" class="headerlink" title="7.页面联动效果"></a>7.页面联动效果</h4><p>这个包括发布评论时键盘的升起和收起时，页面的联动效果。以及出价时，出价器显示，包括优惠券展示的联动效果等。</p>
+<h1 id="重构收益"><a href="#重构收益" class="headerlink" title="重构收益"></a>重构收益</h1><p>经过重构，主要有以下收益：</p>
+<ul>
+<li>直播交互更加的丝滑，体验提升几个档次<ul>
+<li>页面切换，拉流不再卡顿</li>
+<li>键盘交互、横竖屏更加丝滑</li>
+<li>交互动效更加合理</li>
+</ul>
+</li>
+<li>结构更加清晰，扩展性强，解耦，易维护<ul>
+<li>利于新业务的扩展，不再需要梳理大量的业务逻辑</li>
+<li>老业务的废除，都能够做到”干净”移除</li>
+</ul>
+</li>
+<li>期间解决了很多细节问题和历史遗留bug，总数在100+</li>
+<li>上线后，运行稳定，几乎没产生因重构造成的bug</li>
+<li>最后，也是非常重要的一个收益，就是对于开发来说，这块硬骨头终于被拿下，后期维护更加友好，间接提升效率</li>
+</ul>
+<h1 id="总结和感悟"><a href="#总结和感悟" class="headerlink" title="总结和感悟"></a>总结和感悟</h1><p>本次重构任务量很大，重构中也发现了很多历史遗留问题和细节问题。细节问题处理和自测占了大部分时间。很多个夜晚笔者都是自觉加班加点的自测和打磨细节。一方面是希望把这个事情做好，当然，最主要还是害怕出线上bug😂。</p>
+<p>在开启这项工作的前，也有小伙伴劝我不要做这件事。一方面是比较麻烦，另一方面是几乎没有业务价值，再者就是如果出了严重的线上事故，你所做的这一切都将毁于一旦。但是，作为一个有追求的技术来说，在遇到这样的问题时，是没有退路的。而且，我也很享受问题被解决后的成就感，我相信很多人都会有这样的感受。</p>
+<p>通过这次重构，不仅仅是从技术上去解决问题，更多的时候，我会从产品的角度去思考一些功能和交互的合理性，然后去改进它。</p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2023/03/10/20230310/" data-toggle="tooltip" data-placement="top" title="iOS模块化中的通用图片访问器优化">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2023/03/01/20230301/" data-toggle="tooltip" data-placement="top" title="Swift实现一个交互友好&灵活自定义的弹框">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
