@@ -166,6 +166,31 @@
 
 <div class="post-preview">
 
+    <a href="/2021/10/30/20211030/">
+        <h2 class="post-title">
+            iOS模块化中的通用图片访问器
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            前言
+本文旨在解决，多模块、多 bundle 的图片资源的统一访问方法。
+
+目前，我们开发的项目实现了模块化，不同模块使用的图片资源也都抽到了相应的模块内部，可以共用的图片资源和资源访问器，单独封装成一个基础模块。图片资源使用 xcassets 进行管理，模块通过 Cocoapods 进行管理。需要在每个模块中的 podspec 这样定义资源包：
+123s.resource_bundle =......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2021-10-30
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2021/10/29/20211029/">
         <h2 class="post-title">
             iOS 如何更好的适配异形屏（刘海屏）
@@ -391,43 +416,6 @@ Edit Scheme-&gt; Run -&gt; Arguments, 在Environment Variables里边添加 OS_AC
     <p class="post-meta">
         Posted by Qianxing on
         2016-05-03
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/04/29/XcodePlug-ins/">
-        <h2 class="post-title">
-            备份自己使用到的一些Xcode插件
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            在这里记录下自己用到的一些好的Xcode插件，方便以后换电脑或者重装。
-
-
-1.VVDocumenter-Xcode
-
-2.RTImageAssets
-
-3.KSImageNamed-Xcode
-
-4.XAlign
-
-相关阅读
-《解决Xcode升级后插件不能用的问题》
-
-
-原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | Creative Commons BY-NC-ND 3.0
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2016-04-29
     </p>
 
 </div>
