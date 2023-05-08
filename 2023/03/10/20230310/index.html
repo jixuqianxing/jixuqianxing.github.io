@@ -174,7 +174,7 @@
                 post-container">
 
                 <blockquote>
-<p>本文主要针对之前写的文章<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c30728d3c147">《iOS模块化中的通用图片访问器》</a>的方案改进。</p>
+<p>本文主要针对之前写的文章<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2021/10/30/20211030/">《iOS模块化中的通用图片访问器》</a>的方案改进。</p>
 </blockquote>
 <h2 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h2><p>项目组件化，壳工程后，我们对于资源的使用也做了规范。每个模块的图片资源使用<code>xcassets</code>进行管理。正常访问不同<code>Bundle</code>中的资源需要使用以下方法：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">open class UIImage : NSObject, NSSecureCoding &#123;</span><br><span class="line">   @available(iOS 8.0, *)</span><br><span class="line">   public init?(named name: String, in bundle: Bundle?, compatibleWith traitCollection: UITraitCollection?)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
