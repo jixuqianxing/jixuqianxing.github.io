@@ -182,7 +182,7 @@
 <p>在之前的文章中介绍的使用方式如下（详细介绍请查看原文<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2021/10/30/20211030/">《iOS模块化中的通用图片访问器》</a>）：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 从 ModuleName.bundle 中获取图片</span><br><span class="line">MyImage[ModuleName.self, &quot;image name&quot;]</span><br><span class="line"></span><br><span class="line">// 或者，从 main bundle 中获取图片</span><br><span class="line">MyImage[&quot;image name&quot;]</span><br></pre></td></tr></table></figure>
 <p>这种方式，通过传入一个模块命名空间，来获取对应的<code>Bundle</code>。这种使用方式并不优雅。</p>
-<p>##寻找解题方法<br>有了上面这个问题，于是我开始查找可以自动获取模块名的方法。功夫不负有心人，最终找到一个解决方案。</p>
+<h2 id="寻找解题方法"><a href="#寻找解题方法" class="headerlink" title="寻找解题方法"></a>寻找解题方法</h2><p>有了上面这个问题，于是我开始查找可以自动获取模块名的方法。功夫不负有心人，最终找到一个解决方案。</p>
 <p>就是使用<code>#fileID</code>这个表达式，代替我们手动传递模块名。</p>
 <table>
 <thead>
@@ -201,7 +201,7 @@
 <p>通过<code>#fileID</code>可以得到类似下面这串字符串：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyModule/some/disambiguation/MyFile.swift.</span><br></pre></td></tr></table></figure>
 <p>将字符串通过<code>/</code>分割后，第一个元素就是模块名。</p>
-<h2 id="解决痛点"><a href="#解决痛点" class="headerlink" title="解决痛点"></a>解决痛点</h2><p>结合下标语法和<code>fileID</code>表达式，可以对代码做如下改造：</p>
+<h2 id="解决痛点"><a href="#解决痛点" class="headerlink" title="解决痛点"></a>解决痛点</h2><p>结合下标语法和<code>#fileID</code>表达式，可以对代码做如下改造：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public extension UIImage &#123;</span><br><span class="line"> </span><br><span class="line">   static subscript (named: String, fileID: String = #fileID) -&gt; UIImage? &#123;</span><br><span class="line">       guard let moduleName = fileID.components(separatedBy: &quot;/&quot;).first,</span><br><span class="line">             moduleName.isNonEmpty,</span><br><span class="line">             named.isNonEmpty</span><br><span class="line">       else &#123;</span><br><span class="line">           return nil</span><br><span class="line">       &#125;	   </span><br><span class="line">       // 加载图片资源具体实现</span><br><span class="line">       ...</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这样就可以在不同的模块中这样访问图片资源了：</p>
