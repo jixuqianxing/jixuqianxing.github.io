@@ -214,6 +214,55 @@ Swift中有多种高阶函数，包括map，filter，reduce，sort，flatMap，c
 
 <div class="post-preview">
 
+    <a href="/2023/03/10/202303101/">
+        <h2 class="post-title">
+            Apple M2 macOS Flutter环境搭建记录
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1.安装 Rosetta 2 环境1sudo softwareupdate --install-rosetta --agree-to-license
+
+2.下载Flutter SDKflutter_macos_arm64_3.7.7-stable.zip
+当然你也可以在这个文档中找到最新的安装包SDK，下载arm64 版本即可。
+当然，你也可以使用克隆的方式下载SDK。具体，根据个人喜好。
+......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2023-03-10
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2023/03/04/202303041/">
+        <h2 class="post-title">
+            iOS基于Vision框架的人体关键点检测
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            从iOS 14和macOS 11开始，Vision增加了识别人体姿势的强大功能。他可以识别人体的19个关键点。如图所示：
+实现1.发起一个请求使用Vision框架，通过VNDetectHumanBodyPoseRequest提供身体姿势检测功能。 下面代码演示了，如何从CGImage中检测身体关键点。
+123456789101112131415// Get the CGImage on wh......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2023-03-04
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2023/03/04/20230304/">
         <h2 class="post-title">
             iOS直播间重构优化记录
@@ -361,53 +410,6 @@ SCNPhysicsShape  物理体实体的抽象，用于调整碰撞检测。
     <p class="post-meta">
         Posted by Qianxing on
         2021-10-30
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/10/29/20211029/">
-        <h2 class="post-title">
-            iOS 如何更好的适配异形屏（刘海屏）
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            前言通常我们在适配异形屏的时候，我们可能会使用 safeAreaInsets。使用时机不对的话，safeAreaInsets 的值还会存在问题。或许你可以使用 key window 的 safeAreaInsets ，亦或者你可以通过重写 func safeAreaInsetsDidChange() 方法，在合适的时候来修改布局，但这些操作总是比较麻烦，用起来并不舒服。
-有没有更好的方式呢�......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2021-10-29
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2019/06/10/20190610/">
-        <h2 class="post-title">
-            iOS 13 适配
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-iOS 13 如期而至，适配工作可以开展起来啦。在适配 iOS 13 过程中，遇到了如下一些问题。
-
-1. UITextField 的私有属性 _placeholderLabel 被禁止访问了遇到的第一个崩溃是修改UITextField的placeholder的颜色，历史遗留代码如下：
-1[_textField setValue:self.placeholderColor forKeyPa......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2019-06-10
     </p>
 
 </div>

@@ -13,11 +13,11 @@
 
     <title>
         
-          
+          Apple M2 macOS Flutter环境搭建记录 - undefined
         
     </title>
 
-    <link rel="canonical" href="http://example.com/page/4/">
+    <link rel="canonical" href="http://example.com/2023/03/10/202303101/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -129,175 +129,118 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Qianxing&#39;s Blog</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading"></span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#Flutter" title="Flutter">Flutter</a>
+                        
+                    </div>
+                    <h1>Apple M2 macOS Flutter环境搭建记录</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2023-03-10
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="1-安装-Rosetta-2-环境"><a href="#1-安装-Rosetta-2-环境" class="headerlink" title="1.安装 Rosetta 2 环境"></a>1.安装 Rosetta 2 环境</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo softwareupdate --install-rosetta --agree-to-license</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-下载Flutter-SDK"><a href="#2-下载Flutter-SDK" class="headerlink" title="2.下载Flutter SDK"></a>2.下载Flutter SDK</h2><p><a target="_blank" rel="noopener" href="https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_arm64_3.7.7-stable.zip">flutter_macos_arm64_3.7.7-stable.zip</a></p>
+<p>当然你也可以在这个文档中找到最新的安装包<a target="_blank" rel="noopener" href="https://docs.flutter.dev/development/tools/sdk/releases">SDK</a>，下载<code>arm64 </code>版本即可。</p>
+<p>当然，你也可以使用克隆的方式下载SDK。具体，根据个人喜好。</p>
+<h2 id="3-添加环境变量"><a href="#3-添加环境变量" class="headerlink" title="3.添加环境变量"></a>3.添加环境变量</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>~/.zshrc</code>中添加以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PATH=[flutter 安装目录]/bin:$PATH</span><br><span class="line">export PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line">export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br></pre></td></tr></table></figure>
+
+<p>保存并退出编辑，然后刷新一下，让我们的配置立即生效：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Run-flutter-doctor"><a href="#4-Run-flutter-doctor" class="headerlink" title="4.Run flutter doctor"></a>4.Run flutter doctor</h2><p>进入我们之前下载并解压好的<code>flutter</code>目录，然后执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
+<p>根据对应的提示操作即可。</p>
+<p>按照上面这些步骤基本就能完成环境的搭建，其他一些操作，可以查看<a target="_blank" rel="noopener" href="https://docs.flutter.dev/get-started/install/macos">官方文档</a>。</p>
 
 
-<div class="post-preview">
+                <hr>
 
-    <a href="/2014/11/29/iOS8下的UIActionSheet/">
-        <h2 class="post-title">
-            iOS8下的UIActionSheet
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            前段时间做了一个iPad应用，里面用到了图片上传。因此，需要用到UIImagePickerController打开本地图库和开启相机拍照。
+                
 
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2023/03/10/20230310/" data-toggle="tooltip" data-placement="top" title="iOS模块化中的通用图片访问器优化">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2023/03/04/202303041/" data-toggle="tooltip" data-placement="top" title="iOS基于Vision框架的人体关键点检测">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
-代码如下：
-12345678910111213141516171819202122- (IBAction)choosePhoto:(id)sender&#123;    UIActionSheet *sheet = [[UIActionSheet a......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-11-29
-    </p>
+                
 
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/11/28/AutoLayout实用技巧/">
-        <h2 class="post-title">
-            AutoLayout实用技巧
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            前言随着新一代iPhone的推出，苹果也开始大屏化，一下推出了两款大屏iPhone，并且这两款iPhone尺寸也不一样，一个是4.7寸，另一款则是5.5寸，加上之前的3.5寸和4寸，现在已经有四种不同的尺寸了。作为一名iOS开发者，你是不是感到很捉急呢？会不会感觉iPhone也要像安卓那样做着各种机型的适配呢？答案是肯定的，不过你会发现选择iOS开发是多么明智的选择。因为，苹果已经为我们准备......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-11-28
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/11/25/去除布局时的隐式动画效果/">
-        <h2 class="post-title">
-            去除布局时的隐式动画效果
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            在布局UITableViewCell子试图时，如果在layoutSubviews中处理布局，当项目运行时我们经常会看到cell上面的控件在动，这也就是标题所说的隐式动画。虽然说动态效果更能够吸引人，但有时候并非我们所要，那我们应该怎样解决这个问题呢？
-
-解决方法代码示例如下：
-swift版：
-123456789override func layoutSubviews() &#123;    ......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-11-25
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-        <li class="previous">
-            <a href="/page/3/">&larr; Newer Posts</a>
-        </li>
-    
-    
-</ul>
-
-
-
-                <!-- 如果开启评论功能 -->
                 
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-
-                            
-
-                            
-
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
 
 
     <!-- Footer -->

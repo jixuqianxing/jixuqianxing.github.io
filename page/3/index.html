@@ -166,6 +166,53 @@
 
 <div class="post-preview">
 
+    <a href="/2015/03/02/解决Xcode升级后插件不能用的问题/">
+        <h2 class="post-title">
+            解决Xcode升级后插件不能用的问题
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            更新内容：
+使用下面这句命令，就不再需要手动处理了：
+1find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I&#123;&#125; defaults write &#123;&#125; DVTPlugInCompatibilit......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2015-03-02
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2015/02/03/如何给UITextView添加placeholder/">
+        <h2 class="post-title">
+            如何给UITextView添加placeholder
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            引子实际开发过程中，我们可能会使用到输入框，一般的需求我们都可以直接用UITextField来解决，我们都知道UITextField有placeholder属性，他可以提示用户正确的输入格式。但是，UITextField只支持单行输入，如果我们想做一个跟iMessage发送消息一样的输入框，或者新浪微博里面发微博的输入框，UITextField就无法满需求。
+
+
+一个可行的解决办法是使用UI......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2015-02-03
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2015/01/26/你的Cocoapods是最新的吗？/">
         <h2 class="post-title">
             你的Cocoapods是最新的吗？
@@ -361,52 +408,6 @@
     <p class="post-meta">
         Posted by Qianxing on
         2014-12-05
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/11/29/iOS8下的UIActionSheet/">
-        <h2 class="post-title">
-            iOS8下的UIActionSheet
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            前段时间做了一个iPad应用，里面用到了图片上传。因此，需要用到UIImagePickerController打开本地图库和开启相机拍照。
-
-
-代码如下：
-12345678910111213141516171819202122- (IBAction)choosePhoto:(id)sender&#123;    UIActionSheet *sheet = [[UIActionSheet a......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-11-29
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/11/28/AutoLayout实用技巧/">
-        <h2 class="post-title">
-            AutoLayout实用技巧
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            前言随着新一代iPhone的推出，苹果也开始大屏化，一下推出了两款大屏iPhone，并且这两款iPhone尺寸也不一样，一个是4.7寸，另一款则是5.5寸，加上之前的3.5寸和4寸，现在已经有四种不同的尺寸了。作为一名iOS开发者，你是不是感到很捉急呢？会不会感觉iPhone也要像安卓那样做着各种机型的适配呢？答案是肯定的，不过你会发现选择iOS开发是多么明智的选择。因为，苹果已经为我们准备......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-11-28
     </p>
 
 </div>
