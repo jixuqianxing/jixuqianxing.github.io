@@ -176,11 +176,6 @@
 <p><video
 height = 500 
 width = 1000 
-scrolling="no" 
-border="0" 
-frameborder="no" 
-framespacing="0" 
-allowfullscreen="true" 
 src="https://developer.apple.com/augmented-reality/roomplan/videos/roomplan-large.mp4"> </video></p>
 <p>嗯，看上去貌似对房地产行业和家装行业比较友好。</p>
 <h3 id="下面主要从技术角度介绍下RoomPlan"><a href="#下面主要从技术角度介绍下RoomPlan" class="headerlink" title="下面主要从技术角度介绍下RoomPlan"></a>下面主要从技术角度介绍下RoomPlan</h3><p><code>RoomPlan</code>其实是<code>ARKit</code>的一个再封装，其主要利用的技术是借助<code>LiDAR</code>扫描周围的环境，捕获到场景的深度信息。然后，根据场景几何建立我们的<code>Room</code>网格。<code>RoomPlan</code>还利用影像数据结合AI的能力，对现实物体进行了更加细致的分类、检测和分割。主要可以识别这几大类：</p>
