@@ -183,8 +183,10 @@
 </ol>
 <h1 id="UI结构"><a href="#UI结构" class="headerlink" title="UI结构"></a>UI结构</h1><p>以下只是部分结构<br><img src="https://s1.ax1x.com/2023/03/16/pp8dM01.png" alt="直播间UI架构.png"></p>
 <h1 id="部分效果"><a href="#部分效果" class="headerlink" title="部分效果"></a>部分效果</h1><p>由于涉及到一些隐私数据问题，这里只放很小的一部分效果。</p>
-<p>横竖屏切换自适应：<br><img src="https://upload-images.jianshu.io/upload_images/1284335-0c4766e7103e17ef.gif?imageMogr2/auto-orient/strip" alt="点击图片查看动图"></p>
-<p>键盘联动效果，以及横竖屏切换：<br><img src="https://upload-images.jianshu.io/upload_images/1284335-71d498fd051b4335.gif?imageMogr2/auto-orient/strip" alt="点击图片查看动图"></p>
+<p>横竖屏切换自适应：</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20230304/2.gif" alt="点击图片查看动图"></p>
+<p>键盘联动效果，以及横竖屏切换：</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20230304/3.gif" alt="点击图片查看动图"></p>
 <h1 id="体验优化"><a href="#体验优化" class="headerlink" title="体验优化"></a>体验优化</h1><p>本次重构，还做了很多交互体验上的优化。</p>
 <h4 id="1-添加动画"><a href="#1-添加动画" class="headerlink" title="1.添加动画"></a>1.添加动画</h4><p>交互没有动画，就像一个人没有灵魂一样。但是，动效也不是越多越好，越复杂越好。常规动效即可，耐看。也可以理解为，在该有的地方有该有的动效，才是好的动效。<br>比如底部弹起的弹框，那么他就该从底部慢慢升起，而不是直接就盖在了页面上。这是用户已经见惯不怪的效果了，没有这个效果反而觉得很low。<br>再比如键盘升起的时候，页面内容需要跟着键盘的动效一起慢慢升起或者降落。<br>当然，还有很多弹框的动效，由于时间和资源有限，加上直播间的弹框较多，需要重新架构一下。所以，本次只做了部分修改。</p>
 <h4 id="2-直播间刷新优化"><a href="#2-直播间刷新优化" class="headerlink" title="2.直播间刷新优化"></a>2.直播间刷新优化</h4><p>老版本在进入直播间，加载数据的时候加了很多loading，这个其实很影响视觉。所以，我在不影响功能的情况下，直接干掉了霸屏loading。</p>
