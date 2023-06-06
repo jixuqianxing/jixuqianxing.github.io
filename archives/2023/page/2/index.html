@@ -13,11 +13,11 @@
 
     <title>
         
-          使用 Firebase Hosting 托管 app-ads.txt - undefined
+          
         
     </title>
 
-    <link rel="canonical" href="http://example.com/2023/05/21/20230521/">
+    <link rel="canonical" href="http://example.com/archives/2023/page/2/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -129,137 +129,7 @@
 
 
     <!-- Main Content -->
-    
-<!-- Image to hack wechat -->
-<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
-
-<!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('/undefined')
-    }
-</style>
-<header class="intro-header" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        
-                    </div>
-                    <h1>使用 Firebase Hosting 托管 app-ads.txt</h1>
-                    <h2 class="subheading"></h2>
-                    <span class="meta">
-                        Posted by Qianxing on
-                        2023-05-21
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-
-                <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>首先，你需要注册<code>Firebase</code>账号。</li>
-<li>然后，创建<code>Firebase</code>项目。</li>
-<li>生成<code>app-ads.txt</code>文件。</li>
-</ul>
-<h2 id="安装-Firebase-CLI"><a href="#安装-Firebase-CLI" class="headerlink" title="安装 Firebase CLI"></a>安装 Firebase CLI</h2><p>1.安装</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://firebase.tools | bash</span><br></pre></td></tr></table></figure>
-
-<p>2.登录并测试 Firebase CLI</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firebase login</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：firebase login 命令会打开与机器上的 localhost 关联的网页。如果您使用的是远程机器且您无权访问 localhost，请运行带有 –no-localhost 标志的命令。</p>
-</blockquote>
-<h2 id="初始化-Firebase-项目"><a href="#初始化-Firebase-项目" class="headerlink" title="初始化 Firebase 项目"></a>初始化 Firebase 项目</h2><p>切换到项目目录，然后执行以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firebase init</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：firebase init 命令不会创建新目录。如果您要设置一个新应用，必须先创建一个目录，然后在该目录下运行 firebase init。</p>
-</blockquote>
-<p>根据提示，选择:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub </span><br><span class="line">Action deploys</span><br></pre></td></tr></table></figure>
-
-<p>然后，可以选择创建已有的项目，或者新建。前面准备工作中我们已经创建项目，所以选择已有项目即可。</p>
-<h2 id="配置app-ads-txt"><a href="#配置app-ads-txt" class="headerlink" title="配置app-ads.txt"></a>配置app-ads.txt</h2><p>将<code>app-ads.txt</code>文件放置到<code>public</code>目录下面即可。</p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firebase deploy --only hosting</span><br></pre></td></tr></table></figure>
-
-<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>在浏览器输入一下链接并打开。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://PROJECT_ID.web.app/app-ads.txt</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>其中，PROJECT_ID是你的项目名</p>
-</blockquote>
-<p>如果能够正确访问<code>app-ads.txt</code>中的内容，说明配置成功。</p>
-<h2 id="One-More-Thing"><a href="#One-More-Thing" class="headerlink" title="One More Thing"></a>One More Thing</h2><p>如果你有自己的网站，可以将主页重定向到你的网站，在<code>firebase.json </code>文件中添加<code>redirects </code>键值。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&quot;hosting&quot;: &#123;</span><br><span class="line">  ...</span><br><span class="line">  &quot;redirects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;source&quot;: &quot;/&quot;,</span><br><span class="line">      &quot;destination&quot;: &quot;https://www.example.com&quot;,</span><br><span class="line">      &quot;type&quot;: 301</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果没有的话，也可以自己写一个静态网页替换<code>public</code>目录下的<code>index.html</code>文件。</p>
-<p>然后，执行部署命令完成部署即可。</p>
-
-
-                <hr>
-
-                
-
-                <ul class="pager">
-                    
-                        <li class="previous">
-                            <a href="/2023/06/06/20230606/" data-toggle="tooltip" data-placement="top" title="为 visionOS 做准备">&larr; Previous Post</a>
-                        </li>
-                    
-                    
-                        <li class="next">
-                            <a href="/2023/03/25/20230325/" data-toggle="tooltip" data-placement="top" title="Swift高阶函数">Next Post &rarr;</a>
-                        </li>
-                    
-                </ul>
-
-                
-
-                
-
-            </div>
-    <!-- Side Catalog Container -->
-        
-
-    <!-- Sidebar Container -->
-
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-
-                <!-- Friends Blog -->
-                
-            </div>
-
-        </div>
-    </div>
-</article>
-
-
-
-
-
-
-
-
+    <!-- Default Archive layout, we use archives instead. -->
 
     <!-- Footer -->
     <!-- Footer -->

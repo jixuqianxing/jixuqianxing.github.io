@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          为 visionOS 做准备 - undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/2023/06/06/20230606/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>为 visionOS 做准备</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Qianxing on
+                        2023-06-06
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>已经有几年没有熬夜看 <code>WWDC</code> 了，这次为了见证苹果 <code>XR</code> 产品的发布，熬夜看完了整场发布会。发布会上的东西不少，几款硬件产品发布、几个系统更新等等。但是印象深刻的还是 <code>Vision Pro</code>。苹果终于发布了这个传闻已久的产品，也是我非常期待的一款产品。后面也打算深入学习下相关的 <code>Session</code>，为后续的开发做准备。</p>
+<table>
+<thead>
+<tr>
+<th><img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/realitykit/realitykit-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/audio/audio-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/shareplay/shareplay-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/privacy/privacy-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/xcode-beta/xcode-beta-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/asc-outline/asc-outline-96x96_2x.png"></th>
+</tr>
+</thead>
+</table>
+<p>相信大家目前都有在开发或者维护的 <code>iPhone</code>、<code>iPad</code> 产品。那么针对这些已经存在产品如何能够很好的支持 <code>visionOS</code> 呢？看了官方的相关资料，然后整理如下：</p>
+<h2 id="一、学习-visionOS"><a href="#一、学习-visionOS" class="headerlink" title="一、学习 visionOS"></a>一、学习 visionOS</h2><p>首先当然是学习 <code>visionOS</code> 相关的技能了。<code>WWDC23</code> 准备了46个 <code>session</code> 用于介绍 <code>visionOS </code> 一定会帮助你很好的学习相关内容。利用苹果提供的开发工具进行很好的开发工作，包括 <code>Xcode</code>、<code>Reality Composer Pro</code> 以及其他工具。</p>
+<h2 id="二、最佳实践"><a href="#二、最佳实践" class="headerlink" title="二、最佳实践"></a>二、最佳实践</h2><p>虽然，<code>UIKit</code> 跟 <code>SwiftUI</code> 都可以支持 <code>visionOS</code> 开发，但是官方还是更推荐使用 <code>SwiftUI</code> 进行开发，并且 <code>SwiftUI</code> 的 <code>Stack</code> 可以支持深度的设置，这样在 <code>visonOS</code> 中可以更好的呈现效果。</p>
+<h3 id="（1）使用-Scenes"><a href="#（1）使用-Scenes" class="headerlink" title="（1）使用 Scenes"></a>（1）使用 Scenes</h3><p>支持 <code>Scenes</code> ，这个是 <code>iOS 13</code> 推出的。要适配 <code>visonOS</code> 的话，就必须使用 <code>Scenes</code>，那还是说什么呢，赶快适配起来。</p>
+<h3 id="（2）使用-flexible-布局"><a href="#（2）使用-flexible-布局" class="headerlink" title="（2）使用 flexible 布局"></a>（2）使用 flexible 布局</h3><p>使用 <code>flexible</code> 布局，而非绝对布局。这样会使你的应用能够更快的适应不同的操作系统。在发布应用前，应当充分测试各种平台和场景，以保证显示的准确性。并且确保布局变化时的动效高效和准确。</p>
+<h3 id="（3）采用标准的手势和输入"><a href="#（3）采用标准的手势和输入" class="headerlink" title="（3）采用标准的手势和输入"></a>（3）采用标准的手势和输入</h3><p>采用标准的手势和输入，这样系统能够帮我们适配好 <code>visionOS</code>。尽量减少自定义输入和手势识别器的使用，这可能需要你针对 <code>visionOS</code> 做相应的适配工作。</p>
+<h3 id="（4）支持多种与您的内容交互的方式"><a href="#（4）支持多种与您的内容交互的方式" class="headerlink" title="（4）支持多种与您的内容交互的方式"></a>（4）支持多种与您的内容交互的方式</h3><p>添加命令菜单支持，以便人们可以使用连接的键盘执行任务。为您的应用程序添加辅助功能支持，以便使用专门设备的人可以与您的内容交互。这些替代交互方式使人们即使在没有触摸或鼠标事件的情况下也能使用您的应用程序。</p>
+<h3 id="（5）在使用前检查硬件和功能的可用性"><a href="#（5）在使用前检查硬件和功能的可用性" class="headerlink" title="（5）在使用前检查硬件和功能的可用性"></a>（5）在使用前检查硬件和功能的可用性</h3><p>许多框架提供检查功能，以确定当前设备是否支持特定功能。例如，<code>Core Location</code> 可以让您确定设备上可用的位置服务。为了避免在将您的应用程序带到 <code>visionOS</code> 时出现错误，请始终确保当前设备上的功能可用后再使用它们。</p>
+<h3 id="（6）使您的应用程序具有包容性"><a href="#（6）使您的应用程序具有包容性" class="headerlink" title="（6）使您的应用程序具有包容性"></a>（6）使您的应用程序具有包容性</h3><p>具有可访问性和包容性的应用程序可以改变人们的生活，而 <code>visionOS</code> 提供了支持，以帮助您实现这一目标。国际化和本地化您的应用程序，以支持不同国家、地区和语言的更多人。审查您的应用程序的辅助功能支持，使所有能力的人更容易导航和访问信息。选择包容性的语言和术语，让每个人都感到受欢迎。</p>
+<h3 id="（7）避免特定于设备的代码和决策"><a href="#（7）避免特定于设备的代码和决策" class="headerlink" title="（7）避免特定于设备的代码和决策"></a>（7）避免特定于设备的代码和决策</h3><p>如果您基于当前设备类型做出决策，您的应用程序可能无法在 <code>visionOS</code> 中正确运行。而不是基于设备形态做出决策，应该根据情境需要做出选择，并提供合理的默认行为。例如，使用系统提供的大小来布置视图，而不是预期的设备大小。</p>
+<h3 id="（8）更新调用已弃用API的代码"><a href="#（8）更新调用已弃用API的代码" class="headerlink" title="（8）更新调用已弃用API的代码"></a>（8）更新调用已弃用API的代码</h3><p>苹果定期弃用框架和 <code>API</code>，为现代替代品腾出空间。尽快转向这些现代替代品，以确保您的代码在 <code>visionOS</code> 中平稳运行。</p>
+<h2 id="三、探索RealityKit和3D内容"><a href="#三、探索RealityKit和3D内容" class="headerlink" title="三、探索RealityKit和3D内容"></a>三、探索RealityKit和3D内容</h2><p>为 <code>visionOS</code> 构建的应用程序可以利用深度和无限画布来创建强大的沉浸式体验。发现您可以如何使用 <code>RealityKit</code> 和其他框架来准备在 <code>visionOS</code> 中构建应用程序。</p>
+<h3 id="（1）考虑何时向您的界面添加3D元素"><a href="#（1）考虑何时向您的界面添加3D元素" class="headerlink" title="（1）考虑何时向您的界面添加3D元素"></a>（1）考虑何时向您的界面添加3D元素</h3><p>您可以使用 <code>3D</code> 形状和网格增强 <code>visionOS</code> 中的窗口，或在人物周围单独显示这些项目。购物应用程序可以在其主窗口中的产品描述旁显示一个物品的 <code>3D</code> 模型。然后，它可以让人们将该物品从窗口中拖出，以查看它在客厅中的外观。考虑如何将深度融入您的应用程序窗口，并在何时添加体积或沉浸式场景。</p>
+<h3 id="（2）探索RealityKit"><a href="#（2）探索RealityKit" class="headerlink" title="（2）探索RealityKit"></a>（2）探索RealityKit</h3><p><code>RealityKit</code> 是苹果的 <code>3D</code> 渲染引擎，用于 <code>visionOS</code>，现在已与 <code>SwiftUI</code> 深度集成，帮助您构建锐利、响应和立体的界面。<code>3D</code> 内容可以绑定到 <code>SwiftUI</code> 视图和状态上，无缝地将 <code>2D</code> 和 <code>3D</code> 视觉元素相结合。如果您的项目已经有3D内容，请考虑使用 <code>RealityKit</code> 来渲染该内容。</p>
+<h3 id="（3）了解更多关于MaterialX着色器的信息"><a href="#（3）了解更多关于MaterialX着色器的信息" class="headerlink" title="（3）了解更多关于MaterialX着色器的信息"></a>（3）了解更多关于MaterialX着色器的信息</h3><p><code>MaterialX</code> 是由领先的电影、视觉效果、娱乐和游戏公司支持的开放标准。了解如何使用 <code>Reality Composer Pro</code> 创建 <code>MaterialX</code> 中的表面和几何着色器。</p>
+<h3 id="（4）了解更多关于USDZ的信息"><a href="#（4）了解更多关于USDZ的信息" class="headerlink" title="（4）了解更多关于USDZ的信息"></a>（4）了解更多关于USDZ的信息</h3><p>开始探索创建 <code>USDZ</code> 资产的工具和技术，以适用于您的 <code>3D</code> 内容。许多 <code>3D</code> 设计程序现在提供 <code>USDZ</code> 导入和导出，从本月晚些时候开始，您可以使用 <code>Reality Composer Pro</code> 为您的项目构建 <code>USDZ</code> 资产。</p>
+<h2 id="四、准备下一级别的音频和视频"><a href="#四、准备下一级别的音频和视频" class="headerlink" title="四、准备下一级别的音频和视频"></a>四、准备下一级别的音频和视频</h2><p>开始考虑您需要对应用程序的音频和视频内容进行的更改，以支持 <code>visionOS</code>：</p>
+<h3 id="（1）准备您的应用程序的音轨"><a href="#（1）准备您的应用程序的音轨" class="headerlink" title="（1）准备您的应用程序的音轨"></a>（1）准备您的应用程序的音轨</h3><p>即使在您当前的应用程序中，空间音频也为您的内容增加了另一个维度。该音频音轨在 <code>visionOS</code> 中的效果更佳，因为它采用空间音频作为默认播放选项。利用 <code>PHASE</code> 和 <code>AVFAudio</code> 框架构建您的音频内容，并将其定位于您的场景中。</p>
+<h3 id="（2）开始为视频资产添加3D支持"><a href="#（2）开始为视频资产添加3D支持" class="headerlink" title="（2）开始为视频资产添加3D支持"></a>（2）开始为视频资产添加3D支持</h3><p>通过以 <code>3D</code> 方式捕捉视频并准备资产以进行播放，为 <code>visionOS</code> 中的立体声观看做好准备。<code>QuickTime</code> 文件格式扩展允许您包括多个视频轨道以进行立体声播放，但在需要时可以回退到单眼播放。使用 <code>AVFoundation</code> 播放这些资产，以使播放自动适应当前设备。</p>
+<h3 id="（3）考虑替代触觉反馈的方案"><a href="#（3）考虑替代触觉反馈的方案" class="headerlink" title="（3）考虑替代触觉反馈的方案"></a>（3）考虑替代触觉反馈的方案</h3><p>如果您的当前应用程序使用触觉反馈提供反馈，请准备在 <code>visionOS</code> 中用声音替换这些触觉反馈。开始构建音频替代品库，或考虑替代类型的反馈。</p>
+<h2 id="五、扩展SharePlay体验"><a href="#五、扩展SharePlay体验" class="headerlink" title="五、扩展SharePlay体验"></a>五、扩展SharePlay体验</h2><p>共享和协作是 <code>visionOS</code> 的核心部分。就像在 <code>macOS</code> 中一样，人们可以与 <code>FaceTime</code> 通话中的其他人共享任何应用程序窗口。而通过 <code>SharePlay</code>，下一代共享体验成为可能。<br>通过识别现在人们可以共享的活动，并使用 <code>Group Activities</code> 框架来实现它们，让您的应用程序为 <code>visionOS</code> 的 <code>SharePlay</code> 做好准备。考虑您可能需要在设备之间传递哪些附加信息，以确保内容保持视觉同步。例如，您可能想要共享窗口的滚动位置以及窗口的内容。头脑风暴一下人们如何在面对面的环境中享受您的应用程序活动，并观看有关设计和构建空间 <code>SharePlay</code> 体验的 <code>WWDC</code> 会议。</p>
+<h2 id="六、优先考虑用户隐私"><a href="#六、优先考虑用户隐私" class="headerlink" title="六、优先考虑用户隐私"></a>六、优先考虑用户隐私</h2><p><code>visionOS</code> 非常重视隐私，并帮助人们保护个人信息。在一些必须访问敏感信息的情况下，应用程序必须得到设备佩戴者的授权。<br>无论您的应用程序是否涉及识别信息、财务数据、位置数据、联系人、内容、购买历史记录、搜索历史记录、诊断或其他信息，请确保遵循隐私的基本原则：</p>
+<h3 id="（1）为您收集的任何数据提供实际的好处"><a href="#（1）为您收集的任何数据提供实际的好处" class="headerlink" title="（1）为您收集的任何数据提供实际的好处"></a>（1）为您收集的任何数据提供实际的好处</h3><p>当有人同意向您提供个人信息时，请确保您的应用程序能够提供真正的价值作为回报。不要仅仅为了收集个人数据而收集它。将数据用于应用程序本身，并不要用于广告。</p>
+<h3 id="（2）清楚地解释您如何使用所收集的信息"><a href="#（2）清楚地解释您如何使用所收集的信息" class="headerlink" title="（2）清楚地解释您如何使用所收集的信息"></a>（2）清楚地解释您如何使用所收集的信息</h3><p>透明地使用人们的数据。在请求隐私敏感技术的授权时，提供清晰的使用说明字符串，帮助人们理解为什么您需要这些数据。在应用商店上的应用程序页面上解释数据。</p>
+<h3 id="（3）保护您收集的数据"><a href="#（3）保护您收集的数据" class="headerlink" title="（3）保护您收集的数据"></a>（3）保护您收集的数据</h3><p>通过加密数据来保护它，以防止在您的应用程序不使用时被访问。如果必须本地存储数据，请在将其写入磁盘之前对其进行加密。</p>
+<h3 id="（4）遵循应用商店审核指南和所有适用的法律"><a href="#（4）遵循应用商店审核指南和所有适用的法律" class="headerlink" title="（4）遵循应用商店审核指南和所有适用的法律"></a>（4）遵循应用商店审核指南和所有适用的法律</h3><p>有关更多信息，请查看应用商店上的应用程序隐私详情<a target="_blank" rel="noopener" href="https://developer.apple.com/app-store/app-privacy-details/">App privacy details on the App Store</a></p>
+<p>有关其他隐私指南，请参阅访问私人数据<a target="_blank" rel="noopener" href="https://developer.apple.com/design/human-interface-guidelines/accessing-private-data/">Accessing private data</a></p>
+<h2 id="七、调整您的应用程序性能。"><a href="#七、调整您的应用程序性能。" class="headerlink" title="七、调整您的应用程序性能。"></a>七、调整您的应用程序性能。</h2><p>使性能成为您开发过程的重要部分。现在优化您的应用程序将使它更容易达到您在将其引入 <code>visionOS</code> 时的性能目标。定期收集性能指标，并使用这些指标来识别回归，以防止它们成为更大的问题。</p>
+<h3 id="（1）注意您的应用程序执行的工作量"><a href="#（1）注意您的应用程序执行的工作量" class="headerlink" title="（1）注意您的应用程序执行的工作量"></a>（1）注意您的应用程序执行的工作量</h3><p>确保您的应用程序执行的工作提供实际的好处。优化算法以最小化您的应用程序对 <code>CPU</code> 和 <code>GPU</code> 资源的消耗。</p>
+<h3 id="（2）识别要测试的代码流和场景"><a href="#（2）识别要测试的代码流和场景" class="headerlink" title="（2）识别要测试的代码流和场景"></a>（2）识别要测试的代码流和场景</h3><p>构建 <code>XCTest</code> 案例以测量您的应用程序最重要的功能的性能。在不同的系统负载下运行这些测试，以确定您的应用程序的行为。</p>
+<h3 id="（3）为您当前的应用程序设置性能和电源目标"><a href="#（3）为您当前的应用程序设置性能和电源目标" class="headerlink" title="（3）为您当前的应用程序设置性能和电源目标"></a>（3）为您当前的应用程序设置性能和电源目标</h3><p>为您的应用程序设置激进的性能目标，并使用 <code>Instruments</code> 监控这些目标。确保您的应用程序不会在执行不必要或重复的任务时浪费电力。</p>
+<h3 id="（4）采用持续集成（CI）工作流程"><a href="#（4）采用持续集成（CI）工作流程" class="headerlink" title="（4）采用持续集成（CI）工作流程"></a>（4）采用持续集成（CI）工作流程</h3><p>设置您的构建在 <code>Xcode Cloud</code> 中运行。通过确保每个提交都维护您的代码库的质量和稳定性来采用CI思维方式。将与性能相关的测试作为测试套件的一部分运行。</p>
+<h2 id="八、运行您的iPad和iPhone应用程序"><a href="#八、运行您的iPad和iPhone应用程序" class="headerlink" title="八、运行您的iPad和iPhone应用程序"></a>八、运行您的iPad和iPhone应用程序</h2><p><code>iPadOS</code> 和 <code>iOS</code> 中提供的相同框架也包含在 <code>visionOS</code> 中。这意味着您的 <code>iPad</code> 和 <code>iPhone</code> 应用程序将在 <code>Apple Vision Pro</code> 上运行，每个应用程序都作为一个可扩展的 <code>2D</code> 窗口，具有其原始的外观和感觉。当应用商店可用时，兼容的应用程序将自动可用，无需采取任何措施，为人们在 <code>visionOS</code> 中提供更多选项。本月晚些时候，您可以使用模拟器和 <code>TestFlight</code> 在 <code>Apple Vision Pro</code> 上测试您的应用程序。如果您的应用程序不适合 <code>Apple Vision Pro</code>，您将能够在 <code>App Store Connect</code> 中编辑其可用性。</p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2023/05/21/20230521/" data-toggle="tooltip" data-placement="top" title="使用 Firebase Hosting 托管 app-ads.txt">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
