@@ -166,6 +166,28 @@
 
 <div class="post-preview">
 
+    <a href="/2024/03/25/20240325/">
+        <h2 class="post-title">
+            老项目添加 gitignore
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            在给老项目添加 .gitignore 文件时，如果你已经有文件被跟踪并提交到了仓库，那么这些文件将不会被 .gitignore 文件自动忽略。为了从 Git 中移除这些文件并使 .gitignore 文件生效，需要运行以下命令：
+123git rm -r --cached .git add .git commit -m &quot;Remove tracked files&quot;...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Qianxing on
+        2024-03-25
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2023/06/06/20230606/">
         <h2 class="post-title">
             为 visionOS 做准备
@@ -403,31 +425,6 @@ SCNPhysicsShape  物理体实体的抽象，用于调整碰撞检测。
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/2023/02/14/202302141/">
-        <h2 class="post-title">
-            Physics Simulation 之 SCNPhysicsBody
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-此系列为官方文档翻译，用于学习SceneKit
-
-概述当SceneKit准备渲染新帧时，会对场景中附加在节点上的物理体执行物理计算。 这些计算包括重力、摩擦和与其他物体的碰撞。 您还可以将自己的力和冲量应用于物体。 在SceneKit完成这些计算之后，它会在渲染帧之前更新节点对象的位置和方向。
-要向节点添加物理，创建和配置SCNPhysicsBody对象，然后将其分配给SCNNode对象的......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-02-14
-    </p>
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -514,7 +511,7 @@ SCNPhysicsShape  物理体实体的抽象，用于调整碰撞检测。
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Qianxing&#39;s Blog 2023 
+                    Copyright &copy; Qianxing&#39;s Blog 2024 
                     <br>
                     Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
                     <span style="display: inline-block; margin: 0 5px;">

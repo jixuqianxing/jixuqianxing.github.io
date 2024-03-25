@@ -13,11 +13,11 @@
 
     <title>
         
-          从 Octopress 迁移到 Hexo - undefined
+          老项目添加 gitignore - undefined
         
     </title>
 
-    <link rel="canonical" href="http://example.com/2016/04/14/从-Octopress-迁移到-Hexo/">
+    <link rel="canonical" href="http://example.com/2024/03/25/20240325/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -147,12 +147,14 @@
                 <div class="post-heading">
                     <div class="tags">
                         
+                          <a class="tag" href="/tags/#git" title="git">git</a>
+                        
                     </div>
-                    <h1>从 Octopress 迁移到 Hexo</h1>
+                    <h1>老项目添加 gitignore</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by Qianxing on
-                        2016-04-14
+                        2024-03-25
                     </span>
                 </div>
             </div>
@@ -171,46 +173,8 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p><img src="https://github.com/jixuqianxing/jixuqianxing.github.com/blob/master/images/octopress-hexo.jpg?raw=true" alt="image"></p>
-<span id="more"></span>
-
-<p>很久没有更新博客了，一方面是之前搭建的基于<a target="_blank" rel="noopener" href="http://octopress.org/">Octopress</a>的博客系统不小心被我整坏了；另一方面是时间有限。</p>
-<p>写博客只是记录自己学过的知识、自己的一些想法感悟等等，一方面帮助自己梳理知识点，另一方面本着分享的精神，希望可以帮助到那些需要的人。</p>
-<p>这次我又重新尝试了修复<a target="_blank" rel="noopener" href="http://octopress.org/">Octopress</a>，但是还是失败了。然后，我尝试找了下其他的博客系统，我发现<a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a>搭建起来特别简单。于是，我放弃了<a target="_blank" rel="noopener" href="http://octopress.org/">Octopress</a>转向了<a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a>。</p>
-<p>整个搭建过程如下：</p>
-<h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><hr>
-<h3 id="1、Git安装"><a href="#1、Git安装" class="headerlink" title="1、Git安装"></a>1、Git安装</h3><p>已安装的跳过。没安装的自行解决吧，很多教程了。</p>
-<h3 id="2、安装node-js"><a href="#2、安装node-js" class="headerlink" title="2、安装node.js"></a>2、安装node.js</h3><p>下载：<a target="_blank" rel="noopener" href="http://nodejs.org/download/">点我打开</a></p>
-<p>下载好了，按照步骤一路安装即可。</p>
-<h2 id="二、安装Hexo"><a href="#二、安装Hexo" class="headerlink" title="二、安装Hexo"></a>二、安装Hexo</h2><hr>
-<h3 id="1、安装Hexo"><a href="#1、安装Hexo" class="headerlink" title="1、安装Hexo"></a>1、安装Hexo</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>npm install -g hexo</span><br></pre></td></tr></table></figure>
-<h3 id="2、搭建自己的博客"><a href="#2、搭建自己的博客" class="headerlink" title="2、搭建自己的博客"></a>2、搭建自己的博客</h3><p>建议新建一个文件夹，方便日后管理。进入到新建的这个目录，执行以下命令：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init</span><br><span class="line"><span class="variable">$ </span>npm install</span><br></pre></td></tr></table></figure>
-<p>不出意外的话，你将得到以下目录。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">|<span class="params">---- config.yml      （配置文件）</span></span><br><span class="line"><span class="params"></span>|---- db.json</span><br><span class="line">|<span class="params">---- node_modules</span></span><br><span class="line"><span class="params"></span>|---- package.json</span><br><span class="line">|<span class="params">---- <span class="keyword">public</span>          （生成的静态博客会放在此处）</span></span><br><span class="line"><span class="params"></span>|---- scaffolds       （博客文章模板）</span><br><span class="line">|<span class="params">---- source          （存放博客文章等）</span></span><br><span class="line"><span class="params">└---- themes          （博客主题存放）</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="三、开始写博客"><a href="#三、开始写博客" class="headerlink" title="三、开始写博客"></a>三、开始写博客</h2><hr>
-<p>当前目录执行：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo new <span class="string">&quot;your post name&quot;</span></span><br><span class="line"><span class="variable">$ </span>cd source/_post</span><br><span class="line"><span class="variable">$ </span>open your post name.md</span><br></pre></td></tr></table></figure>
-
-<p>然后，开始你的写作吧。</p>
-<p>这里补充下，如果你之前没有接触过<a target="_blank" rel="noopener" href="http://www.appinn.com/markdown/">Markdown</a>那么建议你去学习下。推荐一个<a target="_blank" rel="noopener" href="http://www.appinn.com/markdown/">Markdown</a>编辑器<a target="_blank" rel="noopener" href="http://25.io/mou/">Mou</a>，我一直在使用这个来排版博客，小巧很好用。</p>
-<p>写完博客，可以使用下面命令来本地预览博客。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo generate</span><br><span class="line"><span class="variable">$ </span>hexo server</span><br></pre></td></tr></table></figure>
-<p>第一句是生成静态博客，第二句开启预览访问端口。浏览器打开<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> ，即可预览。</p>
-<h2 id="四、部署博客"><a href="#四、部署博客" class="headerlink" title="四、部署博客"></a>四、部署博客</h2><hr>
-<p>在<code>Github</code>建立与你用户名对应的仓库，仓库名必须为<code>your_user_name.github.io</code>。或者也可以将博客部署到<code>Gitcafe</code>上面，做法类似。<code>Github</code>的相关操作，请自行查资料，这里不再详细说明。</p>
-<p>创建好仓库，编辑<code>_config.yml</code>。添加下面类容：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  <span class="symbol">type:</span> github</span><br><span class="line">  <span class="symbol">repository:</span> <span class="symbol">https:</span>/<span class="regexp">/github.com/your</span>_user_name/your_user_name.github.com.git</span><br><span class="line">  <span class="symbol">branch:</span> master</span><br></pre></td></tr></table></figure>
-
-<p>然后，执行下面指令即可完成部署。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo generate</span><br><span class="line"><span class="variable">$ </span>hexo deploy</span><br></pre></td></tr></table></figure>
-
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><hr>
-<p>文中只是简单介绍了<code>Hexo</code>博客的搭建与部署，实际还有很多东西需要修改，比如配置文件<code>_config.yml</code>的修改、主题修改、统计、评论等，这些网上资料很多，这里不再展开。</p>
-<hr>
-<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
-
+                <p>在给老项目添加 .gitignore 文件时，如果你已经有文件被跟踪并提交到了仓库，那么这些文件将不会被 .gitignore 文件自动忽略。为了从 Git 中移除这些文件并使 .gitignore 文件生效，需要运行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;Remove tracked files&quot;</span><br></pre></td></tr></table></figure>
 
                 <hr>
 
@@ -218,13 +182,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/04/29/XcodePlug-ins/" data-toggle="tooltip" data-placement="top" title="备份自己使用到的一些Xcode插件">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2015/03/02/解决Xcode升级后插件不能用的问题/" data-toggle="tooltip" data-placement="top" title="解决Xcode升级后插件不能用的问题">Next Post &rarr;</a>
+                            <a href="/2023/06/06/20230606/" data-toggle="tooltip" data-placement="top" title="为 visionOS 做准备">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
