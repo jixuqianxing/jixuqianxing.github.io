@@ -1,635 +1,1026 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head tag -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
-    <title>
-        
-          
-        
-    </title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-    <link rel="canonical" href="http://example.com/page/3/">
-
-    <!-- Bootstrap Core CSS -->
-    
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/main.css">
 
 
-    <!-- Custom CSS -->
-    
-<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Qianxing&#39;s Blog">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Qianxing&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Qianxing">
+<meta name="twitter:card" content="summary">
 
 
-    <!-- Pygments Highlight CSS -->
-    
-<link rel="stylesheet" href="/css/highlight.css">
+<link rel="canonical" href="http://example.com/page/3/">
 
 
-    <!-- Custom Fonts -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/3/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Qianxing's Blog</title>
+  
 
 
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-<meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
 
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
 
-                    
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
     </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
+  </div>
 
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
+  <div class="site-meta">
 
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Qianxing's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-    <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Qianxing&#39;s Blog</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading"></span>
-                </div>
-            </div>
-        </div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 </header>
-
-
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
         
-
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
-
-
-<div class="post-preview">
-
-    <a href="/2016/09/09/20160909/">
-        <h2 class="post-title">
-            如何优雅地拦截按钮事件
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            关于这个标题，起因是这样的。
-最近一次做项目需求时，遇到这样一个需求，就是本来我们App是必须注册或者第三方登录才可以使用，现在希望不登录也可以浏览App里面的内容，只是在需要的时候才提示登录，并且在用户没有登录的情况下，用户选择并登录成功了，程序需自动完成用户操作登录前的操作。比如购买商品时没有登录，用户登录成功后，直接跳转至订单确认页面。
-
-
-在接到这个需求时，我们的App功能已经很多了......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2016-09-09
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/05/18/Teamtalk1/">
-        <h2 class="post-title">
-            如何试用Teamtalk iOS端源码
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-
-
-
-什么是Teamtalk？首先，我想向Teamtalk开源团队致敬，感谢你们的开源精神！致敬！
-什么是Teamtalk？Teamtalk是蘑菇街开源的一套即时通讯系统。通俗的说，就是可以拿它来做即时通讯，而且跨平台做的比较好。
-
-为什么写这篇文章？因为，在使用过程中遇到很多麻烦。踩着坑过来，现在我是来填坑的。希望帮助到一些人，能让大家按照修改，快速用起来。不过还是希望官方能够处理掉啊，......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2016-05-18
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/05/03/autolayout-example/">
-        <h2 class="post-title">
-            三个固定宽高的视图如何添加约束做到平分屏幕？
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-
-
-小引前段时间面试，遇到这样一个布局问题。这个问题如果通过手写代码，或者Storyboard、XIB加代码，都是很简单就可以实现的。但是，这个问题怎么会问的这么简单呢？前提是，不能写代码。
-下面说说我想到的一些不需要写代码的布局方案，如果大家有更好的解决方案，欢迎评论讨论。
-
-问题分析三个等宽等高的View不管屏幕旋转，还是屏幕尺寸变化，这三个View都要做到平分屏幕。简单画个草图就可以......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2016-05-03
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/04/29/XcodePlug-ins/">
-        <h2 class="post-title">
-            备份自己使用到的一些Xcode插件
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            在这里记录下自己用到的一些好的Xcode插件，方便以后换电脑或者重装。
-
-
-1.VVDocumenter-Xcode
-
-2.RTImageAssets
-
-3.KSImageNamed-Xcode
-
-4.XAlign
-
-相关阅读
-《解决Xcode升级后插件不能用的问题》
-
-
-原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | Creative Commons BY-NC-ND 3.0
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2016-04-29
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/04/14/从-Octopress-迁移到-Hexo/">
-        <h2 class="post-title">
-            从 Octopress 迁移到 Hexo
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-
-
-很久没有更新博客了，一方面是之前搭建的基于Octopress的博客系统不小心被我整坏了；另一方面是时间有限。
-写博客只是记录自己学过的知识、自己的一些想法感悟等等，一方面帮助自己梳理知识点，另一方面本着分享的精神，希望可以帮助到那些需要的人。
-这次我又重新尝试了修复Octopress，但是还是失败了。然后，我尝试找了下其他的博客系统，我发现Hexo搭建起来特别简单。于是，我放弃了Oct......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2016-04-14
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/03/02/解决Xcode升级后插件不能用的问题/">
-        <h2 class="post-title">
-            解决Xcode升级后插件不能用的问题
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            更新内容：
-使用下面这句命令，就不再需要手动处理了：
-1find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I&#123;&#125; defaults write &#123;&#125; DVTPlugInCompatibilit......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2015-03-02
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/02/03/如何给UITextView添加placeholder/">
-        <h2 class="post-title">
-            如何给UITextView添加placeholder
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            引子实际开发过程中，我们可能会使用到输入框，一般的需求我们都可以直接用UITextField来解决，我们都知道UITextField有placeholder属性，他可以提示用户正确的输入格式。但是，UITextField只支持单行输入，如果我们想做一个跟iMessage发送消息一样的输入框，或者新浪微博里面发微博的输入框，UITextField就无法满需求。
-
-
-一个可行的解决办法是使用UI......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2015-02-03
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/01/26/你的Cocoapods是最新的吗？/">
-        <h2 class="post-title">
-            你的Cocoapods是最新的吗？
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-很多人在电脑系统更新到 Mac OS X Yosemite 时候，原来好用的Cocoapods罢工了。于是，按照网上的教程重装一遍，又可以重新使用了。
-
-
-但是，你确定你的Cocoapods好用？我们可以测试一下，在终端执行以下命令：
-1pod search AFNetworking
-
-如果，你搜索的结果跟下面这张图片里面的结果一样。那么恭喜你！你的Cocoapods是好用的。
-
-需要提醒......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2015-01-26
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/01/19/如何不写一句代码就可以制作一个圆形头像/">
-        <h2 class="post-title">
-            如何不写一句代码就可以制作一个圆形头像
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            小引实现圆形头像的方法有很多种，下面就是其中一种简单的方法。
-12345UIImageView *headIcon = [[UIImageView alloc] initWithFrame:CGRectMake(85, 110, 150, 150)];headIcon.layer.cornerRadius  = 75.0f;/* 针对有imageView的需要设置下面属性为 YES 否则圆角......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2015-01-19
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2015/01/06/AFNtworking同步请求解决方法/">
-        <h2 class="post-title">
-            AFNtworking同步请求解决方法
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            很多时候我们在做网络请求的时候，往往要拿到数据后才能去处理进一步的操作。但是，AFNetworking并没有同步的方法，那么我们应该怎么处理呢？
-
-
-
-方法一:12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849- (void)getWeatherData&#123;......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2015-01-06
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-        <li class="previous">
-            <a href="/page/2/">&larr; Newer Posts</a>
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
         </li>
-    
-    
-        <li class="next">
-            <a href="/page/4/">Older Posts &rarr;</a>
+        <li class="sidebar-nav-overview">
+          Overview
         </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Qianxing</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
     
-</ul>
+  </aside>
 
 
+    </div>
 
-                <!-- 如果开启评论功能 -->
-                
+    <div class="main-inner index posts-expand">
 
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2016/09/09/20160909/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/09/09/20160909/" class="post-title-link" itemprop="url">如何优雅地拦截按钮事件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2016-09-09 10:48:44" itemprop="dateCreated datePublished" datetime="2016-09-09T10:48:44+08:00">2016-09-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-09-10 11:04:43" itemprop="dateModified" datetime="2016-09-10T11:04:43+08:00">2016-09-10</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>关于这个标题，起因是这样的。</p>
+<p>最近一次做项目需求时，遇到这样一个需求，就是本来我们<code>App</code>是必须注册或者第三方登录才可以使用，现在希望不登录也可以浏览<code>App</code>里面的内容，只是在需要的时候才提示登录，并且在用户没有登录的情况下，用户选择并登录成功了，程序需自动完成用户操作登录前的操作。比如购买商品时没有登录，用户登录成功后，直接跳转至订单确认页面。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/09/09/20160909/#more" rel="contents">
+                Read more &raquo;
+              </a>
             </div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-                <!-- Featured Tags -->
-                
-
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-
-                            
-
-                            
-
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
-                
-                <!-- Friends Blog -->
-                
-            </div>
+          <!--/noindex-->
         
+      
     </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 </div>
 
 
-    <!-- Footer -->
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                
-                
-                
 
-                
 
-                
+    
 
-                
 
-                
+<div class="post-block">
+  
+  
 
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; Qianxing&#39;s Blog 2024 
-                    <br>
-                    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">浙ICP备2024078640号-1</a>
-                    <br>
-                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a>
-                    <span style="display: inline-block; margin: 0 5px;">
-                        <i class="fa fa-heart"></i>
-                    </span> 
-                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
-                    </iframe>
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2016/05/18/Teamtalk1/">
 
-                </p>
-            </div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/05/18/Teamtalk1/" class="post-title-link" itemprop="url">如何试用Teamtalk iOS端源码</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2016-05-18 22:34:51 / Modified: 23:09:03" itemprop="dateCreated datePublished" datetime="2016-05-18T22:34:51+08:00">2016-05-18</time>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://coding.net/u/jixuqianxing/p/ShareImages/git/raw/master/Images/teamtalk.jpg" alt="image"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/05/18/Teamtalk1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
     </div>
-</footer>
 
-<!-- jQuery -->
+    
+    
+    
 
-<script src="/js/jquery.min.js"></script>
-
-
-<!-- Bootstrap Core JavaScript -->
-
-<script src="/js/bootstrap.min.js"></script>
-
-
-<!-- Custom Theme JavaScript -->
-
-<script src="/js/hux-blog.min.js"></script>
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
--->
-<!--
-    <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
-    </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
-
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://example.com/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-<!-- Google Analytics -->
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
 
 
-<!-- Baidu Tongji -->
+    
 
 
-<!-- Side Catalog -->
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2016/05/03/autolayout-example/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/05/03/autolayout-example/" class="post-title-link" itemprop="url">三个固定宽高的视图如何添加约束做到平分屏幕？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2016-05-03 22:50:54" itemprop="dateCreated datePublished" datetime="2016-05-03T22:50:54+08:00">2016-05-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-05-09 22:57:00" itemprop="dateModified" datetime="2016-05-09T22:57:00+08:00">2016-05-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://coding.net/u/jixuqianxing/p/ShareImages/git/raw/master/Images/02.png" alt="image"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/05/03/autolayout-example/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2016/04/29/XcodePlug-ins/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/04/29/XcodePlug-ins/" class="post-title-link" itemprop="url">备份自己使用到的一些Xcode插件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2016-04-29 09:45:43 / Modified: 16:28:24" itemprop="dateCreated datePublished" datetime="2016-04-29T09:45:43+08:00">2016-04-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在这里记录下自己用到的一些好的<code>Xcode</code>插件，方便以后换电脑或者重装。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/04/29/XcodePlug-ins/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2016/04/14/%E4%BB%8E-Octopress-%E8%BF%81%E7%A7%BB%E5%88%B0-Hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/04/14/%E4%BB%8E-Octopress-%E8%BF%81%E7%A7%BB%E5%88%B0-Hexo/" class="post-title-link" itemprop="url">从 Octopress 迁移到 Hexo</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2016-04-14 17:03:20" itemprop="dateCreated datePublished" datetime="2016-04-14T17:03:20+08:00">2016-04-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-19 22:26:20" itemprop="dateModified" datetime="2016-04-19T22:26:20+08:00">2016-04-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://github.com/jixuqianxing/jixuqianxing.github.com/blob/master/images/octopress-hexo.jpg?raw=true" alt="image"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/04/14/%E4%BB%8E-Octopress-%E8%BF%81%E7%A7%BB%E5%88%B0-Hexo/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/03/02/%E8%A7%A3%E5%86%B3Xcode%E5%8D%87%E7%BA%A7%E5%90%8E%E6%8F%92%E4%BB%B6%E4%B8%8D%E8%83%BD%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/03/02/%E8%A7%A3%E5%86%B3Xcode%E5%8D%87%E7%BA%A7%E5%90%8E%E6%8F%92%E4%BB%B6%E4%B8%8D%E8%83%BD%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">解决Xcode升级后插件不能用的问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-03-02 19:32:55" itemprop="dateCreated datePublished" datetime="2015-03-02T19:32:55+08:00">2015-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-29 16:33:39" itemprop="dateModified" datetime="2016-04-29T16:33:39+08:00">2016-04-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>更新内容：</strong></p>
+<p>使用下面这句命令，就不再需要手动处理了：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find ~<span class="regexp">/Library/</span><span class="title class_">Application</span>\ <span class="title class_">Support</span>/<span class="title class_">Developer</span>/<span class="title class_">Shared</span>/<span class="title class_">Xcode</span>/<span class="title class_">Plug</span>-ins -name <span class="title class_">Info</span>.plist -maxdepth <span class="number">3</span> |<span class="params"> xargs -I&#123;&#125; defaults write &#123;&#125; DVTPlugInCompatibilityUUIDs -array-add `defaults read /Applications/Xcode.app/Contents/Info.plist DVTPlugInCompatibilityUUID`</span></span><br></pre></td></tr></table></figure>
+
+<p>但是，在实际操作时，使用上面的方法也有不起作用的时候。这个时候，我使用了个比较笨的方法，就是直接删除<code>~/&#123;当前用户名&#125;/library/Application Support/Developer/Shared/Xcode/Plug-ins</code>目录下的所有插件，重新装一下插件即可。此方法比较笨拙，如果大家有好的解决方法，欢迎留下评论。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/02/%E8%A7%A3%E5%86%B3Xcode%E5%8D%87%E7%BA%A7%E5%90%8E%E6%8F%92%E4%BB%B6%E4%B8%8D%E8%83%BD%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/02/03/%E5%A6%82%E4%BD%95%E7%BB%99UITextView%E6%B7%BB%E5%8A%A0placeholder/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/02/03/%E5%A6%82%E4%BD%95%E7%BB%99UITextView%E6%B7%BB%E5%8A%A0placeholder/" class="post-title-link" itemprop="url">如何给UITextView添加placeholder</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-02-03 15:10:53" itemprop="dateCreated datePublished" datetime="2015-02-03T15:10:53+08:00">2015-02-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-15 15:31:24" itemprop="dateModified" datetime="2016-04-15T15:31:24+08:00">2016-04-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>实际开发过程中，我们可能会使用到输入框，一般的需求我们都可以直接用UITextField来解决，我们都知道<code>UITextField</code>有<code>placeholder</code>属性，他可以提示用户正确的输入格式。但是，UITextField只支持单行输入，如果我们想做一个跟<code>iMessage</code>发送消息一样的输入框，或者新浪微博里面发微博的输入框，<code>UITextField</code>就无法满需求。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/02/03/%E5%A6%82%E4%BD%95%E7%BB%99UITextView%E6%B7%BB%E5%8A%A0placeholder/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/01/26/%E4%BD%A0%E7%9A%84Cocoapods%E6%98%AF%E6%9C%80%E6%96%B0%E7%9A%84%E5%90%97%EF%BC%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/01/26/%E4%BD%A0%E7%9A%84Cocoapods%E6%98%AF%E6%9C%80%E6%96%B0%E7%9A%84%E5%90%97%EF%BC%9F/" class="post-title-link" itemprop="url">你的Cocoapods是最新的吗？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-01-26 20:56:36" itemprop="dateCreated datePublished" datetime="2015-01-26T20:56:36+08:00">2015-01-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-19 22:37:32" itemprop="dateModified" datetime="2016-04-19T22:37:32+08:00">2016-04-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://github.com/jixuqianxing/jixuqianxing.github.com/blob/master/images/cocoapods-icon.jpg?raw=true" alt="image"></p>
+<p>很多人在电脑系统更新到 Mac OS X Yosemite 时候，原来好用的Cocoapods罢工了。于是，按照网上的教程重装一遍，又可以重新使用了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/01/26/%E4%BD%A0%E7%9A%84Cocoapods%E6%98%AF%E6%9C%80%E6%96%B0%E7%9A%84%E5%90%97%EF%BC%9F/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/01/19/%E5%A6%82%E4%BD%95%E4%B8%8D%E5%86%99%E4%B8%80%E5%8F%A5%E4%BB%A3%E7%A0%81%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E5%9C%86%E5%BD%A2%E5%A4%B4%E5%83%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/01/19/%E5%A6%82%E4%BD%95%E4%B8%8D%E5%86%99%E4%B8%80%E5%8F%A5%E4%BB%A3%E7%A0%81%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E5%9C%86%E5%BD%A2%E5%A4%B4%E5%83%8F/" class="post-title-link" itemprop="url">如何不写一句代码就可以制作一个圆形头像</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-01-19 20:52:32" itemprop="dateCreated datePublished" datetime="2015-01-19T20:52:32+08:00">2015-01-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-27 23:01:21" itemprop="dateModified" datetime="2016-04-27T23:01:21+08:00">2016-04-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="小引"><a href="#小引" class="headerlink" title="小引"></a>小引</h2><p>实现圆形头像的方法有很多种，下面就是其中一种简单的方法。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">UIImageView</span> *headIcon = [[<span class="title class_">UIImageView</span> alloc] <span class="symbol">initWithFrame:</span><span class="title class_">CGRectMake</span>(<span class="number">85</span>, <span class="number">110</span>, <span class="number">150</span>, <span class="number">150</span>)];</span><br><span class="line">headIcon.layer.cornerRadius  = <span class="number">75</span>.0f;</span><br><span class="line"><span class="regexp">/* 针对有imageView的需要设置下面属性为 YES 否则圆角失效 */</span></span><br><span class="line">headIcon.layer.masksToBounds = <span class="variable constant_">YES</span>;</span><br><span class="line">headIcon.image = [<span class="title class_">UIImage</span> <span class="symbol">imageNamed:</span>@<span class="string">&quot;headIcon&quot;</span>];</span><br></pre></td></tr></table></figure>
+
+<p>但是，本文将会介绍一种不需要写这些代码就可以实现圆形头像的方法。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/01/19/%E5%A6%82%E4%BD%95%E4%B8%8D%E5%86%99%E4%B8%80%E5%8F%A5%E4%BB%A3%E7%A0%81%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E5%9C%86%E5%BD%A2%E5%A4%B4%E5%83%8F/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/01/06/AFNtworking%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/01/06/AFNtworking%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">AFNtworking同步请求解决方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-01-06 20:59:59" itemprop="dateCreated datePublished" datetime="2015-01-06T20:59:59+08:00">2015-01-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-27 23:01:45" itemprop="dateModified" datetime="2016-04-27T23:01:45+08:00">2016-04-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>很多时候我们在做网络请求的时候，往往要拿到数据后才能去处理进一步的操作。但是，<code>AFNetworking</code>并没有同步的方法，那么我们应该怎么处理呢？</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/01/06/AFNtworking%E5%90%8C%E6%AD%A5%E8%AF%B7%E6%B1%82%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备2024078640号-1 </a>
+  </div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Qianxing</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
 
 
 
 
 
-<!-- Image to hack wechat -->
-<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
+
+  
+
+
+
+
 
 </body>
-
 </html>

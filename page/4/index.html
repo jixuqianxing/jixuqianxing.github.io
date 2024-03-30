@@ -1,560 +1,868 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head tag -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
-    <title>
-        
-          
-        
-    </title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-    <link rel="canonical" href="http://example.com/page/4/">
-
-    <!-- Bootstrap Core CSS -->
-    
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/main.css">
 
 
-    <!-- Custom CSS -->
-    
-<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Qianxing&#39;s Blog">
+<meta property="og:url" content="http://example.com/page/4/index.html">
+<meta property="og:site_name" content="Qianxing&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Qianxing">
+<meta name="twitter:card" content="summary">
 
 
-    <!-- Pygments Highlight CSS -->
-    
-<link rel="stylesheet" href="/css/highlight.css">
+<link rel="canonical" href="http://example.com/page/4/">
 
 
-    <!-- Custom Fonts -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/4/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Qianxing's Blog</title>
+  
 
 
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-<meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
 
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
 
-                    
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
     </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
+  </div>
 
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
+  <div class="site-meta">
 
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Qianxing's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-    <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Qianxing&#39;s Blog</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading"></span>
-                </div>
-            </div>
-        </div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 </header>
-
-
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
         
+  
+  <aside class="sidebar">
 
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
-
-
-<div class="post-preview">
-
-    <a href="/2014/12/24/Cocoapods重装及报错处理/">
-        <h2 class="post-title">
-            Cocoapods重装及报错处理
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-电脑升级系统后曾经更新过一次Cocoapods，当时用着还挺好。但是，最近一次使用时报了下面的错误：
-
-[!] Error installing AFNetworking[!] &#x2F;usr&#x2F;bin&#x2F;git clone https://github.com/AFNetworking/AFNetworking.git &#x2F;Users&#x2F;…&#x2F;......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-12-24
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/12/23/多人多Storyboard开发/">
-        <h2 class="post-title">
-            多人多Storyboard开发
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            小引最近，经常在 iOS 开发交流群里面看到有人在讨论关于屏幕适配的问题。我之前也写过几篇关于利用AutoLayout来做屏幕适配的文章《AutoLayout之可视化布局》、《AutoLayout之纯代码布局》，讲的虽然比较基础，但都是可以很好的帮助初学者掌握AutoLayout。
-说到屏幕适配，就不得不提Storyboard。虽然，还是有很多人在坚持使用纯代码，但是Size Class的出......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-12-23
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/12/16/AutoLayout之可视化布局/">
-        <h2 class="post-title">
-            AutoLayout之可视化布局
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            写过两篇关于自动布局的文章《AutoLayout实用技巧》和《AutoLayout之纯代码布局》。虽然，《AutoLayout实用技巧》主要是针对Storyboard和XIB写的，但是里面仅仅只是展示了下操作技巧，也是针对有基础的人来学的，并未对如何在Storyboard和XIB中使用AutoLayout做过介绍。所以，打算再写篇文章来介绍一下。
-
-
-
-基础知识1、如何启用 AutoLayo......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-12-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/12/11/AutoLayout之纯代码布局/">
-        <h2 class="post-title">
-            AutoLayout之纯代码布局
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            我之前写过一篇文章《AutoLayout实用技巧》，那篇文章更适合作为提高来学习，并且只适用于Storyboard和xib。那么对于那些用惯了纯代码的人来说，该怎么使用代码来使用AutoLayout呢？答案是，看我的这篇文章~~ ：）
-
-
-
-基础篇VFL (Visual format language) 格式字符介绍
-注：不明白的没关系，后面用到时候会介绍。
-
-主要API1234+ (NSA......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-12-11
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/12/05/Pch文件惹的祸/">
-        <h2 class="post-title">
-            Pch文件惹的祸
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            小引从 Xcode 6 开始，苹果就阉割掉了Precompile Prefix Header（pch文件），阉割并不就意味着不再让你使用了，只是苹果更推荐你不要使用它。如果你非用不可，你可以手动添加来启用它。想必大家都很清楚 pch 文件的作用，但是，在你遇到问题时，你是否会意识到问题是它惹的祸呢？
-
-
-正文此篇文章源起一个报错，如下图所示：
-
-这是在我在 Xcode 6.1 中新建项目导入......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-12-05
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/11/29/iOS8下的UIActionSheet/">
-        <h2 class="post-title">
-            iOS8下的UIActionSheet
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            前段时间做了一个iPad应用，里面用到了图片上传。因此，需要用到UIImagePickerController打开本地图库和开启相机拍照。
-
-
-代码如下：
-12345678910111213141516171819202122- (IBAction)choosePhoto:(id)sender&#123;    UIActionSheet *sheet = [[UIActionSheet a......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-11-29
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/11/28/AutoLayout实用技巧/">
-        <h2 class="post-title">
-            AutoLayout实用技巧
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            前言随着新一代iPhone的推出，苹果也开始大屏化，一下推出了两款大屏iPhone，并且这两款iPhone尺寸也不一样，一个是4.7寸，另一款则是5.5寸，加上之前的3.5寸和4寸，现在已经有四种不同的尺寸了。作为一名iOS开发者，你是不是感到很捉急呢？会不会感觉iPhone也要像安卓那样做着各种机型的适配呢？答案是肯定的，不过你会发现选择iOS开发是多么明智的选择。因为，苹果已经为我们准备......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-11-28
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/11/25/去除布局时的隐式动画效果/">
-        <h2 class="post-title">
-            去除布局时的隐式动画效果
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            在布局UITableViewCell子试图时，如果在layoutSubviews中处理布局，当项目运行时我们经常会看到cell上面的控件在动，这也就是标题所说的隐式动画。虽然说动态效果更能够吸引人，但有时候并非我们所要，那我们应该怎样解决这个问题呢？
-
-解决方法代码示例如下：
-swift版：
-123456789override func layoutSubviews() &#123;    ......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2014-11-25
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-        <li class="previous">
-            <a href="/page/3/">&larr; Newer Posts</a>
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
         </li>
-    
-    
-</ul>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
 
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Qianxing</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
 
-                <!-- 如果开启评论功能 -->
-                
-
-            </div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-                <!-- Featured Tags -->
-                
-
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-
-                            
-
-                            
-
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
-                
-                <!-- Friends Blog -->
-                
-            </div>
-        
+        </div>
+      </div>
     </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2014/12/24/Cocoapods%E9%87%8D%E8%A3%85%E5%8F%8A%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/12/24/Cocoapods%E9%87%8D%E8%A3%85%E5%8F%8A%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86/" class="post-title-link" itemprop="url">Cocoapods重装及报错处理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-12-24 20:44:32" itemprop="dateCreated datePublished" datetime="2014-12-24T20:44:32+08:00">2014-12-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-19 22:37:32" itemprop="dateModified" datetime="2016-04-19T22:37:32+08:00">2016-04-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://github.com/jixuqianxing/jixuqianxing.github.com/blob/master/images/cocoapods-icon.jpg?raw=true" alt="image"></p>
+<p>电脑升级系统后曾经更新过一次Cocoapods，当时用着还挺好。但是，最近一次使用时报了下面的错误：</p>
+<blockquote>
+<p>[!] Error installing AFNetworking<br>[!] &#x2F;usr&#x2F;bin&#x2F;git clone <a target="_blank" rel="noopener" href="https://github.com/AFNetworking/AFNetworking.git">https://github.com/AFNetworking/AFNetworking.git</a> &#x2F;Users&#x2F;…&#x2F;Pods&#x2F;AFNetworking –single-branch –depth 1 –branch 2.2.0<br>Cloning into ‘&#x2F;Users&#x2F;…&#x2F;Pods&#x2F;AFNetworking’…<br>error: RPC failed; result&#x3D;52, HTTP code &#x3D; 0<br>fatal: The remote end hung up unexpectedly</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/12/24/Cocoapods%E9%87%8D%E8%A3%85%E5%8F%8A%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 </div>
 
 
-    <!-- Footer -->
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                
-                
-                
 
-                
 
-                
+    
 
-                
 
-                
+<div class="post-block">
+  
+  
 
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; Qianxing&#39;s Blog 2024 
-                    <br>
-                    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">浙ICP备2024078640号-1</a>
-                    <br>
-                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a>
-                    <span style="display: inline-block; margin: 0 5px;">
-                        <i class="fa fa-heart"></i>
-                    </span> 
-                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
-                    </iframe>
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/">
 
-                </p>
-            </div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">多人多Storyboard开发</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-12-23 20:29:15" itemprop="dateCreated datePublished" datetime="2014-12-23T20:29:15+08:00">2014-12-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-16 23:00:59" itemprop="dateModified" datetime="2016-04-16T23:00:59+08:00">2016-04-16</time>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="小引"><a href="#小引" class="headerlink" title="小引"></a>小引</h2><p>最近，经常在 iOS 开发交流群里面看到有人在讨论关于屏幕适配的问题。我之前也写过几篇关于利用AutoLayout来做屏幕适配的文章<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/12/16/AutoLayout%E4%B9%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B8%83%E5%B1%80/">《AutoLayout之可视化布局》</a>、<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/12/11/AutoLayout%E4%B9%8B%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%B8%83%E5%B1%80/">《AutoLayout之纯代码布局》</a>，讲的虽然比较基础，但都是可以很好的帮助初学者掌握AutoLayout。</p>
+<p>说到屏幕适配，就不得不提Storyboard。虽然，还是有很多人在坚持使用纯代码，但是Size Class的出现就足够引起你对Storyboard的重视了，在使用Size Class时，一个Storyboard相当于九个Storyboard，你可以在这里处理各种屏幕的适配。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
     </div>
-</footer>
 
-<!-- jQuery -->
+    
+    
+    
 
-<script src="/js/jquery.min.js"></script>
-
-
-<!-- Bootstrap Core JavaScript -->
-
-<script src="/js/bootstrap.min.js"></script>
-
-
-<!-- Custom Theme JavaScript -->
-
-<script src="/js/hux-blog.min.js"></script>
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
--->
-<!--
-    <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
-    </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
-
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://example.com/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-<!-- Google Analytics -->
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
 
 
-<!-- Baidu Tongji -->
+    
 
 
-<!-- Side Catalog -->
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2014/12/16/AutoLayout%E4%B9%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B8%83%E5%B1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/12/16/AutoLayout%E4%B9%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B8%83%E5%B1%80/" class="post-title-link" itemprop="url">AutoLayout之可视化布局</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-12-16 20:17:48" itemprop="dateCreated datePublished" datetime="2014-12-16T20:17:48+08:00">2014-12-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-27 23:09:54" itemprop="dateModified" datetime="2016-04-27T23:09:54+08:00">2016-04-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>写过两篇关于自动布局的文章<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">《AutoLayout实用技巧》</a>和<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/12/11/AutoLayout%E4%B9%8B%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%B8%83%E5%B1%80/">《AutoLayout之纯代码布局》</a>。虽然，<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">《AutoLayout实用技巧》</a>主要是针对<code>Storyboard</code>和<code>XIB</code>写的，但是里面仅仅只是展示了下操作技巧，也是针对有基础的人来学的，并未对如何在<code>Storyboard</code>和<code>XIB</code>中使用<code>AutoLayout</code>做过介绍。所以，打算再写篇文章来介绍一下。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/12/16/AutoLayout%E4%B9%8B%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B8%83%E5%B1%80/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2014/12/11/AutoLayout%E4%B9%8B%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%B8%83%E5%B1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/12/11/AutoLayout%E4%B9%8B%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%B8%83%E5%B1%80/" class="post-title-link" itemprop="url">AutoLayout之纯代码布局</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-12-11 19:56:15" itemprop="dateCreated datePublished" datetime="2014-12-11T19:56:15+08:00">2014-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-27 23:05:56" itemprop="dateModified" datetime="2016-04-27T23:05:56+08:00">2016-04-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我之前写过一篇文章<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">《AutoLayout实用技巧》</a>，那篇文章更适合作为提高来学习，并且只适用于<code>Storyboard</code>和<code>xib</code>。那么对于那些用惯了纯代码的人来说，该怎么使用代码来使用<code>AutoLayout</code>呢？答案是，看我的这篇文章~~ ：）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/12/11/AutoLayout%E4%B9%8B%E7%BA%AF%E4%BB%A3%E7%A0%81%E5%B8%83%E5%B1%80/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2014/12/05/Pch%E6%96%87%E4%BB%B6%E6%83%B9%E7%9A%84%E7%A5%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/12/05/Pch%E6%96%87%E4%BB%B6%E6%83%B9%E7%9A%84%E7%A5%B8/" class="post-title-link" itemprop="url">Pch文件惹的祸</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-12-05 19:46:31" itemprop="dateCreated datePublished" datetime="2014-12-05T19:46:31+08:00">2014-12-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-15 09:21:24" itemprop="dateModified" datetime="2016-04-15T09:21:24+08:00">2016-04-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="小引"><a href="#小引" class="headerlink" title="小引"></a>小引</h2><p>从 Xcode 6 开始，苹果就阉割掉了Precompile Prefix Header（pch文件），阉割并不就意味着不再让你使用了，只是苹果更推荐你不要使用它。如果你非用不可，你可以手动添加来启用它。想必大家都很清楚 pch 文件的作用，但是，在你遇到问题时，你是否会意识到问题是它惹的祸呢？</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/12/05/Pch%E6%96%87%E4%BB%B6%E6%83%B9%E7%9A%84%E7%A5%B8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2014/11/29/iOS8%E4%B8%8B%E7%9A%84UIActionSheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/11/29/iOS8%E4%B8%8B%E7%9A%84UIActionSheet/" class="post-title-link" itemprop="url">iOS8下的UIActionSheet</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-11-29 19:30:28" itemprop="dateCreated datePublished" datetime="2014-11-29T19:30:28+08:00">2014-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-15 09:21:14" itemprop="dateModified" datetime="2016-04-15T09:21:14+08:00">2016-04-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>前段时间做了一个iPad应用，里面用到了图片上传。因此，需要用到UIImagePickerController打开本地图库和开启相机拍照。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/11/29/iOS8%E4%B8%8B%E7%9A%84UIActionSheet/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">AutoLayout实用技巧</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-11-28 19:10:31" itemprop="dateCreated datePublished" datetime="2014-11-28T19:10:31+08:00">2014-11-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-27 23:02:58" itemprop="dateModified" datetime="2016-04-27T23:02:58+08:00">2016-04-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随着新一代<code>iPhone</code>的推出，苹果也开始大屏化，一下推出了两款大屏iPhone，并且这两款<code>iPhone</code>尺寸也不一样，一个是4.7寸，另一款则是5.5寸，加上之前的3.5寸和4寸，现在已经有四种不同的尺寸了。作为一名<code>iOS</code>开发者，你是不是感到很捉急呢？会不会感觉<code>iPhone</code>也要像安卓那样做着各种机型的适配呢？答案是肯定的，不过你会发现选择<code>iOS</code>开发是多么明智的选择。因为，苹果已经为我们准备了屏幕适配做好的工具<code>AutoLayout</code>以及iOS8新推出的<code>SizeClass</code>，熟练掌握这两项技术后，你会发现适配也是如此简单。<br>好了，前面都是废话，之所以写这篇文章，是因为身边还有很多朋友在为屏幕适配而烦恼。接下来我不会介绍什么是<code>AutoLayout</code>，如果你还不熟悉<code>AutoLayout</code>那么建议你先查查资料了解一下。另外，如果你对本文或者对本文使用的方法存在疑问，欢迎在文章下面留言。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/11/28/AutoLayout%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2014/11/25/%E5%8E%BB%E9%99%A4%E5%B8%83%E5%B1%80%E6%97%B6%E7%9A%84%E9%9A%90%E5%BC%8F%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/11/25/%E5%8E%BB%E9%99%A4%E5%B8%83%E5%B1%80%E6%97%B6%E7%9A%84%E9%9A%90%E5%BC%8F%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" class="post-title-link" itemprop="url">去除布局时的隐式动画效果</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-11-25 18:52:54" itemprop="dateCreated datePublished" datetime="2014-11-25T18:52:54+08:00">2014-11-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2016-04-27 23:00:56" itemprop="dateModified" datetime="2016-04-27T23:00:56+08:00">2016-04-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在布局<code>UITableViewCell</code>子试图时，如果在<code>layoutSubviews</code>中处理布局，当项目运行时我们经常会看到<code>cell</code>上面的控件在动，这也就是标题所说的隐式动画。虽然说动态效果更能够吸引人，但有时候并非我们所要，那我们应该怎样解决这个问题呢？</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/11/25/%E5%8E%BB%E9%99%A4%E5%B8%83%E5%B1%80%E6%97%B6%E7%9A%84%E9%9A%90%E5%BC%8F%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备2024078640号-1 </a>
+  </div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Qianxing</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
 
 
 
 
 
-<!-- Image to hack wechat -->
-<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
+
+  
+
+
+
+
 
 </body>
-
 </html>

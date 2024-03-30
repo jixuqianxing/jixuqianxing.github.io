@@ -1,625 +1,1567 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head tag -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
-    <title>
-        
-          
-        
-    </title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-    <link rel="canonical" href="http://example.com/page/2/">
-
-    <!-- Bootstrap Core CSS -->
-    
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/main.css">
 
 
-    <!-- Custom CSS -->
-    
-<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Qianxing&#39;s Blog">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Qianxing&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Qianxing">
+<meta name="twitter:card" content="summary">
 
 
-    <!-- Pygments Highlight CSS -->
-    
-<link rel="stylesheet" href="/css/highlight.css">
+<link rel="canonical" href="http://example.com/page/2/">
 
 
-    <!-- Custom Fonts -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Qianxing's Blog</title>
+  
 
 
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-<meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
 
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
 
-                    
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
     </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
+  </div>
 
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
+  <div class="site-meta">
 
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Qianxing's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-    <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Qianxing&#39;s Blog</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading"></span>
-                </div>
-            </div>
-        </div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 </header>
-
-
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
         
+  
+  <aside class="sidebar">
 
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
-
-
-<div class="post-preview">
-
-    <a href="/2023/02/14/202302141/">
-        <h2 class="post-title">
-            Physics Simulation 之 SCNPhysicsBody
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-此系列为官方文档翻译，用于学习SceneKit
-
-概述当SceneKit准备渲染新帧时，会对场景中附加在节点上的物理体执行物理计算。 这些计算包括重力、摩擦和与其他物体的碰撞。 您还可以将自己的力和冲量应用于物体。 在SceneKit完成这些计算之后，它会在渲染帧之前更新节点对象的位置和方向。
-要向节点添加物理，创建和配置SCNPhysicsBody对象，然后将其分配给SCNNode对象的......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-02-14
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/02/14/20230214/">
-        <h2 class="post-title">
-            Physics Simulation
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-此系列为官方文档翻译，用于学习SceneKit
-
-向场景元素添加动态行为；检测接触和碰撞；模拟重力、弹簧和车辆等逼真的效果。
-相关内容物理体1class SCNPhysicsBody
-附加到场景图节点的物理模拟属性。
-1class SCNPhysicsShape
-物理体实体的抽象，用于调整碰撞检测。
-碰撞和接触检测1protocol SCNPhysicsContactDelegate
-在场......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-02-14
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2022/06/22/20220622/">
-        <h2 class="post-title">
-            RoomPlan
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            RoomPlan是WWDC22上发布的一开非常酷的一个库，虽然，第一天的Keynote中都没有任何介绍和相关的技术展示。但是，从开发者网站中我们窥探到了这一新库出现。这个库主要是干嘛的呢？从目前来看，可以使用它扫描房间，它会帮我们创建好房间的3D模型。
-来看下官方的这个演示视频，可以直观的感受下这个库的魅力。
- 
-嗯，看上去貌似对房地产行业和家装行业比较友好。
-下面主要从技术角度介绍下Roo......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2022-06-22
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/10/30/20211030/">
-        <h2 class="post-title">
-            iOS模块化中的通用图片访问器
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            前言
-本文旨在解决，多模块、多 bundle 的图片资源的统一访问方法。
-
-目前，我们开发的项目实现了模块化，不同模块使用的图片资源也都抽到了相应的模块内部，可以共用的图片资源和资源访问器，单独封装成一个基础模块。图片资源使用 xcassets 进行管理，模块通过 Cocoapods 进行管理。需要在每个模块中的 podspec 这样定义资源包：
-123s.resource_bundle =......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2021-10-30
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/10/29/20211029/">
-        <h2 class="post-title">
-            iOS 如何更好的适配异形屏（刘海屏）
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            前言通常我们在适配异形屏的时候，我们可能会使用 safeAreaInsets。使用时机不对的话，safeAreaInsets 的值还会存在问题。或许你可以使用 key window 的 safeAreaInsets ，亦或者你可以通过重写 func safeAreaInsetsDidChange() 方法，在合适的时候来修改布局，但这些操作总是比较麻烦，用起来并不舒服。
-有没有更好的方式呢�......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2021-10-29
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2019/09/24/20190730/">
-        <h2 class="post-title">
-            Sign in with Apple
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            文章已发布至公账号：Sign in with Apple
-
-通过本文，你将了解到是否需要集成Sign in with Apple功能，以及如何集成Sign in with Apple功能。
-
-本文主要讲解以下内容
-
-概览
-集成
-
-概览在 WWDC 2019 上，苹果推出了自家的Sign in with Apple功能，这很Apple。可能苹果看到第三方登录百家争鸣，琢磨着自己也搞了个，这对很......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2019-09-24
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2019/06/10/20190610/">
-        <h2 class="post-title">
-            iOS 13 适配
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-iOS 13 如期而至，适配工作可以开展起来啦。在适配 iOS 13 过程中，遇到了如下一些问题。
-
-1. UITextField 的私有属性 _placeholderLabel 被禁止访问了遇到的第一个崩溃是修改UITextField的placeholder的颜色，历史遗留代码如下：
-1[_textField setValue:self.placeholderColor forKeyPa......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2019-06-10
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2018/06/10/20180610/">
-        <h2 class="post-title">
-            Autorelease对象何时被释放
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            Run Loop在每个事件循环结束后会去自动释放池将所有自动释放对象的引用计数减一，若引用计数变成了0，则会将对象真正销毁掉，回收内存。
-所以，Autorelease对象是在每个事件循环结束后，自动释放池才会对所有自动释放的对象的引用计数减一，若引用计数变成了0，则释放对象，回收内存。因此，若想要早一点释放掉Autorelease对象，那么我们可以在对象外加一个自动释放池。比如，在循环处理数......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2018-06-10
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2018/05/05/20180506/">
-        <h2 class="post-title">
-            iOS 内存管理
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1. 内存区域分布
-堆操作：
-操作系统中有一个存放堆内空闲存储块地址和大小的链表，当程序员申请空间的时候，系统就会遍历整个链表，找到第一个比申请空间大的空闲块节点，系统会将该空闲块从空闲链表中删除，分配给程序，由于申请的空间不一定与找到的空闲块大小相同，多出来剩余的空闲区会被系统重新添加到空闲链表中。当我需要删除对象时，便会根据指针纪录的地址，将这一块区域重新加入到链表中
-栈操作：
-栈区的内......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2018-05-05
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/09/18/20160918/">
-        <h2 class="post-title">
-            屏蔽Xcode 8“烦人”的日志输出
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            更新到Xcode 8 的同学应该都遇到了这个问题：用Xcode 8运行项目，日志会疯狂的刷，就像下面这种图一样：
-
-于是，简单搜寻了下，“歪果仁”给出了如下解决方法：
-
-Edit Scheme-&gt; Run -&gt; Arguments, 在Environment Variables里边添加 OS_ACTIVITY_MODE ＝ disable
-
-
-这样设置之后，就屏蔽掉那些烦人的日志......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2016-09-18
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-        <li class="previous">
-            <a href="/">&larr; Newer Posts</a>
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
         </li>
-    
-    
-        <li class="next">
-            <a href="/page/3/">Older Posts &rarr;</a>
+        <li class="sidebar-nav-overview">
+          Overview
         </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Qianxing</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
     
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/14/202302141/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/02/14/202302141/" class="post-title-link" itemprop="url">Physics Simulation 之 SCNPhysicsBody</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-02-14 14:20:59" itemprop="dateCreated datePublished" datetime="2023-02-14T14:20:59+08:00">2023-02-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-07 21:14:19" itemprop="dateModified" datetime="2023-05-07T21:14:19+08:00">2023-05-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>此系列为官方文档翻译，用于学习<code>SceneKit</code></p>
+</blockquote>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>当<code>SceneKit</code>准备渲染新帧时，会对场景中附加在节点上的物理体执行物理计算。 这些计算包括重力、摩擦和与其他物体的碰撞。 您还可以将自己的力和冲量应用于物体。 在<code>SceneKit</code>完成这些计算之后，它会在渲染帧之前更新节点对象的位置和方向。</p>
+<p>要向节点添加物理，创建和配置<code>SCNPhysicsBody</code>对象，然后将其分配给<code>SCNNode</code>对象的<code>physicsBody</code>属性。 在您应用力或冲量之前，必须将物理体与节点对象关联。</p>
+<h1 id="一个物体的物理特性"><a href="#一个物体的物理特性" class="headerlink" title="一个物体的物理特性"></a>一个物体的物理特性</h1><p>当场景模拟物体时，<code>SCNPhysicsBody</code>类定义物体的物理特性。对于物理模拟，有三个属性最重要：</p>
+<ul>
+<li><code>type</code> 属性，它确定物体如何与模拟中的力和其他物体交互。 静态物体不受力和碰撞影响且无法移动。动态物体受到力和与其他类型物体的碰撞的影响。 运动物体不受力或碰撞影响，但可以直接移动它们，从而可能会影响动态物体发生碰撞。</li>
+<li><code>physicsShape</code> 属性，它定义物体的三维形状以进行碰撞检测。 使用简单形状而不是节点可见几何的详细信息，物理模拟运行得更快。 通常，您将一个物体的物理形状设置为大致匹配节点可见内容的边界框、球体或基本形状。 有关创建物理形状的详细信息，请参阅<code>SCNPhysicsShape</code>。</li>
+<li><code>kinematic()</code> 属性。 对动态物体施加力或扭矩会导致其加速度（或角加速度）与其质量成比例。</li>
 </ul>
+<p>场景中的所有值在<code>SceneKit</code>的物理模拟中使用国际单位制（SI），<code>mass </code>（质量）单位为千克；<code>force </code>（力）、<code>impulse </code>（冲量）和<code>torque </code>（扭矩）的单位是牛顿、牛顿秒和牛顿米；节点位置和大小的距离单位是米。 请注意，您不必尝试为物理量提供逼真的值 - 使用产生您所需行为或游戏玩法的任何值即可。<br>对于动态物体，您可以控制物体受力或碰撞的影响方式。 请参阅定义力如何影响物理体。</p>
+<h1 id="定义物体的类别和碰撞"><a href="#定义物体的类别和碰撞" class="headerlink" title="定义物体的类别和碰撞"></a>定义物体的类别和碰撞</h1><p>当您设计使用物理的游戏时，定义在场景中出现的不同物理对象的各种类别。 为您的应用程序的行为定义不同类别的物理体。 一个物体可以分配给您想要的这些类别中的任意数量。 除了声明自己的类别之外，物理体还声明了它与哪些物体类别交互。</p>
+<p>使用<code>categoryBitMask</code>和<code>collisionBitMask</code>属性定义对象的碰撞行为。 <code>SCNPhysicsCollisionCategory</code> 中列出的常量为这些属性提供了默认值。 此外，使用 <code>contactTestBitMask</code> 属性，您可以定义一对物体生成接触消息（请参见 <code>SCNPhysicsContactDelegate</code> 协议），而不受到碰撞影响的交互。</p>
+<h1 id="相关物理类"><a href="#相关物理类" class="headerlink" title="相关物理类"></a>相关物理类</h1><p>物理场创建影响区域内所有物体的力，例如涡旋和引力。 有关详细信息和可用字段类型的列表，请参阅 <code>SCNPhysicsField</code>。</p>
+<p>您可以添加更高级别的行为，以控制多个物体之间的交互，例如关节和车辆。 有关详细信息和可用行为的列表，请参阅 <code>SCNPhysicsBehavior</code>。</p>
+<p>场景的 <code>physicsWorld</code> 属性持有一个管理影响整个场景的物理特性的 <code>SCNPhysicsWorld</code> 对象。</p>
+<h1 id="物理和渲染循环"><a href="#物理和渲染循环" class="headerlink" title="物理和渲染循环"></a>物理和渲染循环</h1><p><code>SceneKit</code> 将其物理模拟作为 <code>SCNSceneRendererDelegate</code> 中描述的渲染循环的一部分进行评估。在通过此循环的每个步骤中，SceneKit 确定具有附加物理体的所有节点的状态，并为一个时间步长模拟物理对这些物体的影响。例如，通过根据其速度和角速度更新物体的位置或旋转来模拟物理。在模拟物理之后，<code>SceneKit</code> 将物理模拟的结果应用于场景以供显示。</p>
+<p>因为您不仅可以通过物理，而且可以通过动作和隐式和显式定义的动画动画 <code>SceneKit</code> 内容，所以 <code>SceneKit</code> 将物理模拟的结果不应用于场景中 <code>SCNNode</code> 对象，而应用于每个节点的呈现对象，表示其当前显示状态。 因此，更改受物理影响的节点的属性需要特别考虑。</p>
+<p>如果更改受物理影响的节点的变换值或变换的任何其他属性，如位置和旋转之一，<code>SceneKit</code>将重置该节点的物理模拟。如果您只想更改变换的一个组件，同时将其他组件保留为其物理模拟值，请在更改前复制呈现节点的变换，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//将演示节点的变换复制到模型节点。</span><br><span class="line">node.transform = node.presentationNode.transform</span><br><span class="line">//更改新变换中的一个组件</span><br><span class="line">node.eulerAngles.z = newRollValue</span><br></pre></td></tr></table></figure>
 
+<h1 id="相关API"><a href="#相关API" class="headerlink" title="相关API"></a>相关API</h1><h3 id="创建物理体"><a href="#创建物理体" class="headerlink" title="创建物理体"></a>创建物理体</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init(type: SCNPhysicsBodyType, shape: SCNPhysicsShape?)</span><br></pre></td></tr></table></figure>
+<p>使用指定的类型和形状创建物理体。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class func  `static` () -&gt; Self</span><br></pre></td></tr></table></figure>
+<p>创建一个不受力或碰撞影响且不能移动的物理体。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class func dynamic() -&gt; Self</span><br></pre></td></tr></table></figure>
 
+<p>创建一个可以受力和碰撞影响的物理体。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class func kinematic() -&gt; Self</span><br></pre></td></tr></table></figure>
 
-                <!-- 如果开启评论功能 -->
-                
+<p>创建一个不受力或碰撞影响，但在移动时可以引起影响其他物体的碰撞的物理体。</p>
+<h3 id="定义力如何影响物理体"><a href="#定义力如何影响物理体" class="headerlink" title="定义力如何影响物理体"></a>定义力如何影响物理体</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var physicsShape: SCNPhysicsShape?</span><br></pre></td></tr></table></figure>
+<p>定义用于碰撞检测的物理体的实体体积。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var type: SCNPhysicsBodyType</span><br></pre></td></tr></table></figure>
+<p>一个常量，用于确定物理体如何响应力和碰撞。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enum SCNPhysicsBodyType</span><br></pre></td></tr></table></figure>
 
-            </div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-                <!-- Featured Tags -->
-                
+<p>常量，用于确定物理体如何与力和其他物体交互，用于类型属性和创建物理体时。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var velocityFactor: SCNVector3</span><br></pre></td></tr></table></figure>
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
+<p>一个乘数，影响<code>SceneKit</code>将物理模拟计算的平移应用于包含物理体的节点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var angularVelocityFactor: SCNVector3</span><br></pre></td></tr></table></figure>
 
-                        
+<p>一个乘数，影响<code>SceneKit</code>将物理模拟计算的旋转应用于包含物理体的节点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var isAffectedByGravity: Bool</span><br></pre></td></tr></table></figure>
 
-                        
+<p>一个布尔值，用于确定场景中的恒定重力是否加速物体。</p>
+<h3 id="定义物体的物理属性"><a href="#定义物体的物理属性" class="headerlink" title="定义物体的物理属性"></a>定义物体的物理属性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var mass: CGFloat</span><br></pre></td></tr></table></figure>
+<p>物体的质量，以千克为单位。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var charge: CGFloat</span><br></pre></td></tr></table></figure>
 
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
+<p>物体的电荷，以库仑为单位。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var friction: CGFloat</span><br></pre></td></tr></table></figure>
 
-                            
+<p>物体的滑动运动阻力。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var rollingFriction: CGFloat</span><br></pre></td></tr></table></figure>
 
-                            
+<p>物体的滚动运动阻力。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var restitution: CGFloat</span><br></pre></td></tr></table></figure>
 
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
-                
-                <!-- Friends Blog -->
-                
-            </div>
-        
+<p>确定物体在碰撞中损失或获得多少动能的因子。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var damping: CGFloat</span><br></pre></td></tr></table></figure>
+
+<p>减少物体的线性速度的因子。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var angularDamping: CGFloat</span><br></pre></td></tr></table></figure>
+
+<p>减少物体的角速度的因子。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var momentOfInertia: SCNVector3</span><br></pre></td></tr></table></figure>
+
+<p>物体的惯性矩，以包含物体的节点的本地坐标系表示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var usesDefaultMomentOfInertia: Bool</span><br></pre></td></tr></table></figure>
+
+<p>一个布尔值，用于确定<code>SceneKit</code>是否自动计算物体的惯性矩，或允许设置自定义值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var centerOfMassOffset: SCNVector3</span><br></pre></td></tr></table></figure>
+
+<p>物体质心相对于其本地坐标原点的位置。</p>
+<h3 id="处理接触和碰撞"><a href="#处理接触和碰撞" class="headerlink" title="处理接触和碰撞"></a>处理接触和碰撞</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var categoryBitMask: Int</span><br></pre></td></tr></table></figure>
+
+<p>定义该物理体属于的哪些类别的掩码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var contactTestBitMask: Int</span><br></pre></td></tr></table></figure>
+
+<p>定义哪些类别的物体与此物理体发生交集通知。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var collisionBitMask: Int</span><br></pre></td></tr></table></figure>
+
+<p>定义哪些类别的物理体可以与此物理体碰撞。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct SCNPhysicsCollisionCategory</span><br></pre></td></tr></table></figure>
+
+<p>用于物理体的<code>categoryBitMask</code>和<code>collisionBitMask</code>属性的默认值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var continuousCollisionDetectionThreshold: CGFloat</span><br></pre></td></tr></table></figure>
+
+<p>物体必须移动的最小距离，这样<code>SceneKit</code>才能应用更精确（但更昂贵）的算法来检测与其他物体的接触。</p>
+<h3 id="应用力、冲量和扭矩"><a href="#应用力、冲量和扭矩" class="headerlink" title="应用力、冲量和扭矩"></a>应用力、冲量和扭矩</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func applyForce(SCNVector3, asImpulse: Bool)</span><br></pre></td></tr></table></figure>
+
+<p>将力或冲量应用于物体的质心。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func applyForce(SCNVector3, at: SCNVector3, asImpulse: Bool)</span><br></pre></td></tr></table></figure>
+
+<p>将力或冲量应用于物体的特定点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func applyTorque(SCNVector4, asImpulse: Bool)</span><br></pre></td></tr></table></figure>
+
+<p>将净扭矩或角动量变化应用于物体。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func clearAllForces()</span><br></pre></td></tr></table></figure>
+
+<p>取消当前模拟步骤中作用于物理体上的所有连续力和扭矩。</p>
+<h3 id="在运动的物体中交互"><a href="#在运动的物体中交互" class="headerlink" title="在运动的物体中交互"></a>在运动的物体中交互</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var velocity: SCNVector3</span><br></pre></td></tr></table></figure>
+
+<p>描述物理体当前速度（以米&#x2F;秒为单位）和运动方向的向量。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var angularVelocity: SCNVector4</span><br></pre></td></tr></table></figure>
+
+<p>描述物理体当前旋转轴和旋转速度（以弧度&#x2F;秒为单位）的向量。</p>
+<h3 id="定义何时可以移动物体"><a href="#定义何时可以移动物体" class="headerlink" title="定义何时可以移动物体"></a>定义何时可以移动物体</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var isResting: Bool</span><br></pre></td></tr></table></figure>
+
+<p>一个布尔值，指示物理体是否静止。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var allowsResting: Bool</span><br></pre></td></tr></table></figure>
+
+<p>一个布尔值，指定是否可以自动将物理体标记为静止。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func setResting(Bool)</span><br></pre></td></tr></table></figure>
+
+<p>告诉SceneKit是否将物体视为当前正在运动。</p>
+<h3 id="将物理体与其节点同步"><a href="#将物理体与其节点同步" class="headerlink" title="将物理体与其节点同步"></a>将物理体与其节点同步</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func resetTransform()</span><br></pre></td></tr></table></figure>
+<p>更新物体在物理模拟中的位置和方向，以匹配其附加的节点。</p>
+<h3 id="实例属性"><a href="#实例属性" class="headerlink" title="实例属性"></a>实例属性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var angularRestingThreshold: CGFloat</span><br><span class="line">var linearRestingThreshold: CGFloat</span><br></pre></td></tr></table></figure>
+
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><p>详细内容请看：<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/scenekit/scnphysicsbody#topics">SCNPhysicsBody</a></p>
+
+      
     </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 </div>
 
 
-    <!-- Footer -->
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                
-                
-                
 
-                
 
-                
+    
 
-                
 
-                
+<div class="post-block">
+  
+  
 
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; Qianxing&#39;s Blog 2024 
-                    <br>
-                    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">浙ICP备2024078640号-1</a>
-                    <br>
-                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a>
-                    <span style="display: inline-block; margin: 0 5px;">
-                        <i class="fa fa-heart"></i>
-                    </span> 
-                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
-                    </iframe>
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/14/20230214/">
 
-                </p>
-            </div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/02/14/20230214/" class="post-title-link" itemprop="url">Physics Simulation</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-02-14 10:26:59" itemprop="dateCreated datePublished" datetime="2023-02-14T10:26:59+08:00">2023-02-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-07 19:29:21" itemprop="dateModified" datetime="2023-05-07T19:29:21+08:00">2023-05-07</time>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>此系列为官方文档翻译，用于学习<code>SceneKit</code></p>
+</blockquote>
+<p>向场景元素添加动态行为；检测接触和碰撞；模拟重力、弹簧和车辆等逼真的效果。</p>
+<h1 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h1><h3 id="物理体"><a href="#物理体" class="headerlink" title="物理体"></a>物理体</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsBody</span><br></pre></td></tr></table></figure>
+<p>附加到场景图节点的物理模拟属性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsShape</span><br></pre></td></tr></table></figure>
+<p>物理体实体的抽象，用于调整碰撞检测。</p>
+<h3 id="碰撞和接触检测"><a href="#碰撞和接触检测" class="headerlink" title="碰撞和接触检测"></a>碰撞和接触检测</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protocol SCNPhysicsContactDelegate</span><br></pre></td></tr></table></figure>
+<p>在场景中两个物理体之间发生接触或碰撞时可以实现的方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsContact</span><br></pre></td></tr></table></figure>
+<p>有关场景物理模拟中两个物理体之间接触的详细信息。</p>
+<h3 id="场景中的物理"><a href="#场景中的物理" class="headerlink" title="场景中的物理"></a>场景中的物理</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsWorld</span><br></pre></td></tr></table></figure>
+<p>场景中碰撞、重力、关节和其他物理效果的全局模拟。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsField</span><br></pre></td></tr></table></figure>
+<p>应用力（例如引力、电磁力和湍流）于某个作用范围内的物理体的对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsBehavior</span><br></pre></td></tr></table></figure>
+<p>用于关节、车辆模拟和其他包含多个物理体的高级行为的抽象超类。</p>
+<h3 id="关节"><a href="#关节" class="headerlink" title="关节"></a>关节</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsHingeJoint</span><br></pre></td></tr></table></figure>
+<p>连接两个物体并允许它们在单个轴上绕彼此旋转的物理行为。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsSliderJoint</span><br></pre></td></tr></table></figure>
+<p>连接两个物体并允许它们相互滑动并绕它们的连接点旋转的物理行为。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsBallSocketJoint</span><br></pre></td></tr></table></figure>
+<p>连接两个物理体并允许它们在任何方向上绕彼此旋转的物理行为。</p>
+<h3 id="车辆模拟"><a href="#车辆模拟" class="headerlink" title="车辆模拟"></a>车辆模拟</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsVehicle</span><br></pre></td></tr></table></figure>
+<p>修改物理体以表现为汽车、摩托车或其他有轮车辆的物理行为。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class SCNPhysicsVehicleWheel</span><br></pre></td></tr></table></figure>
+<p>与物理车辆行为相关联的单个轮的外观和物理特性。</p>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><p>详细内容请看：<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/scenekit/physics_simulation">Physics Simulation</a></p>
+
+      
     </div>
-</footer>
 
-<!-- jQuery -->
+    
+    
+    
 
-<script src="/js/jquery.min.js"></script>
-
-
-<!-- Bootstrap Core JavaScript -->
-
-<script src="/js/bootstrap.min.js"></script>
-
-
-<!-- Custom Theme JavaScript -->
-
-<script src="/js/hux-blog.min.js"></script>
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
--->
-<!--
-    <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
-    </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
-
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://example.com/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-<!-- Google Analytics -->
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
 
 
-<!-- Baidu Tongji -->
+    
 
 
-<!-- Side Catalog -->
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/22/20220622/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/06/22/20220622/" class="post-title-link" itemprop="url">RoomPlan</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-06-22 11:04:28" itemprop="dateCreated datePublished" datetime="2022-06-22T11:04:28+08:00">2022-06-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-09 07:11:38" itemprop="dateModified" datetime="2023-05-09T07:11:38+08:00">2023-05-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><code>RoomPlan</code>是<code>WWDC22</code>上发布的一开非常酷的一个库，虽然，第一天的<code>Keynote</code>中都没有任何介绍和相关的技术展示。但是，从开发者网站中我们窥探到了这一新库出现。这个库主要是干嘛的呢？从目前来看，可以使用它扫描房间，它会帮我们创建好房间的3D模型。</p>
+<p>来看下官方的这个演示视频，可以直观的感受下这个库的魅力。</p>
+<p><video
+height = 500 
+width = 1000 
+src="https://developer.apple.com/augmented-reality/roomplan/videos/roomplan-large.mp4"> </video></p>
+<p>嗯，看上去貌似对房地产行业和家装行业比较友好。</p>
+<h3 id="下面主要从技术角度介绍下RoomPlan"><a href="#下面主要从技术角度介绍下RoomPlan" class="headerlink" title="下面主要从技术角度介绍下RoomPlan"></a>下面主要从技术角度介绍下RoomPlan</h3><p><code>RoomPlan</code>其实是<code>ARKit</code>的一个再封装，其主要利用的技术是借助<code>LiDAR</code>扫描周围的环境，捕获到场景的深度信息。然后，根据场景几何建立我们的<code>Room</code>网格。<code>RoomPlan</code>还利用影像数据结合AI的能力，对现实物体进行了更加细致的分类、检测和分割。主要可以识别这几大类：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 墙体</span><br><span class="line">public var walls: [CapturedRoom.Surface] &#123; get &#125;</span><br><span class="line">// 门</span><br><span class="line">public var doors: [CapturedRoom.Surface] &#123; get &#125;</span><br><span class="line">// 窗户</span><br><span class="line">public var windows: [CapturedRoom.Surface] &#123; get &#125;</span><br><span class="line">// 开口</span><br><span class="line">public var openings: [CapturedRoom.Surface] &#123; get &#125;</span><br><span class="line">// 物体</span><br><span class="line">public var objects: [CapturedRoom.Object] &#123; get &#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中，Object 下面还有细分的类别：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">public enum Category : Codable, Sendable &#123;</span><br><span class="line">    // 未知</span><br><span class="line">    case unknown</span><br><span class="line">    // 储物柜</span><br><span class="line">    case storage</span><br><span class="line">    // 冰箱</span><br><span class="line">    case refrigerator</span><br><span class="line">    // 厨灶</span><br><span class="line">    case stove</span><br><span class="line">    // 床</span><br><span class="line">    case bed</span><br><span class="line">    // 水槽</span><br><span class="line">    case sink</span><br><span class="line">    // 洗衣机</span><br><span class="line">    case washer</span><br><span class="line">    // 马桶</span><br><span class="line">    case toilet</span><br><span class="line">    // 浴缸</span><br><span class="line">    case bathtub</span><br><span class="line">    // 烤箱</span><br><span class="line">    case oven</span><br><span class="line">    // 洗碟机</span><br><span class="line">    case dishwasher</span><br><span class="line">    // 桌子</span><br><span class="line">    case table</span><br><span class="line">    // 沙发</span><br><span class="line">    case sofa</span><br><span class="line">    // 椅子</span><br><span class="line">    case chair</span><br><span class="line">    // 壁炉</span><br><span class="line">    case fireplace</span><br><span class="line">    // 屏幕</span><br><span class="line">    case screen</span><br><span class="line">    // 楼梯</span><br><span class="line">    case stairs</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，识别的物品还是比较多的，未来苹果应该会增加更多的识别项。</p>
+<h3 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a>如何使用？</h3><p>主要有两种使用方式，一种是直接使用封装好的<code>RoomCaptureView</code>，另一种是通过<code>API</code>接口来自定义实现。下面主要介绍使用<code>RoomCaptureView</code>实现房间的模型创建。</p>
+<p><code>RoomCaptureView</code>是<code>UIView</code>的子类，我们可以轻松地在自己的应用程序中使用它。<code>RoomCaptureView</code>主要负责三件事情：</p>
+<ul>
+<li>根据扫描到的物理环境空间实时在屏幕上进行反馈；</li>
+<li>实时生成当前扫描得到的房间模型；</li>
+<li>在一些特殊情况时候显示对用户的引导；</li>
+</ul>
+<p>使用<code>RoomCaptureView</code>只需要通过四个简单的步骤。</p>
+<ul>
+<li>首先，我们需要在对应的 ViewController 中创建一个 RoomCaptureView 引用。</li>
+<li>其次，我们需要创建对 RoomCaptureSession 配置对象的引用。</li>
+<li>第三，创建开始扫描的函数，在run中置传递相关参数。</li>
+<li>最后，创建停止扫描函数。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">import UIKit</span><br><span class="line">import RoomPlan</span><br><span class="line"> </span><br><span class="line">class RoomCaptureViewController: UIViewController &#123;</span><br><span class="line">    private var roomCaptureView: RoomCaptureView!</span><br><span class="line">    private var roomCaptureSessionConfig: RoomCaptureSession.Configuration </span><br><span class="line"> </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"> </span><br><span class="line">        // Set up after loading the view.</span><br><span class="line">        setupRoomCaptureView()</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    private func setupRoomCaptureView() &#123;</span><br><span class="line">        roomCaptureView = RoomCaptureView(frame: view.bounds)</span><br><span class="line">        roomCaptureView.captureSession.delegate = self</span><br><span class="line">        roomCaptureView.delegate = self</span><br><span class="line"> </span><br><span class="line">        view.insertSubview(roomCaptureView, at: 0)</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    override func viewDidAppear(_ animated: Bool) &#123;</span><br><span class="line">        super.viewDidAppear(animated)</span><br><span class="line">        startSession()</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    override func viewWillDisappear(_ flag: Bool) &#123;</span><br><span class="line">        super.viewWillDisappear(flag)</span><br><span class="line">        stopSession()</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    private func startSession() &#123;</span><br><span class="line">        roomCaptureView?.captureSession.run(configuration: roomCaptureSessionConfig)</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    private func stopSession() &#123;</span><br><span class="line">        roomCaptureView?.captureSession.stop()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以通过遵循<code>RoomCaptureViewDelegate</code>协议，选择扫描结束后是否要进行后期优化处理，以及存储和导出<code>USDZ</code>文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class RoomCaptureViewController: UIViewController, RoomCaptureViewDelegate&#123;</span><br><span class="line">    // ...</span><br><span class="line">    private var finalResults: CapturedRoom?</span><br><span class="line"> </span><br><span class="line">    // 选择扫描结束后是否要进行后期处理</span><br><span class="line">    func captureView(shouldPresent roomDataForProcessing: CapturedRoomData, error: Error?) -&gt; Bool &#123;</span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    // 选择最终模型如何处理</span><br><span class="line">    func captureView(didPresent processedResult: CapturedRoom, error: Error?) &#123;</span><br><span class="line">        // 存储以便后期使用</span><br><span class="line">        finalResults = processdResult</span><br><span class="line">        // 或者导出</span><br><span class="line">        try processdResult.export(to: destinationURL)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上就是<code>RoomCaptureView</code>的完整使用，通过简短的代码就能创建房间空间的模型。</p>
+<h3 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h3><p>对我来说<code>RoomPlan</code>最大的不足在于纹理上，扫描出来的模型文件没有纹理数据。当然这应该也是苹果对这个产品的定位问题吧，也是出于性能和当前实现的效果考量吧。另外，<code>RoomPlan</code>当前还存在一些测量尺寸不准确的<code>bug</code>，以及一些识别不对的<code>bug</code>。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/30/20211030/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/30/20211030/" class="post-title-link" itemprop="url">iOS模块化中的通用图片访问器</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-10-30 16:46:59" itemprop="dateCreated datePublished" datetime="2021-10-30T16:46:59+08:00">2021-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-03-16 18:57:05" itemprop="dateModified" datetime="2023-03-16T18:57:05+08:00">2023-03-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>本文旨在解决，多模块、多 bundle 的图片资源的统一访问方法。</p>
+</blockquote>
+<p>目前，我们开发的项目实现了模块化，不同模块使用的图片资源也都抽到了相应的模块内部，可以共用的图片资源和资源访问器，单独封装成一个基础模块。图片资源使用 <code>xcassets</code> 进行管理，模块通过 <code>Cocoapods</code> 进行管理。需要在每个模块中的 <code>podspec</code> 这样定义资源包：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s.resource_bundle = &#123;</span><br><span class="line">  <span class="string">&#x27;ModuleName&#x27;</span> =&gt; [<span class="string">&#x27;Resources/*&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样定义的好处是，<code>pod</code> 会将资源打包成模块同名的 <code>bundle</code> 文件。不会将资源整合到 <code>main bundle</code> ，这样也可以避免命名冲突的问题。</p>
+<p>当然，如果你喜欢的话，你也可以选择另一种方式，将所有的资源整合到 <code>main bundle</code> 。那么，你可能就没有从非  <code>main bundle</code> 取图片的烦恼，你也可以关闭这篇文章了。</p>
+<p>在介绍这个访问器之前，有必要介绍下 Swift 的下标语法，我在 <code>Swift</code> 中实现的图片资源访问器是基于此语法进行设计。</p>
+<h2 id="Subscript-下标语法"><a href="#Subscript-下标语法" class="headerlink" title="Subscript-下标语法"></a>Subscript-下标语法</h2><p>下标语法可以定义在类、结构体和枚举中，是访问集合、列表或序列中元素的快捷方式。可以使用下标的索引，设置和获取值，而不需要再调用对应的存取方法。</p>
+<p>在使用 <code>Swift</code> 进行开发时，下标语法几乎每天都会用到，比如我们从数组中取一个元素：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> item <span class="operator">=</span> array[i]</span><br></pre></td></tr></table></figure>
+
+<p>从字典中通过 <code>key</code> 来取值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let value = dict[&quot;key&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>下标允许你通过在实例名称后面的方括号中传入一个或者多个索引值来对实例进行查询。它的语法类似于实例方法语法和计算型属性语法。定义下标使用 <code>subscript</code> 关键字，与定义实例方法类似，都是指定一个或多个输入参数和一个返回类型。与实例方法不同的是，下标可以设定为读写或只读。这种行为由 getter 和 setter 实现，类似计算型属性：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">subscript</span>(<span class="params">index</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">get</span> &#123;</span><br><span class="line">      <span class="comment">// 返回一个适当的 Int 类型的值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span>(newValue) &#123;</span><br><span class="line">      <span class="comment">// 执行适当的赋值操作</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>newValue</code> 的类型和下标操作的返回类型相同。如同计算型属性，可以不指定 setter 的参数（<code>newValue</code>）。如果不指定参数，setter 会提供一个名为 <code>newValue</code> 的默认参数。</p>
+<p>如同只读计算型属性，对于只读下标的声明，你可以通过省略 <code>get</code> 关键字和对应的大括号组来进行简写：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">subscript</span>(<span class="params">index</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="comment">// 返回一个适当的 Int 类型的值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更多关于下标语法的信息，你可以通过这个<a target="_blank" rel="noopener" href="https://docs.swift.org/swift-book/LanguageGuide/Subscripts.html">链接</a>了解更全面的信息。</p>
+<h2 id="使用下标语法实现通用的图片访问器"><a href="#使用下标语法实现通用的图片访问器" class="headerlink" title="使用下标语法实现通用的图片访问器"></a>使用下标语法实现通用的图片访问器</h2><p>这里，其实是利用了下标的多维特性来实现。一个类型可以定义多个下标，通过不同索引类型进行对应的重载。</p>
+<p>多维特性示例：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">subscript</span>(<span class="params">row</span>: <span class="type">Int</span>, <span class="params">column</span>: <span class="type">Int</span>) -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">    <span class="keyword">get</span> &#123;</span><br><span class="line">        <span class="built_in">assert</span>(indexIsValid(row: row, column: column), <span class="string">&quot;Index out of range&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> grid[(row <span class="operator">*</span> columns) <span class="operator">+</span> column]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> &#123;</span><br><span class="line">        <span class="built_in">assert</span>(indexIsValid(row: row, column: column), <span class="string">&quot;Index out of range&quot;</span>)</span><br><span class="line">        grid[(row <span class="operator">*</span> columns) <span class="operator">+</span> column] <span class="operator">=</span> newValue</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最终实现大概如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public struct MyImage &#123;</span><br><span class="line">	/// 通过图片名，获取一个 UIImage</span><br><span class="line">    public static subscript(named: String) -&gt; UIImage? &#123;</span><br><span class="line">        UIImage(named: named)</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    /// 通过 module 和图片名，获取一个 UIImage</span><br><span class="line">    public static subscript(module: Any.Type?, named: String) -&gt; UIImage? &#123;</span><br><span class="line">        var buldel: Bundle?</span><br><span class="line">        if let module = module &#123;</span><br><span class="line">            buldel = Bundle.named(String(describing: module.self))</span><br><span class="line">        &#125;</span><br><span class="line">        return UIImage(named: named, in: buldel, compatibleWith: nil)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用法：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从 ModuleName.bundle 中获取图片</span></span><br><span class="line"><span class="type">MyImage</span>[<span class="type">ModuleName</span>.<span class="keyword">self</span>, <span class="string">&quot;image name&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者，从 main bundle 中获取图片</span></span><br><span class="line"><span class="type">MyImage</span>[<span class="string">&quot;image name&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是一个通用的图片访问器的简单实现，这只是一个基础版本，可以支持 <code>png</code> 和 <code>jpg</code> 格式的图片访问了，基本满足我们的需求。</p>
+<p>由于项目需要，我的项目中，对其进行了扩展，使其可以访问诸如 <code>webp</code> 、 <code>gif</code> 等其他格式文件。</p>
+<p>对于共用的图片资源，我们可以封装在 <code>MyImage</code> 模块下，通过脚本生成类似于下面这样的文件：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extension</span> <span class="title class_">MyImage</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> iconX <span class="operator">=</span> <span class="type">MyImage</span>[<span class="type">MyImage</span>.<span class="keyword">self</span>, <span class="string">&quot;icon name&quot;</span>]</span><br><span class="line">  </span><br><span class="line">    <span class="operator">...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>访问这些共用的资源，只需要这样使用即可：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">MyImage</span>.iconX</span><br></pre></td></tr></table></figure>
+
+<p>另外，想要提的一点是，并不是所有的多个模块使用的图片，都适合放到这个基础组件中，这个需要各位自己权衡。比如导航上面的按钮，一些返回按钮或者箭头之类的就很适合放在这里面。</p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/29/20211029/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/29/20211029/" class="post-title-link" itemprop="url">iOS 如何更好的适配异形屏（刘海屏）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-10-29 09:30:57" itemprop="dateCreated datePublished" datetime="2021-10-29T09:30:57+08:00">2021-10-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-03-16 18:52:37" itemprop="dateModified" datetime="2023-03-16T18:52:37+08:00">2023-03-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通常我们在适配异形屏的时候，我们可能会使用 <code>safeAreaInsets</code>。使用时机不对的话，<code>safeAreaInsets</code> 的值还会存在问题。或许你可以使用 <code>key window</code> 的 <code>safeAreaInsets</code> ，亦或者你可以通过重写 <code>func safeAreaInsetsDidChange()</code> 方法，在合适的时候来修改布局，但这些操作总是比较麻烦，用起来并不舒服。</p>
+<p>有没有更好的方式呢🤔？我们先来介绍两个属性。</p>
+<h2 id="layoutMargins"><a href="#layoutMargins" class="headerlink" title="layoutMargins"></a>layoutMargins</h2><blockquote>
+<p>The default spacing to use when laying out content in the view.</p>
+</blockquote>
+<p>iOS 8 新增，通过属性名，我们就了解他是什么了，简单来说就是布局中的边距。</p>
+<p><img src="https://s1.ax1x.com/2023/03/16/pp8Nz4S.png" alt="A view&#39;s margins"></p>
+<h2 id="layoutMarginsGuide"><a href="#layoutMarginsGuide" class="headerlink" title="layoutMarginsGuide"></a>layoutMarginsGuide</h2><blockquote>
+<p>A layout guide representing the view’s margins.</p>
+</blockquote>
+<p>iOS 9 新增，你可以通过<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/appkit/nsview/3622483-layoutmarginsguide?language=occ">链接</a>查看更多相关信息。</p>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>下面将用过三个用例来总结用法。</p>
+<h4 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a>示例一</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> pinkView <span class="operator">=</span> <span class="type">UIView</span>()</span><br><span class="line">pinkView.backgroundColor <span class="operator">=</span> .systemPink</span><br><span class="line">pinkView.translatesAutoresizingMaskIntoConstraints <span class="operator">=</span> <span class="literal">false</span></span><br><span class="line">view.addSubview(pinkView)</span><br><span class="line"></span><br><span class="line">view.addConstraints([</span><br><span class="line">    <span class="type">NSLayoutConstraint</span>(</span><br><span class="line">        item: pinkView,</span><br><span class="line">        attribute: .leftMargin,</span><br><span class="line">        relatedBy: .equal,</span><br><span class="line">        toItem: view,</span><br><span class="line">        attribute: .leftMargin,</span><br><span class="line">        multiplier: <span class="number">1</span>,</span><br><span class="line">        constant: <span class="number">0</span></span><br><span class="line">    ),</span><br><span class="line">    <span class="type">NSLayoutConstraint</span>(</span><br><span class="line">        item: pinkView,</span><br><span class="line">        attribute: .rightMargin,</span><br><span class="line">        relatedBy: .equal,</span><br><span class="line">        toItem: view,</span><br><span class="line">        attribute: .rightMargin,</span><br><span class="line">        multiplier: <span class="number">1</span>,</span><br><span class="line">        constant: <span class="number">0</span></span><br><span class="line">    ),</span><br><span class="line">    <span class="type">NSLayoutConstraint</span>(</span><br><span class="line">        item: pinkView,</span><br><span class="line">        attribute: .topMargin,</span><br><span class="line">        relatedBy: .equal,</span><br><span class="line">        toItem: view,</span><br><span class="line">        attribute: .topMargin,</span><br><span class="line">        multiplier: <span class="number">1</span>,</span><br><span class="line">        constant: <span class="number">0</span></span><br><span class="line">    ),</span><br><span class="line">    <span class="type">NSLayoutConstraint</span>(</span><br><span class="line">        item: pinkView,</span><br><span class="line">        attribute: .bottomMargin,</span><br><span class="line">        relatedBy: .equal,</span><br><span class="line">        toItem: view,</span><br><span class="line">        attribute: .bottomMargin,</span><br><span class="line">        multiplier: <span class="number">1</span>,</span><br><span class="line">        constant: <span class="number">0</span></span><br><span class="line">    )</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">view.layoutMargins <span class="operator">=</span> <span class="type">UIEdgeInsets</span>(top: <span class="number">20</span>, left: <span class="number">20</span>, bottom: <span class="number">20</span>, right: <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<p>可以使用 <code>SnapKit</code> 来简化下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> pinkView = <span class="title class_">UIView</span>()</span><br><span class="line">pinkView.<span class="property">backgroundColor</span> = .<span class="property">systemBlue</span></span><br><span class="line">pinkView.<span class="property">translatesAutoresizingMaskIntoConstraints</span> = <span class="literal">false</span></span><br><span class="line">view.<span class="title function_">addSubview</span>(pinkView)</span><br><span class="line"></span><br><span class="line">pinkView.<span class="property">snp</span>.<span class="property">makeConstraints</span> &#123;</span><br><span class="line">    $0.<span class="property">edges</span>.<span class="title function_">equalTo</span>(self.<span class="property">view</span>.<span class="property">layoutMarginsGuide</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">layoutMargins = <span class="title class_">UIEdgeInsets</span>(<span class="attr">top</span>: <span class="number">20</span>, <span class="attr">left</span>: <span class="number">20</span>, <span class="attr">bottom</span>: <span class="number">20</span>, <span class="attr">right</span>: <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>self.view.layoutMarginsGuide</code> 还可以替换成 <code>self.view.snp.margins</code> ，两种方式等价。</p>
+<p>同时，<code>SnapKit</code> 也可以单独控制四个边距，使用 <code>leftMargin</code> 、<code>rightMargin</code>、<code>topMargin</code>、<code>bottomMargin</code> 单独控制。</p>
+<p><img src="https://s1.ax1x.com/2023/03/16/pp8UCcj.png" alt="用例一-竖屏"><br><img src="https://s1.ax1x.com/2023/03/16/pp8UAH0.png" alt="用例一-横屏"></p>
+<p>可以从上面的图片中看到，虽然我们设置四个边距都是20pt。但是，实际在不同的机型上面的显示，我们肉眼可见的边距是不一样的，横竖屏也是不一样的。</p>
+<p>这里就有必要提一下安全区域了，我们可以看到<code>pinkView</code>的视图完全显示在安全区域内。事实上我们在设置布局的代码时，并没有考虑各种情况的安全区域，但是系统就是为我们加上了。我想，到这里，这种布局的好用之处就不言而喻了。</p>
+<h4 id="用例二"><a href="#用例二" class="headerlink" title="用例二"></a>用例二</h4><p>我们经常会遇到在页面底部添加一个工具条的需求，这个工具条需要做异形屏的适配。也就是在异形屏上，将其底部增加留白，使操作相关元素处在安全区域内。</p>
+<p>我们可以这样来布局，达到适配的目的：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">BottomBar</span>: <span class="title class_">UIView</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>(<span class="params">frame</span>: <span class="type">CGRect</span>) &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</span><br><span class="line">      </span><br><span class="line">        backgroundColor <span class="operator">=</span> .white</span><br><span class="line"></span><br><span class="line">        layoutMargins <span class="operator">=</span> <span class="type">UIEdgeInsets</span>(top: <span class="number">15</span>, left: <span class="number">15</span>, bottom: <span class="number">15</span>, right: <span class="number">15</span>)</span><br><span class="line"></span><br><span class="line">        addSubview(button)</span><br><span class="line"></span><br><span class="line">        button.snp.makeConstraints &#123;</span><br><span class="line">	    <span class="variable">$0</span>.width.equalTo(<span class="number">90</span>)</span><br><span class="line">            <span class="variable">$0</span>.height.equalTo(<span class="number">36</span>)</span><br><span class="line">            <span class="variable">$0</span>.right.equalTo(<span class="keyword">self</span>.snp.rightMargin)</span><br><span class="line">            <span class="variable">$0</span>.top.equalTo(<span class="keyword">self</span>.snp.topMargin)          </span><br><span class="line">            <span class="variable">$0</span>.bottom.equalTo(<span class="keyword">self</span>.snp.bottomMargin)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="operator">...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ViewController</span>: <span class="title class_">UIViewController</span> &#123;</span><br><span class="line"></span><br><span class="line">  	<span class="keyword">let</span> bottomView <span class="operator">=</span> <span class="type">BottomBar</span>()</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">func</span> <span class="title function_">viewDidLoad</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">      </span><br><span class="line">        view.addSubview(bottomView)</span><br><span class="line">        bottomView.snp.makeConstraints &#123;</span><br><span class="line">            <span class="variable">$0</span>.left.bottom.right.equalTo(<span class="number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2023/03/16/pp8Ue4U.png" alt="用例二-竖屏"></p>
+<p><img src="https://s1.ax1x.com/2023/03/16/pp8UnCF.png" alt="用例二-横屏"></p>
+<p>可以看到底部工具条已经适配好了，不需要我们做其他的操作👏👏👏。</p>
+<p>上面的代码，是通过一个尺寸固定的 <code>button</code> 将底部工具条撑满，我们将 <code>button</code> 的底部约束设置成 <code>$0.bottom.equalTo(self.snp.bottomMargin)</code> ，设置容器视图的 <code>layoutMargins.bottom = 15</code> ，实际效果图上面，系统已经为我们自动加上了<code>safeAreaInsets.bottom</code> 。同时，横屏状态下，底部和右边都加上了安全距离🥳🥳🥳。</p>
+<h4 id="用例三"><a href="#用例三" class="headerlink" title="用例三"></a>用例三</h4><p>在用例二的基础上，我们再加上一个工具条。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">view.addSubview(bottomView)</span><br><span class="line">bottomView.snp.makeConstraints &#123;</span><br><span class="line">    <span class="variable">$0</span>.left.bottom.right.equalTo(<span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> bottomView <span class="operator">=</span> <span class="type">BottomBar</span>()</span><br><span class="line">view.addSubview(bottomView)</span><br><span class="line">bottomView.snp.makeConstraints &#123;</span><br><span class="line">    <span class="variable">$0</span>.left.right.equalTo(<span class="number">0</span>)</span><br><span class="line">    <span class="variable">$0</span>.bottom.equalTo(<span class="keyword">self</span>.bottomView.snp.top).offset(<span class="operator">-</span><span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2023/03/16/pp8Uu34.png" alt="用例三"></p>
+<p>明显，我们看到上面那个工具条的底部没有加上 <code>safeAreaInsets.bottom</code> ，但是右边加上了  <code>safeAreaInsets.right</code> 。</p>
+<p>到这里，我们可以得出总结：</p>
+<blockquote>
+<p><strong>当视图的任意边跟屏幕的边缘相交时，使用 layoutMarginsGuide 布局，系统会给相应的边的边距加上安全区域的边距</strong>。</p>
+</blockquote>
+<p>另外，我们可以在后续的使用中来动态调整 <code>layoutMargins</code> 的值，调整后，视图会<strong>实时刷新相应边距</strong>，甚至你可以给这个变化加上动画。</p>
+<p>是不是很Nice?😎</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这种布局方式，还是非常推荐使用的，通过上面的例子，我们就可以体会到它的妙处。在这个过程中，我们不需要考虑 <code>safeAreaInsets</code> ，仅仅只需要理解 <code>layoutMargins</code> 和 <code>layoutMarginsGuide </code>，并正确的使用即可。</p>
+<p>本文只是简单介绍了 <code>layoutMargins</code> 和 <code>layoutMarginsGuide</code> 的一部分使用，算是抛砖引玉。关于它的使用，我想只有你真正使用起来，你才会觉得这样的设计的好处。</p>
+<p>值得注意的是，在 iOS 11 推出了 <code>directionalLayoutMargins</code> ，也就是  <code>layoutMargins</code>  的替代物，使用起来并没有大的差别，仅仅是换了个枚举而已，感兴趣的可以自己去试下。关于布局还有很多内容值得研究，正确的使用系统提供的方法，可以使我们写出更健壮的代码，同时可以让我们很好的适配不同的屏幕，和不同的设备。</p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/09/24/20190730/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/09/24/20190730/" class="post-title-link" itemprop="url">Sign in with Apple</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-09-24 14:04:28" itemprop="dateCreated datePublished" datetime="2019-09-24T14:04:28+08:00">2019-09-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-08 10:50:45" itemprop="dateModified" datetime="2023-05-08T10:50:45+08:00">2023-05-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>文章已发布至公账号：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI0MzgxNDkyNw==&mid=2247483656&idx=1&sn=41c79bb9a971d4aedb89977a24d872a1&chksm=e9660668de118f7e7630d48454734ee872bba7065981db97acb04ac131bb3acb177cc2cdc448&token=395919763&lang=zh_CN#rd">Sign in with Apple</a></p>
+<blockquote>
+<p>通过本文，你将了解到是否需要集成<code>Sign in with Apple</code>功能，以及如何集成<code>Sign in with Apple</code>功能。</p>
+</blockquote>
+<p>本文主要讲解以下内容</p>
+<ul>
+<li>概览</li>
+<li>集成</li>
+</ul>
+<h1 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h1><p>在 WWDC 2019 上，苹果推出了自家的<code>Sign in with Apple</code>功能，这很<code>Apple</code>。可能苹果看到第三方登录百家争鸣，琢磨着自己也搞了个，这对很多第三方登录来说可能是个威胁。</p>
+<p>苹果对<code>Sign in with Apple</code>的介绍：</p>
+<blockquote>
+<p>Sign In with Apple makes it easy for users to sign in to your apps and websites using their Apple ID. Instead of filling out forms, verifying email addresses, and choosing new passwords, they can use Sign In with Apple to set up an account and start using your app right away. All accounts are protected with two-factor authentication for superior security, and Apple will not track users’ activity in your app or website.</p>
+</blockquote>
+<p>使用<code>Sign in with Apple</code>会更加方便、快捷、安全，苹果不会追踪用户在应用中的行为。所以，对于用户来说使用<code>Sign in with Apple</code>会更加安全。</p>
+<p>另外，<code>Sign in with Apple</code>支持跨平台</p>
+<ul>
+<li>Native SDK 支持 iOS&#x2F;MacOS&#x2F;watchOS&#x2F;tvOS</li>
+<li>Javascript SDK 支持  Android, Windows, Web</li>
+</ul>
+<p>话说这个 iOS 13 才支持的功能，我们有必要集成吗？🤔</p>
+<p>看了下面这句话，你或许就有答案了。</p>
+<blockquote>
+<p>Sign In with Apple will be available for beta testing this summer. It will be required as an option for users in apps that support third-party sign-in when it is commercially available later this year.</p>
+</blockquote>
+<p>简单来说，如果你的<code>App</code>没有提供第三方登录，那就不用集成。如果用到了第三方登录，那么需要提供<code>Sign in with Apple</code>。</p>
+<h1 id="集成"><a href="#集成" class="headerlink" title="集成"></a>集成</h1><p>集成 需要以下几个步骤：</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20190730/1.png"></p>
+<h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><p>开启<code>Sign in with Apple</code>功能</p>
+<p>1.登录开发者网站，在需要添加<code>Sign in with Apple</code>功能的<code>Identifier</code>开启功能。</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20190730/2.png"></p>
+<p>2.<code>Xcode</code>里面<code>Signing &amp; Capabilities</code>开启<code>Sign in with Apple</code>功能。</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20190730/3.png"></p>
+<h2 id="二、代码集成"><a href="#二、代码集成" class="headerlink" title="二、代码集成"></a>二、代码集成</h2><blockquote>
+<p>Talk is cheap. Show me the code！😌</p>
+</blockquote>
+<h4 id="1-创建登录按钮"><a href="#1-创建登录按钮" class="headerlink" title="1.创建登录按钮"></a>1.创建登录按钮</h4><p>官方提供了一个<code>ASAuthorizationAppleIDButton</code>（继承自<code>UIControl</code>），使用这个来创建一个登录按钮。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ASAuthorizationAppleIDButton *button = [ASAuthorizationAppleIDButton buttonWithType:ASAuthorizationAppleIDButtonTypeSignIn style:ASAuthorizationAppleIDButtonStyleWhite];</span><br><span class="line">[button addTarget:self</span><br><span class="line">           action:@selector(signInWithApple)</span><br><span class="line"> forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">button.center = self.view.center;</span><br><span class="line">[self.view addSubview:button];</span><br></pre></td></tr></table></figure>
+
+
+<p>这个按钮具有两种文案类型和三个样式，分别是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_ENUM(NSInteger, ASAuthorizationAppleIDButtonType) &#123;</span><br><span class="line">    ASAuthorizationAppleIDButtonTypeSignIn,</span><br><span class="line">    ASAuthorizationAppleIDButtonTypeContinue,</span><br><span class="line"></span><br><span class="line">    ASAuthorizationAppleIDButtonTypeDefault = ASAuthorizationAppleIDButtonTypeSignIn,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">typedef NS_ENUM(NSInteger, ASAuthorizationAppleIDButtonStyle) &#123;</span><br><span class="line">    ASAuthorizationAppleIDButtonStyleWhite,</span><br><span class="line">    ASAuthorizationAppleIDButtonStyleWhiteOutline,</span><br><span class="line">    ASAuthorizationAppleIDButtonStyleBlack,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过图片可能更直观</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20190730/4.jpeg"></p>
+<p>从图上可以看出：</p>
+<ul>
+<li>Apple 提供的登录按钮有三种外观：白色，带有黑色轮廓线的白色和黑色。</li>
+<li>文案有两种：<code>Sign In with Apple</code> 和 <code>Continue with Apple</code>。（具体使用哪个文案，根据自身业务需求来定）<br>另外，按钮宽高默认值为 <code>&#123;width:130, height:30&#125;</code>。</li>
+</ul>
+<p>对于<code>ASAuthorizationAppleIDButton</code>我们能够自定义的东西比较少，比如背景色不能更改，文案只有两种可选，并且值不能修改，可以调整的只有圆角<code>cornerRadius</code>和<code>size</code>。</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20190730/5.png"></p>
+<p>宽高也有一定限制：</p>
+<table>
+<thead>
+<tr>
+<th>Minimum width</th>
+<th>Minimum height</th>
+<th>Minimum margin</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>140pt (140px @1x, 280px @2x)</td>
+<td>30pt (30px @1x, 60px @2x)</td>
+<td>1&#x2F;10 of the button’s height</td>
+</tr>
+</tbody></table>
+<p>具体的设计规范，请参考：<a target="_blank" rel="noopener" href="https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple">Human Interface Guidelines</a></p>
+<p>通过调整<code>size</code>发现还有个新花样。比如这样：</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20190730/6.png"></p>
+<p>是不是发现文字没有了，当然有些童鞋可能会说，变成圆形的了。嗯，圆形还是比较简单设置的，主要的变化还是文字。同时，我们还可以发现，在这种情况下，调大尺寸，里面的苹果 logo 也会跟着变大，适应展示。具体怎么操作，看下面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ASAuthorizationAppleIDButton *button = [ASAuthorizationAppleIDButton buttonWithType:ASAuthorizationAppleIDButtonTypeContinue style:ASAuthorizationAppleIDButtonStyleBlack];</span><br><span class="line">button.bounds = CGRectMake(0, 0, 40, 40);</span><br><span class="line">button.cornerRadius = 20.0f;</span><br></pre></td></tr></table></figure>
+
+<p>不过上面这种方式，不知道审核是否可以通过哈，大家还是慎用，仅作为一种参考。不过，苹果貌似没有强制使用默认的登录按钮。</p>
+<blockquote>
+<p>To help people set up an account and sign in, it’s best to use the familiar buttons that Apple provides for Sign In with Apple.</p>
+</blockquote>
+<p>再补充一点，通过上面这种修改<code>size</code>后，会收到布局警告⚠️，通过警告信息，大致可以看出来，按钮宽度的范围是：<code>&gt;= 130px</code>，高度范围是：<code>&gt;=30px &amp;&amp; &lt;=64px</code>。</p>
+<p><strong>本地化</strong>：必要且重要的一点</p>
+<p>不知道大家有没有发现，按钮显示的文字都是英文的，而且我们不可以修改文字，那我总不能在国内也展示个英文吧🙄。其实，这是个基础性的问题，知道的童鞋可以跳过了，不清楚的童鞋继续看。解决这个问题，很简单，要知道<code>Apple</code>已经为我们做了很多的工作，简单来说，我们只需要添加本地化支持就可以了，此方法适用于一切系统文案，比如我们创建的<code>UIBarButtonSystemItemSave</code>，添加简体中文支持后，他显示的文案就变成 保存 啦。</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20190730/7.jpeg"></p>
+<p>上图就是添加本地化语言，还不会的童鞋，自己网上查查吧，这里不在展开了。</p>
+<p>下面是添加了本地语言之后的效果：</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20190730/8.jpeg"></p>
+<h4 id="2-Authorization-发起授权登录请求"><a href="#2-Authorization-发起授权登录请求" class="headerlink" title="2.Authorization 发起授权登录请求"></a>2.Authorization 发起授权登录请求</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (void)signInWithApple API_AVAILABLE(ios(13.0))</span><br><span class="line">&#123;</span><br><span class="line">    ASAuthorizationAppleIDProvider *provider = [[ASAuthorizationAppleIDProvider alloc] init];</span><br><span class="line">    ASAuthorizationAppleIDRequest *request = [provider createRequest];</span><br><span class="line">    request.requestedScopes = @[ASAuthorizationScopeFullName, ASAuthorizationScopeEmail];</span><br><span class="line">    </span><br><span class="line">    ASAuthorizationController *vc = [[ASAuthorizationController alloc] initWithAuthorizationRequests:@[request]];</span><br><span class="line">    vc.delegate = self;</span><br><span class="line">    vc.presentationContextProvider = self;</span><br><span class="line">    [vc performRequests];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<ul>
+<li><p><code>ASAuthorizationAppleIDProvider</code>这个类比较简单，头文件中可以看出，主要用于创建一个<code>ASAuthorizationAppleIDRequest</code>以及获取对应<code>userID</code>的用户授权状态。在上面的方法中我们主要是用于创建一个<code>ASAuthorizationAppleIDRequest</code>，用户授权状态的获取后面会提到。</p>
+</li>
+<li><p>给创建的<code>request</code>设置<code>requestedScopes</code>，这是个<code>ASAuthorizationScope</code>数组，目前只有两个值，<code>ASAuthorizationScopeFullName</code>和 <code>ASAuthorizationScopeEmail</code>，根据需求去设置即可。</p>
+</li>
+<li><p>然后，创建<code>ASAuthorizationController</code>，它是管理授权请求的控制器，给其设置 <code>delegate</code>和<code>presentationContextProvider</code>，最后启动授权<code>performRequests</code>。</p>
+</li>
+</ul>
+<p><strong>设置上下文</strong></p>
+<p><code>ASAuthorizationControllerPresentationContextProviding</code>就一个方法，主要是告诉<code>ASAuthorizationController</code>展示在哪个<code>window</code>上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - ASAuthorizationControllerPresentationContextProviding</span><br><span class="line"></span><br><span class="line">- (ASPresentationAnchor)presentationAnchorForAuthorizationController:(ASAuthorizationController *)controller API_AVAILABLE(ios(13.0))</span><br><span class="line">&#123;</span><br><span class="line">    return self.view.window;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Verification-授权"><a href="#3-Verification-授权" class="headerlink" title="3.Verification 授权"></a>3.Verification 授权</h4><p>用户发起授权请求后，系统就会弹出用户登录验证的页面。</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20190730/9.jpeg"></p>
+<p>在用户没有同意授权之前或者取消授权之后，点击登录的时候，都会弹出上面这个界面，在这个授权页面，我们可以修改自己的用户名，以及可以选择共享我的电子邮箱或者隐藏邮件地址。这样一来，就可以达到隐藏自己真实信息的目的。</p>
+<p>授权一次后，再次点击登录按钮，则会直接弹出下面这个窗口：</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20190730/10.jpeg"></p>
+<p><strong>授权回调处理</strong></p>
+<p>下面是<code>ASAuthorizationControllerDelegate</code>方法，一个是授权成功的回调，一个是失败的回调。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - ASAuthorizationControllerDelegate</span><br><span class="line"></span><br><span class="line">- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithAuthorization:(ASAuthorization *)authorization API_AVAILABLE(ios(13.0))</span><br><span class="line">&#123;</span><br><span class="line">    if ([authorization.credential isKindOfClass:[ASAuthorizationAppleIDCredential class]])       &#123;</span><br><span class="line">        ASAuthorizationAppleIDCredential *credential = authorization.credential;</span><br><span class="line">        </span><br><span class="line">        NSString *state = credential.state;</span><br><span class="line">        NSString *userID = credential.user;</span><br><span class="line">        NSPersonNameComponents *fullName = credential.fullName;</span><br><span class="line">        NSString *email = credential.email;</span><br><span class="line">        NSString *authorizationCode = [[NSString alloc] initWithData:credential.authorizationCode encoding:NSUTF8StringEncoding]; // refresh token</span><br><span class="line">        NSString *identityToken = [[NSString alloc] initWithData:credential.identityToken encoding:NSUTF8StringEncoding]; // access token</span><br><span class="line">        ASUserDetectionStatus realUserStatus = credential.realUserStatus;</span><br><span class="line">        </span><br><span class="line">        NSLog(@&quot;state: %@&quot;, state);</span><br><span class="line">        NSLog(@&quot;userID: %@&quot;, userID);</span><br><span class="line">        NSLog(@&quot;fullName: %@&quot;, fullName);</span><br><span class="line">        NSLog(@&quot;email: %@&quot;, email);</span><br><span class="line">        NSLog(@&quot;authorizationCode: %@&quot;, authorizationCode);</span><br><span class="line">        NSLog(@&quot;identityToken: %@&quot;, identityToken);</span><br><span class="line">        NSLog(@&quot;realUserStatus: %@&quot;, @(realUserStatus));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithError:(NSError *)error API_AVAILABLE(ios(13.0))</span><br><span class="line">&#123;</span><br><span class="line">    NSString *errorMsg = nil;</span><br><span class="line">    switch (error.code) &#123;</span><br><span class="line">        case ASAuthorizationErrorCanceled:</span><br><span class="line">            errorMsg = @&quot;用户取消了授权请求&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case ASAuthorizationErrorFailed:</span><br><span class="line">            errorMsg = @&quot;授权请求失败&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case ASAuthorizationErrorInvalidResponse:</span><br><span class="line">            errorMsg = @&quot;授权请求响应无效&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case ASAuthorizationErrorNotHandled:</span><br><span class="line">            errorMsg = @&quot;未能处理授权请求&quot;;</span><br><span class="line">            break;</span><br><span class="line">        case ASAuthorizationErrorUnknown:</span><br><span class="line">            errorMsg = @&quot;授权请求失败未知原因&quot;;</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">    NSLog(@&quot;%@&quot;, errorMsg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当我们授权成功后，我们可以在 <code>authorizationController:didCompleteWithAuthorization:</code>这个代理方法中获取到<code>ASAuthorizationAppleIDCredential</code>，通过这个可以拿到用户的<code>userID</code>、<code>email</code>、<code>fullName</code>、<code>authorizationCode</code>、<code>identityToken</code>以及 <code>realUserStatus</code>等信息。</p>
+<p>这些信息具体含义和用途：</p>
+<ul>
+<li><p><code>User ID</code>: Unique, stable, team-scoped user ID，苹果用户唯一标识符，该值在同一个开发者账号下的所有 App 下是一样的，开发者可以用该唯一标识符与自己后台系统的账号体系绑定起来。</p>
+</li>
+<li><p><code>Verification data</code>: Identity token, code，验证数据，用于传给开发者后台服务器，然后开发者服务器再向苹果的身份验证服务端验证本次授权登录请求数据的有效性和真实性，详见 Sign In with Apple REST API。如果验证成功，可以根据 userIdentifier 判断账号是否已存在，若存在，则返回自己账号系统的登录态，若不存在，则创建一个新的账号，并返回对应的登录态给 App。</p>
+</li>
+<li><p><code>Account information</code>: Name, verified email，苹果用户信息，包括全名、邮箱等。</p>
+</li>
+<li><p><code>Real user indicator</code>: High confidence indicator that likely real user，用于判断当前登录的苹果账号是否是一个真实用户，取值有：unsupported、unknown、likelyReal。</p>
+</li>
+</ul>
+<p>失败情况会走<code>authorizationController:didCompleteWithError:</code>这个方法，具体看代码吧。</p>
+<h4 id="5-Handling-Changes"><a href="#5-Handling-Changes" class="headerlink" title="5. Handling Changes"></a>5. Handling Changes</h4><p>通过上面的步骤一个完整的授权，已经完成。BUT，我们还需要处理一些 Case。</p>
+<ul>
+<li>用户终止<code>App</code>中使用<code>Sign in with Apple</code>功能</li>
+<li>用户在设置里注销了<code>AppleId</code></li>
+</ul>
+<p>这些情况下，<code>App</code>需要获取到这些状态，然后做退出登录操作，或者重新登录。<br>我们需要在<code>App</code>启动的时候，通过<code>getCredentialState:completion:</code>来获取当前用户的授权状态。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</span><br><span class="line">    </span><br><span class="line">    if (@available(iOS 13.0, *)) &#123;</span><br><span class="line">        NSString *userIdentifier = 钥匙串中取出的 userIdentifier;</span><br><span class="line">        if (userIdentifier) &#123;</span><br><span class="line">            ASAuthorizationAppleIDProvider *appleIDProvider = [ASAuthorizationAppleIDProvider new];</span><br><span class="line">            [appleIDProvider getCredentialStateForUserID:userIdentifier</span><br><span class="line">                                              completion:^(ASAuthorizationAppleIDProviderCredentialState credentialState,</span><br><span class="line">                                                           NSError * _Nullable error)</span><br><span class="line">            &#123;</span><br><span class="line">                switch (credentialState) &#123;</span><br><span class="line">                    case ASAuthorizationAppleIDProviderCredentialAuthorized:</span><br><span class="line">                        // The Apple ID credential is valid</span><br><span class="line">                        break;</span><br><span class="line">                    case ASAuthorizationAppleIDProviderCredentialRevoked:</span><br><span class="line">                        // Apple ID Credential revoked, handle unlink</span><br><span class="line">                        break;</span><br><span class="line">                    case ASAuthorizationAppleIDProviderCredentialNotFound:</span><br><span class="line">                        // Credential not found, show login UI</span><br><span class="line">                        break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>ASAuthorizationAppleIDProviderCredentialState</code>解析如下：</p>
+<ul>
+<li><p><code>ASAuthorizationAppleIDProviderCredentialAuthorized</code>授权状态有效；</p>
+</li>
+<li><p><code>ASAuthorizationAppleIDProviderCredentialRevoked</code>上次使用苹果账号登录的凭据已被移除，需解除绑定并重新引导用户使用苹果登录；</p>
+</li>
+<li><p><code>ASAuthorizationAppleIDProviderCredentialNotFound</code>未登录授权，直接弹出登录页面，引导用户登录。</p>
+</li>
+</ul>
+<p>另外，在<code>App</code>使用过程中，你还可以通过通知方法来监听<code>revoked</code>状态，可以添加 <code>ASAuthorizationAppleIDProviderCredentialRevokedNotification</code>这个通知，收到这个通知的时候，我们可以：</p>
+<ul>
+<li>Sign user out on this device</li>
+<li>Guide to sign in again</li>
+</ul>
+<p>具体怎么添加和处理，可以根据业务需求来决定。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">- (void)observeAppleSignInState</span><br><span class="line">&#123;</span><br><span class="line">    if (@available(iOS 13.0, *)) &#123;</span><br><span class="line">        [[NSNotificationCenter defaultCenter] addObserver:self</span><br><span class="line">                                                 selector:@selector(handleSignInWithAppleStateChanged:)</span><br><span class="line">                                                     name:ASAuthorizationAppleIDProviderCredentialRevokedNotification</span><br><span class="line">                                                   object:nil];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)handleSignInWithAppleStateChanged:(NSNotification *)notification</span><br><span class="line">&#123;</span><br><span class="line">    // Sign the user out, optionally guide them to sign in again</span><br><span class="line">    NSLog(@&quot;%@&quot;, notification.userInfo);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="One-more-thing"><a href="#One-more-thing" class="headerlink" title="One more thing"></a>One more thing</h2><p>除此之外，苹果还把<code>iCloud KeyChain password</code>集成到了这套<code>API</code>里，我们在使用的时候，只需要在创建<code>request</code>的时候，多创建一个<code>ASAuthorizationPasswordRequest</code>，这样如果<code>KeyChain</code>里面也有登录信息的话，可以直接使用里面保存的用户名和密码进行登录。代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">- (void)perfomExistingAccountSetupFlows API_AVAILABLE(ios(13.0))</span><br><span class="line">&#123;</span><br><span class="line">    ASAuthorizationAppleIDProvider *appleIDProvider = [ASAuthorizationAppleIDProvider new];</span><br><span class="line">    ASAuthorizationAppleIDRequest *authAppleIDRequest = [appleIDProvider createRequest];</span><br><span class="line">    ASAuthorizationPasswordRequest *passwordRequest = [[ASAuthorizationPasswordProvider new] createRequest];</span><br><span class="line">    </span><br><span class="line">    NSMutableArray &lt;ASAuthorizationRequest *&gt;* array = [NSMutableArray arrayWithCapacity:2];</span><br><span class="line">    if (authAppleIDRequest) &#123;</span><br><span class="line">        [array addObject:authAppleIDRequest];</span><br><span class="line">    &#125;</span><br><span class="line">    if (passwordRequest) &#123;</span><br><span class="line">        [array addObject:passwordRequest];</span><br><span class="line">    &#125;</span><br><span class="line">    NSArray &lt;ASAuthorizationRequest *&gt;* requests = [array copy];</span><br><span class="line">    </span><br><span class="line">    ASAuthorizationController *authorizationController = [[ASAuthorizationController alloc] initWithAuthorizationRequests:requests];</span><br><span class="line">    authorizationController.delegate = self;</span><br><span class="line">    authorizationController.presentationContextProvider = self;</span><br><span class="line">    [authorizationController performRequests];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#pragma mark - ASAuthorizationControllerDelegate</span><br><span class="line"></span><br><span class="line">- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithAuthorization:(ASAuthorization *)authorization API_AVAILABLE(ios(13.0))</span><br><span class="line">&#123;</span><br><span class="line">    if ([authorization.credential isKindOfClass:[ASPasswordCredential class]]) &#123;</span><br><span class="line">        ASPasswordCredential *passwordCredential = authorization.credential;</span><br><span class="line">        NSString *userIdentifier = passwordCredential.user;</span><br><span class="line">        NSString *password = passwordCredential.password;</span><br><span class="line">        </span><br><span class="line">        NSLog(@&quot;userIdentifier: %@&quot;, userIdentifier);</span><br><span class="line">        NSLog(@&quot;password: %@&quot;, password);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上就是关于<code>Sign in with Apple</code>的相关内容和集成方法。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/06/10/20190610/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/06/10/20190610/" class="post-title-link" itemprop="url">iOS 13 适配</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-06-10 09:34:51" itemprop="dateCreated datePublished" datetime="2019-06-10T09:34:51+08:00">2019-06-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-03-16 18:32:05" itemprop="dateModified" datetime="2023-03-16T18:32:05+08:00">2023-03-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="https://s1.ax1x.com/2023/03/16/pp8Ydvn.png" alt="pp8Ydvn.png"></p>
+<p>iOS 13 如期而至，适配工作可以开展起来啦。在适配 iOS 13 过程中，遇到了如下一些问题。</p>
+<hr>
+<h2 id="1-UITextField-的私有属性-placeholderLabel-被禁止访问了"><a href="#1-UITextField-的私有属性-placeholderLabel-被禁止访问了" class="headerlink" title="1. UITextField 的私有属性 _placeholderLabel 被禁止访问了"></a>1. UITextField 的私有属性 _placeholderLabel 被禁止访问了</h2><p>遇到的第一个崩溃是修改<code>UITextField</code>的<code>placeholder</code>的颜色，历史遗留代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[_textField setValue:self.placeholderColor forKeyPath:@&quot;_placeholderLabel.textColor&quot;];</span><br></pre></td></tr></table></figure>
+<p>收到的错误信息⚠️</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;Access to UITextField&#x27;s _placeholderLabel ivar is prohibited. This is an application bug&#x27; </span><br></pre></td></tr></table></figure>
+<p>那么这个问题如何处理呢？</p>
+<p>其实，<code>UITextField </code>有个<code>attributedPlaceholder </code>的属性，我们可以自定义这个富文本来达到我们需要的结果。</p>
+<p>修改如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSMutableAttributedString *placeholderString = [[NSMutableAttributedString alloc] initWithString:placeholder attributes:@&#123;NSForegroundColorAttributeName : self.placeholderColor&#125;];</span><br><span class="line">_textField.attributedPlaceholder = placeholderString;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意⚠️，iOS 13 通过 KVC 方式修改私有属性，有 Crush 风险，谨慎使用！</strong></p>
+<hr>
+<h2 id="2-控制器的-modalPresentationStyle-默认值变了"><a href="#2-控制器的-modalPresentationStyle-默认值变了" class="headerlink" title="2. 控制器的 modalPresentationStyle 默认值变了"></a>2. 控制器的 modalPresentationStyle 默认值变了</h2><p>对于这个变化，有点措手不及，直接修改了模态窗口的交互。<br>查阅了下 <code>UIModalPresentationStyle</code>枚举定义，赫然发现<code>iOS 13</code>新加了一个枚举值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_ENUM(NSInteger, UIModalPresentationStyle) &#123;</span><br><span class="line">    UIModalPresentationFullScreen = 0,</span><br><span class="line">    UIModalPresentationPageSheet API_AVAILABLE(ios(3.2)) API_UNAVAILABLE(tvos),</span><br><span class="line">    UIModalPresentationFormSheet API_AVAILABLE(ios(3.2)) API_UNAVAILABLE(tvos),</span><br><span class="line">    UIModalPresentationCurrentContext API_AVAILABLE(ios(3.2)),</span><br><span class="line">    UIModalPresentationCustom API_AVAILABLE(ios(7.0)),</span><br><span class="line">    UIModalPresentationOverFullScreen API_AVAILABLE(ios(8.0)),</span><br><span class="line">    UIModalPresentationOverCurrentContext API_AVAILABLE(ios(8.0)),</span><br><span class="line">    UIModalPresentationPopover API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos),</span><br><span class="line">    UIModalPresentationBlurOverFullScreen API_AVAILABLE(tvos(11.0)) API_UNAVAILABLE(ios) API_UNAVAILABLE(watchos),</span><br><span class="line">    UIModalPresentationNone API_AVAILABLE(ios(7.0)) = -1,</span><br><span class="line">    UIModalPresentationAutomatic API_AVAILABLE(ios(13.0)) = -2,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>是的，就是<code>UIModalPresentationAutomatic </code>，苹果居然直接将<code>modalPresentationStyle </code>默认值改成这个，有点不解，难道是怕我们不知道新加了这个交互？这个也完全违反了开闭原则吧😒。</p>
+<p><strong>如何修改：</strong><br>如果你完全接受苹果的这个默认效果，那就不需要去修改任何代码。<br>如果，你原来就比较细心，已经设置了<code>modalPresentationStyle</code>的值，那你也不会有这个影响。<br>对于想要找回原来默认交互的同学，直接设置如下即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.modalPresentationStyle = UIModalPresentationFullScreen;</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，当 <code>modalPresentationStyle</code> 是 <code>UIModalPresentationAutomatic</code>时，<code>presentationController</code> 是不会消失的。所以，关闭模态窗口的时候，<code>presentationController</code> 的生命周期方法 <code>viewWillAppear:</code> 和 <code>viewDidAppear:</code> 都不会触发。</p>
+<hr>
+<h2 id="3-MPMoviePlayerController-在iOS-13已经不能用了"><a href="#3-MPMoviePlayerController-在iOS-13已经不能用了" class="headerlink" title="3. MPMoviePlayerController 在iOS 13已经不能用了"></a>3. MPMoviePlayerController 在iOS 13已经不能用了</h2><p>在使用到<code>MPMoviePlayerController</code>的地方，直接抛了异常：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;MPMoviePlayerController is no longer available. Use AVPlayerViewController in AVKit.&#x27; </span><br></pre></td></tr></table></figure>
+<p><strong>如何修改：</strong><br>这个没啥好说的，既然不能再用了，那只能换掉了。替代方案就是<code>AVKit</code>里面的那套播放器。</p>
+<hr>
+<h2 id="4-iOS-13-DeviceToken有变化‼️"><a href="#4-iOS-13-DeviceToken有变化‼️" class="headerlink" title="4. iOS 13 DeviceToken有变化‼️"></a>4. iOS 13 DeviceToken有变化‼️</h2><p><strong>这个很重要⚠️</strong><br>可能大多数使用第三方推送的童鞋都不会注意到这个问题，一般现在的第三方推送都是将<code>DeviceToken</code>原始数据丢进去，具体的解析都是第三方内部处理，所以，这些第三方解析<code>DeviceToken</code>的方式正确的话，那就毫无问题。如果你们是通过这种方式来获取<code>DeviceToken</code>，那你需要注意了。<em>（这个坑也是多年前埋下的，很多文章介绍的也是下面这个方法，不规范的做法迟早要还的🤣）</em>，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NSString *dt = [deviceToken description];</span><br><span class="line">dt = [dt stringByReplacingOccurrencesOfString: @&quot;&lt;&quot; withString: @&quot;&quot;];</span><br><span class="line">dt = [dt stringByReplacingOccurrencesOfString: @&quot;&gt;&quot; withString: @&quot;&quot;];</span><br><span class="line">dt = [dt stringByReplacingOccurrencesOfString: @&quot; &quot; withString: @&quot;&quot;];</span><br></pre></td></tr></table></figure>
+<p>这段代码运行在 iOS 13 上已经无法获取到准确的<code>DeviceToken</code>字符串了，iOS 13 通过<code>[deviceToken description]</code>获取到的内容已经变了。</p>
+<blockquote>
+<p>{length &#x3D; 32, bytes &#x3D; 0x778a7995 29f32fb6 74ba8167 b6bddb4e … b4d6b95f 65ac4587 }</p>
+</blockquote>
+<p>可以看到，跟原来我们认识的那个已经完全不一样了。其实，造成这样的问题，主要还是没有使用正确的方式来操作，下面是解决办法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSMutableString *deviceTokenString = [NSMutableString string];</span><br><span class="line">const char *bytes = deviceToken.bytes;</span><br><span class="line">NSInteger count = deviceToken.length;</span><br><span class="line">for (int i = 0; i &lt; count; i++) &#123;</span><br><span class="line">    [deviceTokenString appendFormat:@&quot;%02x&quot;, bytes[i]&amp;0x000000FF];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者你也可以使用友盟提供的方法（2019年7月24日更新）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken</span><br><span class="line">&#123;</span><br><span class="line">    if (![deviceToken isKindOfClass:[NSData class]]) return;</span><br><span class="line">    const unsigned *tokenBytes = [deviceToken bytes];</span><br><span class="line">    NSString *hexToken = [NSString stringWithFormat:@&quot;%08x%08x%08x%08x%08x%08x%08x%08x&quot;,</span><br><span class="line">                          ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),</span><br><span class="line">                          ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),</span><br><span class="line">                          ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];</span><br><span class="line">    NSLog(@&quot;deviceToken:%@&quot;,hexToken);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-Sign-in-with-Apple-提供第三方登录的注意啦⚠️"><a href="#5-Sign-in-with-Apple-提供第三方登录的注意啦⚠️" class="headerlink" title="5.Sign in with Apple (提供第三方登录的注意啦⚠️)"></a>5.Sign in with Apple (提供第三方登录的注意啦⚠️)</h2><p>如果你的应用使用了第三方登录，那么你可能也需要加下 「Sign in with Apple」🤪</p>
+<blockquote>
+<p>Sign In with Apple will be available for beta testing this summer. It will be required as an option for users in apps that support third-party sign-in when it is commercially available later this year.</p>
+</blockquote>
+<p>关于如何集成，可以参考这篇文章：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/23b46dea2076">《Sign in with Apple》</a>。<br>附上官方Demo：<a target="_blank" rel="noopener" href="https://docs-assets.developer.apple.com/published/80ac09c84c/AddingTheSignInWithAppleFlowToYourApp.zip">点我下载</a></p>
+<p>Sign in with Apple 适配时间苹果已经确认，具体更新到了公众号同名文章，可以在文末扫码关注公众号进行查看。</p>
+<hr>
+<h2 id="6-即将废弃的-LaunchImage"><a href="#6-即将废弃的-LaunchImage" class="headerlink" title="6.即将废弃的 LaunchImage"></a>6.即将废弃的 LaunchImage</h2><p>从 iOS 8 的时候，苹果就引入了 <code>LaunchScreen</code>，我们可以设置 <code>LaunchScreen</code>来作为启动页。当然，现在你还可以使用<code>LaunchImage</code>来设置启动图。不过使用<code>LaunchImage</code>的话，要求我们必须提供各种屏幕尺寸的启动图，来适配各种设备，随着苹果设备尺寸越来越多，这种方式显然不够 <code>Flexible</code>。而使用 <code>LaunchScreen</code>的话，情况会变的很简单， <code>LaunchScreen</code>是支持<code>AutoLayout</code>+<code>SizeClass</code>的，所以适配各种屏幕都不在话下。</p>
+<p><strong>注意⚠️</strong>: 从2020年4月开始，所有使⽤ <code>iOS13 SDK</code> 的 <code>App</code> 将必须提供 <code>LaunchScreen</code>，<code>LaunchImage</code>即将退出历史舞台。</p>
+<p>再补充一点，在使用 <code>LaunchScreen</code>的时候，里面用到的图片资源，最好别放在 <code>xcassets</code> 里面，不然在你修改图片后，你会发现真机上并不会生效。</p>
+<hr>
+<h2 id="7-Dark-Mode"><a href="#7-Dark-Mode" class="headerlink" title="7. Dark Mode"></a>7. Dark Mode</h2><blockquote>
+<p>Apps on iOS 13 are expected to support dark mode<br>Use system colors and materials<br>Create your own dynamic colors and images Leverage flexible infrastructure</p>
+</blockquote>
+<hr>
+<p><strong>9月24更新：</strong></p>
+<p>关于<code>Dark Mode</code>，这里补充几点。</p>
+<p>因为苹果目前还没有强制必须适配这个，相信大家的很多项目也没有开始是配这个模式。所以，前期可以强制<code>Light</code>模式。不然，你可能会遇到一些问题，比如<code>UITableViewCell</code>的背景色，如果你没有设置过背景色的话，它在<code>Dark</code>模式下就是黑色的，再比如<code>UIDatePicker</code>文字颜色等等。</p>
+<p>那么怎么强制模式呢？</p>
+<p><code>iOS 13</code>给<code>UIView</code>和<code>UIViewController</code>都添加了一个属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic) UIUserInterfaceStyle overrideUserInterfaceStyle API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);</span><br></pre></td></tr></table></figure>
+<p>给这个属性设置成某一种模式，即可强制显示模式。<br>如果你想修改一处，应用所有地方，那么你只需要设置<code>widow</code>的显示模式即可，这会影响widow下面的所有视图显示模式，这也可以看出显示模式是向下传递的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (@available(iOS 13, *)) &#123;</span><br><span class="line">   [self.window setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="8-iOS-13-UITabBar顶部分割线隐藏"><a href="#8-iOS-13-UITabBar顶部分割线隐藏" class="headerlink" title="8.iOS 13 UITabBar顶部分割线隐藏"></a>8.iOS 13 UITabBar顶部分割线隐藏</h2><p>这个问题源自网友的提问，我的项目中并没有这样的需求，所以之前没有处理。<br>看到网上的一些解决办法，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[UITabBar appearance].layer.borderWidth = 0.0f;</span><br><span class="line">[UITabBar appearance].clipsToBounds = YES;</span><br></pre></td></tr></table></figure>
+<p>看了下，实际起作用的代码是这条代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[UITabBar appearance].clipsToBounds = YES;</span><br></pre></td></tr></table></figure>
+<p>也就是裁剪掉了多余的部分（多余的部分正好就是分割线，后面会提到为什么是分割线），达到隐藏分割线的目的。但是这样设置，<code>TabBar</code>会裁剪子视图，这样我们有大按钮的<code>TabBar</code>，按钮就会被裁剪，造成显示不完整。</p>
+<p>那么在<code>iOS 13</code>上有没有别的办法来隐藏分割线呢？</p>
+<p>肯定是有的，其实解决这样的问题，只要我们能找到这个视图，就可以解决问题。从这个角度出发，我们来看下<code>iOS 13</code>上面<code>TabBar</code>子视图都有哪些。直接打印下<code>subviews</code>即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(</span><br><span class="line">    &quot;&lt;_UIBarBackground: 0x7fbb34007920; frame = (0 0; 414 83);&quot;,</span><br><span class="line">    &quot;&lt;UITabBarButton: 0x7fbb2ed032d0; frame = (2 1; 410 48);&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>我们可以看到内部有个<code>_UIBarBackground </code>私有的东西，分割线肯定跟他有关（总不可能跟<code>UITabBarButton</code>有关吧😝）。然后，我们在看下这个控件的子视图。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(</span><br><span class="line">    &quot;&lt;UIImageView: 0x7fbb2ec09b90; frame = (0 -0.333333; 414 0.333333);&quot;,</span><br><span class="line">    &quot;&lt;UIVisualEffectView: 0x7fbb2ec05a20; frame = (0 0; 414 83); &quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>emmmm🤔，我们看到了一个越界的<code>UIImageView </code>，这个<code>UIImageView </code>就是分割线视图。怎么证明呢？我们加下这个代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[self.tabBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) &#123;</span><br><span class="line">    [obj.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj1, NSUInteger idx, BOOL * _Nonnull stop) &#123;</span><br><span class="line">         if ([obj1 isKindOfClass:[UIImageView class]]) &#123;</span><br><span class="line">             obj1.hidden = YES;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;];</span><br><span class="line"> &#125;];</span><br></pre></td></tr></table></figure>
+<p>运行后，发现分割线隐藏了，也就证明了我们的猜想。当然，上面这个代码不严谨哈，这里主要是提供一种思路，仅作为演示，具体怎么做相信大家都可以的。</p>
+<p><strong>总结下怎么解决：找到它》隐藏它。千万别通过KVC的方式去处理，理由看第一点。</strong></p>
+<h2 id="9-UIWebView被废弃"><a href="#9-UIWebView被废弃" class="headerlink" title="9.UIWebView被废弃"></a>9.UIWebView被废弃</h2><blockquote>
+<p>“No longer supported; please adopt WKWebView.”, ios(2.0, 12.0)</p>
+</blockquote>
+<p>这个大家也尽快适配吧，看到有提到审核被拒的问题。</p>
+<h2 id="10-iOS-13-需增加蓝牙权限描述"><a href="#10-iOS-13-需增加蓝牙权限描述" class="headerlink" title="10.iOS 13 需增加蓝牙权限描述"></a>10.iOS 13 需增加蓝牙权限描述</h2><p>如果你的应用需要使用蓝牙权限，需要在<code>Info.plist</code>里面加上<code>NSBluetoothAlwaysUsageDescription</code>这个<code>key</code>，对应的描述<code>value</code>根据权限的用途来描述即可。</p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/06/10/20180610/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/06/10/20180610/" class="post-title-link" itemprop="url">Autorelease对象何时被释放</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-06-10 10:34:51" itemprop="dateCreated datePublished" datetime="2018-06-10T10:34:51+08:00">2018-06-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-28 09:57:12" itemprop="dateModified" datetime="2023-04-28T09:57:12+08:00">2023-04-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><code>Run Loop</code>在每个事件循环结束后会去自动释放池将所有自动释放对象的引用计数减一，若引用计数变成了0，则会将对象真正销毁掉，回收内存。</p>
+<p>所以，<code>Autorelease</code>对象是在每个事件循环结束后，自动释放池才会对所有自动释放的对象的引用计数减一，若引用计数变成了0，则释放对象，回收内存。因此，若想要早一点释放掉<code>Autorelease</code>对象，那么我们可以在对象外加一个自动释放池。比如，在循环处理数据时，临时变量要快速释放，就应该采用这种方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 0; i &lt; 10000000; ++i) &#123;</span><br><span class="line">   @autoreleasepool &#123;</span><br><span class="line">      TestModel *tempModel = [[TestModel alloc] init];</span><br><span class="line">      // 临时处理</span><br><span class="line">      // ...</span><br><span class="line">   &#125; // 出了这里，就会去遍历该自动释放池了</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/05/05/20180506/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/05/05/20180506/" class="post-title-link" itemprop="url">iOS 内存管理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-05-05 12:48:50" itemprop="dateCreated datePublished" datetime="2018-05-05T12:48:50+08:00">2018-05-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-28 08:39:02" itemprop="dateModified" datetime="2023-04-28T08:39:02+08:00">2023-04-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="1-内存区域分布"><a href="#1-内存区域分布" class="headerlink" title="1. 内存区域分布"></a>1. 内存区域分布</h3><p><img src="https://tbfungeek.github.io/2019/07/06/iOS-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%80%BB%E7%BB%93/00001.png"></p>
+<p>堆操作：</p>
+<p>操作系统中有一个存放堆内空闲存储块地址和大小的链表，当程序员申请空间的时候，系统就会遍历整个链表，找到第一个比申请空间大的空闲块节点，系统会将该空闲块从空闲链表中删除，分配给程序，由于申请的空间不一定与找到的空闲块大小相同，多出来剩余的空闲区会被系统重新添加到空闲链表中。当我需要删除对象时，便会根据指针纪录的地址，将这一块区域重新加入到链表中</p>
+<p>栈操作：</p>
+<p>栈区的内存是系统自动申请的而且是有序的。我们在申请栈空间时就只能在栈的顶部进行申请，当程序执行某个方法（或者函数）时，会从内存中栈（stack）的区域分配出一块内存空间，这个内存空间被称之为帧（frame）用来储存程序在这个方法内声明的变量的值。当应用启动并运行 main 函数时，它的帧会被存在栈的底部。当 main 继续调用另外一个方法时,这个方法的帧又会继续被压入栈的顶部。被调用的方法还可以再调用其他方法，以此类推，会有帧继续被压入栈顶，在被调用的方法结束后，程序会将其帧从栈顶释放。</p>
+<h3 id="2-iOS-引用计数内存管理策略"><a href="#2-iOS-引用计数内存管理策略" class="headerlink" title="2. iOS 引用计数内存管理策略"></a>2. iOS 引用计数内存管理策略</h3><p>引用计数是一种内存管理技术，是指将资源（可以是对象、内存或磁盘空间等等）的被引用次数保存起来，当被引用次数变为零时就将其释放的过程。从而实现资源自动管理的目的。它的做法是:当创建一个对象的实例并在堆上申请内存时，对象的引用计数就为1，在其他对象中需要持有这个对象时，就需要把该对象的引用计数加1，需要释放一个对象时，就将该对象的引用计数减1，对象的引用计数为0时对象的内存会被立刻释放。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">* 当程序调用方法名以alloc、new、copy、mutableCopy开头的方法来创建对象时，该对象的引用计数加1，这种情况我们将拥有所创建的这个对象。</span><br><span class="line">* 当有一个新的指针指向这个对象时（或者调用retain方法时），我们将其引用计数加 1，接收到此调用的对象通常保证在他接收到retain所在的方法中保持有效。</span><br><span class="line">* 除了以alloc、new、copy、mutableCopy 开头的方式创建对象外，其他方式创建的对象都是会被添加到AutoReleasePool，该对象的引用计数不会+1,这种情况下我们不用负责释放对象。</span><br><span class="line">* 当某个指针不再指向这个对象时（或者调用release方法时），我们将其引用计数减 1 </span><br><span class="line">* 当对象的引用计数变为 0 时，说明这个对象不再被任何指针指向了，这个时候我们就可以将对象销毁，回收内存。这时候会调用该对象的dealloc方法。</span><br><span class="line"></span><br><span class="line">* 对于数组类型其引用计数是会自动的相应变化的：</span><br><span class="line">1. 当一个对象被添加进数组时 ，对象的引用计数也会相应的增加。</span><br><span class="line">2. 数组移除指定的对象或者时所有对象，其被移除的对象会 release</span><br><span class="line">3. 当数组销毁时，所有对象均会 release。</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-iOS开发中的内存管理四个黄金法则"><a href="#3-iOS开发中的内存管理四个黄金法则" class="headerlink" title="3. iOS开发中的内存管理四个黄金法则"></a>3. iOS开发中的内存管理四个黄金法则</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 自己生成的对象，自己持有</span><br><span class="line">* 非自己生成的对象，自己也能持有</span><br><span class="line">* 不再需要自己持有的对象的时候，释放</span><br><span class="line">* 非自己持有的对象无法释放</span><br></pre></td></tr></table></figure>
+<h3 id="4-有关引用计数的方法："><a href="#4-有关引用计数的方法：" class="headerlink" title="4. 有关引用计数的方法："></a>4. 有关引用计数的方法：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* —retain：将该对象的引用计数器加1,从而持有该对象，但是并不拥有对象的释放权利。</span><br><span class="line">* —release：将该对象的引用计数器减1,注意只有在计数为0的时候才会释放，而不是说一旦release就释放。</span><br><span class="line">* —autorelease：调用 autorelease 后，对象不会被立即释放，而是注册到 autoreleasepool 中，经过一段时间后 pool结束，此时调用release方法，引用计数减1。</span><br><span class="line">* —retainCount：返回该对象的引用计数的值。</span><br><span class="line">* dealloc: 当一个对象一个拥有者都没有的话，dealloc就会被自动调用，dealloc方法的角色是释放对象自己的内存，并且销毁他所拥有的资源，包括所有对象变量的拥有权。</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-iOS中的变量标识符-amp-属性标识符"><a href="#5-iOS中的变量标识符-amp-属性标识符" class="headerlink" title="5. iOS中的变量标识符 &amp; 属性标识符"></a>5. iOS中的变量标识符 &amp; 属性标识符</h3><p>变量标识符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">__strong                持有强引用的变量在超出其作用域时被废弃，随着强引用的失效，引用的对象会随之释放，从另一个角度讲只要还有一个强指针指向某个对象，这个对象就会一直存活</span><br><span class="line"></span><br><span class="line">__weak                  弱引用虽然持有对象，但是并不增加引用计数，这样就避免了循环引用的产生，如果对象没有被其他对象强引用，弱引用会被置为 nil，弱引用的实现原理是这样：</span><br><span class="line">                        系统对于每一个有弱引用的对象，都维护一个表来记录它所有的弱引用的指针地址。这样，当一个对象的引用计数为 0 时，系统就通过这张表，找到所有的弱引用指针，</span><br><span class="line">                        继而把它们都置成 nil。</span><br><span class="line">                        </span><br><span class="line">__unsafe_unretained     它和__weak有点类似，只不过在没有被其他对象强引用的时候它不会被置为 nil。如果它引用的对象被回收掉了，该指针就变成了野指针。</span><br><span class="line">                        __unsafe_unretained修饰符的变量不属于编译器的内存管理对象，赋值时即不获得强引用也不获得弱引用。</span><br><span class="line">                        </span><br><span class="line"></span><br><span class="line">__autoreleasing         替代autorelease方法</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>属性标识符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@property (assign/retain/strong/weak/unsafe_unretained/copy) PropertyType* propertyType</span><br><span class="line"></span><br><span class="line">* assign 表明 setter 仅仅是一个简单的赋值操作，没有持有不持有这一说，通常用于基本的数值类型</span><br><span class="line">* strong 表明属性定义一个持有者关系。当给属性设定一个新值的时候，首先对旧值进行 release ，对新值进行retain 然后进行赋值操作。</span><br><span class="line">* weak 表明属性定义了一个持有者关系。当给属性设定一个新值的时候，这个值不会进行 retain，旧值也不会进行 release， 而是进行类似 assign 的操作。</span><br><span class="line">  不过当属性指向的对象被销毁时，该属性会被置为nil。</span><br><span class="line">* unsafe_unretained 的语义和 assign 类似，不过是用于对象类型的，表示一个非拥有(unretained)的，同时也不会在对象被销毁时置为nil的(unsafe)关系。</span><br><span class="line">* copy 类似于 strong，不过在赋值时进行 copy 操作而不是 retain 操作。通常在需要保留某个不可变对象，并且防止它被意外改变时使用。</span><br></pre></td></tr></table></figure>
+
+<p>概括得讲：</p>
+<p>strong 和 copy都会持有对象，一个是持有对象的本身，一个是持有对象的副本。<br>weak，unsafe_unretained 更像一个旁观者，它们不会对数据的引用计数起到任何的改变，它看着对象被持有，被销毁却无能为力，只不过weak会在对象被销毁的时候会将其置为nil。而unsafe_unretained不会，unsafe_unretained 在开发中用得比较少， 如果对性能有极高的要求方可以考虑使用 unsafe_unretained 替换 weak，因为weak 其实对性能还是有影响的，只不过少量使用的时候是不会察觉到的，但是在类似YYModel这种序列化，反序列化库如果大量使用weak，肯定会对性能有较大的影响，weak的最主要作用就是解决循环引用的问题。这个会在后面做介绍，其实这个已经在Block总结的时候已经介绍过了。</p>
+<h3 id="6-ARC规则"><a href="#6-ARC规则" class="headerlink" title="6. ARC规则"></a>6. ARC规则</h3><p>与Java 中 GC 不同，ARC 是编译器特性，而不是基于运行时的，ARC 背后的原理是依赖编译器的静态分析能力，通过在编译时找出合理的插入引用计数管理代码，而不是实时监控与回收内存。<br>需要注意的是ARC 所做的事情并不仅仅局限于在编译期找到合适的位置帮你插入合适的 release 等等这样的内存管理方法，其在运行时期也做了一些优化，比如：</p>
+<ul>
+<li>合并对称的引用计数操作。比如将 +1&#x2F;-1&#x2F;+1&#x2F;-1 直接置为 0.</li>
+<li>巧妙地跳过某些情况下 autorelease 机制的调用。</li>
+</ul>
+<p>当返回值被返回之后，紧接着就需要被 retain 的时候，没有必要进行 autorelease + retain，直接什么都不要做就好了。</p>
+<p>ARC 打开的情况下有如下限制：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* 不能使用retain/release/retainCount/autorelease</span><br><span class="line">* 不能使用NSAllocateObject/NSDeallocateObject</span><br><span class="line">* 须遵守内存管理的方法命名规则</span><br><span class="line">* 不要显式调用dealloc</span><br><span class="line">* 使用@autoreleasepool块替代NSAutoreleasePool</span><br><span class="line">* 不能使用NSZone</span><br><span class="line">* 对象型变量不能作为C语言结构体（struct、union）的成员: 要把对象类型添加到结构体成员中，可以强制转换为void *或是附加__unsafe_unretained修饰符。</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-内存相关常见问题"><a href="#7-内存相关常见问题" class="headerlink" title="7. 内存相关常见问题"></a>7. 内存相关常见问题</h3><p>内存问题有两种：</p>
+<p>释放得太早，还在使用中就释放：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果某个对象有至少一个拥有者，那么就必须保留不能释放，否则的话其他对象或者方法仍然有指向这个对象的指针沦为野指针（空指针）。这称之为过早释放，这是十分危险的，因为当野指针指向的内存区域再次被某个新的对象使用时，野指针上的操作便会破坏这个新对象造成文件丢失或者崩溃。</span><br></pre></td></tr></table></figure>
+<p>释放得太晚，已经不用了但是还没释放：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果某个对象失去了拥有者（变成没有拥有者）那么应该将其释放掉，否则没有拥有者的对象会被孤立而程序找不到，并且始终占用着一块内存，导致内存泄漏</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-1-内存泄漏"><a href="#7-1-内存泄漏" class="headerlink" title="7.1 内存泄漏"></a>7.1 内存泄漏</h4><p>ARC内存泄露常见场景:</p>
+<ul>
+<li>对象型变量作为C语言结构体，或者联合体（struct、union）的成员<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct Data &#123;</span><br><span class="line">    NSMutableArray __unsafe_unretained *array;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>__unsafe_unretained修饰符的变量不属于编译器的内存管理对象。如果管理时不注意赋值对象的所有者，便可能遭遇内存泄露或者程序崩溃。</p>
+<ul>
+<li>循环引用</li>
+</ul>
+<p>循环引用常见有如下几种情况：</p>
+<p>1.两个对象互相持有对象，这个可以设置弱引用解决，最常见的是block，但是需要注意并非所有的block都需要使用weak来打破循环引用，如果self没有持有block就不会造成循环引用。而有些地方之所以使用了__weak，是为了在[self dealloc]之后就不再执行了。</p>
+<p>解决方案 1：在block外部对弱化self，在block内部强化已经弱化的weakSelf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@interface Test: NSObject &#123;</span><br><span class="line">    id __weak obj_;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)setObject:(id __strong)obj;</span><br><span class="line">block持有self对象，这个要在block块外面和里面设置弱引用和强引用。</span><br><span class="line"></span><br><span class="line">__weak __typeof(self) wself = self;</span><br><span class="line">obj.block = ^&#123;</span><br><span class="line">    __strong __typeof(wself) sself = wself;</span><br><span class="line">    [sself updateSomeThing];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解决方法 2: 通过将对象在block中设置为nil,但是这种需要注意的是block一定要被执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">__block TestObject *object = [[TestObject alloc] init…];</span><br><span class="line">object.completionHandler =  ^(NSInteger result) &#123;</span><br><span class="line">    [object testMethod];</span><br><span class="line">    object = nil;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>2.NSTimer的target持有self</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">self.timmer = [NSTimer scheduledTimerWithTimeInterval:1.0 </span><br><span class="line">                                               target:self </span><br><span class="line">                                              selector:@selector(updateTime:) </span><br><span class="line">                                              userInfo:nil </span><br><span class="line">                                               repeats:YES];</span><br></pre></td></tr></table></figure>
+
+<p>NSTimer会造成循环引用，timer会强引用target即self，一般self又会持有timer作为属性，这样就造成了循环引用。<br>如果timer只作为局部变量，不把timer作为属性同样释放不了，因为在加入runloop的操作中，timer被强引用。而timer作为局部变量，是无法执行invalidate的，所以在timer被invalidate之前，self也就不会被释放。</p>
+<p>解决方案：在恰当时机调用[timer invalidate]即可,这个需要根据业务来自己决定，但是放在dealloc中调用是无效的，因为循环引用的情况下dealloc是不会被调用的，所以[timer invalidate]也就不会被调用。</p>
+<p>还有下面几种定时相关的情形也需要注意：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__weak __typeof(self) wself = self;</span><br><span class="line">dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">    [wself commentAnimation];</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">__weak __typeof(self) wself = self;</span><br><span class="line">timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());</span><br><span class="line">dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC, 1 * NSEC_PER_SEC);</span><br><span class="line">dispatch_source_set_event_handler(timer, ^&#123;</span><br><span class="line">    [wself commentAnimation];</span><br><span class="line">&#125;);</span><br><span class="line">dispatch_resume(timer);</span><br></pre></td></tr></table></figure>
+
+<p>3.代理delegate</p>
+<p>代理在一般情况下，需要使用weak修饰，我们常见的delegate 一般会是VC的属性，被VC持有，同时我们会将VC相关的属性作为delegate从而导致循环引用。</p>
+<p>解决方案：delegate属性使用weak修饰</p>
+<p>4.NSNotification</p>
+<p>使用block的方式增加notification，引用了self，在删除notification之前，self不会被释放</p>
+<p>解决方案：在block内部使用弱引用解决</p>
+<p>5.对象被单例持有</p>
+<p>我们在单例里面设置一个对象的属性，因为单例是不会释放的，所以单例会有一直持有这个对象的引用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Instanse shared].obj = self;</span><br></pre></td></tr></table></figure>
+
+<p>6.CF类型内存</p>
+<p>注意以creat,copy作为关键字的函数都是需要释放内存的.</p>
+<h3 id="8-内存泄漏的排查方法"><a href="#8-内存泄漏的排查方法" class="headerlink" title="8. 内存泄漏的排查方法"></a>8. 内存泄漏的排查方法</h3><ul>
+<li><p>静态分析方法（Analyze）</p>
+</li>
+<li><p>动态分析方法（Instrument工具库里的Leaks,Allocations）</p>
+</li>
+<li><p>在可疑对象的dealloc方法中添加log进行查看</p>
+</li>
+<li><p>使用三方开源库：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://wereadteam.github.io/2016/02/22/MLeaksFinder/">MLeaksFinder</a></li>
+<li><a target="_blank" rel="noopener" href="http://mrpeak.cn/blog/leak/">PLeakSniffer</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/FBRetainCycleDetector">FBRetainCycleDetector</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/FBAllocationTracker">FBAllocationTracker</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.fb.com/ios/automatic-memory-leak-detection-on-ios/">介绍FBRetainCycleDetector，FBAllocationTracker，FBMemoryProfiler的文章</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="9-AutoreleasePool-与-RunLoop的关系"><a href="#9-AutoreleasePool-与-RunLoop的关系" class="headerlink" title="9. AutoreleasePool 与 RunLoop的关系"></a>9. AutoreleasePool 与 RunLoop的关系</h3><p>主线程的AutoreleasePool会在RunLoop进入的时候重新建立一个，在RunLoop退出休眠状态的时候也会进行释放后重新建立一个。在退出RunLoop的时候释放AutoreleasePool，具体见RunLoop总结</p>
+<h3 id="10-weak-strong-dance"><a href="#10-weak-strong-dance" class="headerlink" title="10. weak-strong dance"></a>10. weak-strong dance</h3><p>在7.1 介绍内存泄漏类型时候提到循环引用的一种解决方案是在block外部对弱化self，在block内部强化已经弱化的weakSelf，这也就是这里所说的 weak-strong dance，block外部对弱化self是为了避免循环引用，而在block内部强化已经弱化的weakSelf是为了避免外部_weak导致在运行block的时候self被释放。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2016/09/18/20160918/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/09/18/20160918/" class="post-title-link" itemprop="url">屏蔽Xcode 8“烦人”的日志输出</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2016-09-18 09:42:08" itemprop="dateCreated datePublished" datetime="2016-09-18T09:42:08+08:00">2016-09-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-03-16 12:56:26" itemprop="dateModified" datetime="2023-03-16T12:56:26+08:00">2023-03-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>更新到<code>Xcode 8 </code>的同学应该都遇到了这个问题：用<code>Xcode 8</code>运行项目，日志会疯狂的刷，就像下面这种图一样：</p>
+<p><img src="https://s1.ax1x.com/2023/03/16/pp3qbp8.png" alt="日志输出"></p>
+<p>于是，简单搜寻了下，“歪果仁”给出了如下解决方法：</p>
+<blockquote>
+<p>Edit Scheme-&gt; Run -&gt; Arguments, 在Environment Variables里边添加 OS_ACTIVITY_MODE ＝ disable</p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2023/03/16/pp3qL6g.png" alt="解决方法图解"></p>
+<p>这样设置之后，就屏蔽掉那些烦人的日志了。</p>
+<p>关于这个问题，推荐一篇文章供大家查阅<a target="_blank" rel="noopener" href="https://objccn.io/issue-19-5/">《活动追踪》</a>。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备2024078640号-1 </a>
+  </div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Qianxing</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
 
 
 
 
 
-<!-- Image to hack wechat -->
-<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
+
+  
+
+
+
+
 
 </body>
-
 </html>

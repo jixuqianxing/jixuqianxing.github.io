@@ -1,177 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head tag -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
-    <title>
-        
-          为 visionOS 做准备 - undefined
-        
-    </title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-    <link rel="canonical" href="http://example.com/2023/06/06/20230606/">
-
-    <!-- Bootstrap Core CSS -->
-    
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/main.css">
 
 
-    <!-- Custom CSS -->
-    
-<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="已经有几年没有熬夜看 WWDC 了，这次为了见证苹果 XR 产品的发布，熬夜看完了整场发布会。发布会上的东西不少，几款硬件产品发布、几个系统更新等等。但是印象深刻的还是 Vision Pro。苹果终于发布了这个传闻已久的产品，也是我非常期待的一款产品。后面也打算深入学习下相关的 Session，为后续的开发做准备。              相信大家目前都有在开发或者维护的 iPhone、iPad">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为 visionOS 做准备">
+<meta property="og:url" content="http://example.com/2023/06/06/20230606/index.html">
+<meta property="og:site_name" content="Qianxing&#39;s Blog">
+<meta property="og:description" content="已经有几年没有熬夜看 WWDC 了，这次为了见证苹果 XR 产品的发布，熬夜看完了整场发布会。发布会上的东西不少，几款硬件产品发布、几个系统更新等等。但是印象深刻的还是 Vision Pro。苹果终于发布了这个传闻已久的产品，也是我非常期待的一款产品。后面也打算深入学习下相关的 Session，为后续的开发做准备。              相信大家目前都有在开发或者维护的 iPhone、iPad">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png">
+<meta property="og:image" content="https://developer.apple.com/assets/elements/icons/realitykit/realitykit-96x96_2x.png">
+<meta property="og:image" content="https://developer.apple.com/assets/elements/icons/audio/audio-96x96_2x.png">
+<meta property="og:image" content="https://developer.apple.com/assets/elements/icons/shareplay/shareplay-96x96_2x.png">
+<meta property="og:image" content="https://developer.apple.com/assets/elements/icons/privacy/privacy-96x96_2x.png">
+<meta property="og:image" content="https://developer.apple.com/assets/elements/icons/xcode-beta/xcode-beta-96x96_2x.png">
+<meta property="og:image" content="https://developer.apple.com/assets/elements/icons/asc-outline/asc-outline-96x96_2x.png">
+<meta property="article:published_time" content="2023-06-06T11:54:28.000Z">
+<meta property="article:modified_time" content="2023-06-06T12:39:57.429Z">
+<meta property="article:author" content="Qianxing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png">
 
 
-    <!-- Pygments Highlight CSS -->
-    
-<link rel="stylesheet" href="/css/highlight.css">
+<link rel="canonical" href="http://example.com/2023/06/06/20230606/">
 
 
-    <!-- Custom Fonts -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2023/06/06/20230606/","path":"2023/06/06/20230606/","title":"为 visionOS 做准备"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>为 visionOS 做准备 | Qianxing's Blog</title>
+  
 
 
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-<meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
 
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
 
-                    
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
     </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
+  </div>
 
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
+  <div class="site-meta">
 
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Qianxing's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-    <!-- Main Content -->
-    
-<!-- Image to hack wechat -->
-<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
-
-<!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('/undefined')
-    }
-</style>
-<header class="intro-header" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        
-                    </div>
-                    <h1>为 visionOS 做准备</h1>
-                    <h2 class="subheading"></h2>
-                    <span class="meta">
-                        Posted by Qianxing on
-                        2023-06-06
-                    </span>
-                </div>
-            </div>
-        </div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 </header>
+        
+  
+  <aside class="sidebar">
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AD%A6%E4%B9%A0-visionOS"><span class="nav-number">1.</span> <span class="nav-text">一、学习 visionOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">2.</span> <span class="nav-text">二、最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E4%BD%BF%E7%94%A8-Scenes"><span class="nav-number">2.1.</span> <span class="nav-text">（1）使用 Scenes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E4%BD%BF%E7%94%A8-flexible-%E5%B8%83%E5%B1%80"><span class="nav-number">2.2.</span> <span class="nav-text">（2）使用 flexible 布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E9%87%87%E7%94%A8%E6%A0%87%E5%87%86%E7%9A%84%E6%89%8B%E5%8A%BF%E5%92%8C%E8%BE%93%E5%85%A5"><span class="nav-number">2.3.</span> <span class="nav-text">（3）采用标准的手势和输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E4%B8%8E%E6%82%A8%E7%9A%84%E5%86%85%E5%AE%B9%E4%BA%A4%E4%BA%92%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">（4）支持多种与您的内容交互的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%885%EF%BC%89%E5%9C%A8%E4%BD%BF%E7%94%A8%E5%89%8D%E6%A3%80%E6%9F%A5%E7%A1%AC%E4%BB%B6%E5%92%8C%E5%8A%9F%E8%83%BD%E7%9A%84%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="nav-number">2.5.</span> <span class="nav-text">（5）在使用前检查硬件和功能的可用性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%886%EF%BC%89%E4%BD%BF%E6%82%A8%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%85%B7%E6%9C%89%E5%8C%85%E5%AE%B9%E6%80%A7"><span class="nav-number">2.6.</span> <span class="nav-text">（6）使您的应用程序具有包容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%887%EF%BC%89%E9%81%BF%E5%85%8D%E7%89%B9%E5%AE%9A%E4%BA%8E%E8%AE%BE%E5%A4%87%E7%9A%84%E4%BB%A3%E7%A0%81%E5%92%8C%E5%86%B3%E7%AD%96"><span class="nav-number">2.7.</span> <span class="nav-text">（7）避免特定于设备的代码和决策</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%888%EF%BC%89%E6%9B%B4%E6%96%B0%E8%B0%83%E7%94%A8%E5%B7%B2%E5%BC%83%E7%94%A8API%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">2.8.</span> <span class="nav-text">（8）更新调用已弃用API的代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%8E%A2%E7%B4%A2RealityKit%E5%92%8C3D%E5%86%85%E5%AE%B9"><span class="nav-number">3.</span> <span class="nav-text">三、探索RealityKit和3D内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E8%80%83%E8%99%91%E4%BD%95%E6%97%B6%E5%90%91%E6%82%A8%E7%9A%84%E7%95%8C%E9%9D%A2%E6%B7%BB%E5%8A%A03D%E5%85%83%E7%B4%A0"><span class="nav-number">3.1.</span> <span class="nav-text">（1）考虑何时向您的界面添加3D元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E6%8E%A2%E7%B4%A2RealityKit"><span class="nav-number">3.2.</span> <span class="nav-text">（2）探索RealityKit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E5%85%B3%E4%BA%8EMaterialX%E7%9D%80%E8%89%B2%E5%99%A8%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-number">3.3.</span> <span class="nav-text">（3）了解更多关于MaterialX着色器的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E5%85%B3%E4%BA%8EUSDZ%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-number">3.4.</span> <span class="nav-text">（4）了解更多关于USDZ的信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%87%86%E5%A4%87%E4%B8%8B%E4%B8%80%E7%BA%A7%E5%88%AB%E7%9A%84%E9%9F%B3%E9%A2%91%E5%92%8C%E8%A7%86%E9%A2%91"><span class="nav-number">4.</span> <span class="nav-text">四、准备下一级别的音频和视频</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%87%86%E5%A4%87%E6%82%A8%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%9F%B3%E8%BD%A8"><span class="nav-number">4.1.</span> <span class="nav-text">（1）准备您的应用程序的音轨</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%BC%80%E5%A7%8B%E4%B8%BA%E8%A7%86%E9%A2%91%E8%B5%84%E4%BA%A7%E6%B7%BB%E5%8A%A03D%E6%94%AF%E6%8C%81"><span class="nav-number">4.2.</span> <span class="nav-text">（2）开始为视频资产添加3D支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E8%80%83%E8%99%91%E6%9B%BF%E4%BB%A3%E8%A7%A6%E8%A7%89%E5%8F%8D%E9%A6%88%E7%9A%84%E6%96%B9%E6%A1%88"><span class="nav-number">4.3.</span> <span class="nav-text">（3）考虑替代触觉反馈的方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%89%A9%E5%B1%95SharePlay%E4%BD%93%E9%AA%8C"><span class="nav-number">5.</span> <span class="nav-text">五、扩展SharePlay体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E4%BC%98%E5%85%88%E8%80%83%E8%99%91%E7%94%A8%E6%88%B7%E9%9A%90%E7%A7%81"><span class="nav-number">6.</span> <span class="nav-text">六、优先考虑用户隐私</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E4%B8%BA%E6%82%A8%E6%94%B6%E9%9B%86%E7%9A%84%E4%BB%BB%E4%BD%95%E6%95%B0%E6%8D%AE%E6%8F%90%E4%BE%9B%E5%AE%9E%E9%99%85%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-number">6.1.</span> <span class="nav-text">（1）为您收集的任何数据提供实际的好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E6%B8%85%E6%A5%9A%E5%9C%B0%E8%A7%A3%E9%87%8A%E6%82%A8%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%89%80%E6%94%B6%E9%9B%86%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-number">6.2.</span> <span class="nav-text">（2）清楚地解释您如何使用所收集的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E4%BF%9D%E6%8A%A4%E6%82%A8%E6%94%B6%E9%9B%86%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">6.3.</span> <span class="nav-text">（3）保护您收集的数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E9%81%B5%E5%BE%AA%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E5%AE%A1%E6%A0%B8%E6%8C%87%E5%8D%97%E5%92%8C%E6%89%80%E6%9C%89%E9%80%82%E7%94%A8%E7%9A%84%E6%B3%95%E5%BE%8B"><span class="nav-number">6.4.</span> <span class="nav-text">（4）遵循应用商店审核指南和所有适用的法律</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E8%B0%83%E6%95%B4%E6%82%A8%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD%E3%80%82"><span class="nav-number">7.</span> <span class="nav-text">七、调整您的应用程序性能。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E6%B3%A8%E6%84%8F%E6%82%A8%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E7%9A%84%E5%B7%A5%E4%BD%9C%E9%87%8F"><span class="nav-number">7.1.</span> <span class="nav-text">（1）注意您的应用程序执行的工作量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E8%AF%86%E5%88%AB%E8%A6%81%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BB%A3%E7%A0%81%E6%B5%81%E5%92%8C%E5%9C%BA%E6%99%AF"><span class="nav-number">7.2.</span> <span class="nav-text">（2）识别要测试的代码流和场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E4%B8%BA%E6%82%A8%E5%BD%93%E5%89%8D%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AE%E6%80%A7%E8%83%BD%E5%92%8C%E7%94%B5%E6%BA%90%E7%9B%AE%E6%A0%87"><span class="nav-number">7.3.</span> <span class="nav-text">（3）为您当前的应用程序设置性能和电源目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E9%87%87%E7%94%A8%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%EF%BC%88CI%EF%BC%89%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">7.4.</span> <span class="nav-text">（4）采用持续集成（CI）工作流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E8%BF%90%E8%A1%8C%E6%82%A8%E7%9A%84iPad%E5%92%8CiPhone%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F"><span class="nav-number">8.</span> <span class="nav-text">八、运行您的iPad和iPhone应用程序</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
 
-                <p>已经有几年没有熬夜看 <code>WWDC</code> 了，这次为了见证苹果 <code>XR</code> 产品的发布，熬夜看完了整场发布会。发布会上的东西不少，几款硬件产品发布、几个系统更新等等。但是印象深刻的还是 <code>Vision Pro</code>。苹果终于发布了这个传闻已久的产品，也是我非常期待的一款产品。后面也打算深入学习下相关的 <code>Session</code>，为后续的开发做准备。</p>
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Qianxing</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/06/20230606/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="为 visionOS 做准备 | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          为 visionOS 做准备
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-06-06 19:54:28 / Modified: 20:39:57" itemprop="dateCreated datePublished" datetime="2023-06-06T19:54:28+08:00">2023-06-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>已经有几年没有熬夜看 <code>WWDC</code> 了，这次为了见证苹果 <code>XR</code> 产品的发布，熬夜看完了整场发布会。发布会上的东西不少，几款硬件产品发布、几个系统更新等等。但是印象深刻的还是 <code>Vision Pro</code>。苹果终于发布了这个传闻已久的产品，也是我非常期待的一款产品。后面也打算深入学习下相关的 <code>Session</code>，为后续的开发做准备。</p>
 <table>
 <thead>
 <tr>
@@ -219,188 +247,92 @@
 <h3 id="（4）采用持续集成（CI）工作流程"><a href="#（4）采用持续集成（CI）工作流程" class="headerlink" title="（4）采用持续集成（CI）工作流程"></a>（4）采用持续集成（CI）工作流程</h3><p>设置您的构建在 <code>Xcode Cloud</code> 中运行。通过确保每个提交都维护您的代码库的质量和稳定性来采用CI思维方式。将与性能相关的测试作为测试套件的一部分运行。</p>
 <h2 id="八、运行您的iPad和iPhone应用程序"><a href="#八、运行您的iPad和iPhone应用程序" class="headerlink" title="八、运行您的iPad和iPhone应用程序"></a>八、运行您的iPad和iPhone应用程序</h2><p><code>iPadOS</code> 和 <code>iOS</code> 中提供的相同框架也包含在 <code>visionOS</code> 中。这意味着您的 <code>iPad</code> 和 <code>iPhone</code> 应用程序将在 <code>Apple Vision Pro</code> 上运行，每个应用程序都作为一个可扩展的 <code>2D</code> 窗口，具有其原始的外观和感觉。当应用商店可用时，兼容的应用程序将自动可用，无需采取任何措施，为人们在 <code>visionOS</code> 中提供更多选项。本月晚些时候，您可以使用模拟器和 <code>TestFlight</code> 在 <code>Apple Vision Pro</code> 上测试您的应用程序。如果您的应用程序不适合 <code>Apple Vision Pro</code>，您将能够在 <code>App Store Connect</code> 中编辑其可用性。</p>
 
+    </div>
 
-                <hr>
+    
+    
+    
 
-                
+    <footer class="post-footer">
 
-                <ul class="pager">
-                    
-                        <li class="previous">
-                            <a href="/2024/03/25/20240325/" data-toggle="tooltip" data-placement="top" title="老项目添加 gitignore">&larr; Previous Post</a>
-                        </li>
-                    
-                    
-                        <li class="next">
-                            <a href="/2023/05/21/20230521/" data-toggle="tooltip" data-placement="top" title="使用 Firebase Hosting 托管 app-ads.txt">Next Post &rarr;</a>
-                        </li>
-                    
-                </ul>
-
-                
-
-                
-
-            </div>
-    <!-- Side Catalog Container -->
         
 
-    <!-- Sidebar Container -->
-
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-
-                <!-- Friends Blog -->
-                
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/05/21/20230521/" rel="prev" title="使用 Firebase Hosting 托管 app-ads.txt">
+                  <i class="fa fa-angle-left"></i> 使用 Firebase Hosting 托管 app-ads.txt
+                </a>
             </div>
-
-        </div>
-    </div>
-</article>
-
-
-
-
-
-
-
-
-
-    <!-- Footer -->
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                
-                
-                
-
-                
-
-                
-
-                
-
-                
-
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; Qianxing&#39;s Blog 2024 
-                    <br>
-                    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">浙ICP备2024078640号-1</a>
-                    <br>
-                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a>
-                    <span style="display: inline-block; margin: 0 5px;">
-                        <i class="fa fa-heart"></i>
-                    </span> 
-                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
-                    </iframe>
-
-                </p>
+            <div class="post-nav-item">
+                <a href="/2024/03/25/20240325/" rel="next" title="老项目添加 gitignore">
+                  老项目添加 gitignore <i class="fa fa-angle-right"></i>
+                </a>
             </div>
-        </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备2024078640号-1 </a>
+  </div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Qianxing</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
     </div>
-</footer>
+  </footer>
 
-<!-- jQuery -->
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
 
-<script src="/js/jquery.min.js"></script>
-
-
-<!-- Bootstrap Core JavaScript -->
-
-<script src="/js/bootstrap.min.js"></script>
-
-
-<!-- Custom Theme JavaScript -->
-
-<script src="/js/hux-blog.min.js"></script>
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
--->
-<!--
-    <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
-    </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://example.com/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
-<!--fastClick.js -->
-<script>
-    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-<!-- Google Analytics -->
-
-
-
-
-<!-- Baidu Tongji -->
-
-
-<!-- Side Catalog -->
+  
 
 
 
 
 
-<!-- Image to hack wechat -->
-<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
+
+  
+
+
+
+
 
 </body>
-
 </html>

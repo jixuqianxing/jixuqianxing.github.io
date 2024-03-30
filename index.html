@@ -1,625 +1,1238 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head tag -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
-    <title>
-        
-          
-        
-    </title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-    <link rel="canonical" href="http://example.com/">
-
-    <!-- Bootstrap Core CSS -->
-    
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/main.css">
 
 
-    <!-- Custom CSS -->
-    
-<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Qianxing&#39;s Blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Qianxing&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Qianxing">
+<meta name="twitter:card" content="summary">
 
 
-    <!-- Pygments Highlight CSS -->
-    
-<link rel="stylesheet" href="/css/highlight.css">
+<link rel="canonical" href="http://example.com/">
 
 
-    <!-- Custom Fonts -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Qianxing's Blog</title>
+  
 
 
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-<meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
 
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Qianxing&#39;s Blog</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
 
-                    
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
     </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
+  </div>
 
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
+  <div class="site-meta">
 
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Qianxing's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-    <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Qianxing&#39;s Blog</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading"></span>
-                </div>
-            </div>
-        </div>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 </header>
-
-
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
         
+  
+  <aside class="sidebar">
 
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
-
-
-<div class="post-preview">
-
-    <a href="/2024/03/25/20240325/">
-        <h2 class="post-title">
-            老项目添加 gitignore
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            在给老项目添加 .gitignore 文件时，如果你已经有文件被跟踪并提交到了仓库，那么这些文件将不会被 .gitignore 文件自动忽略。为了从 Git 中移除这些文件并使 .gitignore 文件生效，需要运行以下命令：
-123git rm -r --cached .git add .git commit -m &quot;Remove tracked files&quot;...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2024-03-25
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/06/06/20230606/">
-        <h2 class="post-title">
-            为 visionOS 做准备
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            已经有几年没有熬夜看 WWDC 了，这次为了见证苹果 XR 产品的发布，熬夜看完了整场发布会。发布会上的东西不少，几款硬件产品发布、几个系统更新等等。但是印象深刻的还是 Vision Pro。苹果终于发布了这个传闻已久的产品，也是我非常期待的一款产品。后面也打算深入学习下相关的 Session，为后续的开发做准备。
-
-
-
-
-
-
-
-
-
-
-
-
-
-相信大家目前都有在开发或者维护的 iPhone、i......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-06-06
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/05/21/20230521/">
-        <h2 class="post-title">
-            使用 Firebase Hosting 托管 app-ads.txt
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            准备工作
-首先，你需要注册Firebase账号。
-然后，创建Firebase项目。
-生成app-ads.txt文件。
-
-安装 Firebase CLI1.安装
-1curl -sL https://firebase.tools | bash
-
-2.登录并测试 Firebase CLI
-1firebase login
-
-
-注意：firebase login 命令会打开与机器上的 localhos......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-05-21
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/03/25/20230325/">
-        <h2 class="post-title">
-            Swift高阶函数
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            Swift高阶函数Swift高阶函数是指可以接受函数作为参数或返回函数的函数。高阶函数强调了函数的参数和返回值都可以是函数类型，这使得函数能够被视为可传递和可组合的值和运算。
-Swift中有多种高阶函数，包括map，filter，reduce，sort，flatMap，compactMap等。
-1. Mapmap是高阶函数中最常用的函数之一。它接受一个函数和一个数组，并返回一个新数组，其中每......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-03-25
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/03/10/20230310/">
-        <h2 class="post-title">
-            iOS模块化中的通用图片访问器优化
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-本文主要针对之前写的文章《iOS模块化中的通用图片访问器》的方案改进。
-
-痛点项目组件化，壳工程后，我们对于资源的使用也做了规范。每个模块的图片资源使用xcassets进行管理。正常访问不同Bundle中的资源需要使用以下方法：
-1234open class UIImage : NSObject, NSSecureCoding &#123;   @available(iOS 8.0, *)......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-03-10
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/03/10/202303101/">
-        <h2 class="post-title">
-            Apple M2 macOS Flutter环境搭建记录
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            1.安装 Rosetta 2 环境1sudo softwareupdate --install-rosetta --agree-to-license
-
-2.下载Flutter SDKflutter_macos_arm64_3.7.7-stable.zip
-当然你也可以在这个文档中找到最新的安装包SDK，下载arm64 版本即可。
-当然，你也可以使用克隆的方式下载SDK。具体，根据个人喜好。
-......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-03-10
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/03/04/202303041/">
-        <h2 class="post-title">
-            iOS基于Vision框架的人体关键点检测
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            从iOS 14和macOS 11开始，Vision增加了识别人体姿势的强大功能。他可以识别人体的19个关键点。如图所示：
-实现1.发起一个请求使用Vision框架，通过VNDetectHumanBodyPoseRequest提供身体姿势检测功能。 下面代码演示了，如何从CGImage中检测身体关键点。
-123456789101112131415// Get the CGImage on wh......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-03-04
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/03/04/20230304/">
-        <h2 class="post-title">
-            iOS直播间重构优化记录
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            背景历史原因加上功能的不断迭代，造成直播间代码越来越难以维护，前期架构也没有很好设计，造成各种耦合，不管是业务上的耦合，还是UI上的耦合。加上遗留了很多适配上的问题，以及交互问题，这块的代码成了一块比较难啃的硬骨头，重构这块代码已刻不容缓。
-重构思路
-引入多代理实现（使用过XMPP的同学应该会熟悉这个概率，笔者工作早期有使用过XMPP），用于统一事件的分发，各个业务都可以注册成为代理，用于将......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-03-04
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/03/01/20230301/">
-        <h2 class="post-title">
-            Swift实现一个交互友好&灵活自定义的弹框
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            前言在我们平时日常开发中，经常会遇到各种样式的弹框。你是否也经常遇到呢？你是如何实现的？本文介绍使用UIPresentationController，结合自定义转场动效，实现一个高度自定义的弹框，这也是苹果比较推荐的一种实现方式。
-预备知识开始之前，我们要了解下几个知识点：
-
-UIPresentationController
-UIViewControllerTransitioningDele......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-03-01
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2023/02/15/20230215/">
-        <h2 class="post-title">
-            Physics Simulation 之 SCNPhysicsShape
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-此系列为官方文档翻译，用于学习SceneKit
-
-SCNPhysicsShape  物理体实体的抽象，用于调整碰撞检测。
-概述在SceneKit对场景中的SCNPhysicsBody对象进行接触检测和其他模拟时，它使用物理形状而不是可见对象的渲染几何。这种方法既提高了模拟性能，也使您更容易设计基于玩家可以交互的场景元素的游戏玩法。
-简单与复杂的形状当您允许SceneKit自动创建物理形状时......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Qianxing on
-        2023-02-15
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-        <li class="next">
-            <a href="/page/2/">Older Posts &rarr;</a>
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
         </li>
-    
-</ul>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
 
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Qianxing</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
 
-                <!-- 如果开启评论功能 -->
-                
-
-            </div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-                <!-- Featured Tags -->
-                
-
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-
-                            
-
-                            
-
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
-                
-                <!-- Friends Blog -->
-                
-            </div>
-        
+        </div>
+      </div>
     </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/25/20240325/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/03/25/20240325/" class="post-title-link" itemprop="url">老项目添加 gitignore</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-03-25 08:13:28 / Modified: 08:14:15" itemprop="dateCreated datePublished" datetime="2024-03-25T08:13:28+08:00">2024-03-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在给老项目添加 .gitignore 文件时，如果你已经有文件被跟踪并提交到了仓库，那么这些文件将不会被 .gitignore 文件自动忽略。为了从 Git 中移除这些文件并使 .gitignore 文件生效，需要运行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;Remove tracked files&quot;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 </div>
 
 
-    <!-- Footer -->
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                
-                
-                
 
-                
 
-                
+    
 
-                
 
-                
+<div class="post-block">
+  
+  
 
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; Qianxing&#39;s Blog 2024 
-                    <br>
-                    <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">浙ICP备2024078640号-1</a>
-                    <br>
-                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a>
-                    <span style="display: inline-block; margin: 0 5px;">
-                        <i class="fa fa-heart"></i>
-                    </span> 
-                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
-                    </iframe>
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/06/20230606/">
 
-                </p>
-            </div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/06/06/20230606/" class="post-title-link" itemprop="url">为 visionOS 做准备</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-06-06 19:54:28 / Modified: 20:39:57" itemprop="dateCreated datePublished" datetime="2023-06-06T19:54:28+08:00">2023-06-06</time>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>已经有几年没有熬夜看 <code>WWDC</code> 了，这次为了见证苹果 <code>XR</code> 产品的发布，熬夜看完了整场发布会。发布会上的东西不少，几款硬件产品发布、几个系统更新等等。但是印象深刻的还是 <code>Vision Pro</code>。苹果终于发布了这个传闻已久的产品，也是我非常期待的一款产品。后面也打算深入学习下相关的 <code>Session</code>，为后续的开发做准备。</p>
+<table>
+<thead>
+<tr>
+<th><img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/realitykit/realitykit-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/audio/audio-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/shareplay/shareplay-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/privacy/privacy-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/xcode-beta/xcode-beta-96x96_2x.png"></th>
+<th><img src="https://developer.apple.com/assets/elements/icons/asc-outline/asc-outline-96x96_2x.png"></th>
+</tr>
+</thead>
+</table>
+<p>相信大家目前都有在开发或者维护的 <code>iPhone</code>、<code>iPad</code> 产品。那么针对这些已经存在产品如何能够很好的支持 <code>visionOS</code> 呢？看了官方的相关资料，然后整理如下：</p>
+<h2 id="一、学习-visionOS"><a href="#一、学习-visionOS" class="headerlink" title="一、学习 visionOS"></a>一、学习 visionOS</h2><p>首先当然是学习 <code>visionOS</code> 相关的技能了。<code>WWDC23</code> 准备了46个 <code>session</code> 用于介绍 <code>visionOS </code> 一定会帮助你很好的学习相关内容。利用苹果提供的开发工具进行很好的开发工作，包括 <code>Xcode</code>、<code>Reality Composer Pro</code> 以及其他工具。</p>
+<h2 id="二、最佳实践"><a href="#二、最佳实践" class="headerlink" title="二、最佳实践"></a>二、最佳实践</h2><p>虽然，<code>UIKit</code> 跟 <code>SwiftUI</code> 都可以支持 <code>visionOS</code> 开发，但是官方还是更推荐使用 <code>SwiftUI</code> 进行开发，并且 <code>SwiftUI</code> 的 <code>Stack</code> 可以支持深度的设置，这样在 <code>visonOS</code> 中可以更好的呈现效果。</p>
+<h3 id="（1）使用-Scenes"><a href="#（1）使用-Scenes" class="headerlink" title="（1）使用 Scenes"></a>（1）使用 Scenes</h3><p>支持 <code>Scenes</code> ，这个是 <code>iOS 13</code> 推出的。要适配 <code>visonOS</code> 的话，就必须使用 <code>Scenes</code>，那还是说什么呢，赶快适配起来。</p>
+<h3 id="（2）使用-flexible-布局"><a href="#（2）使用-flexible-布局" class="headerlink" title="（2）使用 flexible 布局"></a>（2）使用 flexible 布局</h3><p>使用 <code>flexible</code> 布局，而非绝对布局。这样会使你的应用能够更快的适应不同的操作系统。在发布应用前，应当充分测试各种平台和场景，以保证显示的准确性。并且确保布局变化时的动效高效和准确。</p>
+<h3 id="（3）采用标准的手势和输入"><a href="#（3）采用标准的手势和输入" class="headerlink" title="（3）采用标准的手势和输入"></a>（3）采用标准的手势和输入</h3><p>采用标准的手势和输入，这样系统能够帮我们适配好 <code>visionOS</code>。尽量减少自定义输入和手势识别器的使用，这可能需要你针对 <code>visionOS</code> 做相应的适配工作。</p>
+<h3 id="（4）支持多种与您的内容交互的方式"><a href="#（4）支持多种与您的内容交互的方式" class="headerlink" title="（4）支持多种与您的内容交互的方式"></a>（4）支持多种与您的内容交互的方式</h3><p>添加命令菜单支持，以便人们可以使用连接的键盘执行任务。为您的应用程序添加辅助功能支持，以便使用专门设备的人可以与您的内容交互。这些替代交互方式使人们即使在没有触摸或鼠标事件的情况下也能使用您的应用程序。</p>
+<h3 id="（5）在使用前检查硬件和功能的可用性"><a href="#（5）在使用前检查硬件和功能的可用性" class="headerlink" title="（5）在使用前检查硬件和功能的可用性"></a>（5）在使用前检查硬件和功能的可用性</h3><p>许多框架提供检查功能，以确定当前设备是否支持特定功能。例如，<code>Core Location</code> 可以让您确定设备上可用的位置服务。为了避免在将您的应用程序带到 <code>visionOS</code> 时出现错误，请始终确保当前设备上的功能可用后再使用它们。</p>
+<h3 id="（6）使您的应用程序具有包容性"><a href="#（6）使您的应用程序具有包容性" class="headerlink" title="（6）使您的应用程序具有包容性"></a>（6）使您的应用程序具有包容性</h3><p>具有可访问性和包容性的应用程序可以改变人们的生活，而 <code>visionOS</code> 提供了支持，以帮助您实现这一目标。国际化和本地化您的应用程序，以支持不同国家、地区和语言的更多人。审查您的应用程序的辅助功能支持，使所有能力的人更容易导航和访问信息。选择包容性的语言和术语，让每个人都感到受欢迎。</p>
+<h3 id="（7）避免特定于设备的代码和决策"><a href="#（7）避免特定于设备的代码和决策" class="headerlink" title="（7）避免特定于设备的代码和决策"></a>（7）避免特定于设备的代码和决策</h3><p>如果您基于当前设备类型做出决策，您的应用程序可能无法在 <code>visionOS</code> 中正确运行。而不是基于设备形态做出决策，应该根据情境需要做出选择，并提供合理的默认行为。例如，使用系统提供的大小来布置视图，而不是预期的设备大小。</p>
+<h3 id="（8）更新调用已弃用API的代码"><a href="#（8）更新调用已弃用API的代码" class="headerlink" title="（8）更新调用已弃用API的代码"></a>（8）更新调用已弃用API的代码</h3><p>苹果定期弃用框架和 <code>API</code>，为现代替代品腾出空间。尽快转向这些现代替代品，以确保您的代码在 <code>visionOS</code> 中平稳运行。</p>
+<h2 id="三、探索RealityKit和3D内容"><a href="#三、探索RealityKit和3D内容" class="headerlink" title="三、探索RealityKit和3D内容"></a>三、探索RealityKit和3D内容</h2><p>为 <code>visionOS</code> 构建的应用程序可以利用深度和无限画布来创建强大的沉浸式体验。发现您可以如何使用 <code>RealityKit</code> 和其他框架来准备在 <code>visionOS</code> 中构建应用程序。</p>
+<h3 id="（1）考虑何时向您的界面添加3D元素"><a href="#（1）考虑何时向您的界面添加3D元素" class="headerlink" title="（1）考虑何时向您的界面添加3D元素"></a>（1）考虑何时向您的界面添加3D元素</h3><p>您可以使用 <code>3D</code> 形状和网格增强 <code>visionOS</code> 中的窗口，或在人物周围单独显示这些项目。购物应用程序可以在其主窗口中的产品描述旁显示一个物品的 <code>3D</code> 模型。然后，它可以让人们将该物品从窗口中拖出，以查看它在客厅中的外观。考虑如何将深度融入您的应用程序窗口，并在何时添加体积或沉浸式场景。</p>
+<h3 id="（2）探索RealityKit"><a href="#（2）探索RealityKit" class="headerlink" title="（2）探索RealityKit"></a>（2）探索RealityKit</h3><p><code>RealityKit</code> 是苹果的 <code>3D</code> 渲染引擎，用于 <code>visionOS</code>，现在已与 <code>SwiftUI</code> 深度集成，帮助您构建锐利、响应和立体的界面。<code>3D</code> 内容可以绑定到 <code>SwiftUI</code> 视图和状态上，无缝地将 <code>2D</code> 和 <code>3D</code> 视觉元素相结合。如果您的项目已经有3D内容，请考虑使用 <code>RealityKit</code> 来渲染该内容。</p>
+<h3 id="（3）了解更多关于MaterialX着色器的信息"><a href="#（3）了解更多关于MaterialX着色器的信息" class="headerlink" title="（3）了解更多关于MaterialX着色器的信息"></a>（3）了解更多关于MaterialX着色器的信息</h3><p><code>MaterialX</code> 是由领先的电影、视觉效果、娱乐和游戏公司支持的开放标准。了解如何使用 <code>Reality Composer Pro</code> 创建 <code>MaterialX</code> 中的表面和几何着色器。</p>
+<h3 id="（4）了解更多关于USDZ的信息"><a href="#（4）了解更多关于USDZ的信息" class="headerlink" title="（4）了解更多关于USDZ的信息"></a>（4）了解更多关于USDZ的信息</h3><p>开始探索创建 <code>USDZ</code> 资产的工具和技术，以适用于您的 <code>3D</code> 内容。许多 <code>3D</code> 设计程序现在提供 <code>USDZ</code> 导入和导出，从本月晚些时候开始，您可以使用 <code>Reality Composer Pro</code> 为您的项目构建 <code>USDZ</code> 资产。</p>
+<h2 id="四、准备下一级别的音频和视频"><a href="#四、准备下一级别的音频和视频" class="headerlink" title="四、准备下一级别的音频和视频"></a>四、准备下一级别的音频和视频</h2><p>开始考虑您需要对应用程序的音频和视频内容进行的更改，以支持 <code>visionOS</code>：</p>
+<h3 id="（1）准备您的应用程序的音轨"><a href="#（1）准备您的应用程序的音轨" class="headerlink" title="（1）准备您的应用程序的音轨"></a>（1）准备您的应用程序的音轨</h3><p>即使在您当前的应用程序中，空间音频也为您的内容增加了另一个维度。该音频音轨在 <code>visionOS</code> 中的效果更佳，因为它采用空间音频作为默认播放选项。利用 <code>PHASE</code> 和 <code>AVFAudio</code> 框架构建您的音频内容，并将其定位于您的场景中。</p>
+<h3 id="（2）开始为视频资产添加3D支持"><a href="#（2）开始为视频资产添加3D支持" class="headerlink" title="（2）开始为视频资产添加3D支持"></a>（2）开始为视频资产添加3D支持</h3><p>通过以 <code>3D</code> 方式捕捉视频并准备资产以进行播放，为 <code>visionOS</code> 中的立体声观看做好准备。<code>QuickTime</code> 文件格式扩展允许您包括多个视频轨道以进行立体声播放，但在需要时可以回退到单眼播放。使用 <code>AVFoundation</code> 播放这些资产，以使播放自动适应当前设备。</p>
+<h3 id="（3）考虑替代触觉反馈的方案"><a href="#（3）考虑替代触觉反馈的方案" class="headerlink" title="（3）考虑替代触觉反馈的方案"></a>（3）考虑替代触觉反馈的方案</h3><p>如果您的当前应用程序使用触觉反馈提供反馈，请准备在 <code>visionOS</code> 中用声音替换这些触觉反馈。开始构建音频替代品库，或考虑替代类型的反馈。</p>
+<h2 id="五、扩展SharePlay体验"><a href="#五、扩展SharePlay体验" class="headerlink" title="五、扩展SharePlay体验"></a>五、扩展SharePlay体验</h2><p>共享和协作是 <code>visionOS</code> 的核心部分。就像在 <code>macOS</code> 中一样，人们可以与 <code>FaceTime</code> 通话中的其他人共享任何应用程序窗口。而通过 <code>SharePlay</code>，下一代共享体验成为可能。<br>通过识别现在人们可以共享的活动，并使用 <code>Group Activities</code> 框架来实现它们，让您的应用程序为 <code>visionOS</code> 的 <code>SharePlay</code> 做好准备。考虑您可能需要在设备之间传递哪些附加信息，以确保内容保持视觉同步。例如，您可能想要共享窗口的滚动位置以及窗口的内容。头脑风暴一下人们如何在面对面的环境中享受您的应用程序活动，并观看有关设计和构建空间 <code>SharePlay</code> 体验的 <code>WWDC</code> 会议。</p>
+<h2 id="六、优先考虑用户隐私"><a href="#六、优先考虑用户隐私" class="headerlink" title="六、优先考虑用户隐私"></a>六、优先考虑用户隐私</h2><p><code>visionOS</code> 非常重视隐私，并帮助人们保护个人信息。在一些必须访问敏感信息的情况下，应用程序必须得到设备佩戴者的授权。<br>无论您的应用程序是否涉及识别信息、财务数据、位置数据、联系人、内容、购买历史记录、搜索历史记录、诊断或其他信息，请确保遵循隐私的基本原则：</p>
+<h3 id="（1）为您收集的任何数据提供实际的好处"><a href="#（1）为您收集的任何数据提供实际的好处" class="headerlink" title="（1）为您收集的任何数据提供实际的好处"></a>（1）为您收集的任何数据提供实际的好处</h3><p>当有人同意向您提供个人信息时，请确保您的应用程序能够提供真正的价值作为回报。不要仅仅为了收集个人数据而收集它。将数据用于应用程序本身，并不要用于广告。</p>
+<h3 id="（2）清楚地解释您如何使用所收集的信息"><a href="#（2）清楚地解释您如何使用所收集的信息" class="headerlink" title="（2）清楚地解释您如何使用所收集的信息"></a>（2）清楚地解释您如何使用所收集的信息</h3><p>透明地使用人们的数据。在请求隐私敏感技术的授权时，提供清晰的使用说明字符串，帮助人们理解为什么您需要这些数据。在应用商店上的应用程序页面上解释数据。</p>
+<h3 id="（3）保护您收集的数据"><a href="#（3）保护您收集的数据" class="headerlink" title="（3）保护您收集的数据"></a>（3）保护您收集的数据</h3><p>通过加密数据来保护它，以防止在您的应用程序不使用时被访问。如果必须本地存储数据，请在将其写入磁盘之前对其进行加密。</p>
+<h3 id="（4）遵循应用商店审核指南和所有适用的法律"><a href="#（4）遵循应用商店审核指南和所有适用的法律" class="headerlink" title="（4）遵循应用商店审核指南和所有适用的法律"></a>（4）遵循应用商店审核指南和所有适用的法律</h3><p>有关更多信息，请查看应用商店上的应用程序隐私详情<a target="_blank" rel="noopener" href="https://developer.apple.com/app-store/app-privacy-details/">App privacy details on the App Store</a></p>
+<p>有关其他隐私指南，请参阅访问私人数据<a target="_blank" rel="noopener" href="https://developer.apple.com/design/human-interface-guidelines/accessing-private-data/">Accessing private data</a></p>
+<h2 id="七、调整您的应用程序性能。"><a href="#七、调整您的应用程序性能。" class="headerlink" title="七、调整您的应用程序性能。"></a>七、调整您的应用程序性能。</h2><p>使性能成为您开发过程的重要部分。现在优化您的应用程序将使它更容易达到您在将其引入 <code>visionOS</code> 时的性能目标。定期收集性能指标，并使用这些指标来识别回归，以防止它们成为更大的问题。</p>
+<h3 id="（1）注意您的应用程序执行的工作量"><a href="#（1）注意您的应用程序执行的工作量" class="headerlink" title="（1）注意您的应用程序执行的工作量"></a>（1）注意您的应用程序执行的工作量</h3><p>确保您的应用程序执行的工作提供实际的好处。优化算法以最小化您的应用程序对 <code>CPU</code> 和 <code>GPU</code> 资源的消耗。</p>
+<h3 id="（2）识别要测试的代码流和场景"><a href="#（2）识别要测试的代码流和场景" class="headerlink" title="（2）识别要测试的代码流和场景"></a>（2）识别要测试的代码流和场景</h3><p>构建 <code>XCTest</code> 案例以测量您的应用程序最重要的功能的性能。在不同的系统负载下运行这些测试，以确定您的应用程序的行为。</p>
+<h3 id="（3）为您当前的应用程序设置性能和电源目标"><a href="#（3）为您当前的应用程序设置性能和电源目标" class="headerlink" title="（3）为您当前的应用程序设置性能和电源目标"></a>（3）为您当前的应用程序设置性能和电源目标</h3><p>为您的应用程序设置激进的性能目标，并使用 <code>Instruments</code> 监控这些目标。确保您的应用程序不会在执行不必要或重复的任务时浪费电力。</p>
+<h3 id="（4）采用持续集成（CI）工作流程"><a href="#（4）采用持续集成（CI）工作流程" class="headerlink" title="（4）采用持续集成（CI）工作流程"></a>（4）采用持续集成（CI）工作流程</h3><p>设置您的构建在 <code>Xcode Cloud</code> 中运行。通过确保每个提交都维护您的代码库的质量和稳定性来采用CI思维方式。将与性能相关的测试作为测试套件的一部分运行。</p>
+<h2 id="八、运行您的iPad和iPhone应用程序"><a href="#八、运行您的iPad和iPhone应用程序" class="headerlink" title="八、运行您的iPad和iPhone应用程序"></a>八、运行您的iPad和iPhone应用程序</h2><p><code>iPadOS</code> 和 <code>iOS</code> 中提供的相同框架也包含在 <code>visionOS</code> 中。这意味着您的 <code>iPad</code> 和 <code>iPhone</code> 应用程序将在 <code>Apple Vision Pro</code> 上运行，每个应用程序都作为一个可扩展的 <code>2D</code> 窗口，具有其原始的外观和感觉。当应用商店可用时，兼容的应用程序将自动可用，无需采取任何措施，为人们在 <code>visionOS</code> 中提供更多选项。本月晚些时候，您可以使用模拟器和 <code>TestFlight</code> 在 <code>Apple Vision Pro</code> 上测试您的应用程序。如果您的应用程序不适合 <code>Apple Vision Pro</code>，您将能够在 <code>App Store Connect</code> 中编辑其可用性。</p>
+
+      
     </div>
-</footer>
 
-<!-- jQuery -->
+    
+    
+    
 
-<script src="/js/jquery.min.js"></script>
-
-
-<!-- Bootstrap Core JavaScript -->
-
-<script src="/js/bootstrap.min.js"></script>
-
-
-<!-- Custom Theme JavaScript -->
-
-<script src="/js/hux-blog.min.js"></script>
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
--->
-<!--
-    <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
-    </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
-
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://example.com/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-<!-- Google Analytics -->
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
 
 
-<!-- Baidu Tongji -->
+    
 
 
-<!-- Side Catalog -->
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/21/20230521/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/21/20230521/" class="post-title-link" itemprop="url">使用 Firebase Hosting 托管 app-ads.txt</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-05-21 08:34:51 / Modified: 08:41:58" itemprop="dateCreated datePublished" datetime="2023-05-21T08:34:51+08:00">2023-05-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>首先，你需要注册<code>Firebase</code>账号。</li>
+<li>然后，创建<code>Firebase</code>项目。</li>
+<li>生成<code>app-ads.txt</code>文件。</li>
+</ul>
+<h2 id="安装-Firebase-CLI"><a href="#安装-Firebase-CLI" class="headerlink" title="安装 Firebase CLI"></a>安装 Firebase CLI</h2><p>1.安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://firebase.tools | bash</span><br></pre></td></tr></table></figure>
+
+<p>2.登录并测试 Firebase CLI</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firebase login</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：firebase login 命令会打开与机器上的 localhost 关联的网页。如果您使用的是远程机器且您无权访问 localhost，请运行带有 –no-localhost 标志的命令。</p>
+</blockquote>
+<h2 id="初始化-Firebase-项目"><a href="#初始化-Firebase-项目" class="headerlink" title="初始化 Firebase 项目"></a>初始化 Firebase 项目</h2><p>切换到项目目录，然后执行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firebase init</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：firebase init 命令不会创建新目录。如果您要设置一个新应用，必须先创建一个目录，然后在该目录下运行 firebase init。</p>
+</blockquote>
+<p>根据提示，选择:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub </span><br><span class="line">Action deploys</span><br></pre></td></tr></table></figure>
+
+<p>然后，可以选择创建已有的项目，或者新建。前面准备工作中我们已经创建项目，所以选择已有项目即可。</p>
+<h2 id="配置app-ads-txt"><a href="#配置app-ads-txt" class="headerlink" title="配置app-ads.txt"></a>配置app-ads.txt</h2><p>将<code>app-ads.txt</code>文件放置到<code>public</code>目录下面即可。</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firebase deploy --only hosting</span><br></pre></td></tr></table></figure>
+
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>在浏览器输入一下链接并打开。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://PROJECT_ID.web.app/app-ads.txt</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中，PROJECT_ID是你的项目名</p>
+</blockquote>
+<p>如果能够正确访问<code>app-ads.txt</code>中的内容，说明配置成功。</p>
+<h2 id="One-More-Thing"><a href="#One-More-Thing" class="headerlink" title="One More Thing"></a>One More Thing</h2><p>如果你有自己的网站，可以将主页重定向到你的网站，在<code>firebase.json </code>文件中添加<code>redirects </code>键值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&quot;hosting&quot;: &#123;</span><br><span class="line">  ...</span><br><span class="line">  &quot;redirects&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;source&quot;: &quot;/&quot;,</span><br><span class="line">      &quot;destination&quot;: &quot;https://www.example.com&quot;,</span><br><span class="line">      &quot;type&quot;: 301</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有的话，也可以自己写一个静态网页替换<code>public</code>目录下的<code>index.html</code>文件。</p>
+<p>然后，执行部署命令完成部署即可。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/25/20230325/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/25/20230325/" class="post-title-link" itemprop="url">Swift高阶函数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-25 10:48:50" itemprop="dateCreated datePublished" datetime="2023-03-25T10:48:50+08:00">2023-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-28 08:34:04" itemprop="dateModified" datetime="2023-04-28T08:34:04+08:00">2023-04-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Swift高阶函数"><a href="#Swift高阶函数" class="headerlink" title="Swift高阶函数"></a>Swift高阶函数</h1><p>Swift高阶函数是指可以接受函数作为参数或返回函数的函数。高阶函数强调了函数的参数和返回值都可以是函数类型，这使得函数能够被视为可传递和可组合的值和运算。</p>
+<p>Swift中有多种高阶函数，包括<code>map</code>，<code>filter</code>，<code>reduce</code>，<code>sort</code>，<code>flatMap</code>，<code>compactMap</code>等。</p>
+<h4 id="1-Map"><a href="#1-Map" class="headerlink" title="1. Map"></a>1. Map</h4><p><code>map</code>是高阶函数中最常用的函数之一。它接受一个函数和一个数组，并返回一个新数组，其中每个元素都是原始数组中对应元素通过输入的函数转换后得到的结果。</p>
+<p>以下是一个简单示例，将一个数组中的每个元素加倍：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> doubled <span class="operator">=</span> numbers.map &#123; <span class="variable">$0</span> <span class="operator">*</span> <span class="number">2</span> &#125;</span><br><span class="line"><span class="built_in">print</span>(doubled) </span><br><span class="line"><span class="comment">// prints [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-Filter"><a href="#2-Filter" class="headerlink" title="2. Filter"></a>2. Filter</h4><p><code>filter</code>函数接受一个函数和一个数组，并返回一个新数组，其中只包含原始数组中符合条件的元素。这个函数可以用于过滤数组中不需要的元素。</p>
+<p>以下是一个简单示例，从一个字符串数组中过滤出包含大写字母的字符串：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> words <span class="operator">=</span> [<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;CAT&quot;</span>, <span class="string">&quot;dog&quot;</span>, <span class="string">&quot;EGG&quot;</span>]</span><br><span class="line"><span class="keyword">let</span> capitalized <span class="operator">=</span> words.filter &#123; word <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">let</span> pattern <span class="operator">=</span> <span class="string">&quot;.*[A-Z]+.*&quot;</span></span><br><span class="line">    <span class="keyword">let</span> range <span class="operator">=</span> word.range(of: pattern, options: .regularExpression)</span><br><span class="line">    <span class="keyword">return</span> range <span class="operator">!=</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(capitalized) </span><br><span class="line"><span class="comment">// prints [&quot;CAT&quot;, &quot;EGG&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Reduce"><a href="#3-Reduce" class="headerlink" title="3. Reduce"></a>3. Reduce</h4><p><code>reduce</code>函数接受一个函数和一个数组，并返回一个单一的值，这个值是通过使用指定的函数对数组中的所有元素进行聚合得到的。这个函数可以用于计算数组中所有元素的总和或平均值等。</p>
+<p>以下是一个简单示例，计算一个数组中所有元素的总和：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> sum <span class="operator">=</span> numbers.reduce(<span class="number">0</span>, &#123; <span class="variable">$0</span> <span class="operator">+</span> <span class="variable">$1</span> &#125;)</span><br><span class="line"><span class="built_in">print</span>(sum) </span><br><span class="line"><span class="comment">// prints 15</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的例子在<code>reduce</code>函数的初始化值参数中指定了一个初始值0，<code>reduce</code>函数对该数组中的所有元素进行了求和操作。<code>reduce</code>函数中的第二个参数是一个闭包，用于对数组中的每个元素进行操作。</p>
+<h4 id="4-Sorted"><a href="#4-Sorted" class="headerlink" title="4. Sorted"></a>4. Sorted</h4><p><code>sorted</code>函数接受一个数组，并返回一个新数组，其中所有元素都按照指定的顺序排列。这个函数可以用于对数组中的元素进行排序操作。</p>
+<p>以下是一个简单示例，对一个包含人员信息的数组按照年龄从小到大排序：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> people <span class="operator">=</span> [(<span class="string">&quot;Alice&quot;</span>, <span class="number">20</span>), (<span class="string">&quot;Bob&quot;</span>, <span class="number">18</span>), (<span class="string">&quot;Charlie&quot;</span>, <span class="number">25</span>), (<span class="string">&quot;David&quot;</span>, <span class="number">22</span>)]</span><br><span class="line"><span class="keyword">let</span> sortedPeople <span class="operator">=</span> people.sorted &#123; (person1, person2) <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">return</span> person1.<span class="number">1</span> <span class="operator">&lt;</span> person2.<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(sortedPeople)</span><br><span class="line"><span class="comment">// prints [(&quot;Bob&quot;, 18), (&quot;Alice&quot;, 20), (&quot;David&quot;, 22), (&quot;Charlie&quot;, 25)]</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们传递了一个闭包作为<code>sorted</code>函数的参数，这个闭包用于比较元组中的第二个元素（年龄），成升序排列。</p>
+<h4 id="5-FlatMap"><a href="#5-FlatMap" class="headerlink" title="5. FlatMap"></a>5. FlatMap</h4><p><code>flatMap</code>接受一个数组，然后将每个元素映射为新的数组，并将所有结果组合成一个单一的数组。与map不同，在使用<code>flatMap</code>时，元素可以映射到一个可选类型的数组，从而更加灵活。</p>
+<p>以下是一个简单示例，将一个含有字符串的数组转换成一个包含所有单词的数组：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> phrases <span class="operator">=</span> [<span class="string">&quot;hello world&quot;</span>, <span class="string">&quot;goodbye cruel world&quot;</span>]</span><br><span class="line"><span class="keyword">let</span> words <span class="operator">=</span> phrases.flatMap &#123; <span class="variable">$0</span>.split(separator: <span class="string">&quot; &quot;</span>) &#125;</span><br><span class="line"><span class="built_in">print</span>(words) </span><br><span class="line"><span class="comment">// prints [&quot;hello&quot;, &quot;world&quot;, &quot;goodbye&quot;, &quot;cruel&quot;, &quot;world&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，首先使用<code>split</code>函数将字符串分割成单词数组，然后使用<code>flatMap</code>将多个数组合并为一个数组。</p>
+<h4 id="6-CompactMap"><a href="#6-CompactMap" class="headerlink" title="6. CompactMap"></a>6. CompactMap</h4><p><code>compactMap</code>通过一个闭包参数来转化数组中的每个元素，并返回一个新的数组，其中<code>nil</code>值会被过滤掉。这个闭包必须返回一个可选类型值，当返回值为<code>nil</code>时，元素将被过滤掉。</p>
+<p>例如：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> items <span class="operator">=</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mappedItems <span class="operator">=</span> items.map &#123; <span class="variable">$0</span> <span class="operator">*</span> <span class="number">2</span> &#125;</span><br><span class="line"><span class="built_in">print</span>(mappedItems) </span><br><span class="line"><span class="comment">// prints [2, 4, 6, 8, 10]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> compactMappedItems <span class="operator">=</span> items.compactMap &#123; <span class="variable">$0</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">0</span> <span class="operator">?</span> <span class="variable">$0</span> : <span class="literal">nil</span> &#125;</span><br><span class="line"><span class="built_in">print</span>(compactMappedItems) </span><br><span class="line"><span class="comment">// prints [2, 4]</span></span><br></pre></td></tr></table></figure>
+
+<p>在上面的例子中，我们将数组中的元素乘以 2 进行了映射，产生了一个新的数组。然后我们使用<code>compactMap</code>过滤掉了奇数元素，只剩下了偶数元素 2 和 4。</p>
+<h4 id="One-more-Thing"><a href="#One-more-Thing" class="headerlink" title="One more Thing"></a>One more Thing</h4><p>Swift高阶函数的另一个强大之处在于它们可以链接在一起形成一个管道，这被称为函数链或函数式编程范式。使用函数链，我们可以通过将多个函数应用于同一个数组来生成一个复杂的、自定义的操作序列。</p>
+<p>以下是一个简单示例，将一个字符串数组中的大写字母转换为小写字母，并按字母顺序排序：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> words <span class="operator">=</span> [<span class="string">&quot;AbC&quot;</span>, <span class="string">&quot;deF&quot;</span>, <span class="string">&quot;ghi&quot;</span>, <span class="string">&quot;JKL&quot;</span>]</span><br><span class="line"><span class="keyword">let</span> result <span class="operator">=</span> words</span><br><span class="line">    .map &#123; <span class="variable">$0</span>.lowercased() &#125;</span><br><span class="line">    .filter &#123; <span class="variable">$0</span>.count <span class="operator">&lt;=</span> <span class="number">3</span> &#125;</span><br><span class="line">    .sorted()</span><br><span class="line"><span class="built_in">print</span>(result) </span><br><span class="line"><span class="comment">// prints [&quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们调用了串联式的<code>map</code>、<code>filter</code>和<code>sorted</code>函数，它们在一起形成了一个管道，每个函数都返回一个新的数组，以形成复合操作。</p>
+<p>通过函数链，我们可以创建与原始数据完全不同的结果，并且所需的代码量非常少。使用高阶函数以及函数链编程方式，可以使代码更加可读性强，更加易于维护和测试。</p>
+<p>总之，高阶函数是Swift语言中非常强大和灵活的工具，可以大大简化代码，并提高代码的可读性和可维护性。掌握这些高阶函数，可以让我们更快地构建高效、简洁的代码。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/10/20230310/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/10/20230310/" class="post-title-link" itemprop="url">iOS模块化中的通用图片访问器优化</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-10 12:48:50" itemprop="dateCreated datePublished" datetime="2023-03-10T12:48:50+08:00">2023-03-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-09 06:56:25" itemprop="dateModified" datetime="2023-05-09T06:56:25+08:00">2023-05-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>本文主要针对之前写的文章<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2021/10/30/20211030/">《iOS模块化中的通用图片访问器》</a>的方案改进。</p>
+</blockquote>
+<h2 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h2><p>项目组件化，壳工程后，我们对于资源的使用也做了规范。每个模块的图片资源使用<code>xcassets</code>进行管理。正常访问不同<code>Bundle</code>中的资源需要使用以下方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">open class UIImage : NSObject, NSSecureCoding &#123;</span><br><span class="line">   @available(iOS 8.0, *)</span><br><span class="line">   public init?(named name: String, in bundle: Bundle?, compatibleWith traitCollection: UITraitCollection?)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从其他<code>Bundle</code>访问图片资源，至少要传两个参数，一个<code>name</code>，一个<code>bundle</code>。</p>
+<p>在之前的文章中介绍的使用方式如下（详细介绍请查看原文<a target="_blank" rel="noopener" href="http://jixuqianxing.github.io/2021/10/30/20211030/">《iOS模块化中的通用图片访问器》</a>）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 从 ModuleName.bundle 中获取图片</span><br><span class="line">MyImage[ModuleName.self, &quot;image name&quot;]</span><br><span class="line"></span><br><span class="line">// 或者，从 main bundle 中获取图片</span><br><span class="line">MyImage[&quot;image name&quot;]</span><br></pre></td></tr></table></figure>
+<p>这种方式，通过传入一个模块命名空间，来获取对应的<code>Bundle</code>。这种使用方式并不优雅。</p>
+<h2 id="寻找解题方法"><a href="#寻找解题方法" class="headerlink" title="寻找解题方法"></a>寻找解题方法</h2><p>有了上面这个问题，于是我开始查找可以自动获取模块名的方法。功夫不负有心人，最终找到一个解决方案。</p>
+<p>就是使用<code>#fileID</code>这个表达式，代替我们手动传递模块名。</p>
+<table>
+<thead>
+<tr>
+<th>literal</th>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>#fileID</code></td>
+<td>String</td>
+<td>The name of the file and module in which it appears.</td>
+</tr>
+</tbody></table>
+<p>通过<code>#fileID</code>可以得到类似下面这串字符串：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyModule/some/disambiguation/MyFile.swift.</span><br></pre></td></tr></table></figure>
+<p>将字符串通过<code>/</code>分割后，第一个元素就是模块名。</p>
+<h2 id="解决痛点"><a href="#解决痛点" class="headerlink" title="解决痛点"></a>解决痛点</h2><p>结合下标语法和<code>#fileID</code>表达式，可以对代码做如下改造：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public extension UIImage &#123;</span><br><span class="line"> </span><br><span class="line">   static subscript (named: String, fileID: String = #fileID) -&gt; UIImage? &#123;</span><br><span class="line">       guard let moduleName = fileID.components(separatedBy: &quot;/&quot;).first,</span><br><span class="line">             moduleName.isNonEmpty,</span><br><span class="line">             named.isNonEmpty</span><br><span class="line">       else &#123;</span><br><span class="line">           return nil</span><br><span class="line">       &#125;	   </span><br><span class="line">       // 加载图片资源具体实现</span><br><span class="line">       ...</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样就可以在不同的模块中这样访问图片资源了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UIImage[&quot;name&quot;]</span><br></pre></td></tr></table></figure>
+<p>仅仅只需要填写一个图片名即可，使用起来非常方便。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个问题其实并不复杂，可以使用不同的方式去解决。很多开源代码里面，都有关于<code>Bundle</code>中资源的使用，也有一些封装实现。在我遇到这个问题时，不断尝试最优解，好在最后找到了一种比较满意的方式。当然，我了解的也很有限，如果大家有更好的实现方式，欢迎留言交流。</p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/10/202303101/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/10/202303101/" class="post-title-link" itemprop="url">Apple M2 macOS Flutter环境搭建记录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-10 11:58:28" itemprop="dateCreated datePublished" datetime="2023-03-10T11:58:28+08:00">2023-03-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-08 09:53:18" itemprop="dateModified" datetime="2023-05-08T09:53:18+08:00">2023-05-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="1-安装-Rosetta-2-环境"><a href="#1-安装-Rosetta-2-环境" class="headerlink" title="1.安装 Rosetta 2 环境"></a>1.安装 Rosetta 2 环境</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo softwareupdate --install-rosetta --agree-to-license</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-下载Flutter-SDK"><a href="#2-下载Flutter-SDK" class="headerlink" title="2.下载Flutter SDK"></a>2.下载Flutter SDK</h2><p><a target="_blank" rel="noopener" href="https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_arm64_3.7.7-stable.zip">flutter_macos_arm64_3.7.7-stable.zip</a></p>
+<p>当然你也可以在这个文档中找到最新的安装包<a target="_blank" rel="noopener" href="https://docs.flutter.dev/development/tools/sdk/releases">SDK</a>，下载<code>arm64 </code>版本即可。</p>
+<p>当然，你也可以使用克隆的方式下载SDK。具体，根据个人喜好。</p>
+<h2 id="3-添加环境变量"><a href="#3-添加环境变量" class="headerlink" title="3.添加环境变量"></a>3.添加环境变量</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>~/.zshrc</code>中添加以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PATH=[flutter 安装目录]/bin:$PATH</span><br><span class="line">export PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line">export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br></pre></td></tr></table></figure>
+
+<p>保存并退出编辑，然后刷新一下，让我们的配置立即生效：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Run-flutter-doctor"><a href="#4-Run-flutter-doctor" class="headerlink" title="4.Run flutter doctor"></a>4.Run flutter doctor</h2><p>进入我们之前下载并解压好的<code>flutter</code>目录，然后执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
+<p>根据对应的提示操作即可。</p>
+<p>按照上面这些步骤基本就能完成环境的搭建，其他一些操作，可以查看<a target="_blank" rel="noopener" href="https://docs.flutter.dev/get-started/install/macos">官方文档</a>。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/04/202303041/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/04/202303041/" class="post-title-link" itemprop="url">iOS基于Vision框架的人体关键点检测</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-04 22:06:28" itemprop="dateCreated datePublished" datetime="2023-03-04T22:06:28+08:00">2023-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-09 07:00:07" itemprop="dateModified" datetime="2023-05-09T07:00:07+08:00">2023-05-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>从iOS 14和macOS 11开始，Vision增加了识别人体姿势的强大功能。他可以识别人体的19个关键点。如图所示：<br><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20230304/1.png" alt="人体关键点.png"></p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h3 id="1-发起一个请求"><a href="#1-发起一个请求" class="headerlink" title="1.发起一个请求"></a>1.发起一个请求</h3><p>使用<code>Vision</code>框架，通过<code>VNDetectHumanBodyPoseRequest</code>提供身体姿势检测功能。 下面代码演示了，如何从<code>CGImage</code>中检测身体关键点。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Get the CGImage on which to perform requests.</span></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> cgImage <span class="operator">=</span> <span class="type">UIImage</span>(named: <span class="string">&quot;bodypose&quot;</span>)<span class="operator">?</span>.cgImage <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create a new image-request handler.</span></span><br><span class="line"><span class="keyword">let</span> requestHandler <span class="operator">=</span> <span class="type">VNImageRequestHandler</span>(cgImage: cgImage)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create a new request to recognize a human body pose.</span></span><br><span class="line"><span class="keyword">let</span> request <span class="operator">=</span> <span class="type">VNDetectHumanBodyPoseRequest</span>(completionHandler: bodyPoseHandler)</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// Perform the body pose-detection request.</span></span><br><span class="line">    <span class="keyword">try</span> requestHandler.perform([request])</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Unable to perform the request: <span class="subst">\(error)</span>.&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-处理结果"><a href="#2-处理结果" class="headerlink" title="2.处理结果"></a>2.处理结果</h3><p>请求处理完之后，会调用完成的闭包，通过闭包，可以获取到检测结果和错误信息。 如果正常检测到人体关键点，将以<code>VNHumanBodyPoseObservation</code>数组的形式返回。<code>VNHumanBodyPoseObservation</code>中包含识别到的关键点和一个置信度分数，置信度越大，说明识别的精度越高。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">func</span> <span class="title function_">bodyPoseHandler</span>(<span class="params">request</span>: <span class="type">VNRequest</span>, <span class="params">error</span>: <span class="type">Error</span>?) &#123;</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> observations <span class="operator">=</span></span><br><span class="line">            request.results <span class="keyword">as?</span> [<span class="type">VNHumanBodyPoseObservation</span>] <span class="keyword">else</span> &#123; </span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Process each observation to find the recognized body pose points.</span></span><br><span class="line">    observations.forEach &#123; processObservation(<span class="variable">$0</span>) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-获取关键点"><a href="#3-获取关键点" class="headerlink" title="3.获取关键点"></a>3.获取关键点</h3><p>可以通过<code>VNHumanBodyPoseObservation.JointName</code>来获取对应的关键点的坐标。注意，<code>recognizedPoints(_:)</code> 方法返回的点取值范围[0, 1]，原点位于左下角，实际使用中需要进行转换。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">func</span> <span class="title function_">processObservation</span>(<span class="keyword">_</span> <span class="params">observation</span>: <span class="type">VNHumanBodyPoseObservation</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Retrieve all torso points.</span></span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> recognizedPoints <span class="operator">=</span></span><br><span class="line">            <span class="keyword">try?</span> observation.recognizedPoints(.torso) <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Torso joint names in a clockwise ordering.</span></span><br><span class="line">    <span class="keyword">let</span> torsoJointNames: [<span class="type">VNHumanBodyPoseObservation</span>.<span class="type">JointName</span>] <span class="operator">=</span> [</span><br><span class="line">        .neck,</span><br><span class="line">        .rightShoulder,</span><br><span class="line">        .rightHip,</span><br><span class="line">        .root,</span><br><span class="line">        .leftHip,</span><br><span class="line">        .leftShoulder</span><br><span class="line">    ]</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Retrieve the CGPoints containing the normalized X and Y coordinates.</span></span><br><span class="line">    <span class="keyword">let</span> imagePoints: [<span class="type">CGPoint</span>] <span class="operator">=</span> torsoJointNames.compactMap &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> point <span class="operator">=</span> recognizedPoints[<span class="variable">$0</span>], point.confidence <span class="operator">&gt;</span> <span class="number">0</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Translate the point from normalized-coordinates to image coordinates.</span></span><br><span class="line">        <span class="keyword">return</span> <span class="type">VNImagePointForNormalizedPoint</span>(point.location,</span><br><span class="line">                                              <span class="type">Int</span>(imageSize.width),</span><br><span class="line">                                              <span class="type">Int</span>(imageSize.height))</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Draw the points onscreen.</span></span><br><span class="line">    draw(points: imagePoints)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h1><p>除了使用<code>Vision</code>的<code>VNDetectHumanBodyPoseRequest</code>来做人体姿势识别之外，还可以使用<code>CoreML</code>来实现。官方示例：<a target="_blank" rel="noopener" href="https://docs-assets.developer.apple.com/published/723cc16d46/DetectingHumanBodyPosesInAnImage.zip">Detecting Human Body Poses in an Image</a> ，此示例可以运行在<code>iOS 13</code>及以上版本。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/04/20230304/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/04/20230304/" class="post-title-link" itemprop="url">iOS直播间重构优化记录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-04 14:04:28" itemprop="dateCreated datePublished" datetime="2023-03-04T14:04:28+08:00">2023-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-08 11:05:31" itemprop="dateModified" datetime="2023-05-08T11:05:31+08:00">2023-05-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>历史原因加上功能的不断迭代，造成直播间代码越来越难以维护，前期架构也没有很好设计，造成各种耦合，不管是业务上的耦合，还是UI上的耦合。加上遗留了很多适配上的问题，以及交互问题，这块的代码成了一块比较难啃的硬骨头，重构这块代码已刻不容缓。</p>
+<h1 id="重构思路"><a href="#重构思路" class="headerlink" title="重构思路"></a>重构思路</h1><ol>
+<li>引入多代理实现（使用过XMPP的同学应该会熟悉这个概率，笔者工作早期有使用过XMPP），用于统一事件的分发，各个业务都可以注册成为代理，用于将数据转发给各个关心的业务模块，做到各业务模块的解耦。</li>
+<li>将页面划分成不同的<code>Container</code>，使用<code>UIStatickView</code>来做流式布局。通过协议的方式，添加不同业务的视图，业务层自己维护视图的显示尺寸，以及是否显示，不需要管理布局间的相对关系。这样可以很好的将<code>UI</code>进行解耦，达到插拔式使用效果。</li>
+<li><code>UI</code>联动解耦，比如键盘升起某些视图需要位移，某些需要隐藏，原来的处理方式是在一个地方注册监听，然后处理所有的视图逻辑。重构思路是，下放权利，各个业务模块自己注册通知，然后自己处理这块的逻辑。这个主要也是充分发挥了<code>UIStatickView</code>的特性，不然做起来会比较麻烦。</li>
+<li>横竖屏切换，布局相应调整。主要也是利用<code>UIStatickView </code>流式布局的线性方向，结合<code>SizeClass</code>，可以达到切换横屏后，布局方向的灵活调整。</li>
+<li>业务层采用MVVM结构实现。</li>
+</ol>
+<h1 id="UI结构"><a href="#UI结构" class="headerlink" title="UI结构"></a>UI结构</h1><p>以下只是部分结构<br><img src="https://s1.ax1x.com/2023/03/16/pp8dM01.png" alt="直播间UI架构.png"></p>
+<h1 id="部分效果"><a href="#部分效果" class="headerlink" title="部分效果"></a>部分效果</h1><p>由于涉及到一些隐私数据问题，这里只放很小的一部分效果。</p>
+<p>横竖屏切换自适应：</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20230304/2.gif" alt="点击图片查看动图"></p>
+<p>键盘联动效果，以及横竖屏切换：</p>
+<p><img src="https://raw.githubusercontent.com/jixuqianxing/BlogResources/main/20230304/3.gif" alt="点击图片查看动图"></p>
+<h1 id="体验优化"><a href="#体验优化" class="headerlink" title="体验优化"></a>体验优化</h1><p>本次重构，还做了很多交互体验上的优化。</p>
+<h4 id="1-添加动画"><a href="#1-添加动画" class="headerlink" title="1.添加动画"></a>1.添加动画</h4><p>交互没有动画，就像一个人没有灵魂一样。但是，动效也不是越多越好，越复杂越好。常规动效即可，耐看。也可以理解为，在该有的地方有该有的动效，才是好的动效。<br>比如底部弹起的弹框，那么他就该从底部慢慢升起，而不是直接就盖在了页面上。这是用户已经见惯不怪的效果了，没有这个效果反而觉得很low。<br>再比如键盘升起的时候，页面内容需要跟着键盘的动效一起慢慢升起或者降落。<br>当然，还有很多弹框的动效，由于时间和资源有限，加上直播间的弹框较多，需要重新架构一下。所以，本次只做了部分修改。</p>
+<h4 id="2-直播间刷新优化"><a href="#2-直播间刷新优化" class="headerlink" title="2.直播间刷新优化"></a>2.直播间刷新优化</h4><p>老版本在进入直播间，加载数据的时候加了很多loading，这个其实很影响视觉。所以，我在不影响功能的情况下，直接干掉了霸屏loading。</p>
+<p>再一个，老版本从直播间切换到其他页面后，会再次刷新直播间数据，并且重新拉流。这样就会看到聊天列表闪屏、直播拉流断掉并重新启动等。这样一顿操作下来，体验真的有点难以忍受。这个细节问题，其实很好解决，从新回到直播间的时候，已经在拉流了就不需要再次启动拉流了，这样画面就不会断掉（视网络情况而定）。</p>
+<p>聊天列表闪屏问题。为什么会闪屏？仔细看不难发现，造成闪屏的原因是：列表数据从有到无，再到有。找出这个问题就好解决了，解决方式就是在有数据的时候去刷新列表，不做清空列表的动作。事实上，聊天列表数据也不会有清空的情况。真的有这种情况，那就是数据库数据被清了。</p>
+<h4 id="3-样式升级"><a href="#3-样式升级" class="headerlink" title="3.样式升级"></a>3.样式升级</h4><p>当你在一家公司接触了一波又一波<code>UI</code>设计师后，你会发现每个人的设计都有自己的风格。我觉得一个好的<code>App</code>，需要有一个整体的风格，不管是图标、圆角、配色、字体字号、插图、弹框、交互等等，都应该在一个规范里面去执行，需要一个宏观的把控。巧了，我在公司就主导推动过这件事，并且最终出了一套规范。在这次重构中发现的一些配色和字体问题，做了修改。比如邀请下单按钮背景色、价格颜色和字体、七天无理由颜色等等。</p>
+<h4 id="4-异形屏适配"><a href="#4-异形屏适配" class="headerlink" title="4.异形屏适配"></a>4.异形屏适配</h4><p>屏幕适配，其实，也是UI重构的一部分。放在体验优化里面讲，是因为很多人不觉得这是一个 bug，仅仅是丑了点。它确实不是 bug，但真的看不过去呀。</p>
+<p>关于如何准确适配异形屏，可以参考我之写的一篇文章 《<a target="_blank" rel="noopener" href="https://jixuqianxing.github.io/2021/10/29/20211029/">iOS 如何更好的适配异形屏（刘海屏）</a>》，掌握了这个技巧，可以很轻松的就解决这个问题。</p>
+<h4 id="5-聊天列表顶部渐隐效果"><a href="#5-聊天列表顶部渐隐效果" class="headerlink" title="5.聊天列表顶部渐隐效果"></a>5.聊天列表顶部渐隐效果</h4><p>这个细节问题，也是不痛不痒。但是，别人家孩子有的东西，咱也不能落下。</p>
+<h4 id="6-统一转屏效果"><a href="#6-统一转屏效果" class="headerlink" title="6.统一转屏效果"></a>6.统一转屏效果</h4><p>很多地方都是直接在转屏的同时去切换下一个页面，这样不仅看起来怪怪的，同时也会产生布局的问题，特别的有两个操作都需要转屏时，出现同时调两次转屏造成一些意想不到的问题。<br>本次重构统，重构了转屏的方法，提供了转屏结束的回调。将需要转屏的操作，统一放在完成转屏的回调中去处理。这样既保持了统一性，又能避免出现布局错误。</p>
+<h4 id="7-页面联动效果"><a href="#7-页面联动效果" class="headerlink" title="7.页面联动效果"></a>7.页面联动效果</h4><p>这个包括发布评论时键盘的升起和收起时，页面的联动效果。以及出价时，出价器显示，包括优惠券展示的联动效果等。</p>
+<h1 id="重构收益"><a href="#重构收益" class="headerlink" title="重构收益"></a>重构收益</h1><p>经过重构，主要有以下收益：</p>
+<ul>
+<li>直播交互更加的丝滑，体验提升几个档次<ul>
+<li>页面切换，拉流不再卡顿</li>
+<li>键盘交互、横竖屏更加丝滑</li>
+<li>交互动效更加合理</li>
+</ul>
+</li>
+<li>结构更加清晰，扩展性强，解耦，易维护<ul>
+<li>利于新业务的扩展，不再需要梳理大量的业务逻辑</li>
+<li>老业务的废除，都能够做到”干净”移除</li>
+</ul>
+</li>
+<li>期间解决了很多细节问题和历史遗留bug，总数在100+</li>
+<li>上线后，运行稳定，几乎没产生因重构造成的bug</li>
+<li>最后，也是非常重要的一个收益，就是对于开发来说，这块硬骨头终于被拿下，后期维护更加友好，间接提升效率</li>
+</ul>
+<h1 id="总结和感悟"><a href="#总结和感悟" class="headerlink" title="总结和感悟"></a>总结和感悟</h1><p>本次重构任务量很大，重构中也发现了很多历史遗留问题和细节问题。细节问题处理和自测占了大部分时间。很多个夜晚笔者都是自觉加班加点的自测和打磨细节。一方面是希望把这个事情做好，当然，最主要还是害怕出线上bug😂。</p>
+<p>在开启这项工作的前，也有小伙伴劝我不要做这件事。一方面是比较麻烦，另一方面是几乎没有业务价值，再者就是如果出了严重的线上事故，你所做的这一切都将毁于一旦。但是，作为一个有追求的技术来说，在遇到这样的问题时，是没有退路的。而且，我也很享受问题被解决后的成就感，我相信很多人都会有这样的感受。</p>
+<p>通过这次重构，不仅仅是从技术上去解决问题，更多的时候，我会从产品的角度去思考一些功能和交互的合理性，然后去改进它。</p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/20230301/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/01/20230301/" class="post-title-link" itemprop="url">Swift实现一个交互友好&灵活自定义的弹框</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-01 22:09:18" itemprop="dateCreated datePublished" datetime="2023-03-01T22:09:18+08:00">2023-03-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-03-16 19:33:17" itemprop="dateModified" datetime="2023-03-16T19:33:17+08:00">2023-03-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在我们平时日常开发中，经常会遇到各种样式的弹框。你是否也经常遇到呢？你是如何实现的？<br>本文介绍使用<code>UIPresentationController</code>，结合自定义转场动效，实现一个高度自定义的弹框，这也是苹果比较推荐的一种实现方式。</p>
+<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><p>开始之前，我们要了解下几个知识点：</p>
+<ul>
+<li><code>UIPresentationController</code></li>
+<li><code>UIViewControllerTransitioningDelegate</code></li>
+<li><code>UIViewControllerAnimatedTransitioning</code></li>
+</ul>
+<p>1、<code>UIPresentationController</code>是什么？官方文档中介绍如下：</p>
+<blockquote>
+<p>An object that manages the transition animations and the presentation of view controllers onscreen.</p>
+</blockquote>
+<p>简单来说，它可以管理转场动画和模态出来的窗口控制器。详细信息可以参考：<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/uikit/uipresentationcontroller/">UIPresentationController文档</a></p>
+<p>2、<code>UIViewControllerTransitioningDelegate</code>定义了转场代理方法，可以指定<code>Presented</code>和<code>Dismissed</code>动画，以及<code>UIPresentationController</code>。</p>
+<p>3、<code>UIViewControllerAnimatedTransitioning</code>就是转场动画协议，我们可以遵守该协议，实现转场动画。</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>1、自定义<code>UIPresentationController </code>，并实现相应方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">struct ZCXPopoup &#123;&#125;</span><br><span class="line"></span><br><span class="line">extension ZCXPopoup &#123;</span><br><span class="line"></span><br><span class="line">    class PresentationController: UIPresentationController &#123;</span><br><span class="line"></span><br><span class="line">        override func presentationTransitionWillBegin() &#123;</span><br><span class="line">            guard let containerView else &#123; return &#125;</span><br><span class="line">            dimmingView.frame = containerView.bounds</span><br><span class="line">            dimmingView.alpha = 0.0</span><br><span class="line">            containerView.insertSubview(dimmingView, at: 0)</span><br><span class="line"></span><br><span class="line">            // 背景蒙层淡入动画</span><br><span class="line">            presentedViewController.transitionCoordinator?.animate &#123; _ in</span><br><span class="line">                self.dimmingView.alpha = 1.0</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        override func dismissalTransitionWillBegin() &#123;</span><br><span class="line">            // 背景蒙层淡出动画，以及移除操作</span><br><span class="line">            presentedViewController.transitionCoordinator?.animate(alongsideTransition: &#123; _ in</span><br><span class="line">                self.dimmingView.alpha = 0.0</span><br><span class="line">            &#125;, completion: &#123; _ in</span><br><span class="line">                self.dimmingView.removeFromSuperview()</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        override var frameOfPresentedViewInContainerView: CGRect &#123; UIScreen.main.bounds &#125;</span><br><span class="line"></span><br><span class="line">        override func containerViewWillLayoutSubviews() &#123;</span><br><span class="line"></span><br><span class="line">            guard let containerView else &#123; return &#125;</span><br><span class="line">            dimmingView.frame = containerView.bounds</span><br><span class="line"></span><br><span class="line">            guard let presentedView else &#123; return &#125;</span><br><span class="line">            presentedView.frame = frameOfPresentedViewInContainerView</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // MARK: -</span><br><span class="line"></span><br><span class="line">        /// 背景蒙层</span><br><span class="line">        private lazy var dimmingView: UIView = &#123;</span><br><span class="line">            let view = UIView()</span><br><span class="line">            view.backgroundColor = UIColor.black.withAlphaComponent(0.5)</span><br><span class="line">            return view</span><br><span class="line">        &#125;()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码比较简单，主要的工作就是添加了一个背景蒙层，以及蒙层的动画交互处理，加上子视图尺寸的控制。</p>
+<blockquote>
+<p>注：上面的<code>ZCXPopoup</code>结构体没有实际作用，仅仅是为了区分命名空间。</p>
+</blockquote>
+<p>2、<code>UIViewControllerAnimatedTransitioning</code>实现类实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">extension ZCXPopoup &#123;</span><br><span class="line"></span><br><span class="line">    class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning &#123;</span><br><span class="line"></span><br><span class="line">        private var isOpen: Bool = false</span><br><span class="line"></span><br><span class="line">        convenience init(isOpen: Bool = false) &#123;</span><br><span class="line">            self.init()</span><br><span class="line">            self.isOpen = isOpen</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -&gt; TimeInterval &#123;</span><br><span class="line">            transitionContext?.isAnimated == true ? 0.5 : 0</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        func animateTransition(using transitionContext: UIViewControllerContextTransitioning) &#123;</span><br><span class="line"></span><br><span class="line">            guard let fromView = transitionContext.viewController(forKey: .from)?.view else &#123; return &#125;</span><br><span class="line">            guard let toView = transitionContext.viewController(forKey: .to)?.view else &#123; return &#125;</span><br><span class="line"></span><br><span class="line">            if isOpen &#123;</span><br><span class="line">                transitionContext.containerView.addSubview(toView)</span><br><span class="line">                toView.transform = .init(scaleX: 0.7, y: 0.7)</span><br><span class="line">                toView.alpha = 0</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            UIView.animate(</span><br><span class="line">                withDuration: transitionDuration(using: transitionContext),</span><br><span class="line">                delay: 0,</span><br><span class="line">                usingSpringWithDamping: 0.7,</span><br><span class="line">                initialSpringVelocity: 0.7,</span><br><span class="line">                options: []) &#123;</span><br><span class="line">                if self.isOpen &#123;</span><br><span class="line">                    toView.transform = .identity</span><br><span class="line">                    toView.alpha = 1</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    fromView.transform = .init(scaleX: 0.7, y: 0.7)</span><br><span class="line">                    fromView.alpha = 0</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; completion: &#123; _ in</span><br><span class="line">                let wasCancelled = transitionContext.transitionWasCancelled</span><br><span class="line">                transitionContext.completeTransition(!wasCancelled)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个实现类的内容也较简单，主要是设置转场动画时长，以及实现转场动画，转场动画分为进场（<code>present</code>）和出场（<code>dismiss</code>）动画。</p>
+<p>3、<code>UIViewControllerTransitioningDelegate</code>实现类实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">extension ZCXPopoup &#123;</span><br><span class="line"></span><br><span class="line">    class TransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate &#123;</span><br><span class="line"></span><br><span class="line">        func presentationController(</span><br><span class="line">            forPresented presented: UIViewController,</span><br><span class="line">            presenting: UIViewController?,</span><br><span class="line">            source: UIViewController</span><br><span class="line">        ) -&gt; UIPresentationController? &#123;</span><br><span class="line">            PresentationController(presentedViewController: presented, presenting: presenting)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        func animationController(</span><br><span class="line">            forPresented presented: UIViewController,</span><br><span class="line">            presenting: UIViewController,</span><br><span class="line">            source: UIViewController</span><br><span class="line">        ) -&gt; UIViewControllerAnimatedTransitioning? &#123;</span><br><span class="line">            TransitionAnimator(isOpen: true)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        func animationController(</span><br><span class="line">            forDismissed dismissed: UIViewController</span><br><span class="line">        ) -&gt; UIViewControllerAnimatedTransitioning? &#123;</span><br><span class="line">            TransitionAnimator(isOpen: false)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在该实现类中，实现代理方法，分别返回自定义的<code>PresentationController </code>和<code>TransitionAnimator </code>即可。</p>
+<p>4、为控制器增加一个扩展，方便使用弹框交互</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">extension UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    /// 转场类型，方便后续扩展</span><br><span class="line">    @objc public enum TransitioningType: Int &#123;</span><br><span class="line">        case none  = 0</span><br><span class="line">        case popup = 1</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /// 设置转场类型</span><br><span class="line">    @objc public var transitioningType: TransitioningType &#123;</span><br><span class="line">        get &#123; getAssociatedObject() as? TransitioningType ?? .none &#125;</span><br><span class="line">        set &#123;</span><br><span class="line">            if newValue == .popup &#123;</span><br><span class="line">                transitioningDelegate = self.popupTransitioningDelegate</span><br><span class="line">                modalPresentationStyle = .custom</span><br><span class="line">            &#125;</span><br><span class="line">            setAssociatedObject(newValue)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /// transitioningDelegate 实现类，需要被持有</span><br><span class="line">    private var popupTransitioningDelegate: ZCXPopoup.TransitioningDelegate &#123;</span><br><span class="line">        lazyVarAssociatedObject &#123; ZCXPopoup.TransitioningDelegate() &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>到这里，一个轻量级的弹窗管理就封装好了。我们就可以给任意一个控制器加上这个交互。</p>
+<h1 id="自定义弹框"><a href="#自定义弹框" class="headerlink" title="自定义弹框"></a>自定义弹框</h1><p>上面只是封装了弹框的交互，那么我们要怎么实现一个弹框呢？<br>很简单，具体来说就是，创建一个控制器，将其<code>view</code>设置成透明，然后在其中间加上弹框内容视图<code>contentView</code>。然后，设置控制器的<code>transitioningType = .popup</code>，使用<code>present</code>方式打开即可。</p>
+<blockquote>
+<p>这里大家可能会问，为什么不直接修改控制器的<code>preferredContentSize</code>，而是弄了一个背景透明的全屏控制器。这个问题非常好，欢迎留言讨论。</p>
+</blockquote>
+<p>设置转场类型和打开弹框：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@IBAction func showPopoup(_ sender: Any) &#123;</span><br><span class="line">    let sb = UIStoryboard(name: &quot;DemoViewController&quot;, bundle: nil)</span><br><span class="line">    guard let controller = sb.instantiateInitialViewController() else &#123; return &#125;</span><br><span class="line">    controller.transitioningType = .popup</span><br><span class="line">    present(controller, animated: true)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关闭弹框：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class DemoViewController: UIViewController &#123;</span><br><span class="line">    @IBAction func dismiss(_ sender: Any) &#123;</span><br><span class="line">        dismiss(animated: true)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/jixuqianxing/ZCXPopoup/raw/main/Images/popup.gif" alt="Popup.gif"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>上述方法，可以将弹框的交互独立封装出来，具体的业务弹框只需要实现好<code>UI</code>和交互事件，以及相应功能即可，弹框的打开和关闭，使用<code>present</code>和<code>dismiss</code>即可。<br>可以看到，弹框交互和业务可以完全解耦，这也是能做到弹框的高度可定制的核心。我们可以将这个交互沉淀到基础库，用来规范项目中弹框的统一交互。</p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a target="_blank" rel="noopener" href="https://github.com/jixuqianxing/ZCXPopoup">ZCXPopoup</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/uikit/uipresentationcontroller/">UIPresentationController</a><br><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/uikit/uiviewcontrolleranimatedtransitioning">UIViewControllerAnimatedTransitioning</a><br><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/uikit/uiviewcontrollertransitioningdelegate">UIViewControllerTransitioningDelegate</a></p>
+<hr>
+<p>原创文章，版权声明：自由转载-非商用-非衍生-保持署名 | <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/15/20230215/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/02/15/20230215/" class="post-title-link" itemprop="url">Physics Simulation 之 SCNPhysicsShape</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-02-15 16:46:59" itemprop="dateCreated datePublished" datetime="2023-02-15T16:46:59+08:00">2023-02-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-07 19:09:50" itemprop="dateModified" datetime="2023-05-07T19:09:50+08:00">2023-05-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>此系列为官方文档翻译，用于学习<code>SceneKit</code></p>
+</blockquote>
+<p><code>SCNPhysicsShape </code> 物理体实体的抽象，用于调整碰撞检测。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在<code>SceneKit</code>对场景中的<code>SCNPhysicsBody</code>对象进行接触检测和其他模拟时，它使用物理形状而不是可见对象的渲染几何。这种方法既提高了模拟性能，也使您更容易设计基于玩家可以交互的场景元素的游戏玩法。</p>
+<h2 id="简单与复杂的形状"><a href="#简单与复杂的形状" class="headerlink" title="简单与复杂的形状"></a>简单与复杂的形状</h2><p>当您允许<code>SceneKit</code>自动创建物理形状时，它会使用尽可能简单的形状来匹配物理体所附加的节点的几何形状。这种方法可以最大程度地提高模拟性能，但对于某些对象可能导致不真实的物理行为。<br> 您可以通过定义更接近场景可见几何形状的物理形状来使模拟的行为更加真实。但这种方法会降低性能，因此您需要限制物理形状的细节数量。仅在对应用程序的精确碰撞检测很重要的物体上使用最高级别的细节。</p>
+<p> 如果您使用基本几何类（<code>SCNBox</code>、<code>SCNSphere</code>、<code>SCNPyramid</code>、<code>SCNCone</code>、<code>SCNCylinder</code>或<code>SCNCapsule</code>）之一创建物理形状，则SceneKit使用该几何形状的理想形式来创建物理形状，而不是使用几何形状的顶点数据来模拟碰撞。例如，如果您从SCNSphere对象创建一个物理形状，则<code>SceneKit</code>将模拟射线通过球的半径时的相互碰撞。</p>
+<p> 由于简单几何的理想形式比用于显示它们所需的顶点数据在计算上简单得多，因此使用基本几何形状（或使用<code>init(shapes：transforms :)</code>方法创建的复合形状）通常提供了模拟精度和性能之间的最佳平衡。</p>
+<h2 id="更改物理体的形状"><a href="#更改物理体的形状" class="headerlink" title="更改物理体的形状"></a>更改物理体的形状</h2><p>物理形状是不可变的，但您可以通过创建新的<code>SCNPhysicsShape</code>实例并将其分配给体的<code>physicsShape</code>属性来更改与物理体关联的形状。</p>
+<h2 id="相关API"><a href="#相关API" class="headerlink" title="相关API"></a>相关API</h2><h3 id="创建物理形状"><a href="#创建物理形状" class="headerlink" title="创建物理形状"></a>创建物理形状</h3><p>基于几何对象创建物理形状。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init(geometry: SCNGeometry, options: [SCNPhysicsShape.Option : Any]?)</span><br></pre></td></tr></table></figure>
+
+<p>从节点或节点层次结构创建物理形状。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init(node: SCNNode, options: [SCNPhysicsShape.Option : Any]?)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="组合物理形状"><a href="#组合物理形状" class="headerlink" title="组合物理形状"></a>组合物理形状</h3><p>通过组合其他物理形状创建新的物理形状。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init(shapes: [SCNPhysicsShape], transforms: [NSValue]?)</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取有关形状的信息"><a href="#获取有关形状的信息" class="headerlink" title="获取有关形状的信息"></a>获取有关形状的信息</h3><p>用于创建形状的对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var sourceObject: Any</span><br></pre></td></tr></table></figure>
+<p>用于创建形状的选项字典。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var options: [SCNPhysicsShape.Option : Any]?</span><br></pre></td></tr></table></figure>
+<p>用于创建复合形状的变换数组。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var transforms: [NSValue]?</span><br></pre></td></tr></table></figure>
+
+<h3 id="形状选项"><a href="#形状选项" class="headerlink" title="形状选项"></a>形状选项</h3><p>创建物理形状时使用的选项字典的键。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct SCNPhysicsShape.Option</span><br></pre></td></tr></table></figure>
+
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><p>详细内容请看：<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/scenekit/scnphysicsshape/">SCNPhysicsShape</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备2024078640号-1 </a>
+  </div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Qianxing</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
 
 
 
 
 
-<!-- Image to hack wechat -->
-<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
+
+  
+
+
+
+
 
 </body>
-
 </html>
