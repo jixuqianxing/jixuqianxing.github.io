@@ -17,12 +17,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jixuqianxing.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="小引最近，经常在 iOS 开发交流群里面看到有人在讨论关于屏幕适配的问题。我之前也写过几篇关于利用AutoLayout来做屏幕适配的文章《AutoLayout之可视化布局》、《AutoLayout之纯代码布局》，讲的虽然比较基础，但都是可以很好的帮助初学者掌握AutoLayout。 说到屏幕适配，就不得不提Storyboard。虽然，还是有很多人在坚持使用纯代码，但是Size Class的出现就足">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多人多Storyboard开发">
-<meta property="og:url" content="http://example.com/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/index.html">
+<meta property="og:url" content="http://jixuqianxing.com/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="Qianxing&#39;s Blog">
 <meta property="og:description" content="小引最近，经常在 iOS 开发交流群里面看到有人在讨论关于屏幕适配的问题。我之前也写过几篇关于利用AutoLayout来做屏幕适配的文章《AutoLayout之可视化布局》、《AutoLayout之纯代码布局》，讲的虽然比较基础，但都是可以很好的帮助初学者掌握AutoLayout。 说到屏幕适配，就不得不提Storyboard。虽然，还是有很多人在坚持使用纯代码，但是Size Class的出现就足">
 <meta property="og:locale" content="en_US">
@@ -38,11 +38,11 @@
 <meta name="twitter:image" content="http://img.itc.cn/photo/j3dESAZebb8">
 
 
-<link rel="canonical" href="http://example.com/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/">
+<link rel="canonical" href="http://jixuqianxing.com/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/","path":"2014/12/23/多人多Storyboard开发/","title":"多人多Storyboard开发"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://jixuqianxing.com/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/","path":"2014/12/23/多人多Storyboard开发/","title":"多人多Storyboard开发"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>多人多Storyboard开发 | Qianxing's Blog</title>
@@ -155,7 +155,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/">
+    <link itemprop="mainEntityOfPage" href="http://jixuqianxing.com/2014/12/23/%E5%A4%9A%E4%BA%BA%E5%A4%9AStoryboard%E5%BC%80%E5%8F%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
