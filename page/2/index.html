@@ -112,7 +112,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -134,6 +134,111 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://jixuqianxing.com/2023/02/15/20230215/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Qianxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Qianxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/02/15/20230215/" class="post-title-link" itemprop="url">Physics Simulation 之 SCNPhysicsShape</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-02-15 16:46:59" itemprop="dateCreated datePublished" datetime="2023-02-15T16:46:59+08:00">2023-02-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-05-07 19:09:50" itemprop="dateModified" datetime="2023-05-07T19:09:50+08:00">2023-05-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>此系列为官方文档翻译，用于学习<code>SceneKit</code></p>
+</blockquote>
+<p><code>SCNPhysicsShape </code> 物理体实体的抽象，用于调整碰撞检测。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在<code>SceneKit</code>对场景中的<code>SCNPhysicsBody</code>对象进行接触检测和其他模拟时，它使用物理形状而不是可见对象的渲染几何。这种方法既提高了模拟性能，也使您更容易设计基于玩家可以交互的场景元素的游戏玩法。</p>
+<h2 id="简单与复杂的形状"><a href="#简单与复杂的形状" class="headerlink" title="简单与复杂的形状"></a>简单与复杂的形状</h2><p>当您允许<code>SceneKit</code>自动创建物理形状时，它会使用尽可能简单的形状来匹配物理体所附加的节点的几何形状。这种方法可以最大程度地提高模拟性能，但对于某些对象可能导致不真实的物理行为。<br> 您可以通过定义更接近场景可见几何形状的物理形状来使模拟的行为更加真实。但这种方法会降低性能，因此您需要限制物理形状的细节数量。仅在对应用程序的精确碰撞检测很重要的物体上使用最高级别的细节。</p>
+<p> 如果您使用基本几何类（<code>SCNBox</code>、<code>SCNSphere</code>、<code>SCNPyramid</code>、<code>SCNCone</code>、<code>SCNCylinder</code>或<code>SCNCapsule</code>）之一创建物理形状，则SceneKit使用该几何形状的理想形式来创建物理形状，而不是使用几何形状的顶点数据来模拟碰撞。例如，如果您从SCNSphere对象创建一个物理形状，则<code>SceneKit</code>将模拟射线通过球的半径时的相互碰撞。</p>
+<p> 由于简单几何的理想形式比用于显示它们所需的顶点数据在计算上简单得多，因此使用基本几何形状（或使用<code>init(shapes：transforms :)</code>方法创建的复合形状）通常提供了模拟精度和性能之间的最佳平衡。</p>
+<h2 id="更改物理体的形状"><a href="#更改物理体的形状" class="headerlink" title="更改物理体的形状"></a>更改物理体的形状</h2><p>物理形状是不可变的，但您可以通过创建新的<code>SCNPhysicsShape</code>实例并将其分配给体的<code>physicsShape</code>属性来更改与物理体关联的形状。</p>
+<h2 id="相关API"><a href="#相关API" class="headerlink" title="相关API"></a>相关API</h2><h3 id="创建物理形状"><a href="#创建物理形状" class="headerlink" title="创建物理形状"></a>创建物理形状</h3><p>基于几何对象创建物理形状。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init(geometry: SCNGeometry, options: [SCNPhysicsShape.Option : Any]?)</span><br></pre></td></tr></table></figure>
+
+<p>从节点或节点层次结构创建物理形状。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init(node: SCNNode, options: [SCNPhysicsShape.Option : Any]?)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="组合物理形状"><a href="#组合物理形状" class="headerlink" title="组合物理形状"></a>组合物理形状</h3><p>通过组合其他物理形状创建新的物理形状。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init(shapes: [SCNPhysicsShape], transforms: [NSValue]?)</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取有关形状的信息"><a href="#获取有关形状的信息" class="headerlink" title="获取有关形状的信息"></a>获取有关形状的信息</h3><p>用于创建形状的对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var sourceObject: Any</span><br></pre></td></tr></table></figure>
+<p>用于创建形状的选项字典。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var options: [SCNPhysicsShape.Option : Any]?</span><br></pre></td></tr></table></figure>
+<p>用于创建复合形状的变换数组。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var transforms: [NSValue]?</span><br></pre></td></tr></table></figure>
+
+<h3 id="形状选项"><a href="#形状选项" class="headerlink" title="形状选项"></a>形状选项</h3><p>创建物理形状时使用的选项字典的键。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct SCNPhysicsShape.Option</span><br></pre></td></tr></table></figure>
+
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><p>详细内容请看：<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/scenekit/scnphysicsshape/">SCNPhysicsShape</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1401,90 +1506,6 @@ src="https://developer.apple.com/augmented-reality/roomplan/videos/roomplan-larg
 </ul>
 <h3 id="9-AutoreleasePool-与-RunLoop的关系"><a href="#9-AutoreleasePool-与-RunLoop的关系" class="headerlink" title="9. AutoreleasePool 与 RunLoop的关系"></a>9. AutoreleasePool 与 RunLoop的关系</h3><p>主线程的AutoreleasePool会在RunLoop进入的时候重新建立一个，在RunLoop退出休眠状态的时候也会进行释放后重新建立一个。在退出RunLoop的时候释放AutoreleasePool，具体见RunLoop总结</p>
 <h3 id="10-weak-strong-dance"><a href="#10-weak-strong-dance" class="headerlink" title="10. weak-strong dance"></a>10. weak-strong dance</h3><p>在7.1 介绍内存泄漏类型时候提到循环引用的一种解决方案是在block外部对弱化self，在block内部强化已经弱化的weakSelf，这也就是这里所说的 weak-strong dance，block外部对弱化self是为了避免循环引用，而在block内部强化已经弱化的weakSelf是为了避免外部_weak导致在运行block的时候self被释放。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://jixuqianxing.com/2016/09/18/20160918/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Qianxing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Qianxing's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Qianxing's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/09/18/20160918/" class="post-title-link" itemprop="url">屏蔽Xcode 8“烦人”的日志输出</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2016-09-18 09:42:08" itemprop="dateCreated datePublished" datetime="2016-09-18T09:42:08+08:00">2016-09-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-03-16 12:56:26" itemprop="dateModified" datetime="2023-03-16T12:56:26+08:00">2023-03-16</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>更新到<code>Xcode 8 </code>的同学应该都遇到了这个问题：用<code>Xcode 8</code>运行项目，日志会疯狂的刷，就像下面这种图一样：</p>
-<p><img src="https://s1.ax1x.com/2023/03/16/pp3qbp8.png" alt="日志输出"></p>
-<p>于是，简单搜寻了下，“歪果仁”给出了如下解决方法：</p>
-<blockquote>
-<p>Edit Scheme-&gt; Run -&gt; Arguments, 在Environment Variables里边添加 OS_ACTIVITY_MODE ＝ disable</p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2023/03/16/pp3qL6g.png" alt="解决方法图解"></p>
-<p>这样设置之后，就屏蔽掉那些烦人的日志了。</p>
-<p>关于这个问题，推荐一篇文章供大家查阅<a target="_blank" rel="noopener" href="https://objccn.io/issue-19-5/">《活动追踪》</a>。</p>
 
       
     </div>
